@@ -2,6 +2,6 @@
   uses: cloudaper/epics-action@v1.0.0
   with:
     # GitHub token secret
-    github-token: 
+    github-token: 60d2c39cbe32a8ec06fcba52a058e42a9434403b
     # Label name for epic issues
-    epic-label-name: # default is epic
+    epic-label-name: #epic
