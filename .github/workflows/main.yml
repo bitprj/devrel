@@ -1,0 +1,7 @@
+- name: Epic issues for GitHub
+  uses: cloudaper/epics-action@v1.0.0
+  with:
+    # GitHub token secret
+    github-token: 
+    # Label name for epic issues
+    epic-label-name: # default is epic
