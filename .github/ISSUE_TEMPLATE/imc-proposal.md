@@ -1,7 +1,7 @@
 ---
 name: IMC Proposal
 about: Proposal for Integrated Marketing Campaign
-title: "# {{Insert IMC Name}} [Integrated Campaign]"
+title: "{{Insert IMC Name}} [Integrated Campaign]"
 labels: IMC
 assignees: lazyplatypus, shreyagupta98
 
@@ -15,6 +15,7 @@ assignees: lazyplatypus, shreyagupta98
 #### President
 - [ ] Open IMC Issue
 - [ ] Get Project Manager (announce in channel)
+- [ ] Get Company sponsor
 
 #### Project Manager
 - [ ] Create #imc-[title] channel on Slack
