@@ -1,7 +1,7 @@
 ---
 name: IMC Proposal
 about: Proposal for Integrated Marketing Campaign
-title: "{{Insert IMC Name}} [Integrated Campaign]"
+title: Proposal for {{Insert IMC Name}} [Integrated Campaign]
 labels: IMC
 assignees: lazyplatypus, shreyagupta98
 
