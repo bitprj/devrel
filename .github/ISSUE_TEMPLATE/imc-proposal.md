@@ -20,4 +20,4 @@ assignees: lazyplatypus, shreyagupta98
 #### Project Manager
 - [ ] Create #imc-[title] channel on Slack
 - [ ] Make announcement on #general channel
-- [ ] Build team on Slack (3-4 marketing + 3-4 devs)
+- [ ] Build team on Slack (1-2 marketing + 3-4 devs)
