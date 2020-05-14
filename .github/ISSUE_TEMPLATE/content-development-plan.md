@@ -1,9 +1,9 @@
 ---
 name: Content Development Plan
 about: First steps to creating a plan for content dev.
-title: "# Content Development Plan - {{Name}} {{Insert IMC Name}} [Integrated Campaign]"
+title: "[Content Development Plan] {{Name}} {{Insert IMC Name}} [Integrated Campaign]"
 labels: IMC
-assignees: ''
+assignees: shreyagupta98
 
 ---
 
