@@ -20,7 +20,7 @@ assignees: shreyagupta98
 ### :dancer: Before starting
 - [ ] [Submit blog choice on airtable](https://airtable.com/shrshp0d9sruL7l9J)
 
-### :pushpin: STEP 1: Proposal
+### :pushpin: Step 1: Proposal
 - [ ] Fill out [proposal template](bitprj/devrel/blob/master/contentdevproposal.md)
 - [ ] [Compete Resources Request Form](https://airtable.com/shrYEJufxRzm97jha)
 - [ ] Open Tutorial Development Issue
@@ -39,6 +39,7 @@ assignees: shreyagupta98
     
     - Assign your PM to the pull request
 </details>
+
 ### :pushpin: Step 2: Testing Code
 - [ ] Tested run code to check for completion
 
