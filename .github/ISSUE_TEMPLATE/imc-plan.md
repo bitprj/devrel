@@ -39,3 +39,16 @@ Please see related issues for details related to their respective purposes - thi
 - [ ] 📅 {{Insert Date Here}} Submit Finalized Draft to Design Team + Writing Team
 - [ ] 📅 {{Insert Date Here}} Hold Webinar
 - [ ] 📅 {{Insert Date Here}} Hold Retrospective
+
+### Associated Content:
+#### Marketing Manager
+- @user will be working on ABC {{Insert #issue link}}
+- Webinar link:
+#### Marketing Partners
+- @user will be working on ABC {{Insert #issue link}}
+#### Developers
+- @user will be working on ABC {{Insert #issue link}}
+#### Designers
+- @user will be working on ABC {{Insert #issue link}}
+#### Writers
+- @user will be working on ABC {{Insert #issue link}}
