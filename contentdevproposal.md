@@ -16,12 +16,12 @@ The target audience will be undergraduate college students (Freshman or older) a
 
 ### :pushpin: Step 3
 > Outline your learning/teaching structure: 
-> Differentiate the concepts between Regression and Classification
-> Explain the necessary packages to use for the models (pandas, numpy, scikitlearn, and matplotlib)
-> Explain how the function calls work for code snippets
-> Give techniques to manipulate structure of data (for example, categorical data should be converted to numbers using scikitlearn's LabelEncoder since the machine learning packages don't really work very well with non-numerical values
-> Give basic mathematical bacjground for what's happening under the hood
-> Give context towards the outcome of our results from each model
+- Differentiate the concepts between Regression and Classification
+- Explain the necessary packages to use for the models (pandas, numpy, scikitlearn, and matplotlib)
+- Explain how the function calls work for code snippets
+- Give techniques to manipulate structure of data (for example, categorical data should be converted to numbers using scikitlearn's LabelEncoder since the machine learning packages don't really work very well with non-numerical values
+- Give basic mathematical bacjground for what's happening under the hood
+- Give context towards the outcome of our results from each model
 
 **Beginning (2-3+ sentences):**    
 This is where I explain the differences bewteen Regression and Classification based on what seems appropriate based on a specific metric that we're looking for. I also explain how the flexibility of a model can affect how accurate the model might be (less flexible = more up to interpretation (precision); more flexible = high level of accuracy).
