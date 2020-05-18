@@ -31,13 +31,14 @@ assignees: shreyagupta98
 - [ ] Open Tutorial QA Issue
 - [ ] Submit Proposal
 <details><summary><b>How to: Submit Proposal</b></summary>
+    
+    - Create branch called #{{insert-blog-title}}
+
     - Fork the bitprj/devrel repo
     
     - Create a file in the following folder: bitprj/devrel/{{imc_topic}}/{{imc_name}}/{{blog_title}}/proposal.md
     
     - Commit + Push proposal.md
-    
-    - Create branch called #{{insert-blog-title}}
     
     - Create a pull request to merge into the #{{insert-blog-title}} branch on bitprj/devrel
     
