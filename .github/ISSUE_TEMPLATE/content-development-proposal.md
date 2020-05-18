@@ -16,7 +16,7 @@ assignees: shreyagupta98
 
 >Add this issue into the corresponding IMC Project
 
->**FORMAT:** Add blog/video labels
+>**FORMAT:** Add blog/video/webinar labels
 
 **[Step-By-Step Technical Blog Guide](https://hq.bitproject.org/how-to-write-a-technical-blog/)**
 
@@ -25,7 +25,7 @@ assignees: shreyagupta98
 - [ ] [Submit blog choice on airtable](https://airtable.com/shrshp0d9sruL7l9J)
 
 ### :pushpin: Step 1: Proposal
-📅**Sat May 16**
+📅**{{Due_Date}}**
 - [ ] Complete [proposal template](https://github.com/bitprj/devrel/blob/master/contentdevproposal.md)
 - [ ] [Compete Resources Request Form](https://airtable.com/shrYEJufxRzm97jha)
 - [ ] Open Tutorial QA Issue
@@ -45,7 +45,9 @@ assignees: shreyagupta98
 </details>
 
 - [How to fork a repo video](https://app.getguru.com/card/ijjKGAyT/How-to-Fork-a-Repo-Do-a-Pull-Request)
+
 ### :pushpin: Step 2: Testing Code
+📅**{{Due_Date}}**
 - [ ] Tested run code to check for completion
 
 ### :pushpin: Step 3: Submitting Code Deliverables
