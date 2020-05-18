@@ -8,6 +8,9 @@ Intro To Python Pandas
 Intro to Python, Intro to Data Science, Big Data
 
 **DESCRIPTION (5-7+ sentences):**    
+
+**NOTE:** All code is placed in my blog.md, there is not seperate file for it.
+
 My blog aims to help people of all skill levels develop a fundamental understanding of the Python Pandas library. Python Pandas is one of the most popular libraries in all of computer science. It is able to perform powerful commands with only a few lines of code, and is the foundation of many complex data science projects. I break the tutorial down into bite-sized segments that categorize some of the primary uses of Pandas. Each tutorial comes with a simple exercise to help apply the newly learned topics.
 
 ### :pushpin: Step 2
