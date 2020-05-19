@@ -179,7 +179,6 @@ data: {
                 backgroundColor: "rgba(106, 220, 123, 1)",
                 borderColor: "black",
                 borderWidth: 1
-
             		},
             		{
                 label: "Net Receipts",
