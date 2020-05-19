@@ -16,6 +16,7 @@
 
 ### :pushpin: Step 3
 > Outline your learning/teaching structure: 
+
 **Beginning (2-3+ sentences):**    
 {{Assuming the audience has little to no experience with Python concepts I will begin by giving a brief introduction to Variables. As I explain I will provide interactive examples with the reader and urge them to try these examples on their own. After the explanation I will leave questions about concepts explained to keep readers thinking.}}
 
