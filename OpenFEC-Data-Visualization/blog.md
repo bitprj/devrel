@@ -32,8 +32,11 @@ Now that you have the ChartJS dependency, HTML (OpenFEC.html) and JS (OpenFEC.js
 In OpenFEC.html, add the following lines of code.
 
 ```html
+<!-- Create a canvas object for ChartJS -->
 <canvas id="chart" width="400" height="400"></canvas>
+<!-- Point the HTML file to Chart.js -->
 <script src = "./package/dist/Chart.js"> </script>
+<!-- Point the HTML file to our JS file -->
 <script src = "./OpenFEC.js"></script>
 ```
 
@@ -100,7 +103,7 @@ This allows us to open an “GET” (we want to GET information from the webpage
 Now that we have made our request, we need to set up the onreadystatechange function, which will be invoked when we receive a response. We also need to verify that the response we received is valid (this.readyState == 4 and this.status == 200) before we start using the information we receive from the request. Learn more about HTTP status codes at https://en.wikipedia.org/wiki/List_of_HTTP_status_codes. 
 
 ```javascript
-// this function will run when we receive a response*
+// this function will run when we receive a response
 http.onreadystatechange=function(){
   // only proceed once we receive a VALID response
   if (this.readyState == 4 && this.status == 200) {
@@ -109,7 +112,7 @@ http.onreadystatechange=function(){
 Now, we have to extract that data from the response we received from the request. This is done by JSON.parse(this.response), which takes the response we received and parses it into a JavaScript Object (raw_data) we can use. We then want to focus on the information available under the “results” key from the API response, so we index our raw_data by the key “results”.
 
 ```javascript
-// obtain all the JSON data and parse it into a JavaScript object raw_data*
+// obtain all the JSON data and parse it into a JavaScript object raw_data
     var raw_data = JSON.parse(this.response);
     // obtain the results array from the raw_data
     var results = raw_data["results"];
@@ -177,7 +180,30 @@ data: {
                 borderColor: "black",
                 borderWidth: 1
 
-            },
+            		},
+            		{
+                label: "Net Receipts",
+                data: net_receipts,
+                backgroundColor: "rgba(71, 175, 255, 1)",
+                borderColor: "black",   
+                borderWidth: 1,                  
+                },
+                {
+                label: "Fundraising Disbursements",
+                data: net_receipts,
+                backgroundColor: "rgba(136, 0, 240, 1)",
+                borderColor: "black",    
+                borderWidth: 1,                  
+                },
+                {
+                label: "Individual Contributions Less Refunds",
+                data: individual_contributions_less_refunds,
+                backgroundColor: "rgba(233, 114, 114, 1)",
+                borderColor: "black",    
+                borderWidth: 1,                  
+                }
+            ]
+        },
 ```
 
 Once you’re done labeling and customizing with each data set, you can add options to create a title for the graph.
