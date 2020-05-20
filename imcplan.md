@@ -17,7 +17,6 @@
 {{Insert_description_here}}
 
 ### :pushpin: Step 3
-> Outline your learning/teaching structure: 
 
 **Research on audience engagement:**
   - What type of content does this audience respond well to?
