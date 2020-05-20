@@ -4,17 +4,17 @@
 
 ### :pushpin: Step 1
 **TITLE:**    
-{{Insert_title_here}}
+Data Science in Non-STEM Education
 
 **TOPIC:**    
-{{Insert_topic_here}}
+How data science can be incoporated into Non-STEM courses at universities all over the country
 
 **DESCRIPTION (5-7+ sentences):**    
-{{Insert_description_here}}
+We strongly believe data science can bring students a whole new prespective and understanding of their social science concepts through data visualization for example. By discussing how data science can be incoporated into exisiting curriculus as well as how to start a whole new course exploring the intersection of data science and non-STEM, we hope professors will obtain a general roadmap of creating or add data science into their classrooms. The speaker panel will include UC Berkeley Professors in Legal studies, sociology, and history. We have also invited the data science program coordinator from Cal to discuss data science module creation. 
 
 ### :pushpin: Step 2
 :family: **TARGET AUDIENCE (3-5+ sentences):**    
-{{Insert_description_here}}
+This webinar is made for professors, especially ones in the social sciences. We as an organization has realized that not every university is fortunate enough yet to have data science curriculum and initiatives. The target audience of professors we have reached out to are within poltical science, psychology, publich health, sociology, legal studies, and economics. We also have made this event a facebook page inviting any interested students.
 
 ### :pushpin: Step 3
 > Outline your learning/teaching structure: 
