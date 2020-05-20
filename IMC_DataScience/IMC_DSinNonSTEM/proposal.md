@@ -21,11 +21,11 @@ This webinar is made for professors, especially ones in the social sciences. We 
 
 **Research on audience engagement:**
   - What type of content does this audience respond well to?
-    The audience responds well to topics of their interest. If data science does not interest them. They will not pursue given they only teach sociology for example and is not interested in bringing data science into the picture.
+      -The audience responds well to topics of their interest. If data science does not interest them. They will not pursue given they only teach sociology for example and is not interested in bringing data science into the picture.
   - What platforms will we use to promote this content?
-    We used emails mostly. We had the event registration on eventbrite and had a facebook page as well.
+      -We used emails mostly. We had the event registration on eventbrite and had a facebook page as well.
   - What order should the blogs be released (schedule with Social Media team)?
-    Not clear because our blog and case studies were scrapped last minute. Unfortunately, can't speak to this question or experience.
+      -Not clear because our blog and case studies were scrapped last minute. Unfortunately, can't speak to this question or experience.
   - What is the target number of attendees (range)?
     -Really depends on the subject. If professors merely aren't interested in bringing data science into non-STEM, then it'll be difficult to gain professor attendees. At the end, our goal was about 100 professor attendees for this webinar. 
     - What is the target number of people to plan on reaching out to (range)?
