@@ -25,3 +25,9 @@
   - What is the target number of attendees (range)?
     - What is the target number of people to plan on reaching out to (range)?
     - How are we going to reach this audience (contact collection, email marketing strategy)?
+
+### :pushpin: Step 3
+
+**Related Content**
+> List the names of the blogs (published, in progress, or new) that you will need to complete this IMC successfully
+> - Blog_Name @github_username_of_developer
