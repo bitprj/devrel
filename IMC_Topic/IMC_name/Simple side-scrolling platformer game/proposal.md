@@ -1,11 +1,11 @@
 
 ### Step 1
-- Title: {Simple side-scrolling platformer game}
-- Topic: {Front-End Development}
-- Sub-topic: {html/css}
-- Structure: {step-by-step tutorial}
-- Description (5-7+ sentences): {A intro to building games on the web. Creating a simple platformer game using p5.js and HTML. It might take about an hour to finish}
-- Resources needed: {https://workshops.hackclub.com/platformer/}
+- Title: Simple side-scrolling platformer game
+- Topic: Front-End Development
+- Sub-topic: html/css
+- Structure: step-by-step tutorial
+- Description (5-7+ sentences): A intro to building games on the web. Creating a simple platformer game using p5.js and HTML. It might take about an hour to finish
+- Resources needed: https://workshops.hackclub.com/platformer/
 ### Step 2
 - Describe the target audience: People who are interested in building games. May need a little bit background in HTML.
 ### Step 3
