@@ -34,3 +34,10 @@ Now in terms of detecting the outcomes of our machine learning, we should take i
 (less accurate). 
 
 ## Regression Example with Scikit-learn
+The regression model that we will create will be based on one of Scikit-learn's built in datasets called the Diabetes dataset. We want to predict the median blood pressure level of diabetes patients based on the given features of our dataset. The model we will use will be linear regression because since we're measuring quantitative variables and the values are continuous. Now to break down the componets of the linear regression formula, here's what it looks like below:
+
+![](https://miro.medium.com/max/2872/1*k2bLmeYIG7z7dCyxADedhQ.png)
+
+As we can see here, the Bi's (Beta i's) are the unknown coefficients from our dataset and going back to what you have learned from your Algebra and Pre-Algebra classes, B0 is the y-intercept of the function and B1 is the slope coefficent of the function and X1 is the actual slope. X1 is also the indepencdent variable in our dataset and Yi is the dependent variable in our dataset. Ei (Epsilon i) is the random error in our function where it measures how far off the datapoints of our function are from the bestline of fit.
+
+Now you're probably wondering, "How do we determine the value of the Bi's?"
