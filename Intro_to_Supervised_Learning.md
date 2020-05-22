@@ -65,3 +65,10 @@ The next step would be to convert the dataframe into a pandas dataframe to creat
 import pandas as pd
 diabetes_data = pd.DataFrame(diabetes.data, columns = diabetes.feature_names)
 ```
+
+The next step would be to check the shape of the dataframe to see how large it is.
+
+```python
+#Seeing the shape of the dataframe
+diabetes_data.shape
+```
