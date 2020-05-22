@@ -36,6 +36,6 @@ Insert_description_here
 ### :pushpin: Step 5
 
 **Speakers**
-> Webinar vision: who do you want to reach out to to speak at the webinar and hy
+> Webinar vision: who do you want to reach out to to speak at the webinar and why
 
 - **Name** - Reason.
