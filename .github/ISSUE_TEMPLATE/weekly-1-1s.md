@@ -12,16 +12,19 @@ assignees: ''
 
 DRI: @dri_please_enter_your_username_here
 
-## :calendar: Meetings to complete:
+# :calendar: Meetings to complete:
 > Divide this section by team if applicable
-### Team_1
-- [ ] @person1 {linked_meeting_notes}
 
-### Team_2
-- [ ] @person1 {linked_meeting_notes}
+## Team_1
+- [ ] @person1
 
-## :pushpin: Major Feedback:
+### :pushpin: Major Feedback:
 - notes
     - #linked_related_issues
-- **remove** e.g. Students need extensions for upcoming OKRs
-    - #13523
+
+## Team_2
+- [ ] @person1
+
+### :pushpin: Major Feedback:
+- notes
+    - #linked_related_issues
