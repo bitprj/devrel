@@ -4,17 +4,17 @@
 
 ### :pushpin: Step 1
 **TITLE:**    
-{{Insert_title_here}}
+Insert_title_here
 
 **TOPIC:**    
-{{Insert_topic_here}}
+Insert_topic_here
 
 **DESCRIPTION (5-7+ sentences):**    
-{{Insert_description_here}}
+Insert_description_here
 
 ### :pushpin: Step 2
 :family: **TARGET AUDIENCE (3-5+ sentences):**    
-{{Insert_description_here}}
+Insert_description_here
 
 ### :pushpin: Step 3
 
@@ -32,3 +32,10 @@
 > List the names of the blogs (published, in progress, or new) that you will need to complete this IMC successfully
 
 - Blog_Name @github_username_of_developer
+
+### :pushpin: Step 5
+
+**Speakers**
+> Webinar vision: who do you want to reach out to to speak at the webinar and hy
+
+- **Name** - Reason.
