@@ -21,3 +21,16 @@ values such as yes/no and different shoe brands (Nikes, Jordans, Vans). So now y
 about. Now let's explain the factors on what makes a specific model appropriate to use.
 
 ## When to use a Specific Supervised Learning Model
+So now you're probably wondering, "This seems nice and all, but how do we know when to use a specific model for a desired outcome?"
+Well the answer to that is based on these factors:
+- The size of the data would matter since a large sample size would lead to less variability compared to a small sample size
+- Distribution of data
+- The type of relationship between the labels and features of dataset (linear, non-linear, etc...)
+- Data format such as structured data (csv files, txt files, etc...) and unstructured data (json files, audio files, etc...)
+- Goal of the actual analysis itself
+
+## Accuracy vs Interpretation
+Now in terms of detecting the outcomes of our machine learning, we should take into account about the level of accuracy that our model creates and how much it inteprets what the true value should be. This is alo dependent on how flexible our model is, which means how much our fitted model varies from the data we have to train. The more flexible our model is, the less variation it has from the training data and it could fit more distributions of shapes towards the data, making it more accurate. The less flexible our model is, the more variation it has towards the data, which would fit less distributions of shapes towards the data, thus making it more interpretable 
+(less accurate). 
+
+## Regression Example with Scikit-learn
