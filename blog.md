@@ -1,0 +1,73 @@
+# How To Choose The Right Programming Language
+
+If you are new to programming and are wondering which language to learn first, or if you want to get started on a specific project and aren’t sure which language to code it in, here is a brief overview of the most popular programming languages to help get you started.
+
+**HTML and CSS**:
+
+These languages are necessary for creating static web pages. HTML (Hypertext Markup Language) is used to structure all the text, links, and other content you see on a website. CSS is the language used to describe the presentation of Web pages, including colors, layout, and fonts. One of CSS’ key benefits is the way it allows the separation of document content (written in HTML or a similar markup language) from document presentation (written in CSS). Thus, HTML and CSS are markup languages, heavily utilized for creating web pages and web applications.
+
+**JavaScript**:
+
+Along with HTML and CSS, JavaScript forms the basis of front-end web development, facilitating the creation of an interactive element. JavaScript is an object oriented text-based programming language used both on the client-side and server-side that allows you to make web pages interactive.Things like animations, video players, interactive maps, and simple in-browser games can be created with JavaScript. To put it simply, where HTML and CSS are languages that give structure and style to web pages, JavaScript gives web pages interactive elements that engage the user.
+
+**PHP**:
+
+PHP is a server side scripting language that is used to develop Static websites or Dynamic websites or Web applications. It runs massive sites such as Facebook and Etsy. It can perform operations like read, write, modify, update and display data from a database. It also provides security and contains safeguards to prevent hacking . Because of its popularity, learning PHP will serve you well if you intend to code for the Web.
+
+**Swift**:
+
+Apple released Swift in June, 2014 as a modern language for developing Mac, iPad, iPhone, Apple Watch, and Apple TV applications. Swift is a general-purpose programming language that has uses ranging from systems programming to mobile and desktop apps and scaling up to cloud services. If you want to enter the world of iOS, Swift is the language with which Apple intends to move forward. 
+
+**Python**:
+
+Python is a general-purpose language and a high level programming language used for everything from server automation to data science. SInce Python is an interpreted programming language, it allows you to run the same code on multiple platforms without recompilation. Python is a great language for beginners, because it is easy to read and understand. Python is used to create web apps like Instagram and help researchers make sense of their data.
+
+**Java**:
+
+Java is a high level object oriented programming language that can be used for anything from web applications to desktop and mobile apps. Code written in Java can be run securely on nearly any platform regardless of the operating system as long as the device has a Java Runtime Environment (JRE) installed. Java has a strong presence among large enterprise applications—like banks, hospitals, and university software. It also powers Android apps, so it’s a good choice for those inclined toward mobile development.
+
+**C++**:
+
+C++ is a middle level object oriented programming language. It is widely used to develop applications based on graphic user interface like adobe photoshop. It is also used to build real time image processing, mobile sensor applications and to develop browsers such as Google Chrome and Mozilla Firefox. Thus, C++ is a language that has a myriad of uses but is mostly used in systems programming and embedded systems.
+
+**C**:
+
+As a middle-level language, C combines the features of both high-level and low-level languages. Various features of C including direct access to machine level hardware APIs, the presence of C compilers, deterministic resource use and dynamic memory allocation make C language an optimum choice for scripting applications and drivers of embedded systems. C is a structured programming language which allows a complex program to be broken into simpler programs called functions. It also allows free movement of data across these functions.
+
+If you want to develop an application using an API, below are the pros and cons of the four languages that would be most suited to accomplish the task.
+
+|Language|Pros|Cons|
+|---|---|---|
+|Python| 1) Flexible<br>2) Naturally/Intuitively readable<br>3) Scripted as opposed to compiled | 1) Doesn’t start with programming basics (known to abstract too many important basic concepts)|
+|Java| 1) Regarded as a good start for learning to think like a programmer<br> 2) You’ll be able to access/manipulate the most important computer parts like the file system, graphics, and sound for any fairly sophisticated and modern program—that can run on any operating system | 1) Lots of new vocabulary to learn since it is a higher-level language |
+|C| 1) Used to learn the fundamentals of programming at the lowest (hardware) level| 1) It’s not a very beginner-friendly language<br> 2) The learning curve is very steep|
+|C++| 1) Allows for much higher “control” than other languages | 1) A bit more challenging to pick up and become productive with than C (and even more so than Java).|
+
+If you would like to begin learning a new programming language, here are some tutorials to get you started!
+
+Java: https://www.codecademy.com/learn/learn-java
+
+C++: https://www.codecademy.com/learn/learn-c-plus-plus
+
+C: https://www.programiz.com/c-programming
+
+HTML: https://www.w3schools.com/html/
+
+CSS: https://www.w3schools.com/css/
+
+JavaScript: https://www.w3schools.com/js/
+
+PHP: https://www.guru99.com/what-is-php-first-php-program.html
+
+**Sources**:
+
+1) https://www.simplilearn.com/best-programming-languages-start-learning-today-article
+
+2) https://swift.org/about/#swiftorg-and-open-source
+
+3) https://blog.teamtreehouse.com/choose-programming-language
+
+
+
+
+
