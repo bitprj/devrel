@@ -1,6 +1,6 @@
 ---
 name: IMC Plan
-about: 7 week checkpoints for IMCs.
+about: 8 week checkpoints for IMCs.
 title: IMC Plan {{Insert IMC Name}} [Integrated Campaign]
 labels: IMC
 assignees: lazyplatypus, shreyagupta98
