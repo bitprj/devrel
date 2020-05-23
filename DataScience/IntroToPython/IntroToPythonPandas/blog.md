@@ -1,4 +1,4 @@
-# Intro to Python Pandas
+# Intro to Spyder IDE Using Python Pandas
 
 !["Panda"](https://miro.medium.com/max/1080/1*fUO28EIHi1bkZPhjZ451tQ.jpeg)
 
@@ -42,12 +42,10 @@ Congrats! We have our library installed and our data set to work with. Now, go i
 ```
 import pandas as pd
 ```
-The “import pandas” portion now includes the entire library for us to use. The “as pd” portion is to use pd as a shortcut when calling the library functions. So now we don’t type out pandas.(function_name) everytime, but instead pd.(function_name). Yay Efficiency! Our first line of code will be to get our data set into a DataFrame object (so find your data!) Enter the file location of your .csv file into the pd.read_csv(“file”) function like so:
-```py
-data = pd.read_csv("C://Users//<user_name>//Downloads//factors-affecting-campus-placement//Placement_Data_Full_Class.csv")
-```
+The “import pandas” portion now includes the entire library for us to use. The “as pd” portion is to use pd as a shortcut when calling the library functions. So now we don’t type out pandas.(function_name) everytime, but instead pd.(function_name). Yay Efficiency! Our first line of code will be to get our data set into a DataFrame object (so find your data!) Enter the file location of your .csv file into the pd.read_csv(“file”) function. On Spyder, there’s a tab called *Variable Explorer* in the middle right. Click on it, and you should see a new DataFrame object of size (215,15).
 
-On Spyder, there’s a tab called *Variable Explorer* in the middle right. Click on it, and you should see a new DataFrame object of size (215,15).
+![Alt text](Users/dstef/Downloads/Spyder.png?raw=true "Optional Title")
+
 
 |Name|Type|Size|Value
 |:-----:|------:|:-----:|------:|
@@ -193,7 +191,7 @@ new_data = new_data + data["mba_p"]
 new_data /= 5
 data["Mean"] = new_data
 ```
-## Final Exercise Part 1
+## Final Exercise Part 2
 
 Get the 5 highest mba_p and the 5 highest etest_p candidates and merge their dataset to 10 “premier candidates”
 
