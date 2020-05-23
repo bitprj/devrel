@@ -239,4 +239,6 @@ As we can see here, in the lower end of the line of best fit, the model tends to
 
 ## Classification Example with Scikit-learn
 
-We're now going to make a classification model 
+We're now going to make a classification model using the heart disease dataset from the UCI Machine Learning repository. We want to predict what group of people were diagnosed correctly with heart disease and what group of people where misdiagnosed with heart disease. The model we would use would be logistic regression since it works very well with categorical variables and it helps measure the probablity where some data points will belong in one group or the other. We would set our probability level to be at 50% (p(x) = 0.5) where if a large group of data points are greater than 0.5, they will be labeled as misdiagnosed and if a large group of data points are less than 0.5, they will be labeled as diagnosed. The binary numbers that we will use to group these two categories will be that 1 = misdiagnosed and 0 = diagnosed. 
+
+To messure the accuracy of 
