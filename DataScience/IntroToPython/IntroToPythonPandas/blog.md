@@ -216,7 +216,9 @@ mba_top = pd.concat([etest_top,mba_top])
 ```
 We first have to create two new, sorted DataFrames. We grab the top 5 from both of the new datasets into another pair of DataFrames, and we use the .concat() command to make one of our pair the final dataset. 
 
-Congratulations! With this tuorial, we learned to sort data and isolate information, as well as ignore irrelevant or incomplete data. We could then create new subsets of data for future analysis and readability. Finally, we gained the ability to add the data to create a more comprehensive data set.
+## Congratulations!
+
+With this tuorial, we learned to sort data and isolate information, as well as ignore irrelevant or incomplete data. We could then create new subsets of data for future analysis and readability. Finally, we gained the ability to add the data to create a more comprehensive data set.
 
 
 
