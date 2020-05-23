@@ -44,7 +44,7 @@ import pandas as pd
 ```
 The “import pandas” portion now includes the entire library for us to use. The “as pd” portion is to use pd as a shortcut when calling the library functions. So now we don’t type out pandas.(function_name) everytime, but instead pd.(function_name). Yay Efficiency! Our first line of code will be to get our data set into a DataFrame object (so find your data!) Enter the file location of your .csv file into the pd.read_csv(“file”) function. On Spyder, there’s a tab called *Variable Explorer* in the middle right. Click on it, and you should see a new DataFrame object of size (215,15).
 
-![Alt text](Users/dstef/Downloads/Spyder.png?raw=true "Optional Title")
+![Alt text](https://i.imgur.com/4CZa2uy.png)
 
 
 |Name|Type|Size|Value
