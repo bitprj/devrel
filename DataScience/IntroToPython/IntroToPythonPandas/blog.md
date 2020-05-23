@@ -42,14 +42,11 @@ Congrats! We have our library installed and our data set to work with. Now, go i
 ```
 import pandas as pd
 ```
-The “import pandas” portion now includes the entire library for us to use. The “as pd” portion is to use pd as a shortcut when calling the library functions. So now we don’t type out pandas.(function_name) everytime, but instead pd.(function_name). Yay Efficiency! Our first line of code will be to get our data set into a DataFrame object (so find your data!) Enter the file location of your .csv file into the pd.read_csv(“file”) function. On Spyder, there’s a tab called *Variable Explorer* in the middle right. Click on it, and you should see a new DataFrame object of size (215,15).
+The “import pandas” portion now includes the entire library for us to use. The “as pd” portion is to use pd as a shortcut when calling the library functions. So now we don’t type out pandas.(function_name) everytime, but instead pd.(function_name). Yay Efficiency! Our first line of code will be to get our data set into a DataFrame object (so find your data!) Enter the file location of your .csv file into the pd.read_csv(“file”) function, then click the green play button to run the program. On Spyder, there’s a tab called *Variable Explorer* in the middle right. Click on it, and you should see a new DataFrame object of size (215,15).
 
 ![Alt text](https://i.imgur.com/4CZa2uy.png)
 
 
-|Name|Type|Size|Value
-|:-----:|------:|:-----:|------:|
-|data|DataFrame|(215,15)|Column names: sl_no, gender, ssc_p, ssc_b, hsc_p, hsc_b, hsc_s, degree...|
 
 A DataFrame is just like an Excel table that we can directly edit using our code.
 When creating a DataFrame that is not necessarily imported with read_csv, you can directly build a Dataframe in the following format:
@@ -68,6 +65,8 @@ We have our data with us, but it’s very large, so we might be confused as to w
 - **data.head(x)/tail(x):** returns x top/bottom rows
 - **data.sort_values(col1):** sorts data ascending based on col1
 - **data.sort_values(col1, ascending=False):** will do the same thing, but sorted in Descending order
+
+![Alt text](https://i.imgur.com/tPx4OEY.png)
 
 ### Difference Between head() and head(x):
 
@@ -129,9 +128,11 @@ For our data set:
 
 data.max() = 15 values
 
-data[‘Salary’].max() = 1 value
+data[‘salary’].max() = 1 value
 
 data.mean() = 7 values, since the other 8 columns are non-numerical
+
+![Alt text](https://i.imgur.com/kOaNxs3.png)
 
 
 ## Exercise 2
@@ -150,6 +151,9 @@ sum_hun = hundred["salary"].sum()
 med_hun = hundred["salary"].median()
 max_mba = hundred["mba_p"].max()
 ```
+
+First, we sort the data in descending order, and grab a new DataFrame with .head(). We then create our sum, median and max values by calling their respective commands on the new "hundred" DataFrame.
+
 ## Merging New Data
 
 What if I want to see how all the percentages add up and take the mean? Maybe that can be done with the tools already given, but now I want to add it to our original set as a new column.
@@ -175,9 +179,11 @@ one = one.append(two,ignore_index=True)
 ```
 2 size(1,2) DataFrames merge into a (2,2) new object. Ignore_index works like inplace earlier.
 
+![Alt text](https://i.imgur.com/UTJP4fJ.png)
+
 ## Final Exercise Part 1
 
-Let’s take the 5 percentages in our original data set, sum them into one column (and divide by 5 with data /= 5), return the average of the column and add this column to our original data set.
+Let’s take the 5 percentages in our original data set, sum them into one column (and divide by 5 with data /= 5), return the average of the column and add this column to our original data set. 
 
 Tip: You can add columns together!
 
@@ -191,6 +197,8 @@ new_data = new_data + data["mba_p"]
 new_data /= 5
 data["Mean"] = new_data
 ```
+We create a Series object by adding the two columns from data together. We continue adding the relevant percentages in a similar fashion, and then divide by the number of percentages we are using. Now that we have our master average, there is a new column we can add to our original data set, which we can do so by directly naming a new column for our DataFrame.
+
 ## Final Exercise Part 2
 
 Get the 5 highest mba_p and the 5 highest etest_p candidates and merge their dataset to 10 “premier candidates”
@@ -198,6 +206,7 @@ Get the 5 highest mba_p and the 5 highest etest_p candidates and merge their dat
 Tip: The two Dataframes share the same column indexes 
 
 ## Solution
+
 ```py
 mba = data.sort_values(["mba_p"],ascending=False)
 etest = data.sort_values(["etest_p"],ascending=False)
@@ -205,6 +214,7 @@ mba_top = mba.head()
 etest_top = etest.head()
 mba_top = pd.concat([etest_top,mba_top])
 ```
+We first have to create two new, sorted DataFrames. We grab the top 5 from both of the new datasets into another pair of DataFrames, and we use the .concat() command to make one of our pair the final dataset. 
 
 Congratulations! With this tuorial, we learned to sort data and isolate information, as well as ignore irrelevant or incomplete data. We could then create new subsets of data for future analysis and readability. Finally, we gained the ability to add the data to create a more comprehensive data set.
 
