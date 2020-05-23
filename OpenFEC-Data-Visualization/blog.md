@@ -11,42 +11,66 @@ For this tutorial, we’ll walk through how to make a bar graph visualizing vari
 
 ## Setup
 
-1. Sign up for the OpenFEC API Key through this [website.](https://api.data.gov/signup/)
+1. Sign up for the OpenFEC API Key at https://api.data.gov/signup/. This is a government website with the most up to date financial information. You'll see a form like this:
+
+   ![](./pictures/api-key-signup.png)
 
 2. Check your email for the API Key and save it
 
-3. Download ChartJS through this [website.](https://www.jsdelivr.com/package/npm/chart.js) This is done by clicking the download icon (fourth button), which will download a zip file. Once the zip file is downloaded, move to the desired location where you will store all your project files.
+   ![](./pictures/api-key-email.png)
+
+3. Download ChartJS [here](https://www.jsdelivr.com/package/npm/chart.js). This is done by clicking the download icon (fourth button), which will download a zip file. Once the zip file is downloaded, move to the desired location where you will store all your project files.
 
    <img src = "./pictures/chartjs-download.png"/>
 
-4. Create one HTML file (call it OpenFEC.html) and one JS file (call it OpenFEC.js) in the same location as ChartJS files you downloaded in step 3.
+4. Create one empty HTML file (call it OpenFEC.html) and one empty JavaScript file (call it OpenFEC.js) in the same location as the ChartJS files you downloaded in step 3.
 
-5. Download a text editor if you don’t have one. You'll need one to code everything up!
+5. Download a text editor (we like [Sublime](https://www.sublimetext.com/3)) or an IDE (we prefer [Brackets](http://brackets.io/) for any HTML/CSS/JavaScript project) if you don’t have one. You'll need one to code everything up!
 
-6. At the end, to see your output, right-click on the HTML file and open with Google Chrome!
+6. At the end, to see your output, right-click on the HTML file and open with your favorite web browser!
 
-## How Will We Use the API?
+   ![](./pictures/open-with-chrome.png)
+
+## Coding!
 
 Now that you have the ChartJS dependency, HTML (OpenFEC.html) and JS (OpenFEC.js) files set up, let’s get to coding!
+
+### Coding our HTML File
 
 In OpenFEC.html, add the following lines of code.
 
 ```html
 <!-- Create a canvas object for ChartJS -->
 <canvas id="chart" width="400" height="400"></canvas>
+```
+
+This line is used to create a canvas tag (needed for chartJS) with the specified width and height. This is where our graph will go on the webpage! 
+
+```html
 <!-- Point the HTML file to Chart.js -->
 <script src = "./package/dist/Chart.js"> </script>
+```
+
+This line points our HTML file to the ChartJS JS file that we downloaded earlier. 
+
+```html
 <!-- Point the HTML file to our JS file -->
 <script src = "./OpenFEC.js"></script>
 ```
 
-Line 1 is used to create a canvas tag (needed for chartJS) with the specified width and height. This is where our graph will go on the webpage! Line 2 points our HTML file to the ChartJS JS file that we downloaded earlier. Line 3 points the HTML file to our personal JS file, which is where we will do all of our coding to retrieve the information and display the graph.
+Our last HTML code line points the HTML file to our personal JS file, which is where we will do all of our coding to retrieve the information and display the graph.
 
-Before we start on the JS file, let’s understand the API request we will make. Go to https://api.open.fec.gov/developers/ and scroll down and click on the “presidential” tab.
+### Using the API
+
+Before we start on the JS file, let’s understand the API request we will make. 
+
+#### Getting a Request URL
+
+Go to https://api.open.fec.gov/developers/ and scroll down and click on the “presidential” tab.
 
 ![img](https://lh5.googleusercontent.com/XQkwdh_p7KUfuWYIq-dsY6qvHNcIwwTyGtqwGvMu_w83vl9cPiI6ndsAcNTSRQZ43fhriuaUBlNQnLozvXSVeuRtLj4kQvCP5jBGlw_g7Sx0VbtG9Lxy9MB25f-F2d_JzIcaTyHG)
 
-This should open up a drop down with many options of the different type of information you can obtain. For our purposes, tab seen below.
+This should open up a drop down with many options of the different type of information you can obtain. For our purposes, choose tab seen below.
 
 ![img](https://lh3.googleusercontent.com/Ll6Yfe0YHMbXSOIMfHd0eF8X622SrDHYGtpZPUtvDTR4E8jUQI2hlLYYzrG74_oQZg5ypfa845vbqykqDM2V_Hbn9aEyCoQkwKlHgizlh0F1WmS9qJuQ6FaWwtsQws0iN2HUYKDo)
 
@@ -66,17 +90,23 @@ Woah! You should’ve been hit with a big wall of text! What does this all mean?
 
 ![img](https://lh6.googleusercontent.com/g38gPiOMAgZCpmVUFzVbHXdaPfqewPBkQoupf94P4V6SgnPH59A3qqvPJQr2nRpOlZCGo5w1u3ddIfvJpBfX6bYt73FpFaCHrBoyGYuSlEzRUfiSROQnj2b38QJFue5HUL6R968V)
 
-What you received was a JSON (JavaScript Object Notation) response after making API GET request. Essentially, this is the raw format where all the information you requested from OpenFEC. To make it more readable, copy and paste all the text and enter it into a JSON beautifier (https://codebeautify.org/jsonviewer) and hit “beautify”.
+#### JSON (and Beautifying It)
+
+What you received is a JSON (JavaScript Object Notation) response after making an API GET request. Essentially, this is the raw format where all the information you requested from OpenFEC. To make it more readable, copy and paste all the text and enter it into a JSON beautifier (https://codebeautify.org/jsonviewer) and hit “beautify”.
 
 ![img](https://lh4.googleusercontent.com/A4G4jxrZLtO0EKJr_xils2XmUh-olr_fXPnbA8M3x3DXAZdXoAEY4wkkI0lKnfhFzUFEWlo57EshTJTTQaM_wG7BleNGbq4hqchuhkxbU1p1Mr0v9Ggv5Zb8m9OnV9XP6FPJptKX)
 
 Now that’s much easier to read! As you can see everything is in key-value pairs. For example there is a key “net_receipts” and a value 799419661.15 associated with it. Scroll through the JSON on the right to see what other information you have found.
 
-There are few important things to note about JSON.Text surrounded by curly braces indicate a JSON objectText surrounded by square brackets are elements of an array.
+There are few important things to note about JSON. Text surrounded by curly braces indicate a JSON object. Text surrounded by square brackets are elements of an array.
 
 You should notice that there is a “results” key whose value is an array of multiple JSON objects, all of which have various information for different candidates / parties!
 
 Great, now we have our information. But how to get it into the code?
+
+### Coding Our JavaScript File 
+
+#### XMLHttpRequest
 
 Let’s open our JS file and enter the following lines of code. The link will be same link we got from the OpenFEC website.
 
@@ -108,6 +138,8 @@ http.onreadystatechange=function(){
   // only proceed once we receive a VALID response
   if (this.readyState == 4 && this.status == 200) {
 ```
+
+#### Extracting the Data
 
 Now, we have to extract that data from the response we received from the request. This is done by JSON.parse(this.response), which takes the response we received and parses it into a JavaScript Object (raw_data) we can use. We then want to focus on the information available under the “results” key from the API response, so we index our raw_data by the key “results”.
 
@@ -148,9 +180,11 @@ To set up for ChartJS (which will be discussed below), we want to get all our ca
 
 After initializing all our empty arrays, we loop through all of our results and save the current element (remember, the current element is a JSON object which has the information of a specific candidate / party). We then index this element by the keys associated with our desired information (see the API response shown earlier for the various keys) and push the information into the appropriate arrays. After doing this for every respective element of the results array, we have all the information that we desire from the API saved. Onto using the information in ChartJS! 
 
-## ChartJS Customization
+## ChartJS Bar Graph
 
 Now that we have our data from the API integrated, we will be creating and customizing the graph. 
+
+#### Creating the Graph
 
 To create the graph, we want to instantiate the chart by passing in the 2d context of the canvas where the chart will be drawn. We want to create a bar graph, which is a pre-defined type.
 
@@ -161,6 +195,8 @@ To create the graph, we want to instantiate the chart by passing in the 2d conte
         var chart = new Chart(ctx, {    
         type: 'bar',
 ```
+
+#### Customizing the Graph
 
 Once we’ve instantiated it, we start customizing the graph. Since we already have arrays with all of the data types, we can just call it. ‘Labels: name,’ prints the name of each candidate/group on the x axis. Once we’ve set the x axis, we will begin labeling each data type under ‘datasets: [‘. 
 
@@ -222,9 +258,11 @@ Once you’re done labeling and customizing with each data set, you can add opti
 }
 ```
 
-Lets see how the graph looks! Save your OpenFEC.JS and open your files. Look for OpenFEC.html and right click it. Open the file with a web browser (i.e Safari/Google Chrome) and it should look like below!
+That's it! You've completed the coding!
 
 ## Expected Output
+
+Let's see how the graph looks! Save your OpenFEC.html and OpenFEC.js files. Look for OpenFEC.html and right click it. Open the file with a web browser and it should look like below!
 
 ![img](https://lh4.googleusercontent.com/vrlUSf7GTKdVCinKZix2Lo8O5Mg0WE70j79mNBWtX7td2tRCp6sGvg2OJQnJO2fg34-enEqBEtlg9rRIF9YNSfhrh5O07Z2odv_oUvuyBjHozHjjfGHPIo0F4NOTUm0OkN6rQtWW)
 
