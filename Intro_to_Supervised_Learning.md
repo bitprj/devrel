@@ -389,3 +389,137 @@ Training set standard deviation by feature:
 
 Just like that, we have ensured that the features have a mean of approximately 0 and a standard deviation of 1.
 
+Now we're going to train the logistic regression model by fitting the training data using scikit-learn's `LogisticRegression` pacakage like so.
+
+```python
+#Training the model
+from sklearn.linear_model import LogisticRegression
+regression_model = LogisticRegression()
+regression_model.fit(X_train,y_train)
+```
+
+```python
+LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+                   intercept_scaling=1, l1_ratio=None, max_iter=100,
+                   multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='lbfgs', tol=0.0001, verbose=0,
+                   warm_start=False)
+```
+
+Finally, we're going to show the two methods on measuring the accuracy of the model itself. We will use the first case by calculating the error rate using the `accuracy_score()` function like so.
+
+```python 
+#Measuring how accurate our model is for predicting the amount of people that have benign or malignant tumors
+from sklearn.metrics import accuracy_score
+y_pred = regression_model.predict(X_test)
+test_acc = accuracy_score(y_test,y_pred)*100
+print('The test set accuracy is %4.2f%%' % test_acc)
+```
+
+```python
+The test set accuracy is 65.57%
+```
+
+We can see here that the test accuracy is at 65.57%. This would make our logistic regression model moderately accurate since it's greate than 50%, but at the same, a much more qualified model to be stringly accurate would at least have an accuracy level of 80%. We shall dive even deeper by creating the confusion matrix that would compose all of the true positives/negatives and false postive/negatives to see how many data points fall into these 4 groups and we will visualize it using matplotlib as well.
+
+```python
+#Generating the Confusion Matrix for True Positives and Negatives and False Postives and Negatives
+#True Positive = Diagnosed; True Negative = Misdiagnosed; False Positive = Beliving they're diagnosed but not; False Negative = Believing they're misdiagnosed but not
+from sklearn.metrics import confusion_matrix
+import numpy as np
+conf_matrix = confusion_matrix(y_test,y_pred,labels=[1,0])
+print("Confusion matrix:")
+print(conf_matrix, end='\n\n')
+print('-'*15)
+print(np.array([['TN', 'FP'],[ 'FN' , 'TP']]))
+```
+
+```python
+Confusion matrix:
+[[25  6]
+ [15 15]]
+
+---------------
+[['TN' 'FP']
+ ['FN' 'TP']]
+```
+
+```python
+#Plot for Confusion Matrix
+import itertools
+plt.imshow(conf_matrix, interpolation='nearest')
+for i, j in itertools.product(range(conf_matrix.shape[0]), range(conf_matrix.shape[1])):
+    plt.text(j, i, conf_matrix[i, j],horizontalalignment="center",color="orange")
+    plt.ylabel('True label (Recall)')
+    plt.xlabel('Predicted label (Precision)')
+    plt.title('Logistic Reg | Confusion Matrix')
+    plt.colorbar();
+```
+
+![](https://www.picturepaste.ca/images/2020/05/23/Heart-Disease-Confusion-Matrix.png)
+
+We can see here that there were 25 true negatives, 6 false postives, 15 false negatives, and 15 true postives. So based on our confusion matrix, we see that generally most of the patients were deemed as misdiagnosed. However, this brings more of any issue for the false negatives since it seems to have an the same number of people in their category as the true positives. And since 15 is the second largest majority of cases of the 4 groups, this would mean that there's a lot of patients that actually have heart disease. However, we should calculate the rate of each group to determine if that's really the case. We would also convert each group as a matrix for the calculation. The true postive rate measures how accurate our prediction was for the datapoints to belong in this group. The formula for it is true positive/(true positive + false negative).
+This is our value given below.
+
+```python
+#Assiging the True and False Postives/Negatives as variables for more metrics
+# True negatives
+TN = conf_matrix[0][0]
+# True positives
+TP = conf_matrix[1][1]
+# False negatives
+FN = conf_matrix[1][0]
+# False positives
+FP = conf_matrix[0][1]
+
+#Finding the amount of True Postives that we actally classified
+TPR = float(TP)/(TP+FN)
+print('TPR = %4.2f%%' % (TPR*100))
+```
+
+```python
+TPR = 50.00%
+```
+
+We will also calculate the the true negative rate. It's the same idea as the true postive rate, but there's a difference in the formula. The formula would be true negative/(true negative + false positive). We shall calulate the rate as given below.
+
+```python
+#Finding the amount of True Negatives that we actually classified
+TNR = float(TN)/(TN+FP)
+print('TNR = %4.2f%%' % (TNR*100))
+```
+
+```python
+TNR = 80.65%
+```
+
+Now we're going to calculate the false positve rate. It's the same idea as the last two rates, but the formula is true positive/(true positive + false positive). The rate is calculate as shown here.
+
+```python
+#Finding the amount of False Positives that we predicted
+PPV = float(TP)/(TP+FP)
+print('PPV = %4.2f%%' % (PPV*100))
+```
+
+```python
+PPV = 71.43%
+```
+
+Finally, we're going to calculate the false negative rate. The idea is the same as the last three rates, but the formula is true negative/(true negative + false negative). This is the rate as shown here.
+
+```python
+#Finding the amount of False Negatives that we predicted 
+NPV = float(TN)/(TN+FN)
+print('NPV = %4.2f%%' % (NPV*100))
+```
+
+```python
+
+NPV = 62.50%
+```
+
+As you can see here, our true negative rate and our false negative rate are both less than the accuracy score. In this case, we can see that more of the patients were deemed to be misdiagnosed with heart disease. However, it still somewhat raises a concern that 62.5% of patients had this high of a chance to be falsely misdiagnosed for heart disease. We should still take this into account for safety precautions in the future.
+
+## Conclusion
+
+Overall, we have shown you the appropriate techniques on how to use supervised learning techniques to predict precise values for labeled data. We hope that you found this article informative and now have the selfawareness to use the correct model to solve your problem whether it would be a quantitative one or a qualitative one. We also hope that you can now assess what factors would affect how well the model will when making predictions. We wish you luck on your journey in data science.
