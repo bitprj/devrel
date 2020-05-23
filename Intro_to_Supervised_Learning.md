@@ -241,4 +241,151 @@ As we can see here, in the lower end of the line of best fit, the model tends to
 
 We're now going to make a classification model using the heart disease dataset from the UCI Machine Learning repository. We want to predict what group of people were diagnosed correctly with heart disease and what group of people where misdiagnosed with heart disease. The model we would use would be logistic regression since it works very well with categorical variables and it helps measure the probablity where some data points will belong in one group or the other. We would set our probability level to be at 50% (p(x) = 0.5) where if a large group of data points are greater than 0.5, they will be labeled as misdiagnosed and if a large group of data points are less than 0.5, they will be labeled as diagnosed. The binary numbers that we will use to group these two categories will be that 1 = misdiagnosed and 0 = diagnosed. 
 
-To messure the accuracy of 
+To messure the accuracy of the classification model, there are 2 methods that you can do it. You can calculate the error rate which is the percentage of correct classifications. Another way to calculate the accuracy of the model is to base it off on the types of correct and incorrect predictions for our binary variables. We shall break the terminology of those cases right below:
+
+- A true positive means that the sample was correctly predicted to belong in the positive class (in this case, our postive class is being diagnosed with heart disease and that the patients were correctly diagnosed with the disease).
+- A true negative means that the sample was correctly predicted to belong in the negative class (in this case, our negative class is being misdiagnosed and that the patients were correctly misdiagnosed).
+- A false positive means that the sample was incorrectly predicted to belong in the positive class (this means that the patients were assumed to have heart disease, but they really don't).
+- A false negative means that the sample was incorrectly predicted to belong in the negative class (this means that the patients were assumed to be misdiagnosed, but they actually have heart disease).
+
+Both forms of measuring the accuracy of our logistic regression model are important because the accuracy score ensures that both the true postives and the true negatives equally matter and the correct and incorrect predictions would give us a better course of action on how to handle potentially dangerous mistakes in our study. For example, having a high number of falsely misdiagnosed cases is much worse than having falsely diagnosed cases because you're potentially letting people that are seriously ill live freely for their lives, but they could have a heart attack at any moment without treatment.
+
+Now that we have explained the concept behind logistic regression, let's put this knowledge to practice. The first step would be to import the csv file regarding the heart disease cases.
+
+```python
+#Using the UCI Machine Learning Dataset to determine who has heart disease
+import pandas as pd
+heart_disease = pd.read_csv("heart.csv")
+```
+
+Now we're going to find the shape of the data set.
+
+```python
+#Finding the shape of the dataset
+heart_disease.shape
+```
+
+```python
+(303, 14)
+```
+
+We can see here that the dataset has 303 patients and 14 features. 
+
+We should look at the first five rows of the dataset to see what we're dealing with.
+
+```python
+#Look at first 5 rows of heart disease dataset
+heart_disease.head()
+```
+
+![](https://www.picturepaste.ca/images/2020/05/23/Heart-Disease-Summary-Statistics.png)
+
+Here's a breakdown of all 14 features:
+
+- age: the age of each patient
+- sex: sex identity of each patient
+- cp: chest pain type
+- trestbps: resting blood pressure
+- chol: cholestoral
+- fbs: fasting blood sugar
+- restecg: resting electrocardiographic results
+- thalach: maximum heart rate achieved
+- exang: exercise induced angina
+- oldpeak: ST depression induced by exercise relative to rest
+- slope: the slope of the peak exercise ST segment
+- ca: number of major vessels
+- thal: 3 = normal; 6 = fixed defect; 7 = reversable defect
+- target: 1 or 0
+
+The class column to represent the binary variables, 1 and 0, hasn't been included in this dataset. We will do this through creating the column as shown here.
+
+```python
+#Adding the class label to distingish between misdiagnosed patients with heart disease
+heart_disease["class"] = heart_disease.target
+```
+
+Now we should look at the value counts to see how many people were grouped into binary varaible 1 (misdiagnosed) and binary variable 2 (diagnosed). 
+
+```python
+#Counting the amount of cases of heart disease (1 = people that have it, 0 = misdiagnosed)
+pd.value_counts(heart_disease["class"])
+```
+
+```python
+1    165
+0    138
+Name: class, dtype: int64
+```
+
+We can see here that there are 165 misdiagnosed cases and 138 diagnosed cases. This means that the majority of patients are deemed to not have heart disease. How accurately this was measured is what we will find out later.
+
+We're going to find out about the summary statistics of our dataset with the new class column that we have created earlier.
+
+```python
+#Adding the class of binary varibles for level of diagnosis
+heart_disease.describe().transpose()
+```
+
+![](https://www.picturepaste.ca/images/2020/05/23/Heart-Disease-Stats.png)
+
+The next step now is to form a geometric boundary to determine where one group belongs for the binary variables. We will visualize this using matplotlib and we'll base our metric on the maximum heart rate achieved (thalach) because you can easily misinterpret this as over exercising, which could factor in on the diagnosis of each patient. Here is the visualization below.
+
+```python
+#Plotting the class of diagnosis
+import matplotlib.pyplot as plt
+import seaborn as sns
+sns.set()
+x = range(len(heart_disease["thalach"]))
+y = heart_disease["thalach"]
+plt.scatter(x,y,c=heart_disease["class"])
+plt.xlabel("sample")
+plt.ylabel("thalach")
+plt.show()
+```
+
+![](https://www.picturepaste.ca/images/2020/05/23/heart-disease-graph.png)
+
+We can see here that the bounday seems to be approximately at the x-axis at the sample size equaling 170. So if the x-axis values are less than 170, it would be considered to be misdiagnosed. If it's greater than 170, it would be considered as diagnosed.
+
+We're now going to start to create the model using `test_train_split()` just like the regression example and our x value is based on the column for the maximum heart rate due potential misinterpretation due to over exercsing and our y value is based the class column that we have made earlier. We're also going check the size of our `X_test` and `X_train` variables
+
+```python
+#Training the heart disease model
+X = heart_disease["thalach"].values.reshape(-1,1)
+y = heart_disease["class"].values.reshape(-1,1)
+from sklearn.model_selection import train_test_split
+# Split the data into 80% training and 20% testing. 
+# The random_state allows us to make the same random split every time.
+X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2,random_state=327)
+print('Training data size: (%i,%i)' % X_train.shape)
+print('Testing data size: (%i,%i)' % X_test.shape) 
+```
+
+```python
+Training data size: (242,1)
+Testing data size: (61,1)
+```
+
+We're also going to scale the mean to 0 and the standard deviation to 1 for the features just like the regression model like so.
+
+```python
+#Scale the data so that it has a mean of zero and a uniform standard deviation
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+X_train = scaler.fit_transform(X_train)
+X_test = scaler.transform(X_test)
+print('Training set mean by feature:')
+print(X_train.mean(axis=0))
+print('Training set standard deviation by feature:')
+print(X_train.std(axis=0))
+```
+
+```python
+Training set mean by feature:
+[2.67921589e-16]
+Training set standard deviation by feature:
+[1.]
+```
+
+Just like that, we have ensured that the features have a mean of approximately 0 and a standard deviation of 1.
+
