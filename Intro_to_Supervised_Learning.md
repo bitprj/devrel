@@ -218,4 +218,25 @@ print('Test RMSE: %f' % test_rmse)
 Test RMSE: 5527.810024
 ```
 
-The RMSE score means that 
+The RMSE score means that the error in the predicted median blood pressure level is by approximately 5528 mmHg. Given that the range of blood pressure levels is between 25000 mmHg and 34600 mmHg this is an ordinary difference. The reason as to what may cause this difference in the first place might be that either the relationship between the features and the predicted values aren't perfectly linear or some of the features don't correlate very well with the median blood pressure level. To truly figure out where our model stands in terms of fitting the best line of fit, we shall plot the model as shown below. 
+
+```python
+#Predicted vs Actual Median Blood Pressure level for Diabetes dataset
+import matplotlib.pyplot as plt
+import seaborn as sns
+sns.set()
+plt.scatter(y_test,y_pred)
+plt.plot([2500,34600],[2500,34600],'r',lw=2)
+plt.xlabel('Actual Blood Pressure')
+plt.ylabel('Predicted Blood Pressure')
+plt.show()
+```
+
+![](https://www.picturepaste.ca/images/2020/05/23/Blood-Pressure-Regression-Line.png)
+
+As we can see here, in the lower end of the line of best fit, the model tends to overpredict what the median blood pressure level is (most of the data points are above the line of best fit) and at the higher end, the model tends to underpredict what the median blood pressure level is (most of the data points are below the best line of fit). Overall, our model could have done a much better job in terms of making the predictions much closer to the true median blood pressure level, but at least you're now aware about what factors to take account for when you're creating you're linear regression model
+
+
+## Classification Example with Scikit-learn
+
+We're now going to make a classification model 
