@@ -82,14 +82,12 @@ We have our data with us, but it’s very large, so we might be confused as to w
 |:-----:|------:|:-----:|------:|
 |data|DataFrame|(10,15)|Column names: sl_no, gender, ssc_p, ssc_b, hsc_p, hsc_b, hsc_s, degree...|
 
-## Exercise 1
+## Getting Top and Bottom 6 Salaries
 
 On the Kaggle page used to download our csv, there is a part of the page providing definitions to our data’s column headers, including salary. Use it, and the newly learned commands to:
 Get the 6 highest and lowest salary entries from our dataset.
 
 Tip: calling data.head() returns a text answer, but for a new dataframe, write new_data = data.head()
-
-## Solution
 
 ```py
 salary = data.sort_values(["salary"])
@@ -102,9 +100,7 @@ So you would get 200,000 for the 6 bottom salaries, but the top 6 salaries were 
 ```py
 salary.dropna(subset=["salary"], inplace = True)
 ```
-Dropna() gets rid of null values, and arguments subset means we can remove NULL values in a certain column (here we use salary). Inplace is to choose between overwriting the same object or create a new one (true = overwrite).
-
-## Revised Solution
+Dropna() gets rid of null values, and arguments subset means we can remove NULL values in a certain column (here we use salary). Inplace is to choose between overwriting the same object or create a new one (true = overwrite). The following code would return non-null values:
 
 ```py
 salary = data.sort_values(["salary"])
@@ -135,13 +131,11 @@ data.mean() = 7 values, since the other 8 columns are non-numerical
 ![Alt text](https://i.imgur.com/kOaNxs3.png)
 
 
-## Exercise 2
+## Get the Median, Sum, and Max
 
 Let’s get the median and sum of the top 100 salaries, as well as the max mba_p from those 100 candidates
 
 Tip: How are the salaries sorted right now?
-
-## Solution
 
 ```py
 salary = data.sort_values(["salary"],ascending=False)
@@ -181,13 +175,11 @@ one = one.append(two,ignore_index=True)
 
 ![Alt text](https://i.imgur.com/UTJP4fJ.png)
 
-## Final Exercise Part 1
+## Aggregate Old Percentages to Create a New One
 
 Let’s take the 5 percentages in our original data set, sum them into one column (and divide by 5 with data /= 5), return the average of the column and add this column to our original data set. 
 
 Tip: You can add columns together!
-
-## Solution
 
 ```py
 new_data = data["ssc_p"] + data["hsc_p"]
@@ -199,13 +191,11 @@ data["Mean"] = new_data
 ```
 We create a Series object by adding the two columns from data together. We continue adding the relevant percentages in a similar fashion, and then divide by the number of percentages we are using. Now that we have our master average, there is a new column we can add to our original data set, which we can do so by directly naming a new column for our DataFrame.
 
-## Final Exercise Part 2
+## Merging Two Sets of Relevant Data
 
 Get the 5 highest mba_p and the 5 highest etest_p candidates and merge their dataset to 10 “premier candidates”
 
 Tip: The two Dataframes share the same column indexes 
-
-## Solution
 
 ```py
 mba = data.sort_values(["mba_p"],ascending=False)
