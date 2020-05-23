@@ -53,7 +53,7 @@ To measure the accuracy of our model, we will use the Root Mean Square Error (RM
 Now that we have gotten over the important mathematical concepts to build the regression model, let's put this knowledge into practice. The first step is to import the built in Diabetes dataset from sckiit-learn.
 
 ```python
-#Using Diabetes dataset to predict the average blood pressure level for diabetes patients
+#Using Diabetes dataset to predict the median blood pressure level for diabetes patients
 from sklearn.datasets import load_diabetes
 diabetes = load_diabetes()
 ```
@@ -72,3 +72,150 @@ The next step would be to check the shape of the dataframe to see how large it i
 #Seeing the shape of the dataframe
 diabetes_data.shape
 ```
+
+```python
+(442, 10)
+```
+
+We can now see here that there are 442 patients in totatl with 10 specific features.
+
+Let's look at the first 5 rows to see what type of features that we're dealing with.
+
+```python
+#Looking at the first 5 rows of the dataset
+diabetes_data.head()
+```
+
+![](https://www.picturepaste.ca/images/2020/05/22/Diabetes-Columns.png)
+
+We can see that the 10 features would be 
+- age: the age of the patient
+- sex: the sex that the patient belongs too
+- bmi: the patient's body max index
+- bp: average blood pressure
+- s1: T-Cells (a type of white blood cell)
+- s2: low density lipoproteins
+- s3: high density lipoproteins
+- s4: tch (thyroid stimulating hormone)
+- s5: lamotrigine (medication to can control blood pressure levels)
+- s6: blood sugar level
+
+Since the median blood pressure level isn't a given column in this dataset, we can create through expressing it this way.
+
+```python
+#Creating Blood Pressure column to signify the median blood pressure level because it wasn't given in our dataset
+diabetes_data["Blood Pressure"] = diabetes.target*100
+```
+
+Now we're going to add the column in our given dataset and also calculate the summary statistics to measure the percentiles of each category.
+
+```python
+#Adding the new column into the original data set and looking at the summary statistics
+diabetes_data.describe().transpose()
+```
+
+![](https://www.picturepaste.ca/images/2020/05/22/Diabetes-Summary-Statistics.png)
+
+Now we can see here that every value is scaled differently. We want to scale each feature with an equal metric because this would give our machine learning model less ambuguity when it interprets the main data given. The method that we can use to solve this problem would
+be to standardize each feature to have a mean of 0 and a standard deviation of 1. This would give our coefficients a higher level of intepretability.
+
+Now we're going into the split the data for testing and training. The reason as to why we would seperate our data into two groups is because the testing data is new data that the model hasn't seen before so it would use that as a basis to predict the median blood pressure level whereas the training data is familiar to the model. This would defeat the purpose of this procedure since this would mean that our model will only make predictions based on what it knows rather then working with any form of data that's unfamiliar to it. To create the actual model, we first would need to create the x variable for fetaures (in this case, the last index of the entire dataset) and the y variable for the actual Blood Pressure column. Then we will call the `train_test_split()` to split our data for x and y for testing and training. We will set 80% of the data for training and 20% of it for testing (explains why `test_size = 0.2`). Now that the conceptual material has been explained, let's find the size of our testing and training data.
+
+```python
+#Setting up our data for training and testing
+X = diabetes_data.iloc[:,:-1]
+y = diabetes_data["Blood Pressure"]
+
+from sklearn.model_selection import train_test_split
+#Split the data into 80% training and 20% testing. 
+#The random_state allows us to make the same random split every time.
+X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2,random_state=327)
+print('Training data size: (%i,%i)' % X_train.shape)
+print('Testing data size: (%i,%i)' % X_test.shape)
+```
+
+```python
+Training data size: (353,10)
+Testing data size: (89,10)
+```
+
+Now we can scale the training and testing data to give it a mean of 0 and a standard deviation of 1. We should also print the results to find the training set mean and standrd deviation.
+
+```python
+#Scale the data to give a mean of zero and a unified standard deviation
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+X_train = scaler.fit_transform(X_train)
+X_test = scaler.transform(X_test)
+print('Training set mean by feature:')
+print(X_train.mean(axis=0))
+print('Training set standard deviation by feature:')
+print(X_train.std(axis=0))
+```
+```python
+Training set mean by feature:
+[-1.76126032e-17  7.54825852e-18  1.00643447e-17  5.03217235e-17
+ -2.89349910e-17  2.26447756e-17 -5.03217235e-18  1.25804309e-17
+ -7.54825852e-18 -2.01286894e-17]
+Training set standard deviation by feature:
+[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+```
+
+As we can see here, the training set mean is equal to and 0 the standard deviation is equal to 1.
+
+Now we can train the data using a linear regression model as shown here.
+
+```python
+#Fitting the Regression Model
+from sklearn.linear_model import LinearRegression
+regression_model = LinearRegression()
+regression_model.fit(X_train,y_train)
+```
+
+```python
+LinearRegression(copy_X=True, fit_intercept=True, n_jobs=None, normalize=False)
+```
+
+Now we shall look at the coefficients of each feature to interpret what happens for each increase in a feature.
+
+```python
+#Finding the coefficients of each feature
+intercept = regression_model.intercept_
+coef = pd.DataFrame(regression_model.coef_, index=diabetes.feature_names, columns=['Coefficients'])
+print('Intercept = %f\n' % intercept)
+print(coef)
+```
+
+```python
+Intercept = 15127.195467
+
+     Coefficients
+age    168.813322
+sex  -1079.915788
+bmi   2480.399465
+bp    1378.119030
+s1   -3108.492284
+s2    1763.874470
+s3     278.482641
+s4     685.792186
+s5    3799.116004
+s6     109.684471
+```
+We can see here that the y-intercept (B0) for the function is 15127.195467, which equals to the mean Blood Pressure level for all of the training data when their coefficients are set equal to the mean values (which are zero). The sign difference for each coeffcient should also be taken into account such as an increase in age results in an increase in the median blood pressure level and the increase in T-Cells (s1 column) results in a decrease in the median blood pressure level. These type of factors make senes becaue the older you get, the more likely that you will be frail in health and T-Cells actively try to improve your immune system to stay healthy. 
+
+Now we're going to test the model on new data. We do this by creating a variable called `y_pred` which contains the predicted median Blood Pressure levels and we use this against `y_test` which contains the true Blood Pressure levels. We would also need to calculate the RMSE to see how much our model varies from the true median Blood Pressure level.
+
+```python
+#Testing the validity of the performance of our model by seeing how far off it is from the true  median Blood Pressure level
+from sklearn.metrics import mean_squared_error
+import numpy as np
+y_pred = regression_model.predict(X_test)
+test_rmse = np.sqrt(mean_squared_error(y_test, y_pred))
+print('Test RMSE: %f' % test_rmse)
+```
+
+```python
+Test RMSE: 5527.810024
+```
+
+The RMSE score means that 
