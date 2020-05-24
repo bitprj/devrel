@@ -3,7 +3,7 @@ name: Tutorial Quality Assurance (QA)
 about: Describe this issue template's purpose here.
 title: Tutorial QA {{Title}} {{IMC Name}}
 labels: ''
-assignees: ''
+assignees: atuljayaram
 
 ---
 
