@@ -39,7 +39,7 @@ To measure the accuracy of our model, we will use the Root Mean Square Error (RM
 
 ![](https://secureservercdn.net/160.153.137.16/70j.58d.myftpupload.com/wp-content/uploads/2019/03/rmse-2.png)
 
-Now that we have gotten over the important mathematical concepts to build the regression model, let's put this knowledge into practice. The first step is to import the built in Diabetes dataset from sckiit-learn.
+Now that we have gotten over the important mathematical concepts to build the regression model, let's put this knowledge into practice. Now before we get into the code itself, we will disccuss the Python packages that will be helpful to build our model, which are scikit-learn, numpy, pandas, matplotlib, and seaborn. Scikit-learn is Python's machine learning package that has the necessary tools to carry out the calculations of our machine learning model. Numpy is another Python package that handles computations with lists and matrices of elements. Pandas is another python package that serves a purpose in manipulating the structure of our data. Matplotlib and Seaborn both service the purpose of visualizing our models, but what seaborn does is that it makes matplotlib's visuals more asthetically pleasing smoothing out the outlines of the drawn figures in our graphs. The first step is to import the built in Diabetes dataset from sckiit-learn.
 
 ```python
 #Using Diabetes dataset to predict the median blood pressure level for diabetes patients
@@ -75,7 +75,7 @@ diabetes_data.shape
 
 We can now see here that there are 442 patients in totatl with 10 specific features.
 
-Let's look at the first 5 rows to see what type of features that we're dealing with.
+Let's look at the first 5 rows to see what type of features that we're dealing with. We do this by using the command `diabetes_data.head()` and the `.head()` function call showcases only the 1st five rows of the dataset by default. You can specify a number inside the parenthesis of the `.head()` function call if necessary.
 
 ```python
 #Looking at the first 5 rows of the dataset
@@ -96,14 +96,14 @@ We can see that the 10 features would be
 - s5: lamotrigine (medication to can control blood pressure levels)
 - s6: blood sugar level
 
-Since the median blood pressure level isn't a given column in this dataset, we can create through expressing it this way.
+Since the median blood pressure level isn't a given column in this dataset, we can create through expressing it this way. The reason why we would need such a column is because even though we have the information regarding the average blood pressure across from each patient, we want to precisely see how close our data is to the 50th percentile of the various level of blood pressure across each patient.
 
 ```python
 #Creating Blood Pressure column to signify the median blood pressure level because it wasn't given in our dataset
 diabetes_data["Blood Pressure"] = diabetes.target*100
 ```
 
-Now we're going to add the column in our given dataset and also calculate the summary statistics to measure the percentiles of each category.
+Now we're going to add the column in our given dataset and also calculate the summary statistics to measure the percentiles of each category. In order to do this, we would have to express the function as this `diabetes_data.describe().transpose()` where `.describe()` would give the summary statistics and `.transpose()` would serve the purpose of re-orienting the x and y columns to help include the values of the `diabetes_data["Blood Pressure"]` when you read in on the summary statistics of the entire data frame.
 
 ```python
 #Adding the new column into the original data set and looking at the summary statistics
@@ -119,7 +119,7 @@ Now we're going into the split the data for testing and training. The reason as 
 
 ```python
 #Setting up our data for training and testing
-X = diabetes_data.iloc[:,:-1]
+X = diabetes_data.iloc[:,:-1] #.iloc[] indexes only integers in a list
 y = diabetes_data["Blood Pressure"]
 
 #Split the data into 80% training and 20% testing. 
@@ -131,7 +131,7 @@ print('Testing data size: (%i,%i)' % X_test.shape)
 
 ![](https://www.picturepaste.ca/images/2020/05/25/Diabetes-ML-Shape.png)
 
-Now we can scale the training and testing data to give it a mean of 0 and a standard deviation of 1. We should also print the results to find the training set mean and standrd deviation.
+Now we can scale the training and testing data to give it a mean of 0 and a standard deviation of 1. We should also print the results to find the training set mean and standrd deviation. We would do this using Scikit-learn's `StandardScaler()` package which will remove the mean and convert it to 0 and create a unified standard deviation of 1.
 
 ```python
 #Scale the data to give a mean of zero and a unified standard deviation
@@ -147,7 +147,7 @@ print(X_train.std(axis=0))
 
 As we can see here, the training set mean is equal to and 0 the standard deviation is equal to 1.
 
-Now we can train the data using a linear regression model as shown here.
+Now we can train the data using a linear regression model as shown here. We will do this using scikit-learn's `LinearRegression()` package which will fit the models of the trained data using the `.fit()` function call.
 
 ```python
 #Fitting the Regression Model
