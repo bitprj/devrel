@@ -25,6 +25,7 @@ Please see related issues for details related to their respective purposes - thi
 - {{Link Persona Here}}
 
 ## 🔗 Relevant Links
+- IMC Plan (create copy of IMC Plan Template)
 - {{Insert IMC Plan Link Here}}
 - {{Insert Webinar Plan Link Here}}
 - {{Insert Webinar Slides Link Here}}
