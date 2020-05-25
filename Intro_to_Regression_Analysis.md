@@ -71,9 +71,7 @@ The next step would be to check the shape of the dataframe to see how large it i
 diabetes_data.shape
 ```
 
-```python
-(442, 10)
-```
+![](https://www.picturepaste.ca/images/2020/05/25/Diabetes-Shape.png)
 
 We can now see here that there are 442 patients in totatl with 10 specific features.
 
@@ -131,10 +129,7 @@ print('Training data size: (%i,%i)' % X_train.shape)
 print('Testing data size: (%i,%i)' % X_test.shape)
 ```
 
-```python
-Training data size: (353,10)
-Testing data size: (89,10)
-```
+![](https://www.picturepaste.ca/images/2020/05/25/Diabetes-ML-Shape.png)
 
 Now we can scale the training and testing data to give it a mean of 0 and a standard deviation of 1. We should also print the results to find the training set mean and standrd deviation.
 
@@ -148,14 +143,7 @@ print(X_train.mean(axis=0))
 print('Training set standard deviation by feature:')
 print(X_train.std(axis=0))
 ```
-```python
-Training set mean by feature:
-[-1.76126032e-17  7.54825852e-18  1.00643447e-17  5.03217235e-17
- -2.89349910e-17  2.26447756e-17 -5.03217235e-18  1.25804309e-17
- -7.54825852e-18 -2.01286894e-17]
-Training set standard deviation by feature:
-[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
-```
+![](https://www.picturepaste.ca/images/2020/05/25/Training-Set.png)
 
 As we can see here, the training set mean is equal to and 0 the standard deviation is equal to 1.
 
@@ -167,9 +155,7 @@ regression_model = LinearRegression()
 regression_model.fit(X_train,y_train)
 ```
 
-```python
-LinearRegression(copy_X=True, fit_intercept=True, n_jobs=None, normalize=False)
-```
+![](https://www.picturepaste.ca/images/2020/05/25/Diabetes-Linear-Regression.png)
 
 Now we shall look at the coefficients of each feature to interpret what happens for each increase in a feature.
 
@@ -181,21 +167,8 @@ print('Intercept = %f\n' % intercept)
 print(coef)
 ```
 
-```python
-Intercept = 15127.195467
+![](https://www.picturepaste.ca/images/2020/05/25/Diabetes-Coefficients.png)
 
-     Coefficients
-age    168.813322
-sex  -1079.915788
-bmi   2480.399465
-bp    1378.119030
-s1   -3108.492284
-s2    1763.874470
-s3     278.482641
-s4     685.792186
-s5    3799.116004
-s6     109.684471
-```
 We can see here that the y-intercept (B0) for the function is 15127.195467, which equals to the mean Blood Pressure level for all of the training data when their coefficients are set equal to the mean values (which are zero). The sign difference for each coeffcient should also be taken into account such as an increase in age results in an increase in the median blood pressure level and the increase in T-Cells (s1 column) results in a decrease in the median blood pressure level. These type of factors make senes becaue the older you get, the more likely that you will be frail in health and T-Cells actively try to improve your immune system to stay healthy. 
 
 Now we're going to test the model on new data. We do this by creating a variable called `y_pred` which contains the predicted median Blood Pressure levels and we use this against `y_test` which contains the true Blood Pressure levels. We would also need to calculate the RMSE to see how much our model varies from the true median Blood Pressure level.
@@ -207,9 +180,7 @@ test_rmse = np.sqrt(mean_squared_error(y_test, y_pred))
 print('Test RMSE: %f' % test_rmse)
 ```
 
-```python
-Test RMSE: 5527.810024
-```
+![](https://www.picturepaste.ca/images/2020/05/25/Diabetes-RMSE.png)
 
 The RMSE score means that the error in the predicted median blood pressure level is by approximately 5528 mmHg. Given that the range of blood pressure levels is between 25000 mmHg and 34600 mmHg this is an ordinary difference. The reason as to what may cause this difference in the first place might be that either the relationship between the features and the predicted values aren't perfectly linear or some of the features don't correlate very well with the median blood pressure level. To truly figure out where our model stands in terms of fitting the best line of fit, we shall plot the model as shown below. 
 
