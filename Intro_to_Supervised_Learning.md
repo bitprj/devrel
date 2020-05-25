@@ -1,4 +1,4 @@
-# Intro to Supervised Learning
+# Intro to Regression Analysis: Predicting Blood Pressure
 
 ## What is Supervised Learning?
        
@@ -7,8 +7,7 @@ problems in the world. Well this is where machine learning comes in. Now what is
 subset of artificial intelliegence where the user allows the computer to make predictions on its own without the programmer explicitly telling
 it to do so. A common form of machine learning that we will cover in this article will be supervised learning. So now you're also
 wondering, "What is supervised learning?" Supervised learning is a form of machine learning where the user trains the computer to make
-predctions based on labeled categories of data in a given dataset. The 2 forms of supervised learning that we will cover today will be
-regression and classification models.
+predctions based on labeled categories of data in a given dataset. The form of supervised learning that we will cover today will be linear regression.
 
 ## When to use a Specific Supervised Learning Model
 So how do we know when to use a specific model for a desired outcome?
