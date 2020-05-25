@@ -79,8 +79,11 @@ This example is similar to the example above except the value 42.0 is considered
 Test your knowledge:
 
 	32.189 is considered what kind of Data Type?
+	
 	‘90’ is a number. True or False?
+	
 	“Hello, what is your name?’ is an acceptable string. True or False?
+	
 	-78 is what kind of Data Type?
 
 
@@ -155,7 +158,9 @@ This is an example of a variable being assigned to the string Welcome to this bl
 Test your knowledge:
 
 	7_teen = 17 is an acceptable variable name. True or False?
+	
 	Write an acceptable variable name.
+	
 	We can use Python keywords as variable names. True or False?
 
 
