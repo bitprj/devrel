@@ -3,31 +3,21 @@
 ## What is Supervised Learning?
        
 Hello there. I see that you're very interested in finding interesting applications of using Statistics to solve many
-problems in the world. Well this is where machine learning comes in. Now what is machine learning? Machine learning is a
+problems in the world. Well this is where machine learning comes in. Machine learning is a
 subset of artificial intelliegence where the user allows the computer to make predictions on its own without the programmer explicitly telling
 it to do so. A common form of machine learning that we will cover in this article will be supervised learning. So now you're also
 wondering, "What is supervised learning?" Supervised learning is a form of machine learning where the user trains the computer to make
-predctions based on labeled categories of data in a given dataset. The form of supervised learning that we will cover today will be linear regression.
-
-## When to use a Specific Supervised Learning Model
-So how do we know when to use a specific model for a desired outcome?
-Well the answer to that is based on these factors:
-- The size of the data would matter since a large sample size would lead to less variability compared to a small sample size
-- Distribution of data
-- The type of relationship between the labels and features of dataset (linear, non-linear, etc...)
-- Data format such as structured data (csv files, txt files, etc...) and unstructured data (json files, audio files, etc...)
-- Goal of the actual analysis itself
-
+predctions based on labeled categories of data in a given dataset. 
 ## Accuracy vs Interpretation
-Now in terms of detecting the outcomes of our machine learning, we should take into account about the level of accuracy that our model creates and how much it inteprets what the true value should be. This is also dependent on how flexible our model is, which means how much our fitted model varies from the data we have to train. The more flexible our model is, the less variation it has from the training data and it could fit more distributions of shapes towards the data, making it more accurate. The less flexible our model is, the more variation it has towards the data, which would fit less distributions of shapes towards the data, thus making it more interpretable 
+Now in terms of detecting the outcomes of our machine learning, we should take into account about the level of accuracy that our model creates and how much it inteprets what the true value should be. This is also dependent on the flexibility of our model, which means how much our fitted model varies from the data we have to train. The more flexible our model is, the less variation it has from the training data, making it more accurate. The less flexible our model is, the more variation it has towards the data, making it more interpretable 
 (less accurate). 
 
 ## Regression Example with Scikit-learn
-The regression model that we will create will be based on one of Scikit-learn's built in datasets called the Diabetes dataset. We want to predict the median blood pressure level of diabetes patients based on the given features of our dataset. The model we will use will be linear regression because since we're measuring quantitative variables and the values are continuous. Now to break down the componets of the linear regression formula, here's what it looks like below:
+The regression model that we will create will be based on one of Scikit-learn's built in datasets called the Diabetes dataset. We want to predict the median blood pressure level of diabetes patients based on the given features of our dataset. The model we will use will be linear regression because since we're measuring quantitative variables and the values are continuous. Also, this specfic model would answer questions that doctors would have to encounter with patients such as "Given a patients set of health characteristics such as age, blood sugar or bmi, how would a doctor or a biopharmceutical company predict blood pressure?" Now to break down the componets of the linear regression formula, here's what it looks like below:
 
 ![](https://miro.medium.com/max/2872/1*k2bLmeYIG7z7dCyxADedhQ.png)
 
-As we can see here, the Bi's (Beta i's) are the unknown coefficients from our dataset and going back to what you have learned from your Algebra and Pre-Algebra classes, B0 is the y-intercept of the function and B1 is the slope coefficent of the function and X1 is the actual slope. X1 is also the indepencdent variable in our dataset and Yi is the dependent variable in our dataset. Ei (Epsilon i) is the random error in our function where it measures how far off the datapoints of our function are from the bestline of fit.
+As we can see here, the Bi's (Beta i's) are the unknown coefficients from our dataset and going back to what you have learned from your Algebra and Pre-Algebra classes, B0 is the y-intercept of the function and B1 is the slope coefficent of the function and X1 is the actual slope. X1 is also the independent variable in our dataset and Yi is the dependent variable in our dataset. Ei (Epsilon i) is the random error in our function where it measures how far off the datapoints of our function are from the best line of fit.
 
 So how do we determine the value of the Bi's? We determine the value of the Bi's through using the finding the Residual Sum of Squares (RSS). The Residual Sum of Squares is the sum of the amount of variations each data point has from the true value for the best line of fit. The RSS formula can be expressed as this:
 
@@ -195,4 +185,4 @@ plt.show()
 
 ![](https://www.picturepaste.ca/images/2020/05/23/Blood-Pressure-Regression-Line.png)
 
-As we can see here, in the lower end of the line of best fit, the model tends to overpredict what the median blood pressure level is (most of the data points are above the line of best fit) and at the higher end, the model tends to underpredict what the median blood pressure level is (most of the data points are below the best line of fit). Overall, our model could have done a much better job in terms of making the predictions much closer to the true median blood pressure level, but at least you're now aware about what factors to take account for when you're creating you're linear regression model.
+As we can see here, in the lower end of the line of best fit, the model tends to overpredict what the median blood pressure level is (most of the data points are above the line of best fit) and at the higher end, the model tends to underpredict what the median blood pressure level is (most of the data points are below the best line of fit). Overall, our model could have done a much better job in terms of making the predictions much closer to the true median blood pressure level, but at least you're now aware about what factors to take account for when you're creating your linear regression model.
