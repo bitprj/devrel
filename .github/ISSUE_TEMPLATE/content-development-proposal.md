@@ -29,6 +29,8 @@ assignees: shreyagupta98
 📅**{{Due_Date}}**
 - [ ] Complete [proposal template](https://github.com/bitprj/devrel/blob/master/contentdevproposal.md)
 - [ ] [Compete Resources Request Form](https://airtable.com/shrYEJufxRzm97jha)
+- [ ] Check the [blog tracker](https://airtable.com/shrDBBOFqn5c7SlBh) to find your Technical QA expert (or ask your PM if you can't find it) and Writing QA expert
+- [ ] Open Tutorial QA Issue and assign it to 1. yourself 2. your Technical QA expert
 - [ ] Open Tutorial QA Issue
 - [ ] Submit Proposal
 <details><summary><b>How to: Submit Proposal</b></summary>
@@ -52,7 +54,6 @@ assignees: shreyagupta98
 > :fire: DO NOT MERGE TO MASTER YET
 📅**{{Due_Date}}**
 - [ ] Tested run code to check for completion
-- [ ] Check the [blog tracker](https://airtable.com/shrDBBOFqn5c7SlBh) to find your Technical QA expert (or ask your PM if you can't find it) and Writing QA expert
 
 ### :pushpin: Step 3: Submitting Code Deliverables
 > :fire: DO NOT MERGE TO MASTER YET
