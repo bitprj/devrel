@@ -3,15 +3,15 @@
 
 The importance of understanding politics and the implications of being informed voters are profound. The ability for citizens of a country to understand the financial spending of candidates running for office (at any level) allows one to understand where a candidate's priorities lie. Observing and analyzing financial trends allows one to make predictions about who may win a particular election. A lot of the time, however, it’s easy to get lost in the numbers! 
 
-Thus, being able to visualize this data in a graphical manner helps in truly comparing and understanding a candidate’s financial spending in comparison to others in an easy manner. However, how do you verify the graphs you see online are indeed accurate? 
+Thus, being able to visualize this data in a graphical manner helps in truly comparing and understanding a candidate’s financial spending in comparison to that of others in an easy manner. However, how do you verify the graphs you see online are indeed accurate? 
 
-It’s a catch-22 situation! Either you receive accurate numbers (hard to analyze) or potentially biased graphs. Today, you’ll learn how to make the graph yourself, using the official financial data available at the OpenFEC API.
+It’s a catch-22 situation! Either you receive accurate numbers (hard to analyze) or potentially biased graphs. In this tutorial, you’ll learn how to make the graph yourself, using the official financial data available at the OpenFEC API.
 
 For this tutorial, we’ll walk through how to make a bar graph visualizing various financial information (operating expenses, net receipts, fundraising disbursements, and individual contribution less refunds) for Democrats and Republicans as a whole, as well as specific candidates for the 2016 presidential election.
 
 ## Setup
 
-1. Sign up for the OpenFEC API Key at https://api.data.gov/signup/. This is a government website with the most up to date financial information. You'll see a form like this:
+1. Sign up for the OpenFEC API Key at https://api.data.gov/signup/. This is a government website with the most up-to-date financial information. You'll see a form like this:
 
    ![](./pictures/api-key-signup.png)
 
@@ -19,68 +19,68 @@ For this tutorial, we’ll walk through how to make a bar graph visualizing vari
 
    ![](./pictures/api-key-email.png)
 
-3. Download ChartJS [here](https://www.jsdelivr.com/package/npm/chart.js). This is done by clicking the download icon (fourth button), which will download a zip file. Once the zip file is downloaded, move to the desired location where you will store all your project files.
+3. Download ChartJS [here](https://www.jsdelivr.com/package/npm/chart.js). This is done by clicking the download icon (fourth button on the right), which will download a zip file. Once the zip file is downloaded, extract it to the desired location where you will store all your project files.
 
    <img src = "./pictures/chartjs-download.png"/>
 
-4. Create one empty HTML file (call it OpenFEC.html) and one empty JavaScript file (call it OpenFEC.js) in the same location as the ChartJS files you downloaded in step 3.
+4. Create one empty HTML file (call it `OpenFEC.html`) and one empty JavaScript file (call it `OpenFEC.js`) in the same location as the ChartJS files you downloaded in step 3.
 
 5. Download a text editor (we like [Sublime](https://www.sublimetext.com/3)) or an IDE (we prefer [Brackets](http://brackets.io/) for any HTML/CSS/JavaScript project) if you don’t have one. You'll need one to code everything up!
 
-6. At the end, to see your output, right-click on the HTML file and open with your favorite web browser!
+6. At the end, to see your output, right-click on the HTML file and open it with your favorite web browser!
 
    ![](./pictures/open-with-chrome.png)
 
 ## Coding!
 
-Now that you have the ChartJS dependency, HTML (OpenFEC.html) and JS (OpenFEC.js) files set up, let’s get to coding!
+Now that you have the ChartJS dependency, HTML (`OpenFEC.html`) and JavaScript (`OpenFEC.js`) files set up, let’s get to coding!
 
 ### Coding our HTML File
 
-In OpenFEC.html, add the following lines of code.
+In `OpenFEC.html`, add the following lines of code.
 
 ```html
 <!-- Create a canvas object for ChartJS -->
 <canvas id="chart" width="400" height="400"></canvas>
 ```
 
-This line is used to create a canvas tag (needed for chartJS) with the specified width and height. This is where our graph will go on the webpage! 
+This line is used to create a canvas tag (needed for ChartJS) with the specified width and height. This is where our graph will go on the webpage! 
 
 ```html
 <!-- Point the HTML file to Chart.js -->
 <script src = "./package/dist/Chart.js"> </script>
 ```
 
-This line points our HTML file to the ChartJS JS file that we downloaded earlier. 
+This line points our HTML file to the ChartJS JavaScript file was in the zip file we extracted earlier. 
 
 ```html
 <!-- Point the HTML file to our JS file -->
 <script src = "./OpenFEC.js"></script>
 ```
 
-Our last HTML code line points the HTML file to our personal JS file, which is where we will do all of our coding to retrieve the information and display the graph.
+Our last HTML code line points the HTML file to our personal JavaScript file (`OpenFEC.js`), which is where we will do all of our coding to retrieve the information and display the graph. That's it for the HTML file!
 
 ### Using the API
 
-Before we start on the JS file, let’s understand the API request we will make. 
+Before we start on the JavaScript file, let’s understand the API request we will make. 
 
 #### Getting a Request URL
 
-Go to https://api.open.fec.gov/developers/ and scroll down and click on the “presidential” tab.
+Go to https://api.open.fec.gov/developers/ and scroll down and click on the `presidential` tab.
 
 ![img](https://lh5.googleusercontent.com/XQkwdh_p7KUfuWYIq-dsY6qvHNcIwwTyGtqwGvMu_w83vl9cPiI6ndsAcNTSRQZ43fhriuaUBlNQnLozvXSVeuRtLj4kQvCP5jBGlw_g7Sx0VbtG9Lxy9MB25f-F2d_JzIcaTyHG)
 
-This should open up a drop down with many options of the different type of information you can obtain. For our purposes, choose tab seen below.
+This should open up a drop down with many options of the different type of information you can obtain. For our purposes, choose the tab seen below.
 
 ![img](https://lh3.googleusercontent.com/Ll6Yfe0YHMbXSOIMfHd0eF8X622SrDHYGtpZPUtvDTR4E8jUQI2hlLYYzrG74_oQZg5ypfa845vbqykqDM2V_Hbn9aEyCoQkwKlHgizlh0F1WmS9qJuQ6FaWwtsQws0iN2HUYKDo)
 
-This should now populate your screen with a description of the information available for this specific request as well as certain parameters you can use to filter this information. There is an immense amount of information available on this website and you can specify what information you want by playing around with the parameters and different tabs (“presidential” is just one!). For now, click the “Try it out” button and enter the following parameters.
+This should now populate your screen with a description of the information available for this specific request as well as certain parameters you can use to filter this information. There is an immense amount of information available on this website and you can specify what information you want by playing around with the parameters and different tabs (`presidential` is just one!). For now, click the “Try it out” button and enter the following parameters.
 
 ![img](https://lh5.googleusercontent.com/NfrTdUNTY8xhu8WRZaZky7Ol9EI_u7yeOlCtRuWiKiGW9r-XnP3T_J0fOF7DTsb2JrglWRpSaM13z5CrgOIb1D9NiNG-HAnxuXK10Tc_zBiL9xAfhilJGS0G9Qdu3ZKz7YG8mVvA)
 
-As you can see from this, we are filtering our financial information to focus on the 2016 presidential election, for all candidates (-P00000001) organized by decreasing order of net receipts. There will be multiple pages returned, but we want to focus solely on the first 13 results, so we place the first 13 results on page 1. Make sure to enter the API key you signed up for earlier!
+As you can see from this, we are filtering our financial information to focus on the 2016 presidential election, for all candidates (`-P00000001`) organized by decreasing order of net receipts. There will be multiple pages returned, but we want to focus solely on the first 13 results, so we place the first 13 results on page 1. Make sure to enter the API key you signed up for earlier!
 
-Next, hit the execute button. You should get a response that has a box labeled Request URL that looks like this (note the API key has been colored out).
+Next, hit the execute button. You should get a response that has a box labeled "Request URL" that looks like this (note the API key has been colored out).
 
 ![img](https://lh6.googleusercontent.com/BddSxVFQbcmZMHzQLF7agWbnbBJE-zcduWAxS5FSzq_LjguLLIPTXSw7cWfTgcQ859cjx42nOMtnTCi3m6eCA8sijixLVjg5AApyCePYTdEiSW-jqXczUV5iRL19ucjftccta5Kz)
 
@@ -92,23 +92,23 @@ Woah! You should’ve been hit with a big wall of text! What does this all mean?
 
 #### JSON (and Beautifying It)
 
-What you received is a JSON (JavaScript Object Notation) response after making an API GET request. Essentially, this is the raw format where all the information you requested from OpenFEC. To make it more readable, copy and paste all the text and enter it into a JSON beautifier (https://codebeautify.org/jsonviewer) and hit “beautify”.
+What you received is a JSON (JavaScript Object Notation) response after making an API GET request. Essentially, this is the raw format of all the information you "got" (hence, its called an API GET request) from OpenFEC. To make it more readable, copy and paste all the text and enter it into a JSON beautifier (https://codebeautify.org/jsonviewer) and hit “Beautify.”
 
 ![img](https://lh4.googleusercontent.com/A4G4jxrZLtO0EKJr_xils2XmUh-olr_fXPnbA8M3x3DXAZdXoAEY4wkkI0lKnfhFzUFEWlo57EshTJTTQaM_wG7BleNGbq4hqchuhkxbU1p1Mr0v9Ggv5Zb8m9OnV9XP6FPJptKX)
 
-Now that’s much easier to read! As you can see everything is in key-value pairs. For example there is a key “net_receipts” and a value 799419661.15 associated with it. Scroll through the JSON on the right to see what other information you have found.
+Now that’s much easier to read! As you can see, everything is in key-value pairs. For example, there is a key “net_receipts” and a value 799419661.15 associated with it. Scroll through the JSON on the right of your screen to see what other information you have found.
 
-There are few important things to note about JSON. Text surrounded by curly braces indicate a JSON object. Text surrounded by square brackets are elements of an array.
+There are few important things to note about JSON. Text surrounded by curly braces indicate a JSON object. Text surrounded by square brackets are elements of an array (an array is synonymous for a list of things).
 
-You should notice that there is a “results” key whose value is an array of multiple JSON objects, all of which have various information for different candidates / parties!
+You should notice that there is a “results” key whose value is an array (i.e. list) of multiple JSON objects (many key value pairs grouped by curly braces). Each JSON object has various information (key-value pairs) for different candidates / parties!
 
-Great, now we have our information. But how to get it into the code?
+Great, now we have our information! But how to get it into the code?
 
 ### Coding Our JavaScript File 
 
 #### XMLHttpRequest
 
-Let’s open our JS file and enter the following lines of code. The link will be same link we got from the OpenFEC website.
+Let’s open our JS file and enter the following lines of code. The link will be the "Request URL" we got from the OpenFEC website.
 
 ```javascript
 // Create a web request object using an XMLHttpRequest object
@@ -120,7 +120,7 @@ var url = "https://api.open.fec.gov/v1/presidential/financial_summary/"
 \+ "&api_key=YOUR API KEY HERE&candidate_id=-P00000001&sort_hide_null=false&per_page=13";
 ```
 
-XMLHttpRequest is used to create a JavaScript Object which we can make request to the internet! Now, enter the following code:
+`XMLHttpRequest` is used to create a JavaScript Object which we can make request to the internet! Now, enter the following code:
 
 ```javascript
 // open and sending the GET request at the url
@@ -128,9 +128,9 @@ http.open('GET', url);
 http.send();
 ```
 
-This allows us to open an “GET” (we want to GET information from the webpage) request to our specified URL. We then send the request! Note that there are other types of HTTP requests but we won’t worry about that here.
+This allows us to open a GET (we want to "GET" information from the webpage) request to our specified URL. We then send the request! Note that GET is not the only type of HTTP request, but we won't concern ourselves with the other types here.
 
-Now that we have made our request, we need to set up the onreadystatechange function, which will be invoked when we receive a response. We also need to verify that the response we received is valid (this.readyState == 4 and this.status == 200) before we start using the information we receive from the request. Learn more about HTTP status codes at https://en.wikipedia.org/wiki/List_of_HTTP_status_codes. 
+Now that we have made our request, we need to set up the `onreadystatechange` function, which will be invoked when we receive a response. We also need to verify that the response we received is valid (`this.readyState == 4` and `this.status == 200`) before we start using the information we receive from the request. Learn more about the different HTTP status codes [here](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes). 
 
 ```javascript
 // this function will run when we receive a response
@@ -141,7 +141,7 @@ http.onreadystatechange=function(){
 
 #### Extracting the Data
 
-Now, we have to extract that data from the response we received from the request. This is done by JSON.parse(this.response), which takes the response we received and parses it into a JavaScript Object (raw_data) we can use. We then want to focus on the information available under the “results” key from the API response, so we index our raw_data by the key “results”.
+Now, we have to extract the data from the response we received from the request. This is done by `JSON.parse(this.response)`, which takes the response we received and parses it into a JavaScript Object (`raw_data`) we can use. We then want to focus on the information available under the “results” key from the API response, so we index our `raw_data` by the key “results”.
 
 ```javascript
 // obtain all the JSON data and parse it into a JavaScript object raw_data
@@ -150,7 +150,7 @@ Now, we have to extract that data from the response we received from the request
     var results = raw_data["results"];
 ```
 
-Now that we have our results saved in the results array our work is almost done! Results stores all the JSON objects of each respective candidate / party with all their financial information.
+Now that we have our results saved in the `results` array our work is almost done! `results` stores all the JSON objects of each respective candidate / party with all their financial information.
 
 To set up for ChartJS (which will be discussed below), we want to get all our candidate / party names in a single array and all our data (operating expenditures, net receipts, fundraising disbursements, and individual contributions less refunds) into separate arrays. This is done as follows.
 
@@ -178,7 +178,7 @@ To set up for ChartJS (which will be discussed below), we want to get all our ca
         } 
 ```
 
-After initializing all our empty arrays, we loop through all of our results and save the current element (remember, the current element is a JSON object which has the information of a specific candidate / party). We then index this element by the keys associated with our desired information (see the API response shown earlier for the various keys) and push the information into the appropriate arrays. After doing this for every respective element of the results array, we have all the information that we desire from the API saved. Onto using the information in ChartJS! 
+After initializing all our empty arrays, we loop through all of our results and save the current element (remember, the current element is a JSON object which has the information of a specific candidate / party). We then index this element by the keys associated with our desired information (see the API response shown earlier for the various keys) and push the information into the appropriate arrays. After doing this for every respective element of the `results` array, we have all the information that we desire from the API saved. Onto using the information in ChartJS! 
 
 ## ChartJS Bar Graph
 
@@ -198,9 +198,9 @@ To create the graph, we want to instantiate the chart by passing in the 2d conte
 
 #### Customizing the Graph
 
-Once we’ve instantiated it, we start customizing the graph. Since we already have arrays with all of the data types, we can just call it. ‘Labels: name,’ prints the name of each candidate/group on the x axis. Once we’ve set the x axis, we will begin labeling each data type under ‘datasets: [‘. 
+Once we’ve instantiated it, we start customizing the graph. `labels: names,` prints the name of each candidate/party on the x-axis of our graph using the `names` array we created earlier. Once we’ve set the x axis, we will begin labeling each data type under `datasets: [`. Since we already have arrays storing all of the different financial information desired, we can use those arrays as the values for the different `data` tabs. 
 
-We set the data according to the label and once that's done, we can work with the background color of each bar. You can have, for example, “black”, “white”, “yellow” or you could do “rgba(0, 0, 0, 0.1)”. Use https://www.hexcolortool.com/ for reference to any color you want! Same as well for borderColor and you can mess around with the width. Repeat for every data set you have.
+We set the data according to the label and once that's done, we can work with the background color of each bar. You can have, for example, `black`, `white`, `yellow` or you could do `rgba(0, 0, 0, 0.1)`. Use https://www.hexcolortool.com/ for reference to any color you want! This also applies for the `borderColor` attribute and you can also play around with the `width` attribute. Repeat this procedure for every data set you have.
 
 ```javascript
 data: {
@@ -262,7 +262,7 @@ That's it! You've completed the coding!
 
 ## Expected Output
 
-Let's see how the graph looks! Save your OpenFEC.html and OpenFEC.js files. Look for OpenFEC.html and right click it. Open the file with a web browser and it should look like below!
+Let's see how the graph looks! Save your `OpenFEC.html` and `OpenFEC.js` files. Look for `OpenFEC.html` in your file directory and right click it. Open the file with a web browser and it should look like below!
 
 ![img](https://lh4.googleusercontent.com/vrlUSf7GTKdVCinKZix2Lo8O5Mg0WE70j79mNBWtX7td2tRCp6sGvg2OJQnJO2fg34-enEqBEtlg9rRIF9YNSfhrh5O07Z2odv_oUvuyBjHozHjjfGHPIo0F4NOTUm0OkN6rQtWW)
 
@@ -272,7 +272,7 @@ From this tutorial, you should have learned
 
 * How to use the OpenFEC API to obtain desired information
 * What JSON is
-* How to make an API request from your JS code using XMLHttpRequest and how to extract information from the response
+* How to make an API request from your JavaScript code using `XMLHttpRequest` and how to extract information from the response
 * How to visualize data using ChartJS in order to make a bar chart
 
 While this example was simple, it served to illustrate the power of understanding how to use APIs to extract information and how to use this information to create your own charts. The variety of information you can explore even within one API and how you can visualize the information for trend analysis is an extremely powerful tool that helps in discovering a multitude of information.
@@ -281,5 +281,5 @@ While this example was simple, it served to illustrate the power of understandin
 
 As next steps, the reader is encouraged to
 
-* Graph data comparing specific information from the 2016 election and 2020 election in order to find similarities and differences
+* Graph data comparing specific financial information from the 2016 election and 2020 election in order to find similarities and differences
 * Explore coloring and other ChartJS features
