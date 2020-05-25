@@ -30,3 +30,6 @@ I will discuss about how to actually implement the program. Each code will be ex
 
 **End (2-3+ sentences):**    
 Lastly, I will talk about how this topic relates to the real world and why it is relevant in the society that we live in today. I will also provide screenshots of what the output looks like and provide an ending statement to encourage others to pursue more web scraping! 
+
+** Loom Video Link: ** 
+https://www.loom.com/share/edfaca5e142048e688d29bfd31972943
