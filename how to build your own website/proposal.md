@@ -23,3 +23,9 @@ Now, the blog will expand on each step that was outlined in the beginning. The f
 
 **End (2-3+ sentences):**    
 Here, the blog will prompt the reader to run their files and show how to interact with the website. Then, because this is a basic start to creating a complex customized website, the blog will encourage the reader to continue to build their site as stylize however they want, such as an online portfolio and so on. The blog will suggest how to learn more about web development and provide resources the reader may look for in enhancing and developing their website.
+
+
+
+**VIDEO:**  
+
+https://www.loom.com/share/aeb38e6e89154a50916e2a7945ca469c
