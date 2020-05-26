@@ -76,7 +76,7 @@ I will end this section on one final key point to understand about React. Rememb
 ## END
 If you got this far, congrats. You can stop reading. No, seriously, it’s all code and pictures from here on out in order to illustrate some fundamental features of React for you.
 
-[ React class component ]
+1. React class component
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -96,7 +96,20 @@ ReactDOM.render(
 )
 ```
 
-[ React functional component ]
+2. React functional component (another way to write the above code)
+```js
+// function
+function AnotherComponent() {
+  return (
+    <div>hello</div>
+  );
+};
+
+ReactDOM.render(
+  <AnotherComponent />,
+  document.getElementById('root')
+)
+```
 
 [ React JSX ]
 
