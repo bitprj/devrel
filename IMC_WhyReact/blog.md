@@ -8,7 +8,7 @@ Right now is a great time to learn web dev. HTML, CSS, and Javascript are the co
 
 <div align='center'>
   <img src='./img/7.jpg' />
-  <p color='gray'>Programmers love trees. React-ers are no different. Keep reading!</p>
+  <p color='grey'>Programmers love trees. React-ers are no different. Keep reading!</p>
 </div>
 
 ## MIDDLE
