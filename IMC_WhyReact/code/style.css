@@ -1,3 +1,7 @@
-img + p {
+img {
   text-align: center;
+}
+
+* {
+  color: red;
 }
