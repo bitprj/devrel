@@ -51,6 +51,19 @@ ReactDOM.render(
 );
 
 
+// inline css as an object
+let element = 
+  <div 
+    style={{border:'solid purple 2px', padding:'5em'}}>
+    My favorite anime is {anime}
+  </div>
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+);
+
+
+
 // state
 class ClassComponentWithState extends React.Component {
   constructor() {
