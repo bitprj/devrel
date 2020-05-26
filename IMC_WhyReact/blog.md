@@ -96,6 +96,7 @@ ReactDOM.render(
 )
 ```
 
+
 2. React functional component (another way to write the above code)
 ```js
 // function
@@ -111,15 +112,114 @@ ReactDOM.render(
 )
 ```
 
-[ React JSX ]
 
-[ React inline CSS ]
+3. React JSX
+```js
+// jsx
+let anime = 'Hunter x Hunter';
+let element = <div>My favorite anime is {anime}.</div>;
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+);
+```
 
-[ React component with state ]
+4. React inline CSS 
+```js
+// inline css as an object
+let element = 
+  <div 
+    style={{border:'solid purple 2px', padding:'5em'}}>
+    My favorite anime is {anime}
+  </div>
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+);
+```
 
-[ React component with props ]
+5. React component with state
+```js
+// state
+class ClassComponentWithState extends React.Component {
+  constructor() {
+    this.state = {
+      animes: [
+        'Hunter x Hunter',
+        'One Piece',
+        'Neon Genesis Evangelion'
+      ],
+      recs: []
+    };
+    this.handleClick = this.handleClick.bind(this)
+  };
 
-[ Passing props ]
+  handleClick() {
+    if (this.state.animes.length !== 0) {
+      this.setState(state => ({
+        animes: state.animes.slice(0, state.animes.length-1),
+        recs: state.recs.push(state.animes[state.animes.length-1])
+      }))
+    }
+
+    else {
+      alert('We have no more anime recommendations for you today! Please return after you have finished watching the ones we have already given you. Good luck!')
+    }
+  }
+
+  render() {
+    let recommended = recs.map(anime => <p style={{margin:'.5em'}}>{anime}</p>)
+
+    return (
+      <div style={{display:'block', padding:'1.5em'}}>
+        <button 
+          style={{padding:'.5em', margin:'1em'}}
+          onClick={this.handleClick}>
+          Click to get new anime recommendation!
+        </button>
+        {recommended}
+      </div>
+    );
+  };
+};
+
+ReactDOM.render(
+  <ClassComponentWithState />,
+  document.getElementById('root')
+);
+```
+
+6. React component with props
+```js
+// props
+let FunctionalComponentWithProps = (props) => {
+  return (
+    <div style={props.styles}>
+      <h1>You should watch the following animes!</h1>
+      {props.animes.map(anime => <p>{anime}</p>)}
+    </div>
+  )
+}
+
+let styles = {
+  display: 'block',
+}
+
+let animes = [
+  'Hunter x Hunter',
+  'One Piece',
+  'Neon Genesis Evangelion'
+]
+
+ReactDOM.render(
+  <FunctionalComponentWithProps 
+    styles={styles}
+    animes={animes}
+  />,
+  document.getElementById('root')
+);
+```
+
 
 Hopefully you have a better understanding of what React is and why we use it. I highly encourage you to make your own React apps, no other way of learning compares in terms of enjoyment and how much you will learn in the process. Here are some great resources to get you started:
 
