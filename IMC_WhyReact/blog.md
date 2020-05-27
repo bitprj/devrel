@@ -23,7 +23,7 @@ What exactly is React (fun edition)? Let’s begin with the name itself. React i
 </div>
 
 
-What exactly is React (boring edition, also the one you should focus on)? React is a JavaScript library made for one purpose: to revolutionize and streamline how UIs are built. It’s essentially an extension of vanilla JS that comes with a small API serving as a medium between the programmer and the DOM (DOM stands for Document Object Model and is the tree structure that HTML uses to arrange elements on the page), using something called the Virtual DOM, which makes working with the DOM exponentially easier (more on this later).
+What exactly is React (boring edition, also the one you should focus on)? React is a JavaScript library made for one purpose: to make the creation of UIs way more efficient than older methods. It’s essentially an extension of vanilla JS that comes with a small API serving as a medium between the programmer and the **DOM** (DOM stands for **Document Object Model** and is the tree structure that HTML uses to arrange elements on the page). Developers no longer have to manually communicate each little update to the browser; instead, developers simply tell React what to change and React uses something called the **Virtual DOM** to update the browser (more on this later).
 
 <div align='center'>
   <img src='./img/6.png' width='600' />
@@ -31,7 +31,7 @@ What exactly is React (boring edition, also the one you should focus on)? React 
 </div>
 
 
-This is extremely useful for building web apps that need to change and re-render often. React allows us to simply tell it what we want to render and what changes to make, while it handles all the “how” grunt work under the hood. Without React, we’d have to do all of this heavy-loading ourselves. With React, we can focus on what we as developers care about most: the UI and logic.
+This is extremely useful for building web apps that need to change and re-render often. React allows us to simply tell it what we want to render and what changes to make, while it handles all the “how” grunt work under the hood. Without React, we’d have to do all of this heavy-lifting ourselves. With React, we can focus on what we as developers care about most: the UI and logic.
 
 Before the days of React, websites were mostly static and pretty boring. They mainly just displayed information and offered very little user interactivity, if any (think back to the early 2000s). Fast-forward to the early 2010s when social media apps began rapidly rising in popularity, and with that, a new way of building web apps was developed—Facebook created the React library. 
 
@@ -41,7 +41,7 @@ Before the days of React, websites were mostly static and pretty boring. They ma
 </div>
 
 
-Whereas in the not-so-distant past, websites were compiled of several static, separate HTML pages, React introduced the single-page application paradigm—creating one HTML skeleton or template and dynamically injecting content into said template based on app state. Instagram is a quintessential example of a single-page app built with React. This is made possible because of JavaScript, which is a definite prerequisite to learning React. JavaScript is the sole focus of React, both syntactically and conceptually; HTML is kept relatively bare-bones, any elements will serve as empty containers for dynamically-passed data. 
+Whereas in the not-so-distant past, websites were compiled of several static, separate HTML pages with hard-coded content, React introduced the **single-page application** paradigm—creating one HTML skeleton or template and dynamically injecting content into said template based on app state. Instagram is a quintessential example of a single-page app built with React. 
 
 <div align='center'>
   <img src='./img/3.png' width='400' />
@@ -49,9 +49,11 @@ Whereas in the not-so-distant past, websites were compiled of several static, se
 </div>
 
 
-React isn’t hard to learn if you have solid fundamentals in JavaScript. It’s syntactically very similar, with a few useful additions that make coding a lot more pleasant, one of them being JSX—this is basically the ability to write HTML code inside your React files. (You can also write CSS in React files, more on this and JSX later).
+Long gone are the days of hard-coding content into `div` and `p` tags. In React, HTML is kept relatively bare-bones, any elements will serve as templates that hold data which is dynamically-passed via JavaScript. That said, React wouldn't work without HTML; since HTML is still the skeleton of every website. It simply means the **focus** has shifted from writing static content to writing code that renders content based on UI state. 
 
-The key thing to understand about React is how it works. React encourages the creation of “reusable, composable, and stateful components.” Let me translate that as such: make components that can generalize into more specific use cases and make sure they have internal properties which handle the content they display. Now for the cool part: React components are designed to interact with each other, which means you can pass “props” between components in order to control what’s being rendered. You can even change the internal “state” of one component from another component. (In React, components are the building blocks of your app and can be written as either functions or objects.)
+React isn’t hard to learn if you have solid fundamentals in JavaScript. This is because JavaScript is the language that React uses; thus React and vanilla JS are syntactically and conceptually similar. However, there are many useful additions that make coding a lot more pleasant, one of them being **JSX**—this is basically the ability to write HTML code inside your React files. (You can also write CSS in React files, which is dubbed **inline-CSS**. More on this and JSX later).
+
+The key thing to understand about React is how it works. React encourages the creation of “reusable, composable, and stateful components.” Let me translate that as such: make components that can generalize into more specific use cases and make sure they have internal properties which handle the content they display. Now for the cool part: React components are designed to interact with each other, which means you can pass **props** between components in order to control what’s being rendered. You can even change the internal **state** of one component from another component. (In React, components are the building blocks of your app and can be written as either functions or objects.)
 
 <div align='center'>
   <img src='./img/10.jpg' width='400' />
@@ -67,12 +69,17 @@ Another key thing to know is that React uses a tree hierarchy to internally stru
 </div>
 
 
-I will end this section on one final key point to understand about React. Remember when I mentioned the Virtual DOM at the start of this section? Well, it’s essentially a copy of the real DOM (HTML tree) that React stores in memory. React does this for efficiency’s sake: React makes changes directly to the Virtual DOM, and then renders just the differences between the Virtual DOM and the real DOM. With vanilla JS, the real DOM would need to re-render itself entirely on each update, which is computationally much more expensive. Don’t worry if this is slightly confusing—it should be, since React is a new way of thinking about web apps, but just know that React makes web dev life much easier.
+I will end this section on one final key point to understand about React. Remember when I mentioned the Virtual DOM at the start of this section? Well, it’s essentially a copy of the real DOM (HTML tree) that React stores in memory. React does this for efficiency’s sake: React makes changes directly to the Virtual DOM, and then renders just the differences between the Virtual DOM and the real DOM. With vanilla JS, the real DOM would need to re-render itself entirely on each update, which is computationally much more expensive. Don’t worry if this is slightly confusing, things will become more clear as you get more practice coding React. For now, just know that React makes web dev life much easier.
 
 <div align='center'>
   <img src='./img/5.png' width='600' />
   <p>The Virtual DOM compares itself to the real DOM and smartly re-renders only what has been changed (in red), instead of re-rendering the entire DOM.</p>
 </div>
+
+## When to React and when NOT to React?
+I just spent many paragraphs describing what React is great at and how it has ushered in a new paradigm into the web dev universe. However, React doesn't need to be used for EVERYTHING web-related. For instance, if all you want is a simple blog site, making a React app would be gross overkill, at least for 99% of blogs out there. 
+
+You should strongly consider React when you are building something that is **highly interactive**. This is exactly what React was built for. Projects like messenger apps, social media apps, board games, audio workstations, notetaking and productivity apps, etc. are where React will shine brightest.
 
 
 ## How-to React
@@ -223,7 +230,7 @@ ReactDOM.render(
 ```
 
 
-Hopefully you have a better understanding of what React is and why we use it. I highly encourage you to make your own React apps, no other way of learning compares in terms of enjoyment and how much you will learn in the process. Here are some great resources to get you started:
+Hopefully you have a better understanding of what React is and why it's used. I highly encourage you to make your own React apps, no other method of learning comes close in terms of enjoyment and improvement potential. Below are some great resources to get you started on your React journey. Thank you for reading!
 
 <a href='https://reactjs.org/tutorial/tutorial.html'>React Tic-Tac-Toe Beginner Tutorial</a>
 
