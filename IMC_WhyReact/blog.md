@@ -214,7 +214,48 @@ ReactDOM.render(
 
 <br />
 
-5. <a href="https://codesandbox.io/s/react-hooks-usestate-k4hri">React component with state</a>
+5. <a href="https://codesandbox.io/s/react-hooks-usestate-8twy2">React component with props</a>
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+
+// If you want your component to be able to hold props, simply pass "props" as a parameter.
+// Alternatively, you could omit "props" and individually put prop names within an object, and pass the object as a parameter to your component
+function FunctionalComponentWithProps(props) {
+  return (
+    <div>
+      <h1>You should watch the following animes:</h1>
+
+      <div style={props.styles}>
+        <ul>
+          {props.animes.map(anime => (
+            <li>{anime}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+// Here is the "style" prop I will pass to my component
+let myStyles = {
+  color: "orangered",
+  marginTop: "10px"
+};
+
+// Here is the "animes" prop I will pass to my component
+let myAnimes = ["Hunter x Hunter", "Neon Genesis Evangelion", "One Piece"];
+
+ReactDOM.render(
+  <FunctionalComponentWithProps
+    styles={myStyles} // passing styles as prop
+    animes={myAnimes} // passing animes as prop
+  />,
+  document.getElementById("root")
+);
+```
+
+6. <a href="https://codesandbox.io/s/react-hooks-usestate-k4hri">React component with state</a>
 ```js
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
@@ -281,51 +322,6 @@ function FuncComponentWithState() {
 
 ReactDOM.render(
 	<FuncComponentWithState />,
-  document.getElementById("root")
-);
-```
-
-<br />
-
-6. <a href="https://codesandbox.io/s/react-hooks-usestate-8twy2">React component with props</a>
-```js
-import React from 'react';
-import ReactDOM from 'react-dom'
-
-// If you want your component to be able to hold props, simply pass "props" as a parameter.
-// Alternatively, you could omit "props" and individually put prop names within an object, and pass the object as a parameter to your component
-function FunctionalComponentWithProps(props) {
-  return (
-    <div>
-      <h1>You should watch the following animes:</h1>
-      
-      <div style={props.styles}>
-        <ul>
-          {props.animes.map(anime => <li>{anime}</li>)}
-        </ul>
-      </div>
-    </div>
-  )
-}
-
-// Here is the "style" prop I will pass to my component
-let myStyles = {
-  color: 'orangered',
-  marginTop: '10px'
-}
-
-// Here is the "animes" prop I will pass to my component
-let myAnimes = [
-  "Hunter x Hunter",
-  "Neon Genesis Evangelion",
-  "One Piece"
-]
-
-ReactDOM.render(
-  <FunctionalComponentWithProps 
-    styles={myStyles} // passing styles
-    animes={myAnimes} // passing animes
-  />,
   document.getElementById("root")
 );
 ```
