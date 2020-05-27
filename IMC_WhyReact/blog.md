@@ -23,7 +23,7 @@ What exactly is React (fun edition)? Let’s begin with the name itself. React i
 </div>
 
 
-What exactly is React (boring edition, also the one you should focus on)? React is a JavaScript library made for one purpose: to make the creation of UIs way more efficient than older methods. It’s essentially an extension of vanilla JS that comes with a small API serving as a medium between the programmer and the **DOM** (DOM stands for **Document Object Model** and is the tree structure that HTML uses to arrange elements on the page). Developers no longer have to manually communicate each little update to the browser; instead, developers simply tell React what to change and React uses something called the **Virtual DOM** to update the browser (more on this later).
+What exactly is React (boring edition, also the one you should focus on)? React is a JavaScript library made for one purpose: to make the creation of UIs way more efficient than older methods. It’s essentially an extension of vanilla JS that comes with a small but powerful API that serves as a medium between the programmer and the **DOM** (DOM stands for **Document Object Model** and is the tree structure that HTML uses to arrange elements on the page). Developers no longer have to manually communicate each little update to the browser; instead, developers simply tell React what to change and React uses something called the **Virtual DOM** to update the browser (more on this later).
 
 <div align='center'>
   <img src='./img/6.png' width='600' />
@@ -41,7 +41,7 @@ Before the days of React, websites were mostly static and pretty boring. They ma
 </div>
 
 
-Whereas in the not-so-distant past, websites were compiled of several static, separate HTML pages with hard-coded content, React introduced the **single-page application** paradigm—creating one HTML skeleton or template and dynamically injecting content into said template based on app state. Instagram is a quintessential example of a single-page app built with React. 
+Whereas in the not-so-distant past, websites were composed of several static, separate HTML pages with hard-coded content, React introduced the **single-page application** paradigm—creating one HTML skeleton or template and dynamically injecting content into said template based on app state. Instagram is a quintessential example of a single-page app built with React. 
 
 <div align='center'>
   <img src='./img/3.png' width='400' />
@@ -69,29 +69,34 @@ Another key thing to know is that React uses a tree hierarchy to internally stru
 </div>
 
 
-I will end this section on one final key point to understand about React. Remember when I mentioned the Virtual DOM at the start of this section? Well, it’s essentially a copy of the real DOM (HTML tree) that React stores in memory. React does this for efficiency’s sake: React makes changes directly to the Virtual DOM, and then renders just the differences between the Virtual DOM and the real DOM. With vanilla JS, the real DOM would need to re-render itself entirely on each update, which is computationally much more expensive. Don’t worry if this is slightly confusing, things will become more clear as you get more practice coding React. For now, just know that React makes web dev life much easier.
+I will end this section on one final key point to understand about React. Remember when I mentioned the Virtual DOM at the start of this section? Well, it’s essentially a copy of the browser DOM (HTML tree) that React stores in memory. React does this for efficiency’s sake: React makes changes directly to the Virtual DOM, and then renders just the differences between the Virtual DOM and the browser DOM. With vanilla JS, the browser DOM would need to re-render itself entirely on each update, which is computationally much more expensive. Don’t worry if this is slightly confusing, things will become more clear as you get more practice coding React. For now, just know that React makes web dev life much easier.
 
 <div align='center'>
   <img src='./img/5.png' width='600' />
-  <p>The Virtual DOM compares itself to the real DOM and smartly re-renders only what has been changed (in red), instead of re-rendering the entire DOM.</p>
+  <p>The Virtual DOM compares itself to the browser DOM and smartly re-renders only what has been changed (in red), instead of re-rendering the entire DOM.</p>
 </div>
 
-## When to React and when NOT to React?
+## When to React and when not to React?
 I just spent many paragraphs describing what React is great at and how it has ushered in a new paradigm into the web dev universe. However, React doesn't need to be used for EVERYTHING web-related. For instance, if all you want is a simple blog site, making a React app would be gross overkill, at least for 99% of blogs out there. 
 
 You should strongly consider React when you are building something that is **highly interactive**. This is exactly what React was built for. Projects like messenger apps, social media apps, board games, audio workstations, notetaking and productivity apps, etc. are where React will shine brightest.
 
 
 ## How-to React
-If you got this far, congrats. In this final section, I have included several code examples illustrating fundamental React concepts to get you familiar with the code. At the very end, I have included three great resources where you can learn more about React in depth. 
+Congrats for reaching this point in the blog! In this final section, I have included several code examples illustrating fundamental React concepts to get you familiar with the code. At the very end, I have included three great resources where you can learn more about React in depth. 
+
+I have tried to make these examples as easy to follow as possible, but don't worry if some of the syntax is confusing. Instead, try to get a feel for how React code flows and is structured. 
+
 
 1. React class component
 ```js
-import React from 'react';
+import React from 'react'; 
 import ReactDOM from 'react-dom';
 
-// class
+// Class components are essentially JavaScript objects
 class NewComponent extends React.Component {
+  
+  // This is where content is rendered in the form of HTML or other React components
   render() {
     return (
       <div>hello</div>
@@ -106,10 +111,12 @@ ReactDOM.render(
 ```
 
 
-2. React functional component (another way to write the above code)
+2. React functional component (more popular)
 ```js
-// function
+// Functional components are becoming more popular than class components, since they are more flexible and can perform the same duties with less code.
 function AnotherComponent() {
+
+  // You don't need a render() {} block like in class components, just a return() function
   return (
     <div>hello</div>
   );
@@ -124,9 +131,11 @@ ReactDOM.render(
 
 3. React JSX
 ```js
-// jsx
 let anime = 'Hunter x Hunter';
+
+// A very simple example of JSX - assigning an HTML element to a variable
 let element = <div>My favorite anime is {anime}.</div>;
+
 ReactDOM.render(
   element,
   document.getElementById('root')
@@ -135,11 +144,16 @@ ReactDOM.render(
 
 4. React inline CSS 
 ```js
-// inline css as an object
 let element = 
   <div 
-    style={{border:'solid purple 2px', padding:'5em'}}>
-    My favorite anime is {anime}
+    // Inline-CSS is written as a JavaScript object
+    style={{
+      border:'solid purple 2px', 
+      padding:'5em',
+      textAlign: 'center' // JSX uses camelCase syntax instead of hyphenating multi-word attributes like in vanilla CSS
+    }}
+  >
+    My favorite anime is {anime}.
   </div>
 ReactDOM.render(
   element,
@@ -149,9 +163,9 @@ ReactDOM.render(
 
 5. React component with state
 ```js
-// state
 class ClassComponentWithState extends React.Component {
   constructor() {
+    // Component's state is initialized here, in the constructor, as a JavaScript object
     this.state = {
       animes: [
         'Hunter x Hunter',
@@ -165,6 +179,7 @@ class ClassComponentWithState extends React.Component {
 
   handleClick() {
     if (this.state.animes.length !== 0) {
+      // Changing state happens here
       this.setState(state => ({
         animes: state.animes.slice(0, state.animes.length-1),
         recs: state.recs.push(state.animes[state.animes.length-1])
@@ -176,9 +191,12 @@ class ClassComponentWithState extends React.Component {
     }
   }
 
+  // Don't forget the render() {} block, since this is a class component!
   render() {
+    // map() is an extremely useful Array function you will be using very frequently
     let recommended = recs.map(anime => <p style={{margin:'.5em'}}>{anime}</p>)
 
+    // Actual content to be rendered is inside return()
     return (
       <div style={{display:'block', padding:'1.5em'}}>
         <button 
@@ -200,8 +218,9 @@ ReactDOM.render(
 
 6. React component with props
 ```js
-// props
-let FunctionalComponentWithProps = (props) => {
+// If you want your component to be able to hold props, simply pass "props" as a parameter.
+// Alternatively, you could omit "props" and individually put prop names within an object, and pass the object as a parameter to your component
+function FunctionalComponentWithProps(props) {
   return (
     <div style={props.styles}>
       <h1>You should watch the following animes!</h1>
@@ -210,11 +229,13 @@ let FunctionalComponentWithProps = (props) => {
   )
 }
 
-let styles = {
+// Here is the "style" prop I will pass to my component
+let myStyles = {
   display: 'block',
 }
 
-let animes = [
+// Here is the "animes" prop I will pass to my component
+let myAnimes = [
   'Hunter x Hunter',
   'One Piece',
   'Neon Genesis Evangelion'
@@ -222,15 +243,15 @@ let animes = [
 
 ReactDOM.render(
   <FunctionalComponentWithProps 
-    styles={styles}
-    animes={animes}
+    styles={myStyles} // passing styles
+    animes={myAnimes} // passing animes
   />,
   document.getElementById('root')
 );
 ```
 
 
-Hopefully you have a better understanding of what React is and why it's used. I highly encourage you to make your own React apps, no other method of learning comes close in terms of enjoyment and improvement potential. Below are some great resources to get you started on your React journey. Thank you for reading!
+Hopefully, you now have a better understanding of what React is and why it's used. I highly encourage you to make your own React apps, no other method of learning comes close in terms of enjoyment and improvement potential. Below are some great resources to get you started on your React journey. Thank you for reading!
 
 <a href='https://reactjs.org/tutorial/tutorial.html'>React Tic-Tac-Toe Beginner Tutorial</a>
 
