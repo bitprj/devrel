@@ -25,11 +25,10 @@ There are a massive amount of active users online these days. Chatbots make it m
 
 As you can see, the advantages of a chatbot are far-reaching. Let's start creating our own from the place the researchers and pioneers of Natural language understanding (NLU) started. **Curiosity**.
 
-For this example, we will be using Google's **DialogFlow**
 
 ### What is Google Dialogflow?
 
-DialogFlow is a powerful NLU API that was acquired and is now developed by Google. It gives users new ways to interact with your product by building engaging voice and text-based conversational interfaces, such as voice apps and chatbots, powered by AI. You can connect with users on your website, mobile app, Google Assistant, Amazon Alexa, Facebook Messenger, and other popular platforms and devices.
+For this tutorial, we will be using Google's **DialogFlow**. DialogFlow is a powerful NLU API that was acquired and is now developed by Google. It gives users new ways to interact with your product by building engaging voice and text-based conversational interfaces, such as voice apps and chatbots, powered by AI. You can connect with users on your website, mobile app, Google Assistant, Amazon Alexa, Facebook Messenger, and other popular platforms and devices.
 
 What makes DialogFlow so useful and popular:
 
@@ -81,11 +80,8 @@ To enable and deploy the default fulfillment code, use the Inline Editor:
 3. If you did not [enable billing in setup steps](https://cloud.google.com/dialogflow/docs/quick/setup#billing), you are prompted to enable billing now. Cloud Functions have associated charges, but the service is free up to a [significant number of monthly invocations](https://cloud.google.com/functions/pricing).
 4. Click **Deploy** at the bottom of the form and wait until dialogs indicate that it has been deployed.
 5. Go to the Google Cloud Console and select Cloud Functions on the left panel.
-
 6. Select the fulfillment for the function you created and click the **Edit** button.
-
 7. Under the **Source code** section, select **ZIP upload** and upload the fulfillment zip file you downloaded above. Select a Stage bucket (you may need to create one if it hasn’t been created yet).
-
 8. Follow the instructions in the Google Maps Platform [quickstart](https://developers.google.com/maps/gmp-get-started?&_ga=2.151893690.2050009114.1588390420-45888550.1587369863#quickstart) to enable the Google Maps **Places API**. Select **API & Services > Credentials** in the console to create an API key for calling the Places API (See [Get an API Key](https://developers.google.com/places/web-service/get-api-key) for more information).
 
    <img src="images/4.png" alt="img" style="zoom:40%;" />
@@ -105,12 +101,12 @@ To enable and deploy the default fulfillment code, use the Inline Editor:
 ## Interacting with your agent
 
 ### Using the Dialogflow Console Simulator
+1. Type your text query input in the [Dialogflow Simulator](https://cloud.google.com/dialogflow/docs/console#simulator).
 
 <img src="images/6.png" alt="img" style="zoom:70%;" />
 
 
 
-1. Type your text query input in the [Dialogflow Simulator](https://cloud.google.com/dialogflow/docs/console#simulator).
 
 **Note: The custom payload of responses may not show up on the Dialogflow Console.**
 
@@ -150,6 +146,7 @@ To interact with your agent using the Dialogflow API, ensure that your Google Cl
    ```
 
 <iframe src="https://medium.com/media/2732022c337c912f61e95a2781ebaf99" allowfullscreen="" frameborder="0" height="300" width="680" title="request.json" class="s t u dq ai" scrolling="auto" style="box-sizing: inherit; position: absolute; top: 0px; left: 0px; width: 680px; height: 299.984px;"></iframe>
+
 
 2. Run the following command to send a detect intent request to your agent.
 
