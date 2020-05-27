@@ -255,7 +255,9 @@ ReactDOM.render(
 );
 ```
 
-6. <a href="https://codesandbox.io/s/react-hooks-usestate-k4hri">React component with state</a>
+<br />
+
+6. <a href="https://codesandbox.io/s/react-hooks-usestate-v94x0?file=/src/index.js">React component with state</a>
 ```js
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
