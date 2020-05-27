@@ -53,11 +53,20 @@ Long gone are the days of hard-coding content into `div` and `p` tags. In React,
 
 React isn’t hard to learn if you have solid fundamentals in JavaScript. This is because JavaScript is the language that React uses; thus React and vanilla JS are syntactically and conceptually similar. However, there are many useful additions that make coding a lot more pleasant, one of them being **JSX**—this is basically the ability to write HTML code inside your React files. (You can also write CSS in React files, which is dubbed **inline-CSS**. More on this and JSX later).
 
-The key thing to understand about React is how it works. React encourages the creation of “reusable, composable, and stateful components.” Let me translate that as such: make components that can generalize into more specific use cases and make sure they have internal properties which handle the content they display. Now for the cool part: React components are designed to interact with each other, which means you can pass **props** between components in order to control what’s being rendered. You can even change the internal **state** of one component from another component. (In React, components are the building blocks of your app and can be written as either functions or objects.)
+## How does React work?
+
+In React, **components** are the building blocks of your app and can be written as either functions or objects. How exactly do components dynamically render content? Via **props** and **state**. 
+
+**Props** are just like parameters you pass to a function—The specific props you design for your component and the data you pass to it in the form of said props will dictate what's being rendered. Prop data is passed **externally** to a component.
+
+**State** is a variable or set of variables that control a component's... state (I actually think it's most intuitive to self-define state). State variables are created and updated **internally** and can be used to render content dynamically based on logic you provide.
+
+The cool part: components are designed to interact with each other. Components can render other components, props can be passed from one component to another, and state can also be passed as a prop so that it can be updated externally. If this is confusing, don't worry. Practice writing React will clear things up. 
+
+React encourages the creation of “reusable, composable, and stateful components.” Let me translate that as such: make components that can generalize into more specific use cases and make sure they have internal properties which handle the content they display. 
 
 <div align='center'>
   <img src='./img/10.jpg' width='400' />
-  <p>Now it all makes sense! Our elementary school teachers were trying to prep us all to become React developers!</p>
 </div>
 
 
