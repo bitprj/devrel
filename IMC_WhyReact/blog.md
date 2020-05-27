@@ -122,7 +122,7 @@ Now comes the fun part—coding! In this final section, I have included several 
 I have tried to make these examples as easy to follow as possible, but don"t worry if some of the syntax is confusing. Instead, try to get a feel for how React code flows and is structured. 
 
 
-1. React class component
+1. <a href="https://codesandbox.io/s/6vv9xxwyww?fontsize=14&hidenavigation=1&theme=dark">React class component</a>
 ```js
 import React from "react"; 
 import ReactDOM from "react-dom";
@@ -144,14 +144,7 @@ ReactDOM.render(
 )
 ```
 
-<iframe
-  src="https://codesandbox.io/embed/6vv9xxwyww?fontsize=14&hidenavigation=1&theme=dark"
-  style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-  title="React Hooks - useState()"
-  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts allow-autoplay">
-</iframe>
-
+<br />
 
 2. React functional component (more popular)
 ```js
@@ -173,6 +166,7 @@ ReactDOM.render(
 )
 ```
 
+<br />
 
 3. React JSX
 ```js
@@ -190,7 +184,7 @@ ReactDOM.render(
 );
 ```
 
-
+<br />
 
 4. React inline CSS 
 ```js
@@ -216,7 +210,7 @@ ReactDOM.render(
 );
 ```
 
-
+<br />
 
 5. React component with state
 ```js
@@ -269,7 +263,7 @@ ReactDOM.render(
 )
 ```
 
-
+<br />
 
 6. React component with props
 ```js
@@ -314,6 +308,7 @@ ReactDOM.render(
 );
 ```
 
+<br />
 
 Hopefully, you now have a better understanding of what React is and why it"s used. I highly encourage you to make your own React apps, no other method of learning comes close in terms of enjoyment and improvement potential. Below are some great resources to get you started on your React journey. Thank you for reading!
 
