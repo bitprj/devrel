@@ -1,6 +1,6 @@
 'use strict'
 
-let today = new Date();
-let formatDate = today.toDateString();
-let selectElement = document.getElementById('date');
-selectElement.innerHTML = formatDate;
+let currentDay = new Date();
+let newFormat = currentDay.toDateString();
+let getData = document.getElementById('today');
+getData.innerHTML = newFormat;
