@@ -109,7 +109,7 @@ data.head()
 
 The data frame will look like this:
 
-![data_head output](/images/data_head.png)
+![data_head output](/Association_Mining/images/data_head.png)
 
 To check if we are on the right track, we can look at the number of rows and columns in the data and verify it with the actual numbers. 
 
@@ -192,7 +192,7 @@ Let us see how the rules table looks. Execute the following code and you should 
 rules.head(6)
 ```
 
-![rules_head output](/images/rules_head.png)
+![rules_head output](/Association_Mining/images/rules_head.png)
 
 For example, here it shows that if a customer in USA buys a *Mini Paint Set Vintage*, he/she will most likely buy *60 Cake Cases Dolly Girl Design*.
 
