@@ -57,7 +57,7 @@ React isn’t hard to learn if you have solid fundamentals in JavaScript. This i
 
 In React, **components** are the building blocks of your app and can be written as either functions or objects. How exactly do components dynamically render content? Via **props** and **state**. 
 
-**Props** are just like parameters you pass to a function—The specific props you design for your component and the data you pass to it in the form of said props will dictate what's being rendered. Prop data is passed **externally** to a component.
+**Props** are just like parameters you pass to a function—the specific props you design for your component and the data you pass to it in the form of said props will dictate what's being rendered. Prop data is passed **externally** to a component.
 
 **State** is a variable or set of variables that control a component's... state (I actually think it's most intuitive to self-define state). State variables are created and updated **internally** and can be used to render content dynamically based on logic you provide.
 
