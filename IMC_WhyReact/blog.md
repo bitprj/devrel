@@ -119,10 +119,11 @@ You should strongly consider React when you are building something that is **hig
 ## How to React!
 Now comes the fun part—coding! In this final section, I have included several code examples illustrating fundamental React concepts to get you familiar with the code. At the very end, I have included three great resources where you can learn more about React in depth. 
 
-I have tried to make these examples as easy to follow as possible, but don"t worry if some of the syntax is confusing. Instead, try to get a feel for how React code flows and is structured. 
+I have tried to make these examples as easy to follow as possible, but there is bound to be some syntax that's confusing if you're new to React. This is unavoidable, as some lines are required for all the code to function. I have explained the essential portions in comments, but don't worry about the parts you might not understand. Instead, try to get a feel for how React code flows and is structured. In due time, everything will make sense!. 
 
+For each example, I have embedded links to CodeSandBox so that you can play around with the code yourself and see it being rendered in the browser.
 
-1. <a href="https://codesandbox.io/s/6vv9xxwyww?fontsize=14&hidenavigation=1&theme=dark">React class component</a>
+1. <a href="https://codesandbox.io/s/react-hooks-usestate-kviru?file=/src/index.js">React class component</a>
 ```js
 import React from "react"; 
 import ReactDOM from "react-dom";
@@ -138,6 +139,7 @@ class NewComponent extends React.Component {
   };
 };
 
+// render to the DOM
 ReactDOM.render(
   <NewComponent />,
   document.getElementById("root")
@@ -146,7 +148,7 @@ ReactDOM.render(
 
 <br />
 
-2. React functional component (more popular)
+2. <a href="https://codesandbox.io/s/react-hooks-usestate-g50ik?file=/src/index.js:0-487">React functional component (more popular)</a>
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom'
@@ -168,7 +170,7 @@ ReactDOM.render(
 
 <br />
 
-3. React JSX
+3. <a href="https://codesandbox.io/s/react-hooks-usestate-mpyue">React JSX</a>
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom'
@@ -186,7 +188,7 @@ ReactDOM.render(
 
 <br />
 
-4. React inline CSS 
+4. <a href="https://codesandbox.io/s/react-hooks-usestate-fc0mx">React inline CSS </a>
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom'
@@ -212,17 +214,24 @@ ReactDOM.render(
 
 <br />
 
-5. React component with state
+5. <a href="https://codesandbox.io/s/react-hooks-usestate-k4hri">React component with state</a>
 ```js
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom';
 
-function FuncComponentWithState() {
-  let [animes, setAnimes] = useState([
+// This is our initial state, will also make resetting state easier
+let initialState = {
+  animes: [
     "Hunter x Hunter",
     "One Piece",
     "Neon Genesis Evangelion"
-  ]);
+  ]
+}
+
+function FuncComponentWithState() {
+
+  // This is where we initialize our state variables for our component
+  let [animes, setAnimes] = useState([...initialState.animes]);
   let [recs, setRecs] = useState([]);
   
   let handleClick = () => {
@@ -245,6 +254,7 @@ function FuncComponentWithState() {
 	// Actual content to be rendered is inside return()
 	return (
 		<div style={{display:"block", padding:"1.5em"}}>
+
       <button 
         style={{padding:".5em", margin:"1em"}}
         onClick={handleClick}
@@ -253,6 +263,18 @@ function FuncComponentWithState() {
       </button>
 
       <div>{recommended}</div>
+
+      <button
+        style={
+          animes.length === 0 
+            ? 
+          {} : {'visibility':'hidden'}
+        }
+        onClick={() => {
+          setAnimes(initialState.animes);
+          setRecs([])
+        }}
+      >Reset</button>
     </div>
 	);
 };
@@ -260,12 +282,12 @@ function FuncComponentWithState() {
 ReactDOM.render(
 	<FuncComponentWithState />,
   document.getElementById("root")
-)
+);
 ```
 
 <br />
 
-6. React component with props
+6. <a href="https://codesandbox.io/s/react-hooks-usestate-8twy2">React component with props</a>
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom'
