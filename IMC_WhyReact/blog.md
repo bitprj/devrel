@@ -1,8 +1,8 @@
-<div align='center'>
-  <img src='./img/0.png' />
+<div align="center">
+  <img src="./img/0.png" />
 </div>
 
-# What's with all the craze about React?
+# What"s with all the craze about React?
 ### By Joey Hua
 
 ## A Little Intro
@@ -11,8 +11,8 @@ Right now is a great time to learn web dev. HTML, CSS, and Javascript are the co
 
 <br />
 
-<div align='center'>
-  <img src='./img/7.jpg' width='600' />
+<div align="center">
+  <img src="./img/7.jpg" width="600" />
   <p>Programmers love trees. React-ers are no different. Keep reading!</p>
 </div>
 
@@ -23,8 +23,8 @@ What exactly is React (fun edition)? Let’s begin with the name itself. React i
 
 <br />
 
-<div align='center'>
-  <img src='./img/2.jpg' width='600' />
+<div align="center">
+  <img src="./img/2.jpg" width="600" />
   <p>React is one with nature.</p>
 </div>
 
@@ -34,8 +34,8 @@ What exactly is React (boring edition, also the one you should focus on)? React 
 
 <br />
 
-<div align='center'>
-  <img src='./img/6.png' width='600' />
+<div align="center">
+  <img src="./img/6.png" width="600" />
 </div>
 
 <br />
@@ -46,8 +46,8 @@ Before the days of React, websites were mostly static and pretty boring. They ma
 
 <br />
 
-<div align='center'>
-  <img src='./img/1.png' width='300' />
+<div align="center">
+  <img src="./img/1.png" width="300" />
 </div>
 
 <br />
@@ -56,14 +56,14 @@ Whereas in the not-so-distant past, websites were composed of several static, se
 
 
 
-<div align='center'>
-  <img src='./img/3.png' width='400' />
+<div align="center">
+  <img src="./img/3.png" width="400" />
   <p>We have React to thank for Instagram.</p>
 </div>
 
 <br />
 
-Long gone are the days of hard-coding content into `div` and `p` tags. In React, HTML is kept relatively bare-bones, any elements will serve as templates that hold data which is dynamically-passed via JavaScript. That said, React wouldn't work without HTML; since HTML is still the skeleton of every website. It simply means the **focus** has shifted from writing static content to writing code that renders content based on UI state. 
+Long gone are the days of hard-coding content into `div` and `p` tags. In React, HTML is kept relatively bare-bones, any elements will serve as templates that hold data which is dynamically-passed via JavaScript. That said, React wouldn"t work without HTML; since HTML is still the skeleton of every website. It simply means the **focus** has shifted from writing static content to writing code that renders content based on UI state. 
 
 React isn’t hard to learn if you have solid fundamentals in JavaScript. This is because JavaScript is the language that React uses; thus React and vanilla JS are syntactically and conceptually similar. However, there are many useful additions that make coding a lot more pleasant, one of them being **JSX**—this is basically the ability to write HTML code inside your React files. (You can also write CSS in React files, which is dubbed **inline-CSS**. More on this and JSX later).
 
@@ -72,18 +72,18 @@ React isn’t hard to learn if you have solid fundamentals in JavaScript. This i
 
 In React, **components** are the building blocks of your app and can be written as either functions or objects. How exactly do components dynamically render content? Via **props** and **state**. 
 
-**Props** are just like parameters you pass to a function—the specific props you design for your component and the data you pass to it in the form of said props will dictate what's being rendered. Prop data is passed **externally** to a component.
+**Props** are just like parameters you pass to a function—the specific props you design for your component and the data you pass to it in the form of said props will dictate what"s being rendered. Prop data is passed **externally** to a component.
 
-**State** is a variable or set of variables that control a component's... state (I actually think it's most intuitive to self-define state). State variables are created and updated **internally** and can be used to render content dynamically based on logic you provide.
+**State** is a variable or set of variables that control a component's... state (I actually think it"s most intuitive to self-define state). State variables are created and updated **internally** and can be used to render content dynamically based on logic you provide.
 
-The cool part: components are designed to interact with each other. Components can render other components, props can be passed from one component to another, and state can also be passed as a prop so that it can be updated externally. If this is confusing, don't worry. Practice writing React will clear things up. 
+The cool part: components are designed to interact with each other. Components can render other components, props can be passed from one component to another, and state can also be passed as a prop so that it can be updated externally. If this is confusing, don"t worry. Practice writing React will clear things up. 
 
 React encourages the creation of “reusable, composable, and stateful components.” Let me translate that as such: make components that can generalize into more specific use cases and make sure they have internal properties which handle the content they display. 
 
 <br />
 
-<div align='center'>
-  <img src='./img/10.jpg' width='400' />
+<div align="center">
+  <img src="./img/10.jpg" width="400" />
 </div>
 
 <br />
@@ -92,8 +92,8 @@ Another key thing to know is that React uses a tree hierarchy to internally stru
 
 <br />
 
-<div align='center'>
-  <img src='./img/8.png' width='600' />
+<div align="center">
+  <img src="./img/8.png" width="600" />
   <p>Gotta get back to our Roots.</p>
 </div>
 
@@ -103,15 +103,15 @@ I will end this section on one final key point to understand about React. Rememb
 
 <br />
 
-<div align='center'>
-  <img src='./img/5.png' width='600' />
+<div align="center">
+  <img src="./img/5.png" width="600" />
   <p>The Virtual DOM compares itself to the browser DOM and smartly re-renders only what has been changed (in red), instead of re-rendering the entire DOM.</p>
 </div>
 
 <br />
 
 ## When to React and when not to React?
-I just spent many paragraphs describing what React is great at and how it has ushered in a new paradigm into the web dev universe. However, React doesn't need to be used for EVERYTHING web-related. For instance, if all you want is a simple blog site, making a React app would be gross overkill, at least for 99% of blogs out there. 
+I just spent many paragraphs describing what React is great at and how it has ushered in a new paradigm into the web dev universe. However, React doesn"t need to be used for EVERYTHING web-related. For instance, if all you want is a simple blog site, making a React app would be gross overkill, at least for 99% of blogs out there. 
 
 You should strongly consider React when you are building something that is **highly interactive**. This is exactly what React was built for. Projects like messenger apps, social media apps, board games, audio workstations, notetaking and productivity apps, etc. are where React will shine brightest.
 
@@ -119,13 +119,13 @@ You should strongly consider React when you are building something that is **hig
 ## How to React!
 Now comes the fun part—coding! In this final section, I have included several code examples illustrating fundamental React concepts to get you familiar with the code. At the very end, I have included three great resources where you can learn more about React in depth. 
 
-I have tried to make these examples as easy to follow as possible, but don't worry if some of the syntax is confusing. Instead, try to get a feel for how React code flows and is structured. 
+I have tried to make these examples as easy to follow as possible, but don"t worry if some of the syntax is confusing. Instead, try to get a feel for how React code flows and is structured. 
 
 
 1. React class component
 ```js
-import React from 'react'; 
-import ReactDOM from 'react-dom';
+import React from "react"; 
+import ReactDOM from "react-dom";
 
 // Class components are essentially JavaScript objects
 class NewComponent extends React.Component {
@@ -133,14 +133,14 @@ class NewComponent extends React.Component {
   // This is where content is rendered in the form of HTML or other React components
   render() {
     return (
-      <div>hello</div>
+      <div>Hello, I"m a new React Component!</div>
     )
   };
 };
 
 ReactDOM.render(
   <NewComponent />,
-  document.getElementById('root')
+  document.getElementById("root")
 )
 ```
 
@@ -148,32 +148,38 @@ ReactDOM.render(
 
 2. React functional component (more popular)
 ```js
+import React from 'react';
+import ReactDOM from 'react-dom'
+
 // Functional components are becoming more popular than class components, since they are more flexible and can perform the same duties with less code.
 function AnotherComponent() {
 
-  // You don't need a render() {} block like in class components, just a return() function
+  // You don"t need a render() {} block like in class components, just a return() function
   return (
-    <div>hello</div>
+    <div>Hello, I'm a new React Component!</div>
   );
 };
 
 ReactDOM.render(
   <AnotherComponent />,
-  document.getElementById('root')
+  document.getElementById("root")
 )
 ```
 
 
 3. React JSX
 ```js
-let anime = 'Hunter x Hunter';
+import React from 'react';
+import ReactDOM from 'react-dom'
+
+let anime = "Hunter x Hunter";
 
 // A very simple example of JSX - assigning an HTML element to a variable
 let element = <div>My favorite anime is {anime}.</div>;
 
 ReactDOM.render(
   element,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 ```
 
@@ -181,13 +187,17 @@ ReactDOM.render(
 
 4. React inline CSS 
 ```js
+import React from 'react';
+import ReactDOM from 'react-dom'
+
+let anime = "Hunter x Hunter"
 let element = 
   <div 
     // Inline-CSS is written as a JavaScript object
     style={{
-      border:'solid purple 2px', 
-      padding:'5em',
-      textAlign: 'center' // JSX uses camelCase syntax instead of hyphenating multi-word attributes like in vanilla CSS
+      border:"solid purple 2px", 
+      padding:"5em",
+      textAlign: "center" // JSX uses camelCase syntax instead of hyphenating multi-word attributes like in vanilla CSS
     }}
   >
     My favorite anime is {anime}.
@@ -195,7 +205,7 @@ let element =
 
 ReactDOM.render(
   element,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 ```
 
@@ -203,89 +213,89 @@ ReactDOM.render(
 
 5. React component with state
 ```js
-class ClassComponentWithState extends React.Component {
-  constructor() {
-    // Component's state is initialized here, in the constructor, as a JavaScript object
-    // Here, I have 2 state variables - "animes" and "recs"
-    this.state = {
-      animes: [
-        'Hunter x Hunter',
-        'One Piece',
-        'Neon Genesis Evangelion'
-      ],
-      recs: []
-    };
-    this.handleClick = this.handleClick.bind(this)
-  };
+import React, { useState } from 'react';
+import ReactDOM from 'react-dom'
 
-  handleClick() {
-    if (this.state.animes.length !== 0) {
+function FuncComponentWithState() {
+  let [animes, setAnimes] = useState([
+    "Hunter x Hunter",
+    "One Piece",
+    "Neon Genesis Evangelion"
+  ]);
+  let [recs, setRecs] = useState([]);
+  
+  let handleClick = () => {
+    if (animes.length !== 0) {
 
       // Updating state happens here
-      this.setState(state => ({
-        animes: state.animes.slice(0, state.animes.length-1),
-        recs: state.recs.push(state.animes[state.animes.length-1])
-      }))
+      setAnimes(animes.slice(0, animes.length-1))
+      setRecs(recs.concat(animes[animes.length-1]))
     }
 
     else {
-      alert('We have no more anime recommendations for you today! Please return after you have finished watching the ones we have already given you. Good luck!')
+      alert("We have no more anime recommendations for you today! Please return after you have finished watching the ones we have already given you. Good luck!")
     }
-  }
+  };
 
-  // Don't forget the render() {} block, since this is a class component!
-  render() {
-    
     // This variable will hold all anime recommendations
     // map() is an extremely useful Array function you will be using very frequently
-    let recommended = recs.map(anime => <p style={{margin:'.5em'}}>{anime}</p>)
+  let recommended = recs.map(rec => <p style={{margin:".5em"}}>{rec}</p>)
 
-    // Actual content to be rendered is inside return()
-    return (
-      <div style={{display:'block', padding:'1.5em'}}>
-        <button 
-          style={{padding:'.5em', margin:'1em'}}
-          onClick={this.handleClick}> 
-          Click to get new anime recommendation!
-        </button>
+	// Actual content to be rendered is inside return()
+	return (
+		<div style={{display:"block", padding:"1.5em"}}>
+      <button 
+        style={{padding:".5em", margin:"1em"}}
+        onClick={handleClick}
+      > 
+        Click to get new anime recommendation!
+      </button>
 
-        <div>{recommended}</div>
-      </div>
-    );
-  };
+      <div>{recommended}</div>
+    </div>
+	);
 };
 
 ReactDOM.render(
-  <ClassComponentWithState />,
-  document.getElementById('root')
-);
+	<FuncComponentWithState />,
+  document.getElementById("root")
+)
 ```
 
 
 
 6. React component with props
 ```js
+import React from 'react';
+import ReactDOM from 'react-dom'
+
 // If you want your component to be able to hold props, simply pass "props" as a parameter.
 // Alternatively, you could omit "props" and individually put prop names within an object, and pass the object as a parameter to your component
 function FunctionalComponentWithProps(props) {
   return (
-    <div style={props.styles}>
-      <h1>You should watch the following animes!</h1>
-      {props.animes.map(anime => <p>{anime}</p>)}
+    <div>
+      <h1>You should watch the following animes:</h1>
+      
+      <div style={props.styles}>
+        <ul>
+          {props.animes.map(anime => <li>{anime}</li>)}
+        </ul>
+      </div>
     </div>
   )
 }
 
 // Here is the "style" prop I will pass to my component
 let myStyles = {
-  display: 'block',
+  color: 'orangered',
+  marginTop: '10px'
 }
 
 // Here is the "animes" prop I will pass to my component
 let myAnimes = [
-  'Hunter x Hunter',
-  'One Piece',
-  'Neon Genesis Evangelion'
+  "Hunter x Hunter",
+  "Neon Genesis Evangelion",
+  "One Piece"
 ]
 
 ReactDOM.render(
@@ -293,18 +303,18 @@ ReactDOM.render(
     styles={myStyles} // passing styles
     animes={myAnimes} // passing animes
   />,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 ```
 
 
-Hopefully, you now have a better understanding of what React is and why it's used. I highly encourage you to make your own React apps, no other method of learning comes close in terms of enjoyment and improvement potential. Below are some great resources to get you started on your React journey. Thank you for reading!
+Hopefully, you now have a better understanding of what React is and why it"s used. I highly encourage you to make your own React apps, no other method of learning comes close in terms of enjoyment and improvement potential. Below are some great resources to get you started on your React journey. Thank you for reading!
 
-<a href='https://reactjs.org/tutorial/tutorial.html'>React Tic-Tac-Toe Beginner Tutorial</a>
+<a href="https://reactjs.org/tutorial/tutorial.html">React Tic-Tac-Toe Beginner Tutorial</a>
 
-<a href='https://www.freecodecamp.org/news/yes-react-is-taking-over-front-end-development-the-question-is-why-40837af8ab76/'>An article that goes more in depth on what this blog covers</a>
+<a href="https://www.freecodecamp.org/news/yes-react-is-taking-over-front-end-development-the-question-is-why-40837af8ab76/">An article that goes more in depth on what this blog covers</a>
 
-<a href='https://scrimba.com/p/p7P5Hd/Index'>Scrimba: A Great Interactive Resource for learning how to write React code</a>
+<a href="https://scrimba.com/p/p7P5Hd/Index">Scrimba: A Great Interactive Resource for learning how to write React code</a>
 
 
 
