@@ -170,7 +170,7 @@ ReactDOM.render(
 
 <br />
 
-3. <a href="https://codesandbox.io/s/react-hooks-usestate-mpyue">React JSX</a>
+3. <a href="https://codesandbox.io/s/react-hooks-usestate-l2x01">React JSX</a>
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom'
