@@ -3,7 +3,7 @@
 
 ​	With Azure and Twilio, this problem can be easily remedied. We'll use Azure to set up a timer to trigger other code to run, and integrate Twilio so we can send a text message or call to ourselves to make sure we notice the reminder.
 
-​	It will take a little bit of Javascript to make everything work, but it's pretty straightforward and we'll go over everything together. Firstly, we need to set up 2 accounts, Microsoft Azure , and Twilio. Azure has a 12 month free trial and Twilio has a free trial as well with some credits to experiment with the features.
+​	It will take a little bit of Javascript to make everything work, but it's pretty straightforward and we'll go over everything together. Firstly, we need to set up 2 accounts, [Microsoft Azure](https://azure.microsoft.com/en-us/free/search/?&ef_id=Cj0KCQjwn7j2BRDrARIsAHJkxmwz0tcFx8fTgoL7jogctsTPYrzEntPYcIpEu0QV_YRDbPFyv7oNrOoaAvspEALw_wcB:G:s&OCID=AID2000128_SEM_Cj0KCQjwn7j2BRDrARIsAHJkxmwz0tcFx8fTgoL7jogctsTPYrzEntPYcIpEu0QV_YRDbPFyv7oNrOoaAvspEALw_wcB:G:s&gclid=Cj0KCQjwn7j2BRDrARIsAHJkxmwz0tcFx8fTgoL7jogctsTPYrzEntPYcIpEu0QV_YRDbPFyv7oNrOoaAvspEALw_wcB) , and [Twilio](https://www.twilio.com/try-twilio). Azure has a 12 month free trial and Twilio has a free trial as well with some credits to experiment with the features.
 
 ### Step 1: Create Timer Function
 ​	Let's pop open Azure and click to create a new resource, get started, then select "Function App". After that, fill in all the info about your function. Make sure you select "JavaScript" for the runtime stack option.
@@ -33,7 +33,7 @@
 
 ​	Now let's go over to our Twilio account and purchase a phone number. The free Twilio trial comes with some balance so we can purchase a phone number and send calls and texts using that balance.
 
-​	Back over in Azure, let's go to the same left panel as earlier and go into the Configuration tab. There let's create 4 new application settings for your TWILIO_SID, TWILIO_TOKEN, SENDER_NUMBER, RECIPIENT_NUMBER. Those are all values that we need in our code later, but for security, we put those values under application settings instead of directly writing it into our code. 
+​	Back over in Azure, let's go to the same left panel as earlier and go into the Configuration tab. There let's create 4 new application settings for your TWILIO_SID, TWILIO_TOKEN, SENDER_NUMBER, RECIPIENT_NUMBER. Those are all values that we need in our code later, but for security, we save those values under their corresponding name in the application settings instead of directly writing it into our code so other people can't see those credentials. 
 
 <img src=".\pics\06.PNG" style="zoom:75%;" />
 
@@ -45,7 +45,7 @@
 
 <img src=".\pics\08.PNG" style="zoom:75%;" />
 
-​	It's not too complex. If the timer is past due, write that in the log, then create and send a message from SENDER_NUMBER to RECIPIENT_NUMBER. If everything works perfectly, log a success, else log the error. 
+​	Let's do a quick rundown of the code. If the timer is past due, write that in the log, then create and send a message from SENDER_NUMBER to RECIPIENT_NUMBER. If everything works perfectly, log a success, else log the error. 
 
 ### Step 4: Making a Call
 
