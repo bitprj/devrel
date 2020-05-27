@@ -133,7 +133,7 @@ class NewComponent extends React.Component {
   // This is where content is rendered in the form of HTML or other React components
   render() {
     return (
-      <div>Hello, I"m a new React Component!</div>
+      <div>Hello, I'm a new React Component!</div>
     )
   };
 };
@@ -144,6 +144,13 @@ ReactDOM.render(
 )
 ```
 
+<iframe
+  src="https://codesandbox.io/embed/6vv9xxwyww?fontsize=14&hidenavigation=1&theme=dark"
+  style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+  title="React Hooks - useState()"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts allow-autoplay">
+</iframe>
 
 
 2. React functional component (more popular)
