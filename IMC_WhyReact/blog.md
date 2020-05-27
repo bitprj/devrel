@@ -155,6 +155,7 @@ let element =
   >
     My favorite anime is {anime}.
   </div>
+
 ReactDOM.render(
   element,
   document.getElementById('root')
@@ -166,6 +167,7 @@ ReactDOM.render(
 class ClassComponentWithState extends React.Component {
   constructor() {
     // Component's state is initialized here, in the constructor, as a JavaScript object
+    // Here, I have 2 state variables - "animes" and "recs"
     this.state = {
       animes: [
         'Hunter x Hunter',
@@ -179,7 +181,8 @@ class ClassComponentWithState extends React.Component {
 
   handleClick() {
     if (this.state.animes.length !== 0) {
-      // Changing state happens here
+
+      // Updating state happens here
       this.setState(state => ({
         animes: state.animes.slice(0, state.animes.length-1),
         recs: state.recs.push(state.animes[state.animes.length-1])
@@ -193,6 +196,8 @@ class ClassComponentWithState extends React.Component {
 
   // Don't forget the render() {} block, since this is a class component!
   render() {
+    
+    // This variable will hold all anime recommendations
     // map() is an extremely useful Array function you will be using very frequently
     let recommended = recs.map(anime => <p style={{margin:'.5em'}}>{anime}</p>)
 
@@ -201,10 +206,11 @@ class ClassComponentWithState extends React.Component {
       <div style={{display:'block', padding:'1.5em'}}>
         <button 
           style={{padding:'.5em', margin:'1em'}}
-          onClick={this.handleClick}>
+          onClick={this.handleClick}> 
           Click to get new anime recommendation!
         </button>
-        {recommended}
+
+        <div>{recommended}</div>
       </div>
     );
   };
