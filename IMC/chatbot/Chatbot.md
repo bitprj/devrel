@@ -1,8 +1,9 @@
 # Covid-19 and ChatBots
+In this tutorial, we will be walking through how to create a ChatBot that fetches **COVID-19** information from all around the world.
 
 ![img](images/1.jpg)
-
-## What is a Chatbot?
+## Background 
+### What is a Chatbot?
 
 A Chatbot is a software that you can “chat with.” You can find Chatbots in messaging apps such as Facebook Messenger, or on websites through pop-ups. They can also be integrated with “virtual assistants” for customer service or tech support. Google Assistant and Amazon Alexa are both great examples.
 
@@ -54,9 +55,9 @@ Entities map what a user says to what action should be taken. Any information th
 
 
 
-Let's apply this information to something practical. For this tutorial, we will be walking you through how to create a ChatBot that fetches **COVID-19** information from all around the world.
+Let's use this information to create our chatbot! 
 
-# Steps:
+# Tutorial
 
 ## Download the template files
 
