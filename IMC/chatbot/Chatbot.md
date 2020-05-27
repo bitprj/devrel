@@ -19,7 +19,7 @@ First, let’s look into why we might need a chatbot:
 
 ![img](images/2.gif)
 
-## Why are Chatbots important for business?
+### Why are Chatbots important for business?
 
 There are a massive amount of active users online these days. Chatbots make it much easier to offer customer service. They can interact with multiple users at the same time and work 24 hours a day. They provide users with helpful information to enhance customer experience while reducing the cost of traditional customer service, and prevent your team from always answering the same FAQs.
 
@@ -27,7 +27,7 @@ As you can see, the advantages of a chatbot are far-reaching. Let's start creati
 
 For this example, we will be using Google's **DialogFlow**
 
-## **What is Google Dialogflow?**
+### What is Google Dialogflow?
 
 DialogFlow is a powerful NLU API that was acquired and is now developed by Google. It gives users new ways to interact with your product by building engaging voice and text-based conversational interfaces, such as voice apps and chatbots, powered by AI. You can connect with users on your website, mobile app, Google Assistant, Amazon Alexa, Facebook Messenger, and other popular platforms and devices.
 
@@ -57,13 +57,13 @@ Entities map what a user says to what action should be taken. Any information th
 
 Let's use this information to create our chatbot! 
 
-# Tutorial
+## Tutorial
 
-## Download the template files
+### Download the template files
 
 From GitHub, download the [Verily COVID-19 Pathfinder virtual agent template](https://github.com/GoogleCloudPlatform/covid19-rapid-response-demo/blob/master/agent-template/covid-19-agent-template.zip) and its associated [fulfillment code](https://github.com/GoogleCloudPlatform/covid19-rapid-response-demo/blob/master/agent-template/dialogflow-fulfillment.zip).
 
-## Create an Agent:
+### Create an Agent
 
 1. Go to the [Dialogflow Console](https://dialogflow.cloud.google.com/).
 2. If requested, sign in to the Dialogflow console. See [DialogFlow console overview](https://cloud.google.com/dialogflow/docs/console) for more information.
@@ -72,7 +72,7 @@ From GitHub, download the [Verily COVID-19 Pathfinder virtual agent template](ht
 5. Click the settings button.
 6. Select the **Export and Import** tab, then click the **Import from Zip** button to [import the template](https://cloud.google.com/dialogflow/docs/agents-settings#export) you downloaded above.
 
-## Enable and deploy fulfillment with the Inline Editor
+### Enable and deploy fulfillment with the Inline Editor
 
 To enable and deploy the default fulfillment code, use the Inline Editor:
 
@@ -80,16 +80,13 @@ To enable and deploy the default fulfillment code, use the Inline Editor:
 2. Toggle the switch to [enable the Inline Editor](https://cloud.google.com/dialogflow/docs/fulfillment-inline-editor).
 3. If you did not [enable billing in setup steps](https://cloud.google.com/dialogflow/docs/quick/setup#billing), you are prompted to enable billing now. Cloud Functions have associated charges, but the service is free up to a [significant number of monthly invocations](https://cloud.google.com/functions/pricing).
 4. Click **Deploy** at the bottom of the form and wait until dialogs indicate that it has been deployed.
+5. Go to the Google Cloud Console and select Cloud Functions on the left panel.
 
+6. Select the fulfillment for the function you created and click the **Edit** button.
 
+7. Under the **Source code** section, select **ZIP upload** and upload the fulfillment zip file you downloaded above. Select a Stage bucket (you may need to create one if it hasn’t been created yet).
 
-- Go to the Google Cloud Console and select Cloud Functions on the left panel.
-
-1. Select the fulfillment for the function you created and click the **Edit** button.
-
-2. Under the **Source code** section, select **ZIP upload** and upload the fulfillment zip file you downloaded above. Select a Stage bucket (you may need to create one if it hasn’t been created yet).
-
-3. Follow the instructions in the Google Maps Platform [quickstart](https://developers.google.com/maps/gmp-get-started?&_ga=2.151893690.2050009114.1588390420-45888550.1587369863#quickstart) to enable the Google Maps **Places API**. Select **API & Services > Credentials** in the console to create an API key for calling the Places API (See [Get an API Key](https://developers.google.com/places/web-service/get-api-key) for more information).
+8. Follow the instructions in the Google Maps Platform [quickstart](https://developers.google.com/maps/gmp-get-started?&_ga=2.151893690.2050009114.1588390420-45888550.1587369863#quickstart) to enable the Google Maps **Places API**. Select **API & Services > Credentials** in the console to create an API key for calling the Places API (See [Get an API Key](https://developers.google.com/places/web-service/get-api-key) for more information).
 
    <img src="images/4.png" alt="img" style="zoom:40%;" />
 
@@ -97,17 +94,17 @@ To enable and deploy the default fulfillment code, use the Inline Editor:
 
 
 
-5. Set the `GOOGLE_MAPS_API_KEY` environment variable to the provided API key. See [Updating environment variables](https://cloud.google.com/functions/docs/env-var#updating_environment_variables) for more information.
+9. Set the `GOOGLE_MAPS_API_KEY` environment variable to the provided API key. See [Updating environment variables](https://cloud.google.com/functions/docs/env-var#updating_environment_variables) for more information.
 
 
 
 <img src="images/5.png" alt="img" style="zoom:50%;" />
 
-6. To use metrics for COVID-19, [enable the BigQuery API](https://console.cloud.google.com/flows/enableapi?apiid=bigquery) by selecting your project and agreeing to the terms of service.
+10. To use metrics for COVID-19, [enable the BigQuery API](https://console.cloud.google.com/flows/enableapi?apiid=bigquery) by selecting your project and agreeing to the terms of service.
 
-# Interacting with your agent
+## Interacting with your agent
 
-## Using the Dialogflow Console Simulator
+### Using the Dialogflow Console Simulator
 
 <img src="images/6.png" alt="img" style="zoom:70%;" />
 
@@ -123,7 +120,7 @@ To enable and deploy the default fulfillment code, use the Inline Editor:
 
 
 
-## Using Dialogflow Messenger
+### Using Dialogflow Messenger
 
 1. Go to the [Dialogflow Console](https://dialogflow.cloud.google.com/).
 2. Select your agent.
@@ -132,7 +129,7 @@ To enable and deploy the default fulfillment code, use the Inline Editor:
 5. Paste the embed code shown on the dialog in a webpage on your website. To interact with the agent on your site, click the icon at the bottom right, type your input query, and press Enter. The agent responds.
 6. [Customize the agent](https://cloud.google.com/dialogflow/docs/integrations/dialogflow-messenger#html_customizations) to appear the way you want it.
 
-# Using the Dialogflow API
+### Using the Dialogflow API
 
 To interact with your agent using the Dialogflow API, ensure that your Google Cloud Platform project is properly [set up](https://cloud.google.com/dialogflow/docs/quick/setup), then submit a natural language query about COVID-19 and detect its intent.
 
