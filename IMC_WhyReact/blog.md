@@ -294,8 +294,8 @@ function FuncComponentWithState() {
     }
   };
 
-    // This variable will hold all anime recommendations
-    // map() is an extremely useful Array function you will be using very frequently
+  // This variable will hold all anime recommendations
+  // map() is an extremely useful Array function you will be using very frequently
   let recommended = recs.map(rec => <p style={{margin:".5em"}}>{rec}</p>)
 
 	// Actual content to be rendered is inside return()
