@@ -23,7 +23,7 @@ First, let’s look into why we might need a Chatbot:
 
 There are a massive amount of active users online these days. Chatbots make it much easier to offer customer service. They can interact with multiple users at the same time and work 24 hours a day. They provide users with helpful information to enhance customer experience while reducing the cost of traditional customer service, and prevent your team from always answering the same FAQs.
 
-As you can see, the advantages of a Chatbot are far-reaching. Let's start creating our own from the place the researchers and pioneers of Natural language understanding (NLU) started. **Curiosity**.
+As you can see, the advantages of a Chatbot are far-reaching. Fortunately for us there are framworks and services which make it relatively easy to create information based bots.
 
 
 ### What is Google Dialogflow?
@@ -145,9 +145,6 @@ To interact with your agent using the Dialogflow API, ensure that your Google Cl
    // page: https://cloud.google.com/dialogflow/docs/reference/rest/v2/projects.agent.sessions/detectIntent#request-body
    ```
 
-<iframe src="https://medium.com/media/2732022c337c912f61e95a2781ebaf99" allowfullscreen="" frameborder="0" height="300" width="680" title="request.json" class="s t u dq ai" scrolling="auto" style="box-sizing: inherit; position: absolute; top: 0px; left: 0px; width: 680px; height: 299.984px;"></iframe>
-
-
 2. Run the following command to send a detect intent request to your agent.
 
 ```json
@@ -167,4 +164,4 @@ curl -X POST
 
 ## Conclusion
 
-Congratulations! Now you can easily create a smart ChatBot that gives useful information related to COVID-19. Remember the framework used is not just limited to this scenario, in fact, Google cloud services along with DialogFlow can make any sort of information or action ChatBot, from news to personal finances. It is also a fun activity to test the limit of this technology and improve on them. From this article, we showed the tools available that are easy to use such as Google Cloud Platform and Google DiaLog Flow. We used "a little bit" of coding to create connect inputs with relevant intents. Most of all, we learned something new.
+Congratulations! Now you can easily create a smart ChatBot that gives useful information related to COVID-19. Remember the framework used is not just limited to this scenario, in fact, Google cloud services along with DialogFlow can make any sort of information or action ChatBot, from news to personal finances. It is also a fun activity to test the limit of this technology and improve on them. From this article, we showed the tools available that are easy to use such as Google Cloud Platform and Google DiaLog Flow. We used a little bit of coding to user inputs with relevant intents. Most of all, we learned something new.
