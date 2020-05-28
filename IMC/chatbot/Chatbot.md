@@ -1,4 +1,4 @@
-# Covid-19 and ChatBots
+# Creating a Chatbot for COVID-19 
 In this tutorial, we will be walking through how to create a ChatBot that fetches **COVID-19** information from all around the world.
 
 ![img](images/1.jpg)
@@ -7,9 +7,9 @@ In this tutorial, we will be walking through how to create a ChatBot that fetche
 
 A Chatbot is a software that you can “chat with.” You can find Chatbots in messaging apps such as Facebook Messenger, or on websites through pop-ups. They can also be integrated with “virtual assistants” for customer service or tech support. Google Assistant and Amazon Alexa are both great examples.
 
-With the rapid improvements in Natural Language Processing (NLP), it has never been easier to create a chatbot. If you pay  attention to the structures of modern websites, you will notice that most of them use an existing chatbot integrated with the web pages. These bots are considered smart chatbots as they have the ability to understand language structures. Although limited in general, they provide all the necessary components of a virtual assistant to help you navigate a website. Let's see how easy is it to create a chatbot!
+With the rapid improvements in Natural Language Processing (NLP), it has never been easier to create a Chatbot. If you pay  attention to the structures of modern websites, you will notice that most of them use an existing Chatbot integrated with the web pages. These bots are considered smart Chatbots as they have the ability to understand language structures. Although limited in general, they provide all the necessary components of a virtual assistant to help you navigate a website. Let's see how easy is it to create a Chatbot!
 
-First, let’s look into why we might need a chatbot:
+First, let’s look into why we might need a Chatbot:
 
 - **Navigation:** You want to help a user navigate through a website.
 - **Information:** Search for news relevant to you.
@@ -23,12 +23,12 @@ First, let’s look into why we might need a chatbot:
 
 There are a massive amount of active users online these days. Chatbots make it much easier to offer customer service. They can interact with multiple users at the same time and work 24 hours a day. They provide users with helpful information to enhance customer experience while reducing the cost of traditional customer service, and prevent your team from always answering the same FAQs.
 
-As you can see, the advantages of a chatbot are far-reaching. Let's start creating our own from the place the researchers and pioneers of Natural language understanding (NLU) started. **Curiosity**.
+As you can see, the advantages of a Chatbot are far-reaching. Let's start creating our own from the place the researchers and pioneers of Natural language understanding (NLU) started. **Curiosity**.
 
 
 ### What is Google Dialogflow?
 
-For this tutorial, we will be using Google's **DialogFlow**. DialogFlow is a powerful NLU API that was acquired and is now developed by Google. It gives users new ways to interact with your product by building engaging voice and text-based conversational interfaces, such as voice apps and chatbots, powered by AI. You can connect with users on your website, mobile app, Google Assistant, Amazon Alexa, Facebook Messenger, and other popular platforms and devices.
+For this tutorial, we will be using Google's **DialogFlow**. DialogFlow is a powerful NLU API that was acquired and is now developed by Google. It gives users new ways to interact with your product by building engaging voice and text-based conversational interfaces, such as voice apps and Chatbots, powered by AI. You can connect with users on your website, mobile app, Google Assistant, Amazon Alexa, Facebook Messenger, and other popular platforms and devices.
 
 What makes DialogFlow so useful and popular:
 
@@ -43,7 +43,7 @@ What makes DialogFlow so useful and popular:
 DialogFlow allows you to make Natural language understanding (NLU) modules called agents. The agent is the main component of your bot. It connects to your backend and provides it with your custom logic. Agents are made up of intents. 
 
 **Intents:**
-Intents are actions that a user can perform on your agent. You can set up as many intents as you want for your agent. When a user says something, DialogFlow will match the expression with one of the intents that you created. For example, you may have a “Shipping” intent. When a user asks “What are the shipping methods?“ the chatbot will match it with the “Shipping” intent. The chatbot knows which intent to call by using entities.
+Intents are actions that a user can perform on your agent. You can set up as many intents as you want for your agent. When a user says something, DialogFlow will match the expression with one of the intents that you created. For example, you may have a “Shipping” intent. When a user asks “What are the shipping methods?“ the Chatbot will match it with the “Shipping” intent. The Chatbot knows which intent to call by using entities.
 
 **Entities:**
 Entities map what a user says to what action should be taken. Any information that is critical to your business logic will be an entity. This includes things like dates, email addresses, and any other keyword categories that users may ask about. For example, “order number” can be an entity that will get called when a user enters an order number. This entity can be linked to an “Order” intent which can deal with all the possible problems for an order.
@@ -54,7 +54,7 @@ Entities map what a user says to what action should be taken. Any information th
 
 
 
-Let's use this information to create our chatbot! 
+Let's use this information to create our Chatbot! 
 
 ## Tutorial
 
