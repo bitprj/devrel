@@ -163,3 +163,8 @@ curl -X POST
 ```
 
 **Note:** There are many [other ways](https://cloud.google.com/dialogflow/docs/quick/api#detect_intent) (C#, Go, Java, Python, Node.js, PHP, Ruby, etc) to interact with the API.
+
+
+## Conclusion
+
+Congratulations! Now you can easily create a smart ChatBot that gives useful information related to COVID-19. Remember the framework used is not just limited to this scenario, in fact, Google cloud services along with DialogFlow can make any sort of information or action ChatBot, from news to personal finances. It is also a fun activity to test the limit of this technology and improve on them. From this article, we showed the tools available that are easy to use such as Google Cloud Platform and Google DiaLog Flow. We used "a little bit" of coding to create connect inputs with relevant intents. Most of all, we learned something new.
