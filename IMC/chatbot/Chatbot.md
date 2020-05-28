@@ -1,5 +1,5 @@
 # Creating a Chatbot for COVID-19 
-In this tutorial, we will be walking through how to create a ChatBot that fetches **COVID-19** information from all around the world.
+In this tutorial, we will be walking through how to create a Chatbot that fetches **COVID-19** information from all around the world.
 
 ![img](images/1.jpg)
 ## Background 
@@ -23,7 +23,7 @@ First, let’s look into why we might need a Chatbot:
 
 There are a massive amount of active users online these days. Chatbots make it much easier to offer customer service. They can interact with multiple users at the same time and work 24 hours a day. They provide users with helpful information to enhance customer experience while reducing the cost of traditional customer service, and prevent your team from always answering the same FAQs.
 
-As you can see, the advantages of a Chatbot are far-reaching. Fortunately for us there are framworks and services which make it relatively easy to create information based bots.
+As you can see, the advantages of a Chatbot are far-reaching. Fortunately for us, there are frameworks and services which make it relatively easy to create information-based bots.
 
 
 ### What is Google Dialogflow?
@@ -164,4 +164,4 @@ curl -X POST
 
 ## Conclusion
 
-Congratulations! Now you can easily create a smart ChatBot that gives useful information related to COVID-19. Remember the framework used is not just limited to this scenario, in fact, Google cloud services along with DialogFlow can make any sort of information or action ChatBot, from news to personal finances. It is also a fun activity to test the limit of this technology and improve on them. From this article, we showed the tools available that are easy to use such as Google Cloud Platform and Google DiaLog Flow. We used a little bit of coding to user inputs with relevant intents. Most of all, we learned something new.
+Congratulations! Now you know how to create a smart Chatbot that gives useful information related to COVID-19. In this tutorial, we showed the easy-to-use tools available such as Google Cloud Platform and Google DiaLog Flow to develop our Chatbot. We used a little bit of coding to user inputs with relevant intents. Remember the framework we used is not just limited to this scenario. In fact, Google cloud services along with DialogFlow can be used to make any sort of information or action Chatbot, from news to personal finances. It is also a fun activity to test the limits of this technology and improve them!
