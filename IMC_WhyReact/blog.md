@@ -32,7 +32,7 @@ What exactly is React? Let’s begin with the fun explanation by starting with t
 
 <br />
 
-As for the more technical (and arguably more boring) explanation, React is a JavaScript library made for one purpose: to make the creation of UIs way more efficient than older methods. It’s essentially an extension of vanilla JS that comes with a small but powerful API that serves as a bridge between the programmer and the **DOM** (DOM stands for **Document Object Model**, the tree structure that HTML uses to arrange elements on the page). Developers no longer have to manually communicate every update to the browser. Instead, developers simply tell React what to change. It'll then use something called the **Virtual DOM** to update the browser (more on this later).
+As for the more technical (and arguably more boring) explanation, React is a JavaScript library made for one purpose: to make the creation of UIs way more efficient than older methods. It’s essentially an extension of vanilla JavaScript that comes with a small but powerful API that serves as a bridge between the programmer and the **DOM** (DOM stands for **Document Object Model**, the tree structure that HTML uses to arrange elements on the page). Developers no longer have to manually communicate every update to the browser. Instead, developers simply tell React what to change. It'll then use something called the **Virtual DOM** to update the browser (more on this later).
 
 <br />
 
@@ -65,9 +65,11 @@ Compared to the not-so-distant past when websites consisted of several static an
 
 <br />
 
-Long gone are the days of hard-coding content into `div` and `p` tags. In React, HTML is kept relatively bare-bones, any elements will serve as templates that hold data which is dynamically-passed via JavaScript. That being said, React won't work without HTML since HTML is still the skeleton of every website. It simply means the **focus** has shifted from writing static content to writing code that renders content based on UI state. 
+Long gone are the days of hard-coding content into `div` and `p` tags. In React, HTML is kept relatively bare-bones, any elements will serve as templates that hold data which is dynamically-passed via JavaScript. That being said, don't think HTML isn't important anymore. React won't work without HTML since HTML is still the skeleton of every website. It simply means the **focus** has shifted from writing static content to writing code that renders content based on UI state. 
 
-React isn’t hard to learn if you have a solid foundation in JavaScript. This is because JavaScript is the language that React uses, so React and vanilla JS are syntactically and conceptually similar. However, there are many useful additions that make coding a lot more pleasant, one of them being **JSX**—the ability to write HTML code inside your React files. (You can also write CSS in React files, which is dubbed **inline-CSS**. There will be more on this and JSX later.).
+You can totally learn React if you have experience with HTML, CSS, and, ideally, JavaScript. Knowing JavaScript will make your life much easier when learning React, since JavaScript is the language that React uses; hence, React and vanilla JavaScript are syntactically and conceptually similar. However, even if you have no experience with vanilla JavaScript, you can still learn React if you put in the work. I personally jumped straight into React because I'm impatient, which meant I had to teach myself JavaScript _and_ React simultaneously. I made it out the other side relatively unscathed, but I highly recommend you save yourself some headache and learn vanilla JavaScript first, then React. And if you have zero programming experience, then your first priority should be to learn HTML, CSS, JavaScript, then React, in that order.
+
+As I stated above, JavaScript is the foundation of React. React is a library built on top of the language, which means that it comes with many useful new features. One fundamental feature is **JSX**—the ability to write HTML code inside your React files. Another key feature is **inline-CSS**—the ability to write CSS in React files. In addition to being two of the most fundamental and most frequently used features, JSX and inline-CSS are a testament to how tightly integrated HTML, CSS, and JavaScript are in React. Have fun discovering all the other cool features on your own!
 
 
 ## How does React work?
@@ -101,7 +103,7 @@ Another key thing to know is that React uses a tree hierarchy to internally stru
 
 <br />
 
-I will end this section on one final key point to understand about React. Remember when I mentioned the Virtual DOM at the start of this section? Well, it’s essentially a copy of the browser DOM (HTML tree) that React stores in memory. React does this for efficiency’s sake: React makes changes directly to the Virtual DOM, and then renders only the differences between the Virtual DOM and the browser DOM. With vanilla JS, the browser DOM would need to re-render itself entirely on each update, which is computationally much more expensive. Don’t worry if this is slightly confusing, things will become more clear as you get more practice coding React. For now, just know that React makes web dev life much easier.
+I will end this section on one final key point to understand about React. Remember when I mentioned the Virtual DOM at the start of this section? Well, it’s essentially a copy of the browser DOM (HTML tree) that React stores in memory. React does this for efficiency’s sake: React makes changes directly to the Virtual DOM, and then renders only the differences between the Virtual DOM and the browser DOM. With vanilla JavaScript, the browser DOM would need to re-render itself entirely on each update, which is computationally much more expensive. Don’t worry if this is slightly confusing, things will become more clear as you get more practice coding React. For now, just know that React makes web dev life much easier.
 
 <br />
 
