@@ -32,7 +32,7 @@ What exactly is React? Let’s begin with the fun explanation by starting with t
 
 <br />
 
-As for the more technical (and arguably more boring) explanation, React is a JavaScript library made for one purpose: to make the creation of UIs way more efficient than older methods. It’s essentially an extension of vanilla JS that comes with a small but powerful API that serves as a bridge between the programmer and the **DOM** (DOM stands for **Document Object Model** ,the tree structure that HTML uses to arrange elements on the page). Developers no longer have to manually communicate every update to the browser. Instead, developers simply tell React what to change. It'll then use something called the **Virtual DOM** to update the browser (more on this later).
+As for the more technical (and arguably more boring) explanation, React is a JavaScript library made for one purpose: to make the creation of UIs way more efficient than older methods. It’s essentially an extension of vanilla JS that comes with a small but powerful API that serves as a bridge between the programmer and the **DOM** (DOM stands for **Document Object Model**, the tree structure that HTML uses to arrange elements on the page). Developers no longer have to manually communicate every update to the browser. Instead, developers simply tell React what to change. It'll then use something called the **Virtual DOM** to update the browser (more on this later).
 
 <br />
 
@@ -113,7 +113,7 @@ I will end this section on one final key point to understand about React. Rememb
 <br />
 
 ## When to React and when not to React?
-I just spent lots of time describing what React is great at and how it has ushered in a new paradigm into the web dev universe. However, React doesn"t need to be used for EVERYTHING web-related. For instance, if all you want is a simple blog site, making a React app would be overkill, at least for 99% of blogs out there. 
+I just spent lots of time describing what React is great at and how it has ushered in a new paradigm into the web dev universe. However, React doesn't need to be used for EVERYTHING web-related. For instance, if all you want is a simple blog site, making a React app would be overkill, at least for 99% of blogs out there. 
 
 You should strongly consider React when you are building something that is **highly interactive**. This is exactly what React was built for. Projects like messenger apps, social media apps, board games, audio workstations, and notetaking and productivity apps are where React will shine brightest.
 
