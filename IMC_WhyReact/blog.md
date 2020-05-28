@@ -125,7 +125,7 @@ Now comes the fun part—coding! In this final section, I have included several 
 
 I made these examples as easy as I could manage, but there is bound to be some syntax that's confusing if you're new to React. This is unavoidable, as some lines are required for all of the code to function. I have explained the essential portions in comments, but don't worry about the parts you don't understand. Instead, try to get a feel for how React code flows and is structured. In due time, everything will make sense! 
 
-For each example, I have embedded links to CodeSandBox so that you can play around with the code yourself and see it being rendered in the browser.
+For each example, I have embedded links to CodeSandBox so that you can play around with the code yourself and see it being rendered in the browser (highly encouraged!). Keep in mind that I designed these examples to demonstrate the basics. You can do **much more** fancy and creative things with React!
 
 1. <a href="https://codesandbox.io/s/react-hooks-usestate-j5iu3?file=/src/index.js">React class component</a>
 ```js
