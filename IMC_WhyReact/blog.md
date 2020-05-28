@@ -123,7 +123,7 @@ I have tried to make these examples as easy to follow as possible, but there is 
 
 For each example, I have embedded links to CodeSandBox so that you can play around with the code yourself and see it being rendered in the browser.
 
-1. <a href="https://codesandbox.io/s/react-hooks-usestate-kviru?file=/src/index.js">React class component</a>
+1. <a href="https://codesandbox.io/s/react-hooks-usestate-j5iu3?file=/src/index.js">React class component</a>
 ```js
 import React from "react"; 
 import ReactDOM from "react-dom";
@@ -143,15 +143,15 @@ class NewComponent extends React.Component {
 ReactDOM.render(
   <NewComponent />,
   document.getElementById("root")
-)
+);
 ```
 
 <br />
 
-2. <a href="https://codesandbox.io/s/react-hooks-usestate-g50ik?file=/src/index.js:0-487">React functional component (more popular)</a>
+2. <a href="https://codesandbox.io/s/react-hooks-usestate-54p5z?file=/src/index.js">React functional component (more popular)</a>
 ```js
 import React from 'react';
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom';
 
 // Functional components are becoming more popular than class components, since they are more flexible and can perform the same duties with less code.
 function AnotherComponent() {
@@ -170,10 +170,10 @@ ReactDOM.render(
 
 <br />
 
-3. <a href="https://codesandbox.io/s/react-hooks-usestate-l2x01">React JSX</a>
+3. <a href="https://codesandbox.io/s/react-hooks-usestate-r0uk0?file=/src/index.js">React JSX</a>
 ```js
 import React from 'react';
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom';
 
 let anime = "Hunter x Hunter";
 
@@ -188,10 +188,10 @@ ReactDOM.render(
 
 <br />
 
-4. <a href="https://codesandbox.io/s/react-hooks-usestate-fc0mx">React inline CSS </a>
+4. <a href="https://codesandbox.io/s/react-hooks-usestate-bfkb3?file=/src/index.js">React inline CSS </a>
 ```js
 import React from 'react';
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom';
 
 let anime = "Hunter x Hunter"
 let element = 
@@ -214,7 +214,7 @@ ReactDOM.render(
 
 <br />
 
-5. <a href="https://codesandbox.io/s/react-hooks-usestate-8twy2">React component with props</a>
+5. <a href="https://codesandbox.io/s/react-hooks-usestate-1ewyf?file=/src/index.js">React component with props</a>
 ```js
 import React from "react";
 import ReactDOM from "react-dom";
@@ -257,7 +257,7 @@ ReactDOM.render(
 
 <br />
 
-6. <a href="https://codesandbox.io/s/react-hooks-usestate-v94x0?file=/src/index.js">React component with state</a>
+6. <a href="https://codesandbox.io/s/react-hooks-usestate-lr8nj?file=/src/index.js">React component with state</a>
 ```js
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
