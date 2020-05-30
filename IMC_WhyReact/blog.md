@@ -5,6 +5,10 @@
 # What's with all the craze about React?
 ### by Joey Hua
 
+## DISCLAIMER:
+
+This blog was intended for readers who have experience with HTML, CSS, and ideally, JavaScript. If you have no clue what I'm talking about, you will probably find this blog hard to understand. 
+
 ## A Little Introduction
 
 Now is a great time to learn web development. HTML, CSS, and Javascript are the core trio of languages to learn when it comes to mastering front-end skills. If you’re familiar with any of those, you've most likely heard of React.js, the flashy and widely popular new `div` on the `block` (have a sense of humor please!). Over the past five years or so, React has quickly become the go-to JavaScript library for building dynamic web apps. I emphasize "dynamic" because “static” is becoming a thing of the past. With the rapid advancement of today's technology, companies and consumers need websites that are flexible and can make UI and data changes seamlessly. Just think of your favorite destinations on the Internet, such as YouTube, Instagram, or Facebook—you will realize that these are _all_ dynamic web apps (more on this later). 
@@ -129,7 +133,7 @@ For each example, I have embedded links to CodeSandBox so that you can play arou
 
 1. <a href="https://codesandbox.io/s/react-hooks-usestate-j5iu3?file=/src/index.js">React class component</a>
 
-> Components are the building blocks of React apps. Here's an example of a simple React class component that renders a sentence inside of a `div`. Click the title (next to "1.") to play with the code on CodeSandBox!  
+> Components are the building blocks of React apps. Here's an example of a simple React **class component** that renders a sentence inside of a `div`. Click the title (next to "1.") to play with the code on CodeSandBox!  
 
 ```js
 import React from "react"; 
@@ -159,7 +163,7 @@ ReactDOM.render(
 
 > As I mentioned earlier, components can also be written as functions in React. 
 
-> Generally speaking, class components require more boilerplate than functional components to perform the same tasks. However, class components have access to an array of <a href='https://blog.bitsrc.io/react-16-lifecycle-methods-how-and-when-to-use-them-f4ad31fb2282'>lifecycle methods</a> that allow for precise control over rendering, updating, etc.
+> Generally speaking, class components require more boilerplate than **functional components** to perform the same tasks. However, class components have access to an array of <a href='https://blog.bitsrc.io/react-16-lifecycle-methods-how-and-when-to-use-them-f4ad31fb2282'>lifecycle methods</a> that allow for precise control over rendering, updating, etc.
 
 > Here's the same component as the one in Example 1, but in functional form instead. 
 
