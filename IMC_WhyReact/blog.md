@@ -156,6 +156,15 @@ ReactDOM.render(
 <br />
 
 2. <a href="https://codesandbox.io/s/react-hooks-usestate-54p5z?file=/src/index.js">React functional component (more popular)</a>
+
+> As I mentioned earlier, components can also be written as functions in React. 
+
+Generally speaking, class components require more boilerplate than functional components to perform the same tasks. However, class components have access to an array of <a href='https://blog.bitsrc.io/react-16-lifecycle-methods-how-and-when-to-use-them-f4ad31fb2282'>lifecycle methods</a> that allow for precise control over rendering, updating, etc.
+
+Until the introduction of <a href='https://reactjs.org/docs/hooks-intro.html'>hooks</a>, functional components were stateless—they COULD NOT use state, unlike class components. With hooks, we can use state and control lifecycle events in functional components, although it's a bit different from how it's done in class components.
+
+Here's the same component as the one in Example 1, but in functional form instead. 
+
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -178,6 +187,9 @@ ReactDOM.render(
 <br />
 
 3. <a href="https://codesandbox.io/s/react-hooks-usestate-r0uk0?file=/src/index.js">React JSX</a>
+
+> Here's a simple example of <a hef='https://reactjs.org/docs/introducing-jsx.html'>JSX</a>. Here, I'm assigning a `div` to the variable `element` and embedding the variable `anime` inside my content. JSX is super useful since it allows you to interweave JavaScript and HTML code together! 
+
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -196,6 +208,11 @@ ReactDOM.render(
 <br />
 
 4. <a href="https://codesandbox.io/s/react-hooks-usestate-bfkb3?file=/src/index.js">React inline CSS </a>
+
+> In React, there are two ways to apply styling to components. The first is <a href='https://www.w3schools.com/react/react_css.asp'>Inline-CSS</a>, which is the focus of this example. The other way is to import external style sheets.
+
+This example builds off of the code in Example 3. The only addition is that I applied styling to the `div` element in the form of a JavaScript object. 
+
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -222,6 +239,13 @@ ReactDOM.render(
 <br />
 
 5. <a href="https://codesandbox.io/s/react-hooks-usestate-1ewyf?file=/src/index.js">React component with props</a>
+
+> **Props** are essentially parameters you pass to your components in order to control functionality. 
+
+In this example, I use a functional component to render a list of anime titles as a `ul`. There are two props—_styles_ allows me to pass whatever CSS I want, and _animes_ allows me to control the content I want rendered inside of the `ul`.
+
+The props names and locations are defined within my component, but the actual content of those props is defined externally. Scroll to the bottom of this example to see how it's done!
+
 ```js
 import React from "react";
 import ReactDOM from "react-dom";
@@ -265,6 +289,13 @@ ReactDOM.render(
 <br />
 
 6. <a href="https://codesandbox.io/s/react-hooks-usestate-lr8nj?file=/src/index.js">React component with state</a>
+
+> Last, but definitely not least, here's an example of <a href='https://daveceddia.com/visual-guide-to-state-in-react/'>**state**</a>. If you're familiar with object-oriented programming, think of state as class attributes, except you can update it throughout a component's lifecycle and pass it between different components (<a href='https://reactjs.org/docs/lifting-state-up.html'>lifting state</a>). 
+
+In this example, I have two state variables—_animes_ holds the anime titles that are waiting to be recommended, and _recs_ holds the anime titles that have been recommended. These two state variables are updated whenever a button is pressed. Take your time to mess around with the code in this example, since there are quite a few fundamental concepts to digest.
+
+State is one of the most important concepts to grasp in React, so I definitely encourage you to get a ton of practice with it! 
+
 ```js
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
