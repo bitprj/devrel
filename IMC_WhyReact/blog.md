@@ -159,11 +159,11 @@ ReactDOM.render(
 
 > As I mentioned earlier, components can also be written as functions in React. 
 
-Generally speaking, class components require more boilerplate than functional components to perform the same tasks. However, class components have access to an array of <a href='https://blog.bitsrc.io/react-16-lifecycle-methods-how-and-when-to-use-them-f4ad31fb2282'>lifecycle methods</a> that allow for precise control over rendering, updating, etc.
+> Generally speaking, class components require more boilerplate than functional components to perform the same tasks. However, class components have access to an array of <a href='https://blog.bitsrc.io/react-16-lifecycle-methods-how-and-when-to-use-them-f4ad31fb2282'>lifecycle methods</a> that allow for precise control over rendering, updating, etc.
 
-Until the introduction of <a href='https://reactjs.org/docs/hooks-intro.html'>hooks</a>, functional components were stateless—they COULD NOT use state, unlike class components. With hooks, we can use state and control lifecycle events in functional components, although it's a bit different from how it's done in class components.
+> Until the introduction of <a href='https://reactjs.org/docs/hooks-intro.html'>hooks</a>, functional components were stateless—they COULD NOT use state, unlike class components. With hooks, we can use state and control lifecycle events in functional components, although it's a bit different from how it's done in class components.
 
-Here's the same component as the one in Example 1, but in functional form instead. 
+> Here's the same component as the one in Example 1, but in functional form instead. 
 
 ```js
 import React from 'react';
@@ -211,7 +211,7 @@ ReactDOM.render(
 
 > In React, there are two ways to apply styling to components. The first is <a href='https://www.w3schools.com/react/react_css.asp'>Inline-CSS</a>, which is the focus of this example. The other way is to import external style sheets.
 
-This example builds off of the code in Example 3. The only addition is that I applied styling to the `div` element in the form of a JavaScript object. 
+> This example builds off of the code in Example 3. The only addition is that I applied styling to the `div` element in the form of a JavaScript object. 
 
 ```js
 import React from 'react';
@@ -242,9 +242,9 @@ ReactDOM.render(
 
 > **Props** are essentially parameters you pass to your components in order to control functionality. 
 
-In this example, I use a functional component to render a list of anime titles as a `ul`. There are two props—_styles_ allows me to pass whatever CSS I want, and _animes_ allows me to control the content I want rendered inside of the `ul`.
+> In this example, I use a functional component to render a list of anime titles as a `ul`. There are two props—_styles_ allows me to pass whatever CSS I want, and _animes_ allows me to control the content I want rendered inside of the `ul`.
 
-The props names and locations are defined within my component, but the actual content of those props is defined externally. Scroll to the bottom of this example to see how it's done!
+> The props names and locations are defined within my component, but the actual content of those props is defined externally. Scroll to the bottom of this example to see how it's done!
 
 ```js
 import React from "react";
