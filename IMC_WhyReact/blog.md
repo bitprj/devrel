@@ -1,8 +1,3 @@
-# LINK TO MY LOOM VIDEO:
-<a href='https://www.loom.com/share/c085de33c3fa4e9e8d495f91c9cb71ad'>Click me!</a>
-
-<br />
-
 <div align="center">
   <img src="./img/0.png" />
 </div>
@@ -133,6 +128,9 @@ I made these examples as easy as I could manage, but there is bound to be some s
 For each example, I have embedded links to CodeSandBox so that you can play around with the code yourself and see it being rendered in the browser (highly encouraged!). Keep in mind that I designed these examples to demonstrate the basics. You can do **many more** fancy and creative things with React!
 
 1. <a href="https://codesandbox.io/s/react-hooks-usestate-j5iu3?file=/src/index.js">React class component</a>
+
+Components are the building blocks of React apps. Here's an example of a simple React class component that renders a sentence inside of a `div`. Click the title (next to "1.") to play with the code on CodeSandBox!  
+
 ```js
 import React from "react"; 
 import ReactDOM from "react-dom";
