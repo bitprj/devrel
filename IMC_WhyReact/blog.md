@@ -129,7 +129,7 @@ For each example, I have embedded links to CodeSandBox so that you can play arou
 
 1. <a href="https://codesandbox.io/s/react-hooks-usestate-j5iu3?file=/src/index.js">React class component</a>
 
-Components are the building blocks of React apps. Here's an example of a simple React class component that renders a sentence inside of a `div`. Click the title (next to "1.") to play with the code on CodeSandBox!  
+> Components are the building blocks of React apps. Here's an example of a simple React class component that renders a sentence inside of a `div`. Click the title (next to "1.") to play with the code on CodeSandBox!  
 
 ```js
 import React from "react"; 
