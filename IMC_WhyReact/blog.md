@@ -1,3 +1,8 @@
+# LINK TO MY LOOM VIDEO:
+<a href='https://www.loom.com/share/c085de33c3fa4e9e8d495f91c9cb71ad'>Click me!</a>
+
+<br />
+
 <div align="center">
   <img src="./img/0.png" />
 </div>
