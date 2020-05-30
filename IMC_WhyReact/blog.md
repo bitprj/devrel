@@ -7,11 +7,11 @@
 
 ## DISCLAIMER:
 
-This blog was intended for readers who have experience with HTML, CSS, and ideally, JavaScript. If you have no clue what I'm talking about, you will probably find this blog hard to understand. 
+_This blog was intended for readers who have experience with HTML, CSS, and ideally, JavaScript. If you have no clue what I'm talking about, you will probably find this blog hard to understand._ 
 
 ## A Little Introduction
 
-Now is a great time to learn web development. HTML, CSS, and Javascript are the core trio of languages to learn when it comes to mastering front-end skills. If you’re familiar with any of those, you've most likely heard of React.js, the flashy and widely popular new `div` on the `block` (have a sense of humor please!). Over the past five years or so, React has quickly become the go-to JavaScript library for building dynamic web apps. I emphasize "dynamic" because “static” is becoming a thing of the past. With the rapid advancement of today's technology, companies and consumers need websites that are flexible and can make UI and data changes seamlessly. Just think of your favorite destinations on the Internet, such as YouTube, Instagram, or Facebook—you will realize that these are _all_ dynamic web apps (more on this later). 
+Now is a great time to learn web development! HTML, CSS, and Javascript are the core trio of languages to learn when it comes to mastering front-end skills. If you’re familiar with any of those, you've most likely heard of React.js, the flashy and widely popular new `div` on the `block` (have a sense of humor please!). Over the past five years or so, React has quickly become the go-to JavaScript library for building dynamic web apps. I emphasize "dynamic" because “static” is becoming a thing of the past. With the rapid advancement of today's technology, companies and consumers need websites that are flexible and can make UI and data changes seamlessly. Just think of your favorite destinations on the Internet, such as YouTube, Instagram, or Facebook—you will realize that these are _all_ dynamic web apps (more on this later). 
 
 I wrote this blog to answer the one question undoubtedly bouncing around in your mind—what’s with all the craze about React? This is something I myself didn’t understand when I first began learning React and wish someone had told me. I’m a firm believer in understanding why you’re doing what you’re doing; thus, I believe addressing this topic will definitely make you a better React developer and spur you on in your learning.
 
