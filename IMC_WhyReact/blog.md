@@ -186,7 +186,7 @@ ReactDOM.render(
 
 3. <a href="https://codesandbox.io/s/react-hooks-usestate-r0uk0?file=/src/index.js">React JSX</a>
 
-> Here's a simple example of <a href='https://reactjs.org/docs/introducing-jsx.html'>JSX</a>. Here, I'm assigning a `div` to the variable `element` and embedding the variable `anime` inside my content. JSX is super useful since it allows you to interweave JavaScript and HTML code together! 
+> Here's a simple example of **JSX**. I'm assigning a `div` to the variable _element_ and embedding the variable _anime_ inside my content. JSX is super useful since it allows you to interweave JavaScript and HTML code together! 
 
 ```js
 import React from 'react';
@@ -207,7 +207,7 @@ ReactDOM.render(
 
 4. <a href="https://codesandbox.io/s/react-hooks-usestate-bfkb3?file=/src/index.js">React inline CSS </a>
 
-> In React, there are two ways to apply styling to components. The first is <a href='https://www.w3schools.com/react/react_css.asp'>Inline-CSS</a>, which is the focus of this example. The other way is to import external style sheets.
+> In React, there are two ways to <a href='https://www.w3schools.com/react/react_css.asp'>apply styling to components</a>. The first is **inline CSS**, which is the focus of this example. The other way is to import external style sheets.
 
 > This example builds off of the code in Example 3. The only addition is that I applied styling to the `div` element in the form of a JavaScript object. 
 
@@ -242,7 +242,7 @@ ReactDOM.render(
 
 > In this example, I use a functional component to render a list of anime titles as a `ul`. There are two props—_styles_ allows me to pass whatever CSS I want, and _animes_ allows me to control the content I want rendered inside of the `ul`.
 
-> The props names and locations are defined within my component, but the actual content of those props is defined externally. Scroll to the bottom of this example to see how it's done!
+> The prop names and locations are defined within my component, but the actual content of those props is defined externally. Scroll to the bottom of this example to see how it's done!
 
 ```js
 import React from "react";
