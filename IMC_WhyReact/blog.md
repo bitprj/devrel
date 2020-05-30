@@ -372,7 +372,7 @@ Hopefully, you now have a better understanding of what React is and why it's use
 
 <a href="https://reactjs.org/tutorial/tutorial.html">React Tic-Tac-Toe Beginner Tutorial</a>
 
-<a href="https://www.freecodecamp.org/news/yes-react-is-taking-over-front-end-development-the-question-is-why-40837af8ab76/">An article that goes more in-depth on what this blog covers</a>
+<a href="https://reactjs.org/docs/state-and-lifecycle.html">State and Lifecycle</a>
 
 <a href="https://scrimba.com/p/p7P5Hd/Index">Scrimba: A Great Interactive Resource for learning how to write React code</a>
 
