@@ -6,26 +6,26 @@
 
 ### :pushpin: Step 1
 **TITLE:**    
-Intro to Multiple Logistic Regression in R
+How Multiple Logistic Regression in R can determine what streaming service you used to watch Movies!
 
 **TOPIC:**    
 Multiple Logistic Regression
 
 **DESCRIPTION (5-7+ sentences):**    
-This will be about the modeling process of creating a multiple logistic regression in R using the movies recommendation dataset. The main goal is to classify which streaming service did the viewers use to watch the movie. The first step would be to 
+This will be about the modeling process of creating a multiple logistic regression in R using the movies recommendation dataset. The main goal is to classify which streaming service did the viewers use to watch a particular movie. The first step would be to explain the mathematical concepts behind how logistic regression classifies specific data points on where each person in the sample belongs in for streaming services. The next step would be to go through the coding process on how I would build the model in R using the neccessary packages to do so. After that, I would conclude the results I would have received from my model.
 
 ### :pushpin: Step 2
 :family: **TARGET AUDIENCE (3-5+ sentences):**    
-{{Insert_description_here}}
+The target audience would be college students (at the minimum, college freshman) that have some exposure to Statistics whether it would be through taking an intrdocutory class in college or taking AP Statistics in high school.
 
 ### :pushpin: Step 3
 > Outline your learning/teaching structure: 
 
 **Beginning (2-3+ sentences):**    
-{{Insert_here}}
+This is where I'll introduce the mathematics behind multiple logistic regression. I'll mention how the binary variables (1 and 0) still apply here for datapoint group 1 and datapoint group 0, but mention how this extends beyond simple logistic regression by classifying these binary variables in the multiple categories that are greater than 2.
 
 **Middle (2-3+ sentences):**    
-{{Insert_here}}
+This is where I'll explain the model building process for the logistic regression model. The primary idea would be to fit the streaming service variables against the watcher's ID because the ID pertains to the specfic user that watched the movie and we're trying to see which streaming service did they use.
 
 **End (2-3+ sentences):**    
-{{Insert_here}}
+This is where I conclude our findings for creating the model. I'll mention how with the power of logistic regression, you can determine what streaming site did your friends use to watch their favorite movie.
