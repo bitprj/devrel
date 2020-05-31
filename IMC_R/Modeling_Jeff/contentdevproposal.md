@@ -6,13 +6,13 @@
 
 ### :pushpin: Step 1
 **TITLE:**    
-{{Insert_title_here}}
+Intro to Multiple Logistic Regression in R
 
 **TOPIC:**    
-{{Insert_topic_here}}
+Multiple Logistic Regression
 
 **DESCRIPTION (5-7+ sentences):**    
-{{Insert_description_here}}
+This will be about the modeling process of creating a multiple logistic regression in R using the movies recommendation dataset. The main goal is to classify which streaming service did the viewers use to watch the movie. The first step would be to 
 
 ### :pushpin: Step 2
 :family: **TARGET AUDIENCE (3-5+ sentences):**    
