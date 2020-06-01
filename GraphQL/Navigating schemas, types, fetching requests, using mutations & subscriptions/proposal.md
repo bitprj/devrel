@@ -13,7 +13,7 @@ GraphQL
 
 **DESCRIPTION (5-7+ sentences):**    
 
-GraphQL, a language for APIs, was first developed by Facebook. After it was introduced, it became extremely popular as some considered it a better API than rest API because underfetching and overfetching data no longer became a problem. GraphQL allows us to specify the root field and the payload from the client side, giving greater flexibility to manipulate the data we want to request with a single endpoint. Furthermore, GraphQL has special features of allowing the client to update data, commonly known as mutations, as well as receive real-time data, the concept of subscriptions. These are the core concepts I will be covering within my blog. 
+GraphQL, a language for APIs, was first developed by Facebook. After it was introduced, it became extremely popular as some considered it a better API than rest API because underfetching and overfetching data no longer became a problem. GraphQL allows us to specify the root field and the payload from the client side, giving greater flexibility to manipulate the data we want to request from the server. Furthermore, GraphQL has special features of allowing the client to update data, commonly known as mutations, as well as receive real-time data, the concept of subscriptions. These are the core concepts I will be covering within my blog. 
 
 ### :pushpin: Step 2
 :family: **TARGET AUDIENCE (3-5+ sentences):**    
