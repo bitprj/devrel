@@ -1,5 +1,5 @@
 TITLE:
-Everything You Need To Know About Styling Your Own Mini City
+Styling Your Mini City With CSS
 
 TOPIC:
 Introduction To CSS
