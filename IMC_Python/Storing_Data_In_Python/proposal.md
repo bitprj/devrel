@@ -1,3 +1,4 @@
+### :pushpin: Step 1
 **TITLE:**    
 Storing Data in Python
 
