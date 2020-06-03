@@ -59,7 +59,7 @@
 
 ​	In that TwiML Bin, let's write some code so the program knows what to say during the call, and copy the URL for the bin and save it as an Application Setting with all our other Twilio credentials. 
 
-<img src=".\pics\12.PNG" style="zoom:75%;" />
+<img src= ".\pics\12.png" style="zoom:75%;" />
 
 ​	Now we can go back and change the code like so:
 
