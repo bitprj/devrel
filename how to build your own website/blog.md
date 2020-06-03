@@ -69,7 +69,7 @@ To create the title of our website, add text between the `<title></title>` tags:
 ...
 ```
 
-Even though it won't be displayed on the web page, having a title is important because it represents your website in search engines, becomes the default name of your website when bookmarked, and allows for easy navigation of this page of your website.
+Even though it won't be displayed on the web page, having a title is important because it represents your website in search engines, becomes the default name of your website when it's bookmarked, and allows for easy navigation of this page of your website.
 
 To add text to the body of the web page, we will use a heading tag `<h1></h1>`, which is a ranked tag that can be numbered up to `<h6></h6>`, and a paragraph tag `<p></p>` between the opening and closing tags of the `body` element. Write any text you would like to feature on your web page between these tags:
 
