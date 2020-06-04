@@ -41,7 +41,7 @@ Group 1            |  Group 2 | Group 3
 A restriction we have is access to digital images of rocks on the web, not physical rock specimens themselves. That's ok, we'll cluster based on color instead.
 
 
-If we consider the digital images as collections of data points that represent pixeled coordinates, we can try applying some math (K-Means) to its numbers. 
+If we consider the digital images as collections of data points that represent pixeled coordinates, we can try applying some math (K-Means) to those data points, represented as decimals organized as a table of some number of rows and columns
 
 Packages required for the implementaton include:
 
@@ -67,7 +67,7 @@ To see the contents of these numbers, simply print them. You should see:
 
 ![](https://i.imgur.com/kPMrdqB.png)
 
-It is also important to understand the size of image. In python, we have converted it to a numpy data storage type. To see its dimensions, run:
+It is also important to understand the size of image. In python, we have converted it to a numpy data storage type, using "io.imread()". To see its dimensions, run:
 
 ```
 img.shape #(500, 500, 4)
@@ -87,7 +87,7 @@ plt.figure(figsize=(6, 6)) # plot initial image
 plt.imshow(img_init)
 ```
 
-- We use *matplotlib*'s plotting function and *figsize=(6,6)* is just the size of our output viewing window in the colab notebook.
+We use *matplotlib*'s plotting function and *figsize=(6,6)* is just the size of our output viewing window in the colab notebook.
 
 
 It should appear exactly as expected.
@@ -112,7 +112,7 @@ clt = KMeans(n_clusters = k) # "pick out" the K-means tool from our collection o
 clt.fit(img) # apply the model to our data, the image
 ```
 
-Fitting the model means to apply our tool to our data, to familiarize our model with the contents of the data.
+Fitting the model means to apply our tool, Kmeans, familiarizing our model with the contents of the data. The relationship between our data and the output is "learned" by the algorithm. [Standord](https://stanford.edu/~cpiech/cs221/handouts/kmeans.html) provides a detailed explanation behind the theory and implementation of this algorithm.
 
 
 ## Handling the output
@@ -134,27 +134,28 @@ To represent the number of colors we want to observe and in what quantity they a
 ```
 label_indx = np.arange(0,len(np.unique(clt.labels_)) + 1) 
 ```
-- initializes an array of length == # clusters, set the indices for the histogram
+Initializes an array of length == # clusters. These are the set the indices for the histogram
 
 Each "data" point of the image array will consist of its own color class label, so we plot the frequency of each color.The more a certain color appears in an image, the more data points it will have associated with it
 
 ![](https://i.imgur.com/spfxuak.png)
 
-
-- since the output of this are two arrays and we only want to focus on the first one for the histogram, we use (_) to denote an empty storage, let the second array " go to nothing"
+Notice that the output of the above line are two arrays. At the moment, 67942 is the frequency that corresponds to the first class 0. 52586 corresponds to class 1. Grabbing only the first array, we name two variables below called "hist" and "_" and store both inside a tuple. "_" denotes empty storage as we do not need the secondary output.
 
 Normalize the numbers within the array to get proportions that amount to 1. 
 
 ![](https://i.imgur.com/f6vJfk4.png)
 
-- The proportions for each group (Group 0: 0.27, Group 1: 0.21...)
+The proportions for each class label. From above, the frequency count for some unknown color, 67942, makes up approximately 27% of all the colors. 
+
+## Figuring out the appropriate color labels
 
 Next, create a grid to hold our colors and their proportionate components. 
 
 ```
 hist_bar = np.zeros((50, 300, 3), dtype = "uint8") 
 ```
-- Initialize an array of some arbitary shape.
+'Np.zeros()' initializes an array of some arbitary shape. Here, we choose a shape that spans 50 pixels in height and 300 pixels in length.
 
 Loop over the percentage of each cluster and the color of each cluster. A loop is something that causes a command to repeat over and over for some duration, each time iterating over some variable, we iterate over 2 arrays containing the color frequencies and the cluster centers.
 
@@ -166,10 +167,9 @@ for (percent, color) in zip(hist,  clt.cluster_centers_):
       color.astype("uint8").tolist(), -1)
   startX = endX
 ```
+Colors are identified with 'color.astype("uint8")' that converts the numbers into another color representation that tells Python that a certain number will be identified as a particular color. Remember that initially, we converted the image into its numerical representation. This is just the undoing of that first process.
 
-- plot the relative percentage of each cluster
-
-- ```cv2.rectangle()``` builds the rectanglur grid, with sections that match the partitions of each color
+```cv2.rectangle()``` builds the rectanglur grid, with sections that match the partitions of each color
 
 ## Plotting the output
 
@@ -177,7 +177,7 @@ Plot both the original image and its color/quantity extraction.
 
 ![](https://i.imgur.com/xDGKYlr.jpg)
 
-- The first gray group has the largest proportion, followed by a brownish/red group and so on... Exact colors are not extracted, but with artistic perception and some shading involved, you could probably achieve it!
+The first gray group has the largest proportion, followed by a brownish/red group and so on... Exact colors are not extracted, but with artistic perception and some shading involved, you could probably achieve it!
 
 
 If we enlarge our K to 10, we'll see a wider variety of colors seen in the image. 
@@ -190,7 +190,7 @@ Testing for a new image for K = 5:
 
 ![](https://i.imgur.com/L3aNnM6.png)
 
-- Make note that the larger K is, the more computation and time it takes to complete
+Make note that the larger K is, the more computation and time it takes to complete
 
 
 
