@@ -5,7 +5,7 @@ The world of web development and design is rapidly growing. Whether you're estab
 For those who are beginners, this blog is a great way to ease into the basics of web development.
 
 In this tutorial, you will learn how to do the following:
-- Set up a code editor
+- Install a code editor
 
 - Code HTML, CSS, and JavaScript files
 
@@ -169,7 +169,7 @@ body {
 }
 ```
 
-You can customize the color of your web page and its text by using the `background` attribute and the `color` attribute respecitvely. Feel free to browse this [browser-supported colors list](https://www.w3schools.com/colors/colors_names.asp) and select any color you would like to use for your website. 
+You can customize the color of your web page and its text by using the `background` attribute and the `color` attribute, respectively. Feel free to browse this [browser-supported colors list](https://www.w3schools.com/colors/colors_names.asp) and select any color you would like to use for your website. 
 
 This is what your completed CSS file should look like:
 
@@ -181,7 +181,7 @@ Now, let us run our file again to review the stylizations we have added to our w
 
 ### Adding Interactivity: JavaScript File
 
-*JavaScript* is a programming language used in web development to add interactivity to websites through dynamic behavior such as buttons, pop-up windows, and so on. For our website, we will add an element that displays today's date on our website.
+*JavaScript* is a programming language used in web development to add interactivity to websites through dynamic behavior such as buttons, pop-up windows, and so on. For our website, we will add an element that displays today's date on our website, and the following JavaScript code we will use for this interactive feature is based on this [Microsoft Docs Module](https://docs.microsoft.com/en-us/learn/modules/build-simple-website/5-javascript-basics).
 
 Before we start coding our JavaScript file, we need to create an element in our HTML file to display our date by adding a set of `<p></p>` tags with an `id` attribute. This assigns a unique identity named `today` to an HTML element that can be stylized by CSS and/or manipulated by JavaScript. We also need to link our JavaScript file in the HTML file by adding a set of `<script></script>` tags with a `src` attribute to our head element:
 
