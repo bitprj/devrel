@@ -2,7 +2,9 @@
 
 Growing up, you might've heard the phrase, " a picture is worth a thousand words." In this age of rapidly growing information, there is a lot that can be extracted from pictures. Advancements with computer vision has allowed for self-driving cars to recognize and classify whether an object is a pedestrian crossing or a static road hazard up ahead. Another application are the fun instagram filters you might've seen on everyone's stories lately. Of course, every possible advancement the world appreciates today had stemmed from the most the most fundamental approaches or techniques in machine learning. 
 
-In machine learning, approaches that don't provide prediction but instead uncover insights from a given dataset are referred to as unsupervised. One such technique for image processing and information extraction is Kmeans clustering, a learning approach that aims to partition **n** data points into **k** groups.
+Machine learning involves the learning process machines undertake in order to understand data and provide some answers about the data. In the context of image processing, an application of machine learning could be the attempt to process an image digitally, with numbers that represent the pixels and colors as data. 
+
+Approaches that don't provide prediction or assume a correct set of outputs but instead uncover insights from a given dataset are referred to as unsupervised. One such technique for image processing and information extraction is Kmeans clustering, a learning approach that aims to partition **n** data points into **k** groups.
 
 ## Background on K-Means
 
