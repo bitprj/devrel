@@ -124,7 +124,7 @@ Let's observe what the model outputs so far after fitting. Run:
 
 ![](https://i.imgur.com/CZDhWav.png)
 
-- The first 3 datapoints belong to group *4* and the last 3 points belong to group *2*. Somewhere in between, there should be some assortment of 0s,1s, and 3s for the assigned group labels.
+The first 3 datapoints belong to group *4* and the last 3 points belong to group *2*. Somewhere in between, there should be some assortment of 0s,1s, and 3s for the assigned group labels.
 
 
 
