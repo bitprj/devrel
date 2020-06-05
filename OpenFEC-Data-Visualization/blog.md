@@ -1,9 +1,9 @@
 # Introduction to OpenFEC Data Visualization with ChartJs
 ## Purpose
 
-The importance of understanding politics and the implications of being informed voters are profound. The ability for citizens of a country to understand the financial spending of candidates running for office (at any level) allows one to understand where a candidate's priorities lie. Observing and analyzing financial trends allows one to make predictions about who may win a particular election. A lot of the time, however, it’s easy to get lost in the numbers! 
+The importance of understanding the implications of being an informed voter is profound. The ability for citizens of a country to understand the financial spending of candidates running for office (at any level—presidential, state, or local) allows one to understand where a candidate's priorities lie. Observing and analyzing financial trends allows one to make predictions about who may win a particular election. A lot of the time, however, it’s easy to get lost in the numbers! 
 
-Thus, being able to visualize this data in a graphical manner helps in truly comparing and understanding a candidate’s financial spending in comparison to that of others in an easy manner. However, how do you verify the graphs you see online are indeed accurate? 
+Thus, being able to visualize this data helps in comparing and understanding the financial spending of candidates. However, how do you verify the graphs you see online are indeed accurate? 
 
 It’s a catch-22 situation! Either you receive accurate numbers (hard to analyze) or potentially biased graphs. In this tutorial, you’ll learn how to make the graph yourself, using the official financial data available at the OpenFEC API.
 
@@ -268,12 +268,17 @@ Let's see how the graph looks! Save your `OpenFEC.html` and `OpenFEC.js` files. 
 
 ## Conclusion
 
-From this tutorial, you should have learned
+From this tutorial, you should have learned technical skills such as
 
 * How to use the OpenFEC API to obtain desired information
 * What JSON is
 * How to make an API request from your JavaScript code using `XMLHttpRequest` and how to extract information from the response
 * How to visualize data using ChartJS in order to make a bar chart
+
+Moreover, in terms of content, you should have learned
+
+* The importance of using reliable financial data so that you can be an informed voter, make accurate predictions, and draw unbiased conclusions
+* The importance of visualizing financial data so that you can see and analyze complex information in an easy to understand manner
 
 While this example was simple, it served to illustrate the power of understanding how to use APIs to extract information and how to use this information to create your own charts. The variety of information you can explore even within one API and how you can visualize the information for trend analysis is an extremely powerful tool that helps in discovering a multitude of information.
 
