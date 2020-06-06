@@ -55,7 +55,7 @@ Then, check the shape of the dataframe to see how large it is.
 diabetes_data.shape
 ```
 
-![](https://www.picturepaste.ca/images/2020/05/25/Diabetes-Shape.png)
+![](https://snipboard.io/iaSIg8.jpg)
 
 There are 442 patients in total with ten specific features.
 
@@ -66,7 +66,7 @@ Let's look at the first five rows to see what type of features we're dealing wit
 diabetes_data.head()
 ```
 
-![](https://www.picturepaste.ca/images/2020/05/22/Diabetes-Columns.png)
+![](https://snipboard.io/L1SrbR.jpg)
 
 We can see that the ten features would be: 
 - Age: the age of the patient
