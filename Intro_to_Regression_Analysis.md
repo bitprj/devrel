@@ -94,7 +94,7 @@ We're going to add the column to our given dataset and calculate the summary sta
 diabetes_data.describe().transpose()
 ```
 
-![](https://www.picturepaste.ca/images/2020/05/22/Diabetes-Summary-Statistics.png)
+![](https://snipboard.io/80hCjY.jpg)
 
 Every value is scaled differently right now, but we want to scale each feature with an equal metric so that our machine learning model is less ambiguous when it interprets the main data given. To scale them with equal metrics, standardize each feature to have a mean of 0 and a standard deviation of 1. This will give our coefficients a higher level of interpretability.
 
@@ -112,7 +112,7 @@ print('Training data size: (%i,%i)' % X_train.shape)
 print('Testing data size: (%i,%i)' % X_test.shape)
 ```
 
-![](https://www.picturepaste.ca/images/2020/05/25/Diabetes-ML-Shape.png)
+![](https://snipboard.io/36heDx.jpg)
 
 Now, we can scale the training and testing data to give it a mean of 0 and a standard deviation of 1. We should also print the results to find the training set mean and standrd deviation. We do this using Scikit-learn's `StandardScaler()` package, which removes the mean, converts it to 0, and creates a unified standard deviation of 1.
 
@@ -126,7 +126,7 @@ print(X_train.mean(axis=0))
 print('Training set standard deviation by feature:')
 print(X_train.std(axis=0))
 ```
-![](https://www.picturepaste.ca/images/2020/05/25/Training-Set.png)
+![](https://snipboard.io/x510e7.jpg)
 
 The training set mean is equal to 0 and the standard deviation is equal to 1.
 
@@ -138,7 +138,7 @@ regression_model = LinearRegression()
 regression_model.fit(X_train,y_train)
 ```
 
-![](https://www.picturepaste.ca/images/2020/05/25/Diabetes-Linear-Regression.png)
+![](https://snipboard.io/x23LFg.jpg)
 
 Look at the coefficients of each feature to interpret what happens for each increase in a feature.
 
@@ -150,7 +150,7 @@ print('Intercept = %f\n' % intercept)
 print(coef)
 ```
 
-![](https://www.picturepaste.ca/images/2020/05/25/Diabetes-Coefficients.png)
+![](https://snipboard.io/zDhnQ4.jpg)
 
 The y-intercept (B0) for the function is 15127.195467, which equals to the mean Blood Pressure level for all of the training data when their coefficients are equal to the mean values (which equal to zero). The sign difference for each coeffcient should also be taken into account. For instance, an increase in age results in an increase in the median blood pressure level. An increase in T-Cells (s1 column) results in a decrease in the median blood pressure level. These factors make sense because the older you get, the more your health declines and T-Cells actively try to improve your immune system to stay healthy. 
 
@@ -163,7 +163,7 @@ test_rmse = np.sqrt(mean_squared_error(y_test, y_pred))
 print('Test RMSE: %f' % test_rmse)
 ```
 
-![](https://www.picturepaste.ca/images/2020/05/25/Diabetes-RMSE.png)
+![](https://snipboard.io/AlvWYs.jpg)
 
 The RMSE score means that the error in the predicted median blood pressure level is by approximately 5528 mmHg. Given that the range of blood pressure levels is between 25000 mmHg and 34600 mmHg, this is an ordinary difference. This difference occurred because the relationship between the features and the predicted values isn't perfectly linear, or some of the features don't correlate well with the median blood pressure level. 
 
@@ -178,6 +178,6 @@ plt.ylabel('Predicted Blood Pressure')
 plt.show()
 ```
 
-![](https://www.picturepaste.ca/images/2020/05/23/Blood-Pressure-Regression-Line.png)
+![](https://snipboard.io/rHyAE3.jpg)
 
 At the lower end of the line of best fit, the model tends to overestimate what the median blood pressure level is (most of the data points are above the line of best fit). At the higher end, the model tends to underestimate what the median blood pressure level is (most of the data points are below the line of best fit). Overall, our model could have made the predictions much closer to the true median blood pressure level, but at least you now know what factors to look for when creating your linear regression model.
