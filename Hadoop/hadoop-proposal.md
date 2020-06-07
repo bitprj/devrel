@@ -14,7 +14,7 @@ The Apache Hadoop software library is a framework that allows for the distribute
 
 ### :pushpin: Step 2
 :family: **TARGET AUDIENCE (3-5+ sentences):**    
-We will be reaching out to people who want to get started in the world of big data but donot understand data processing distribution.
+We will be reaching out to people who want to get started in the world of big data but do not understand data processing distribution.
 An age group is irrelevent the focus is developing basic understanding of data science tools.
 
 ### :pushpin: Step 3
