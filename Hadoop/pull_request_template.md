@@ -5,5 +5,5 @@
 - I added the devcontent proposal for the Topic Hadoop
 
 ### Reviewers requested:
-- @your_PM_github_username - **pending**
+- @kylebegovich  - **pending**
 - @your_QA_github_username - **pending**
