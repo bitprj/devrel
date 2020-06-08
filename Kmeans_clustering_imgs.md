@@ -135,9 +135,9 @@ To represent the number of colors we want to observe and in what quantity they a
 ```
 label_indx = np.arange(0,len(np.unique(clt.labels_)) + 1) 
 ```
-Initializes an array of length == # clusters. These are the set the indices for the histogram
+This initializes an array of length == # clusters. These are the set the indices for the histogram
 
-Each "data" point of the image array will consist of its own color class label, so we plot the frequency of each color.The more a certain color appears in an image, the more data points it will have associated with it
+Each "data" point of the image array will consist of its own color class label, so we plot the frequency of each color.The more a certain color appears in an image, the more data points it will have associated with it.
 
 ![](https://i.imgur.com/spfxuak.png)
 
