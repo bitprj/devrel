@@ -1,6 +1,6 @@
 # Extracting Information from Images Using K-Means Clustering
 
-Growing up, you might've heard the phrase, " a picture is worth a thousand words." In this age of rapidly growing information, there is a lot that can be extracted from pictures. Advancements with computer vision has allowed for self-driving cars to recognize and classify whether an object is a pedestrian crossing or a static road hazard up ahead. Another application are the fun instagram filters you might've seen on everyone's stories lately. Of course, every possible advancement the world appreciates today had stemmed from the most the most fundamental approaches or techniques in machine learning. 
+You’ve probably heard the phrase “a picture is worth a thousand words.” In our digitally-advanced age, this is more accurate than ever; a lot of information can be extracted from an image. High-level computer vision systems have allowed self-driving cars to recognize whether an object is a pedestrian crossing or a static road hazard up ahead, and Instagram filters are face-detecting and interactive. These advancements stem from the most of the fundamental approaches of machine learning.
 
 Machine learning involves the learning process machines undertake in order to understand data and provide some answers about the data. In the context of image processing, an application of machine learning could be the attempt to process an image digitally, with numbers that represent the pixels and colors as data. 
 
@@ -8,16 +8,16 @@ Approaches that don't provide prediction or assume a correct set of outputs but 
 
 ## Background on K-Means
 
-A simple analogy of this concept can be illustrated as a collection of rocks of various sizes and colors. Suppose I'd like to partition, or separate my collection into 3 subgroups. 
+The Kmeans clustering technique can be illustrated by the following rock collecting analogy. Suppose I’d like to separate a collection of rocks of various sizes and colors into 3 subgroups.
 
 
 ![](https://i.imgur.com/RArtpOd.png)
-I start by randomly selecting 3 rocks, as leaders, to represent each group. 
+I start by randomly selecting 3 different rocks as models to represent each group.
 
 
 ![](https://i.imgur.com/5AY6skk.png)
 
-I then allocate each of the remaining rocks to the 3 rocks based on size-similarity.
+I then group each of the remaining rocks with the 3 rock types based on size-similarity.
 
 ### First Iteration
 
@@ -26,11 +26,9 @@ Group 1            |  Group 2 | Group 3
 ![](https://i.imgur.com/zoMMoe2.png) | ![](https://i.imgur.com/YyzHfgL.png) | ![](https://i.imgur.com/6U05nSB.png)
 
 
-Once I have 3 subgroups, I find the mean of the rock sizes per group. The rock that best matches its respective groups mean is the new leader. Now we want 3 new leaders and I reallocate the rest of the rocks based on size-similarity. Then the size mean per groups is redetermined and the process repeats until the new mean does not develop any more significantly than its counterpart, meaning that the convergence point has been reached. 
+Once I have 3 subgroups, I find the mean rock size of each group. The rocks that best exemplify the rock size of their respective group become the new model rock. Now I can reallocate the rest of the rocks based on size-similarity to the new models, and the size mean of each group is redetermined. This process repeats until the new mean of each group does not change significantly from the previous mean, meaning that the convergence point has been reached and are rocks are organized properly.
 
-
-### Some number of iterations later...
-The groups resulting from KMeans should be more homogeneous than its original mix. 
+Some number of iterations later, the groups resulting from KMeans should be more homogeneous than its original mix. 
 Group 1            |  Group 2 | Group 3
 :-------------------------:|:-------------------------: | :-------------------------:
 ![](https://i.imgur.com/9jwvfLJ.jpg) |![](https://i.imgur.com/gSdctgw.jpg)|![](https://i.imgur.com/qz6MfeO.jpg)
@@ -40,12 +38,12 @@ Group 1            |  Group 2 | Group 3
 
 # Now let's perform clustering on the first image
 
-A restriction we have is access to digital images of rocks on the web, not physical rock specimens themselves. That's ok, we'll cluster based on color instead.
+A restriction of this process is that we have only have access to digital images of rocks, not physical rock specimens themselves. So instead of size, we’ll cluster based on color.
 
 
 If we consider the digital images as collections of data points that represent pixeled coordinates, we can try applying some math (K-Means) to those data points, represented as decimals organized as a table of some number of rows and columns
 
-Packages required for the implementaton include:
+Before beginning the implementation,import these packages:
 
 ```
 from sklearn.cluster import KMeans
@@ -56,10 +54,10 @@ from skimage import io
 from google.colab.patches import cv2_imshow
 ```
 
+## Data Processing
+
 We start by reading in the *link* to the image we are interested in working with. 
 
-
-## Data Processing
 ```
 url = "https://i.imgur.com/RArtpOd.png" #first image
 img = io.imread(url)
@@ -150,8 +148,6 @@ Normalize the numbers within the array to get proportions that amount to 1.
 
 The proportions for each class label. From above, the frequency count for some unknown color, 67942, makes up approximately 27% of all the colors. 
 
-## Figuring out the appropriate color labels
-
 Next, create a grid to hold our colors and their proportionate components. 
 
 ```
@@ -198,9 +194,9 @@ Make note that the larger K is, the more computation and time it takes to comple
 
 # Conclusion
 
-By following the logic of KMeans clustering, you were able to automate the assortment of objects within an image. The digital image provides information only on the colors it possesses. By considering its pixeled coordinates and color features, you were able to specify the number of clusters you wanted to observe, fit the model based on that specified number, and return the colors and their proportions.
+By following the logic of KMeans clustering, we were able to automate the assortment of colors within an image. The digital image provides information only on the colors it possesses. By considering its pixeled coordinates and color features, we can specify the number of clusters we want to observe, fit the model based on that specified number, and return the colors and their proportions.
 
-Going forward, if the dataset included information on the rock's size and weight in grams, perhaps you can cluster based on size, fulfilling the intial analogy provided. 
+Going forward, if the dataset included information on the rock’s size and weight in grams, perhaps you could cluster based on size, fulfilling the intial analogy provided.
 
 What other images can you try?
 
