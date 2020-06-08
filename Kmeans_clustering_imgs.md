@@ -37,7 +37,7 @@ Group 1            |  Group 2 | Group 3
 
 
 
-# Now let's perform clustering on the first image
+# Kmeans clustering on the first image
 
 A restriction of this process is that we have only have access to digital images of rocks, not physical rock specimens themselves. So instead of size, we’ll cluster based on color.
 
