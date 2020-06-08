@@ -104,6 +104,9 @@ img = img.reshape((img.shape[0] * img.shape[1],img.shape[2]))
 ```
 
 ## Model Fitting
+
+Fitting the model means to apply our tool, Kmeans, familiarizing our model with the contents of the data. The relationship between our data and the output is "learned" by the algorithm. [Standord](https://stanford.edu/~cpiech/cs221/handouts/kmeans.html) provides a detailed explanation behind the theory and implementation of this algorithm.
+
 Create an instance of the KMeans class. This basically means that grab the *KMeans* tool from our set of *sklearn* toolbox.
 
 Suppose that we'd like to extract 5 groups or colors from our dataset, pass in *n=5* as a parameter.
@@ -112,9 +115,6 @@ k = 5
 clt = KMeans(n_clusters = k) # "pick out" the K-means tool from our collection of algorithms
 clt.fit(img) # apply the model to our data, the image
 ```
-
-Fitting the model means to apply our tool, Kmeans, familiarizing our model with the contents of the data. The relationship between our data and the output is "learned" by the algorithm. [Standord](https://stanford.edu/~cpiech/cs221/handouts/kmeans.html) provides a detailed explanation behind the theory and implementation of this algorithm.
-
 
 ## Handling the output
 The output of our model will need to be stored somehow. Create a numpy array that has length the number of clusters, starting at 0.
