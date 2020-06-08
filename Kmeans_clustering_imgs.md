@@ -147,7 +147,7 @@ Then, normalize the numbers within the array to get proportions that amount to 1
 
 ![](https://i.imgur.com/f6vJfk4.png)
 
-The proportions for each class label. From above, the frequency count for some unknown color, 67942, makes up approximately 27% of all the colors. 
+These are the proportions for each class label. For instance, the frequency count for the first unknown color, 67942, makes up approximately 27% of all the colors. 
 
 Next, create a grid to hold our colors and their proportionate components. 
 
