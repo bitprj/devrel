@@ -12,6 +12,7 @@ The Kmeans clustering technique can be illustrated by the following rock collect
 
 
 ![](https://i.imgur.com/RArtpOd.png)
+
 I start by randomly selecting 3 different rocks as models to represent each group.
 
 
