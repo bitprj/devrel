@@ -33,3 +33,6 @@ new_df = final_df[final_df.team_id.isin(['CHI','LAL','BOS','NYK','PHO'])]
 new_df = new_df.append(pd.Series(dtype='object'),ignore_index=True)
 new_df = new_df.dropna()
 final_df = final_df.dropna()
+
+final_df.head();
+new_df.head();
