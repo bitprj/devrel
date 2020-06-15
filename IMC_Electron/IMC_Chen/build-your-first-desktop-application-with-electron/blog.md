@@ -9,13 +9,13 @@ This guide introduces Electron and will help you develop your first Electron app
 This guide targets people interested in Electron but have little to no experience with it. It is recommended that readers have some experience in html, css and javascript since knowing them is very essential to build an Electron application.
 
 ## What is Electron?
-Electron is a framework for creating cross-platform desktop applications with web programming languages like html, css, and javascript. By cross-platform, it means that you can build and deploy your application on all major operating systems(OS) including Windows, Linux, and MacOS with the same source code. The reason why you don’t have to adapt your program to different operating systems is that Electron runs your code in a Chromium environment independent of your OS. So, let’s jump into our first Electron app!
+Electron is a framework for creating cross-platform desktop applications with web programming languages like html, css, and javascript. By cross-platform, it means that you can build and deploy your application on all major operating systems(OS) including Windows, Linux, and MacOS with the same source code. The reason why you don’t have to adapt your program to different operating systems is that Electron runs your code in a ![Chromium](https://www.chromium.org) environment independent of your OS. So, let’s jump into our first Electron app!
 
 ## Get Started: Hello World Application!
 Of course, the easiest and simplest way to learn a new technology is to create a hello world project of your own, so we are going to build one.
 
 ### Prerequisite: Installation and Setup
-Before diving into our hello world application, make sure you have node.js installed on your computer. node.js is a javascript runtime environment that can execute javascript code outside of a web browser, and Electron also uses it to run your javascript code.
+Before diving into our hello world application, make sure you have ![node.js](https://nodejs.org/en/download/) installed on your computer. node.js is a javascript runtime environment that can execute javascript code outside of a web browser, and Electron also uses it to run your javascript code.
 
 An Electron application is essentially a node.js application, so the first step is to create a node project. Open your command line client and create a new folder to store your project, and in that folder, run:
 
@@ -23,8 +23,8 @@ An Electron application is essentially a node.js application, so the first step 
 npm init
 ```
 
-npm will guide you to create a basic package.json file, in the end it might look like this:
-```javascript
+npm will guide you to create a basic **package.json** file, in the end it might look like this:
+```json
 {
   "name": "Hello World",
   "version": "1.0.0",
@@ -36,10 +36,10 @@ npm will guide you to create a basic package.json file, in the end it might look
 }
 ```
 
-Make sure you remember the main field, since it directs to the file being executed when the program starts. In this case, the main field directs to file main.js.
+Make sure you remember the **main** field, since it directs to the file being executed when the program starts. In this case, the main field directs to file **main.js**.
 
-Next, we need to add a start script as instruction for Electron to execute current package:
-```javascript
+Next, we need to add a **start** script as instruction for Electron to execute current package:
+```json
 {
   "name": "Hello World",
   "version": "1.0.0",
@@ -51,18 +51,18 @@ Next, we need to add a start script as instruction for Electron to execute curre
 }
 ```
 
-With package.json configured, we have to install Electron into our project. It is recommended to install it as a development dependency:
+With **package.json** configured, we have to install Electron into our project. It is recommended to install it as a development dependency:
 ```
 npm install --save-dev electron
 ```
 
 ### Writing Our Hello World App
-First let’s look into main.js, the entry portal into our hello world application. For Electron, all of its APIs and features can be accessed via the electron module by using the require() function, just like every node module:
+First let’s look into **main.js**, the entry portal into our hello world application. For Electron, all of its APIs and features can be accessed via the **electron** module by using the **require()** function, just like every node module:
 ```javascript
 const electron = require('electron')
 ```
 
-The require function stores all of Electron’s features into the variable electron as namespaces, and each feature can be accessed via calling electron.feature_name. For every application, its life cycle is managed through electron.app. A window can be created using the electron.BrowserWindow class. We can access the features by calling:
+The **require** function stores all of Electron’s features into the variable **electron** as namespaces, and each feature can be accessed via calling **electron.feature_name**. For every application, its life cycle is managed through **electron.app**. A window can be created using the **electron.BrowserWindow** class. We can access the features by calling:
 ```javascript
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
@@ -73,7 +73,7 @@ Or alternatively:
 const { app, BrowserWindow } = require('electron');
 ```
 
-For our hello world application, a simple main.js file can wait for app to be ready and then open a BrowserWindow, which then loads an html file as the main UI:
+For our hello world application, a simple main.js file can wait for **app** to be ready and then open a **BrowserWindow**, which then loads an html file as the main UI:
 ```javascript
 const { app, BrowserWindow } = require('electron');
 function createWindow() {
@@ -93,7 +93,7 @@ function createWindow() {
 app.whenReady().then(createWindow)
 ```
 
-Finally, we write a simple index.html to display our hello world page:
+Finally, we write a simple **index.html** to display our hello world page:
 ```html
 <html>
   <head>
@@ -107,19 +107,19 @@ Finally, we write a simple index.html to display our hello world page:
 </html>
 ```
 ### Running Your Application
-After finishing our hello world project, it’s time to run it! To run, simply type this command. It will execute the “electron .” command we have set in package.json.
+After finishing our hello world project, it’s time to run it! To run, simply type this command. It will execute the **“electron .”** command we have set in package.json.
 ```
 npm start
 ```
+A window will show up in your computer: 
 </br>
-A window will show up in your computer: </br>
-![screenshot](./1.png)
+![1](./1.png)
 
 Watching the window show up is very exciting! yet … a bit boring. So, why not create a more interesting program?
 
 ## What Electron Can Do: Build A More Complicated Application
 
-For a more complicated application, we are going to build a small timer widget that lives on the top corner of the screen. The source code can be found in this Github repo.
+For a more complicated application, we are going to build a small timer widget that lives on the top corner of the screen. The source code can be found in this ![Github](https://github.com/MCharming98/myTimer) repo.
 
 ### Step1: Start With the UI
 
@@ -162,7 +162,7 @@ button { width: 80px; }
 ```
 
 ### Step2: Implement the Body of the Timer
-The next step is to implement the body of the timer in timer.js, which contains the button listeners to start and stop the timer. It also has the timer function which counts down and update the UI accordingly:
+The next step is to implement the body of the timer in **timer.js**, which contains the button listeners to start and stop the timer. It also has the timer function which counts down and update the UI accordingly:
 
 ```javascript
 // dialog is used to show message box in the app
@@ -259,10 +259,10 @@ function createWindow() {
 app.whenReady().then(createWindow)
 ```
 
-With index.html, timer.js, and main.js ready, our timer app is good to go! Let’s run it and see how it behaves.
+With **index.html**, **timer.js**, and **main.js** ready, our timer app is good to go! Let’s run it and see how it behaves.
 
 Step 4: Play With It
-By running npm start, this window should pop up on the top left corner on your screen. It has two text input fields for entering desired minutes and seconds. </br>
+By running **npm start**, this window should pop up on the top left corner on your screen. It has two text input fields for entering desired minutes and seconds. </br>
 ![2](./2.png) </br>
 We can set a countdown for 1 minute and 5 seconds, then press the start button. The countdown begins.
 ![3](./3.png) </br>
@@ -271,7 +271,7 @@ After counting down to 0, the alert message shows up and the timer is reset. Our
 
 ## Conclusion
 
-This guide should have given you an overview of how to build a simple cross-platform desktop application with Electron. If you have trouble following this guide, I suggest learning more about node.js before moving forward. Happy hacking!
+This guide should have given you an overview of how to build a simple cross-platform desktop application with Electron. If you have trouble following this guide, I suggest learning more about **node.js** before moving forward. Happy hacking!
 
 Relevant Resources: </br>
 Electron Official Beginner's Guide: https://www.electronjs.org/docs/tutorial/first-app </br>
