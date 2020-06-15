@@ -9,13 +9,13 @@ This guide introduces Electron and will help you develop your first Electron app
 This guide targets people interested in Electron but have little to no experience with it. It is recommended that readers have some experience in html, css and javascript since knowing them is very essential to build an Electron application.
 
 ## What is Electron?
-Electron is a framework for creating cross-platform desktop applications with web programming languages like html, css, and javascript. By cross-platform, it means that you can build and deploy your application on all major operating systems(OS) including Windows, Linux, and MacOS with the same source code. The reason why you don’t have to adapt your program to different operating systems is that Electron runs your code in a ![Chromium](https://www.chromium.org) environment independent of your OS. So, let’s jump into our first Electron app!
+Electron is a framework for creating cross-platform desktop applications with web programming languages like html, css, and javascript. By cross-platform, it means that you can build and deploy your application on all major operating systems(OS) including Windows, Linux, and MacOS with the same source code. The reason why you don’t have to adapt your program to different operating systems is that Electron runs your code in a [Chromium](https://www.chromium.org) environment independent of your OS. So, let’s jump into our first Electron app!
 
 ## Get Started: Hello World Application!
 Of course, the easiest and simplest way to learn a new technology is to create a hello world project of your own, so we are going to build one.
 
 ### Prerequisite: Installation and Setup
-Before diving into our hello world application, make sure you have ![node.js](https://nodejs.org/en/download/) installed on your computer. node.js is a javascript runtime environment that can execute javascript code outside of a web browser, and Electron also uses it to run your javascript code.
+Before diving into our hello world application, make sure you have [node.js](https://nodejs.org/en/download/) installed on your computer. node.js is a javascript runtime environment that can execute javascript code outside of a web browser, and Electron also uses it to run your javascript code.
 
 An Electron application is essentially a node.js application, so the first step is to create a node project. Open your command line client and create a new folder to store your project, and in that folder, run:
 
@@ -119,7 +119,7 @@ Watching the window show up is very exciting! yet … a bit boring. So, why not 
 
 ## What Electron Can Do: Build A More Complicated Application
 
-For a more complicated application, we are going to build a small timer widget that lives on the top corner of the screen. The source code can be found in this ![Github](https://github.com/MCharming98/myTimer) repo.
+For a more complicated application, we are going to build a small timer widget that lives on the top corner of the screen. The source code can be found in this [Github](https://github.com/MCharming98/myTimer) repo.
 
 ### Step1: Start With the UI
 
