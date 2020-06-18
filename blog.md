@@ -63,12 +63,11 @@ We will scrape statistics from a [set of](https://www.basketball-reference.com/p
 
 ![Alt Text](https://i.imgur.com/g8mi9vx.png)
 
-
 # Scraping the Data
 
 Understanding where our data lies is crucial for implementing the scraper. BeautifulSoup uses an html parser to locate the data we want, but we have to give it some baseline information to do so. 
 
-## Installing Dependencies
+## Installing Dependencies and Scanning URL
 
 Before we start, we want to ensure we have the following libraries installed using pip install *package_name*: pandas, numpy, requests and bs4. The first thing we want to do for our scraper is determine how many pages of information there are. For this particular dataset, it is laid out across 9 different URLs. We have to examine what changes occur between two pages. It is a really long link, but we can see at the end there is a part that says offset=0 for the first page, but is equal to 100 for the second page, and increments by 100 each time. 
 
