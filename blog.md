@@ -86,7 +86,7 @@ At the start of each loop iteration, we are going to have to request an HTTP res
 
 # Append Data
 
-We now have our data, we want to re-format our data and add it to a final set. We take the stats variable and pass it into a Pandas DataFrame. Due to how the information was stored, our stats variable is a 4 element list with each element being size 100. We want the opposite of that, so we call `.transpose()` on our new dataframe to flip the rows to columns and vice versa, and set the column names to our list of features. We then call `.append()` with the final set DataFrame.
+We now have our data, we want to re-format our data and add it to a final set. We take the stats variable and pass it into a Pandas DataFrame. Due to how the information was stored, our stats variable is a 4 element list with each element being size 100. We want the opposite of that, so we call `.transpose()` on our new dataframe to flip the rows to columns and vice versa, and set the column names to our list of features. We then call `.append()` with the final set DataFrame. We can send this to a .csv file using 'final_df.to_csv('league_20ppg.csv')', which will be stored to the local directory of your IDE.
 
 # Bonus: Cleaning The Data
 
