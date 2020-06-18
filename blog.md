@@ -68,6 +68,8 @@ We will scrape statistics from a [set of](https://www.basketball-reference.com/p
 
 Understanding where our data lies is crucial for implementing the scraper. BeautifulSoup uses an html parser to locate the data we want, but we have to give it some baseline information to do so. 
 
+## Installing Dependencies
+
 Before we start, we want to ensure we have the following libraries installed using pip install *package_name*: pandas, numpy, requests and bs4. The first thing we want to do for our scraper is determine how many pages of information there are. For this particular dataset, it is laid out across 9 different URLs. We have to examine what changes occur between two pages. It is a really long link, but we can see at the end there is a part that says offset=0 for the first page, but is equal to 100 for the second page, and increments by 100 each time. 
 
 Knowing what changes in our url, we will create a for loop that goes from 0 to 900 in increments of 100, and we will copy the base url (everything through `offset=`), and then add our for loop variable `i` to the end of the url with `str(i)`. So, `url = (base url) + str(i)`.
@@ -89,6 +91,14 @@ We now have our data, we want to re-format our data and add it to a final set. W
 
 # Bonus: Cleaning The Data
 
-We were able to work with a cleaned data set that didn't require too much to change. However, one may want to make more specific queries on the existing data set or eliminate any potential null values. For example, I can use the `.isin()` command to extract a value or list of values. So, if I only wanted the list of twenty point per game scorers from the Suns, Bulls, Lakers, Celtics and Knicks, I can extract them with `isin()`. For null values, imagine an older data set that started from 1964 instead of 1984. The three point line didn't exist before 1979, so I can use `dropna()` to remove any instances of seasons before the three point era. This snippet below showcases a basic use of `isin()` and `dropna()`. 
+We were able to work with a cleaned data set that didn't require too much to change. However, one may want to make more specific queries on the existing data set or eliminate any potentially null or missing values. For example, I can use the `.isin()` command to extract a value or list of values. So, if I only wanted the list of twenty point per game scorers from the Suns, Bulls, Lakers, Celtics and Knicks, I can extract them with `isin()`. For null values, imagine an older data set that started from 1964 instead of 1984. The three point line didn't exist before 1979, so I can use `dropna()` to remove any instances of seasons before the three point era. This snippet below showcases a basic use of `isin()` and `dropna()`. 
 
 ![Alt Text](https://i.imgur.com/Mn052zQ.png)
+
+Before Query            |  After Query
+:-------------------------:|:-------------------------:
+![](https://i.imgur.com/4KNhGZJ.png)  |  ![](https://i.imgur.com/d0pnUmY.png)
+
+Before Drop            |  After Drop
+:-------------------------:|:-------------------------:
+![](https://i.imgur.com/1q4i4qd.png)  |  ![](https://i.imgur.com/88GuIQ4.png)
