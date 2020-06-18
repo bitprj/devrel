@@ -1,8 +1,8 @@
 # Building a Charades Game In JavaScript
 
-Life during quarantine has been boring without being able to hang out with friends or buy boba. Everyone is looking for new ways to have some fun at home. I recently read a post about creating a [memery game using Vanilla JavaScript by Marina Ferreira](https://medium.com/free-code-camp/vanilla-javascript-tutorial-build-a-memory-game-in-30-minutes-e542c4447eae), and found the techniques she used very interesting. So I decided to create another popular game - Charades, using similar techniques and adding more features. In this tutorial, we will dive a little deeper into JavaScript methods than the original. Let's start to build our own charades game while learning HTML/CSS and JavaScript!
+Life during quarantine has been boring without being able to hang out with friends or buy boba. Everyone is looking for new ways to have some fun at home. I recently read a post about creating a [memery game using Vanilla JavaScript by Marina Ferreira](https://medium.com/free-code-camp/vanilla-javascript-tutorial-build-a-memory-game-in-30-minutes-e542c4447eae), and found the techniques she used very interesting. So I decided to create another popular game - Charades, using similar techniques and adding more features. In this tutorial, we will dive a little deeper into JavaScript methods than the original. Let's start to build our own charades game while learning HTML/CSS and JavaScript! HTML and CSS help us build the basic interface of the pages, and we need JavaScript to add functions to the elements.
 
-### Live Demo: [Charades!](https://)
+### Live Demo: [Charades!](https://cotton-broadleaf-pufferfish.glitch.me/)
 ## Download Starter Code
 Before we start, you can find all the code here:  [Charades_Game_in_JavaScript Repo](https://github.com/bitprj/Charades_Game_In_JavaScript). 
 You can download the folder **"starter"** directly, or you can also start from scratch by creating **5 HTML files, 3 CSS files, and 4 JavaScript files in one single folder.**
@@ -51,26 +51,6 @@ Now that we have all our files created, we can move on to the first step — cre
 
 
 ## Starting Page and Ending Page
-### Ending Page
-In the [live demo](https://), we see that the ending page is just a page with one single line of words to show a finishing message.
-
-![](https://i.imgur.com/bBJIeDc.jpg)
-
-To do this, we can simply write in the HTML file.
-A simple header shows the message, but we want it to be wrapped by a section so the text is centered.
-
-```
-<body>
-    <section>
-        <h1>Times up!</h1>
-    </section>
-</body>
-```
-
-Since this is a very simple page, we don't need a script file to add functions to it. Instead of using a separate CSS file to style the contents, we can simply add `style="..."` in each tag to customize the style.
-
-[](https://github.com/bitprj/Charades_Game_In_JavaScript/blob/master/end_code/endpage.html)
-
 
 ### Starting Page
 ![](https://i.imgur.com/2hL51bx.png)
@@ -109,11 +89,32 @@ Use the tag `<a href="{{YOUR_NEXT_HTML_NAME}}"></a>` under the `<head>` tag in y
 
 
 
+### Ending Page
+
+In the [live demo](https://cotton-broadleaf-pufferfish.glitch.me/), we see that the ending page is just a page with one single line of words to show a finishing message.
+
+![](https://i.imgur.com/bBJIeDc.jpg)
+
+To do this, we can simply write in the HTML file.
+A simple header shows the message, but we want it to be wrapped by a section so the text is centered.
+
+```
+<body>
+    <section>
+        <h1>Times up!</h1>
+    </section>
+</body>
+```
+
+Since this is a very simple page, we don't need a script file to add functions to it. Instead of using a separate CSS file to style the contents, we can simply add `style="..."` in each tag to customize the style.
+
+
+
 ## Choosing the Game Rules
 
 ![](https://i.imgur.com/4yewZS5.png)
 
-The start button redirects us to the second page where we can choose the version of the game we would like to play. One is limited by time and the other is limited by words.
+The start button redirects us to the second page where we can choose the version of how we want to play the game. One is called "limiting time" and the other is "how many words".
 
 ***Want to play the game right now? Skip this page! Jump directly to the "Creating Animated Word Cards" section with your preferred version!***
 
@@ -153,11 +154,11 @@ Not ready for the game to start right away? Let's create a 5-second countdown ti
 The timer will be created under the `<span></span>` tag in the HTML file.
 ![](https://i.imgur.com/l5aeE0C.png)
 
-The timer will be exactly the same in both versions. Let's start adding it to the `"limiting time"` version first.
+The timer will be exactly the same in both versions. Let's start adding it to the `"Limiting time"` version first.
 
 ### **Part 1: Hide And Show**
 It is important to notice that in the beginning, before the player makes a choice, the countdown should not be shown on the page, so we need to "hide" the timer at first. Then, after one of the buttons is clicked, the countdown will "show".
-Inspired by Marina's post, I included the "hide" and "show" properties in the CSS file.
+Inspired by the original post, I include the "hide" and "show" properties in the CSS file.
 
 **in CSS:**
 You can set the style of the timer by its tag name. Make sure you include `display: none;` so that it is not shown in the beginning.
@@ -165,14 +166,13 @@ The `none` indicates it is not showing, and `block` indicates it is showing.
 
 ![](https://i.imgur.com/2rYdVql.png)
 
-
 **in JavaScript**
-When the button is clicked, we want the buttons and the text to disappear and the countdown timer to show up. Therefore, **inside each function**, we  use `.classList.toggle` to hide the text, and change button style to `"hidden"` to hide buttons.
+When the button is clicked, we want the buttons and the text to disappear, but the countdown timer to show up. Therefore, inside both functions `time()` and `word()`, we need to hide the texts and the buttons.
 
 Here we take `time()` for example, and the `word()` is implemented in the exact same way.
 
 1. Hide Text:
-To select the text boxes, we set a variable `var element = document.getElementById("intro-words");`. Then, we modify the style of this element into `"hide"`. Do the same for the `"intro-time"` text box.
+To select the text boxes, we set a variable `var element = document.getElementById("intro-words");`. Then, we modify the style of this element into `"hide"` by using `.classList.toggle()`. Do the same for the `"intro-time"` text box.
 
 ![](https://i.imgur.com/0NXOPNd.png)
 
@@ -219,9 +219,9 @@ Now for the exciting part — creating flipping cards with words on them!
 Let's start with creating the elements in HTML.
 
 **in HTML:**
-The HTML of both versions are exactly the same, besides the different JavaScript they include.
+The HTML of both versions of how you play the game are exactly the same, besides the different JavaScript they include.
 
-There will be a simple `<div>` holding the card which has a `front-face`, and a `back-face`. As learned from Marina Ferreira's blog, I adapted her procedure to create the flipping card. I also added a timer to give a reference to the players.
+There will be a simple `<div>` holding the card which has a `front-face`, and a `back-face`. I adapted a procedure from the original blog to create the flipping card. I also added a timer to give a reference to the players.
 
 ```
 <div class="cards" id="words">
@@ -231,20 +231,19 @@ There will be a simple `<div>` holding the card which has a `front-face`, and a 
 <span id="timer"></span>
 ```
 **in CSS:**
-Since both versions have the same HTML elements, we do not need to create separate CSS files for each design (but you can if you want the cards look different for different versions).
-Besides the design of cards, there are some important features to add to make the card flips as we want. I mainly adapted these [CSS codes](https://github.com/code-sketch/memory-game/blob/master/video-11/styles.css) from [Marina](https://medium.com/free-code-camp/vanilla-javascript-tutorial-build-a-memory-game-in-30-minutes-e542c4447eae), because she has made the flipping effects very fluid and attractive. However, instead of flipping them vertically, I flipped them horizontally, so we have `transform: rotateX(180deg);`.
+Since both versions have the same HTML elements, we do not need to create separate CSS files for each design (but you can if you want the cards look differently).
+Besides the design of cards, there are some important features to add to make the card flips as we want. I mainly adapted these [CSS codes](https://github.com/code-sketch/memory-game/blob/master/video-11/styles.css) from [the original blog post](https://medium.com/free-code-camp/vanilla-javascript-tutorial-build-a-memory-game-in-30-minutes-e542c4447eae), because it has made the flipping effects very fluid and attractive. However, instead of flipping them vertically, I flipped them horizontally, so we have `transform: rotateX(180deg);`.
 
 You can find my full CSS code [here](https://github.com/bitprj/Charades_Game_In_JavaScript/blob/master/finish_code/cardstyle.css).
 
 ![](https://i.imgur.com/r8J1YZg.gif)
 
-
-**Note:** This is a little tricky. Since I used the same CSS codes from original blog, the `back-face` is shown in the beginning as the first word, so I named it `id="word1"`. I'll refer to all the words as `word1`, `word2`, etc. to make it more clear.
+**Note:** This is a little tricky. Since I used the same CSS codes from the original blog, the `back-face` is shown in the beginning as the first word, so I named it `id="word1"`. I'll refer to all the words as `word1`, `word2`, etc. to make it more clear.
 
 
 ### "Limiting Time" Version
-In this version, we want to use a timer to keep track of the time that each card has been shown, and flip the card when the time is up.
-To do this, we can write a function `function flipWord() {...}` which flips the word, and then start the timer. When the time is up, call `flipWord()` again and reset the `textContent` of whichever word is hidden now, and it would be the next word to be shown.
+In this version, we want to use a timer to keep track of the time that each card has been shown, and flip the card when 30 seconds is up. The total game will last for 5 minutes. Play this with your friends to see how many words you can guess right in 5 minutes!
+To do this, we can write a function `function flipWord() {...}` which flips the word, and then start the timer. When 30 seconds is up, call `flipWord()` again and reset the `textContent` of whichever word is hidden now, and it would be the next word to be shown. The first word when the game starts is the `back-face` of the card, and the next word is the `front-face` of this card. However, after the first flip, if we flip the card again, the `back-face` shows up again. So we want the next word be on the `back-face` already before we do the flip. Let's break this process up and implement it in JavaScript now.
 
 **in JavaScript:**
 1. The First Flip:
@@ -262,9 +261,9 @@ When we call `flipCard()`, we want to set the style corresponding to the "flip" 
 3. Keep Flipping Cards and Resetting Words:
 After the first flip, a new 30 second countdown should start, so we add the same timer again in the `flipWord()` function after `toggle('flip);'`. Now we are seeing `word2` on the screen, and `word1` is being hidden in the back. This is the time to change `word1` secretly! How do we do that?
 
-While it is definitely an idea to creating a number of the same card's HTMLs and link them one by one to jump to the new words, here we will keep the single HTML file and add a counter to keep track of the new word.
+Here we want to keep the single HTML file and add a counter to keep track of the new word.
 
-Declare a counter `var word-num = 1;` outside of the function. It starts at 1 because we already flipped the first card. Then, the counter is incremented by 1 each time until the 30 seconds is up. In this way, we could keep track of how many words we have been guessed.
+Declare a counter `var word-num = 1;` outside of the function. It starts at 1 because we already flipped the first card. Then, the counter is incremented by 1 each time a word is guessed. In this way, we could keep track of how many words we have been guessed.
 
 The function should look like this:
 
