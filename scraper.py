@@ -34,5 +34,8 @@ new_df = new_df.append(pd.Series(dtype='object'),ignore_index=True)
 new_df = new_df.dropna()
 final_df = final_df.dropna()
 
+#display the information and pass files into csv's
 final_df.head();
 new_df.head();
+
+final_df.to_csv('20ppg.csv')
