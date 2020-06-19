@@ -1,6 +1,6 @@
 # Building a Charades Game In JavaScript
 
-Life during quarantine has been boring without being able to hang out with friends or buy boba. Everyone is looking for new ways to have some fun at home. I recently read a post about creating a [memory game using Vanilla JavaScript by Marina Ferreira](https://medium.com/free-code-camp/vanilla-javascript-tutorial-build-a-memory-game-in-30-minutes-e542c4447eae), and found the techniques she used very interesting. So I decided to create another popular game - Charades — using similar techniques and adding more features; in this tutorial, we will dive a little deeper into JavaScript methods than the original. We will use HTML and CSS to help us build the basic interface of the pages, and we need JavaScript to add functions to the elements of the game. Let's build our own Charades game while learning HTML/CSS and JavaScript!
+Life during quarantine has been boring without being able to hang out with friends or buy boba. Everyone is looking for new ways to have some fun at home. I recently read a post about creating a [memory game using Vanilla JavaScript by Marina Ferreira](https://medium.com/free-code-camp/vanilla-javascript-tutorial-build-a-memory-game-in-30-minutes-e542c4447eae), and found the techniques she used very interesting. So I decided to create another popular game — Charades — using similar techniques and adding more features; in this tutorial, we will dive a little deeper into JavaScript methods than the original. We will use HTML and CSS to help us build the basic interface of the pages, and we need JavaScript to add functions to the elements of the game. Let's build our own Charades game while learning HTML/CSS and JavaScript!
 
 ### Live Demo: [Charades!](https://cotton-broadleaf-pufferfish.glitch.me/)
 ## Download Starter Code
@@ -120,9 +120,9 @@ The start button redirects us to the second page where we can choose the version
 ***Want to play the game right now? Skip this page! Jump directly to the "Creating Animated Word Cards" section about your preferred version!***
 
 **in HTML:**
-On this page, we want to have two buttons which redirect to two different HTML pages. The buttons are created in the same way as the start button on the starting page. We add a `<p></p>` to create the text box under each button.
+On this page, we want to have two buttons which redirect to two different HTML pages. The buttons are created in the same way as the start button on the starting page. We add a `<p></p>` tag to create the text box under each button.
 
-Create two `<div>` with class names "v1" and "v2" for the two buttons under the `<section>` first. These containers will allow us to set the positions of the buttons and the text box in CSS later.
+Create two `<div>` tags with class names "v1" and "v2" for the two buttons under the `<section>` tag first. These containers will allow us to set the positions of the buttons and the text box in CSS later.
 
 Use `<br></br>` tags if you want to create blank lines.
 
@@ -223,7 +223,7 @@ Let's start with creating the elements in HTML.
 **in HTML:**
 The HTML of both versions of how you play the game are exactly the same, besides the different JavaScript they include.
 
-There will be a simple `<div>` holding the card which has a `front-face`, and a `back-face`. I adapted a procedure from the original blog to create the flipping card. I also added a timer to give a reference to the players.
+There will be a simple `<div>` tag holding the card which has a `front-face`, and a `back-face`. I adapted a procedure from the original blog to create the flipping card. I also added a timer to give a reference to the players.
 
 ```
 <div class="cards" id="words">
