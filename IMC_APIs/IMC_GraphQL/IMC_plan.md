@@ -17,7 +17,7 @@ GraphQL, javascript languages
 ### :pushpin: Step 2
 
 :family: **TARGET AUDIENCE (3-5+ sentences):**    
-Insert_description_here
+Users with little to no experience with GraphQL APIs and javascript languages like Nodejs and React. The demographic will primarily consist of freshman to sophomore college students, but can include high school students. The webinar should prepare attendees for future endeavors. This enables us to create our own GraphQL API and is beginner-friendly.
 
 ### :pushpin: Step 3
 
@@ -48,7 +48,11 @@ Insert_description_here
 
 > List the names of the blogs (published, in progress, or new) that you will need to complete this IMC successfully
 
-- Blog_Name @github_username_of_developer
+- How to Fetch Data from GraphQL APIs @TonyWu1998
+- Creating a Server with Hasura @mukulljangid
+- What is GraphQL and GraphQL vs REST APIs @Dadao-xiaoguaishou
+- Navigating schemas/types/Fetching requests, using mutations/subscriptions @jhong00
+- Express - GraphQL @HollyCao
 
 ### :pushpin: Step 5
 
@@ -56,4 +60,6 @@ Insert_description_here
 
 > Webinar vision: who do you want to reach out to to speak at the webinar and why
 
-- **Name** - Reason.
+- Hasura Representative - Provide detailed information about product we use in demonstration
+- Student Speaker - Can share their perspective with learning about GraphQL which can be relatable to attendees
+- Youtuber: LevelUpTuts - Has performed a tutorial on GraphQL API and Hasura
