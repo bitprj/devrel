@@ -10,7 +10,8 @@ In this blog, we are going to keep building our mini city. We will have a car go
 
 First, let's build our car and boat with HTML and CSS like we did for the ground and buildings previously.
 The car is a rectangle box and the boat is a rectangle box with a triangle in the front. Both of them has a shadow to help show the 3D effect.
-So we need to have 2 divs for the car and the boat, and in each of them, we will have some children divs inside.
+So we need to have 2 divs for the car and the boat, and in each of them, we will have some children divs inside. Children divs are divs inside a parent div. They are associated to their parent, and can be easily aligned with their parent div. The two children divs under the car are to hold the left and front side rectangles, and the three children divs under the boat are to hold the triangle in the front, and the left and front side rectangles.
+
 ##### In HTML
 ```
 <div class = "car">
