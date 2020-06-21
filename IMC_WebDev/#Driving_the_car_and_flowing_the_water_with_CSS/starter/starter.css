@@ -1,0 +1,348 @@
+body {
+    position: fixed;
+    background-color: #d5f3fe;
+    top: 40%;
+    left: 50%;
+    margin-left: -100px;
+    margin-top: -50px;
+  }
+  
+  /*GROUND1*/
+  .ground {
+    /*foundation*/
+    position: absolute;
+    display: block;
+    /*purple*/
+    background-color: #d3d3d3;
+    width: 200px;
+    height: 148px;
+    transform: skew(60deg, -15deg);
+    top: 100px;
+    left: -150px;
+    z-index: -999;
+  }
+  .ground .bottomSide {
+    position: absolute;
+    display: block;
+    width: 16px;
+    height: 148px;
+    background-color: #c0c0c0;
+    transform: skew(0deg, -30deg);
+    top: 4px;
+    left: -16px;
+    z-index: -1001;
+  }
+  .ground .bottomFront {
+    position: absolute;
+    display: block;
+    width: 210px;
+    height: 9.5px;
+    background-color: #c0c0c0;
+    transform: skew(-60deg, 0deg);
+    top: 147px;
+    left: -8px;
+    z-index: -1001;
+  }
+  .ground .building1 {
+    /*foundation*/
+    position: absolute;
+    display: block;
+    background-color: #021c3b;
+    width: 120px;
+    height: 55px;
+    transform: rotateZ(150deg);
+    transform: rotateX(50deg);
+    bottom: 90px;
+    left: 55px;
+    z-index: -999;
+  }
+  .ground .building1 .wall1 {
+    position: absolute;
+    display: block;
+    background-color: #021c3b;
+    width: 260px;
+    height: 55px;
+    transform: skew(0, -42deg);
+    bottom: 117px;
+    left: 0px;
+    background: #555;
+    box-shadow: inset 0 0 0 3px #313131;
+  }
+  .ground .building2 .roof {
+    /*roof*/
+    position: absolute;
+    display: block;
+    background-color: #ff8c00;
+    width: 90px;
+    height: 85px;
+    transform: rotateZ(150deg);
+    transform: rotateX(50deg);
+    top: -260px;
+    left: 180px;
+    z-index: -999;
+  }
+  .ground .building1 .wall2 {
+    position: absolute;
+    display: block;
+    background-color: #c0c0c0;
+    width: 120px;
+    height: 234px;
+    transform: skew(-48deg, 0);
+    bottom: 0px;
+    left: 129px;
+    background: #555;
+    z-index: -999;
+    box-shadow: inset 0 0 0 3px #313131;
+  }
+  .ground .building1 .roof {
+    position: absolute;
+    display: block;
+    background-color: #a9a9a9;
+    width: 120px;
+    height: 85px;
+    transform: rotateZ(150deg);
+    transform: rotateX(50deg);
+    bottom: 219px;
+    left: 260px;
+    z-index: -999;
+  }
+  .ground .building2 {
+    /*foundation*/
+    position: absolute;
+    display: block;
+    background-color: #a9a9a9;
+    width: 90px;
+    height: 50px;
+    transform: rotateZ(150deg);
+    transform: rotateX(50deg);
+    bottom: 35px;
+    left: 40px;
+    z-index: -999;
+  }
+  .ground .building2 .wall3 {
+    /*wall3*/
+    position: absolute;
+    display: block;
+    background-color: #cb7a4d;
+    width: 180px;
+    height: 50px;
+    transform: skew(0, -42deg);
+    bottom: 81px;
+    left: 0px;
+    box-shadow: inset 0 0 0 3px #313131;
+  }
+  .ground .building2 .wall4 {
+    /*wall4*/
+    position: absolute;
+    display: block;
+    background-color: #cb7a4d;
+    width: 90px;
+    height: 162px;
+    transform: skew(-48deg, 0);
+    bottom: 0px;
+    left: 90px;
+    box-shadow: inset 0 0 0 3px #313131;
+  }
+  .ground .building2 .roof2 {
+    /*roof2*/
+    position: absolute;
+    display: block;
+    background-color: #ff8c00;
+    width: 90px;
+    height: 77px;
+    transform: rotateZ(150deg);
+    transform: rotateX(50deg);
+    bottom: 148px;
+    left: 180px;
+    z-index: -999;
+  }
+  /*GROUND2*/
+  .ground2 {
+    position: absolute;
+    background-color: #e0e0eb;
+    width: 200px;
+    height: 150px;
+    transform: skew(60deg, -15deg);
+    top: 5.5px;
+    left: 200px;
+    z-index: -1000;
+  }
+  .ground2 .bottomFront {
+    position: absolute;
+    display: block;
+    width: 202px;
+    height: 9.5px;
+    background-color: #c0c0c0;
+    transform: skew(-60deg, 0deg);
+    top: 149px;
+    left: -10px;
+    z-index: -1001;
+  }
+  .ground2 .grassArea {
+    position: absolute;
+    display: block;
+    background-color: #83a75f;
+    width: 200px;
+    height: 70px;
+    bottom: 80px;
+    right: 0px;
+    z-index: -1000;
+  }
+  .ground2 .grassArea .circleTops {
+    position: absolute;
+    display: block;
+    background-color: #426b43;
+    width: 50px;
+    height: 50px;
+    transform: skew(-60deg, 15deg);
+    border-radius: 50%;
+    top: -20;
+    left: 10;
+    z-index: -990;
+  }
+  .ground .road1 {
+    position: absolute;
+    display: block;
+    background-color: #c0c0c0;
+    width: 20px;
+    height: 200px;
+    transform: rotateZ(90deg);
+    top: 18px;
+    left: 90px;
+    z-index: -998;
+  }
+  .ground .road2 {
+    position: absolute;
+    display: block;
+    background-color: #c0c0c0;
+    width: 20px;
+    height: 200px;
+    transform: rotateZ(90deg);
+    top: 18px;
+    left: 440px;
+    z-index: -997;
+  }
+  .ground2 .grassArea .treeTrunks {
+    /*treeTrunks*/
+    position: absolute;
+    display: block;
+    background-color: #462512;
+    width: 6px;
+    height: 25px;
+    transform: skew(-60deg, 15deg);
+    border-radius: 4px;
+  
+    /*orginal, middle middle*/
+    top: 10px;
+    left: 130px;
+    box-shadow: -20px -20px 0 0 #462512, /*middleBottom*/ 20px 20px 0 0 #462512,
+      /*middleTop*/ -10px 30px 0 0 #462512, /*leftBottom*/ -70px -5px 0 0 #462512,
+      /*leftTop*/ -40px 15px 0 0 #462512, /*leftMiddle*/ 50px 10px 0 0 #462512,
+      /*rightBottom*/ 10px -30px 0 0 #462512, /*rightTop*/ 30px -10px 0 0 #462512; /*rightMiddle*/
+  
+    z-index: -990;
+  }
+  .ground2 .grassArea .circleTops {
+    position: absolute;
+    display: block;
+    background-color: #3d5239;
+    width: 40px;
+    height: 40px;
+    transform: skew(-60deg, 15deg);
+    border-radius: 50%;
+  
+    /*orginal, middle middle*/
+    top: -20px;
+    left: 153px;
+    box-shadow: -70px -5px 0 0 #36692c, /*leftTop*/ 50px 10px 0 0 #93cc89,
+      /*rightBottom*/ 10px -30px 0 0 #36692c; /*rightTop*/
+  
+    z-index: -980;
+  }
+  .ground2 .grassArea .triangleTops {
+    position: absolute;
+    display: block;
+  
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 50px solid #c3e3bc;
+    border-radius: 12px;
+    transform: skew(-60deg, 15deg);
+    /*original, leftBottom*/
+    top: 0px;
+    left: 95px;
+  
+    box-shadow: -30px -20px #2a591f, /*leftMiddle*/ 30px -10px #5f8257,
+      /*middleBottom*/ -10px -50px 0 0 #467a38; /*middleTop*/
+    /*30px -10px 0 0 #40573a; rightMiddle*/
+    z-index: -970;
+  }
+  /*OCEAN*/
+  .ocean {
+    /*foundation*/
+    position: absolute;
+    display: block;
+    background-color: #1e90ff;
+    width: 168px;
+    height: 158px;
+    transform: skew(60deg, -15deg);
+    top: 53.5px;
+    left: 45px;
+    z-index: -1000;
+  }
+  .bridge {
+    position: absolute;
+    display: block;
+    background-color: #a0522d;
+    width: 100px;
+    height: 23px;
+    transform: skew(60deg, -15deg);
+    top: 150px;
+    left: 155px;
+    z-index: -995;
+    box-shadow: inset 0 0 0 3px #313131;
+  }
+  .ramp1 {
+    position: absolute;
+    display: block;
+    background-color: #a0522d;
+    width: 30px;
+    height: 24px;
+    transform: skew(60deg, 10deg);
+    top: 139px;
+    left: 250px;
+    z-index: -990;
+  }
+  .ramp2 {
+    position: absolute;
+    display: block;
+    background-color: #a0522d;
+    width: 35px;
+    height: 22px;
+    transform: skew(60deg, -30deg);
+    top: 171px;
+    left: 126px;
+    z-index: -990;
+  }
+  .waterfall {
+    position: absolute;
+    border-left: 55px solid transparent;
+    border-right: 96px solid transparent;
+    border-top: 880px solid #1e90ff;
+    transform: skew(0deg, -14deg);
+    top: 200px;
+    left: 177px;
+    z-index: -990;
+  }  
+  .sun {
+    position: absolute;
+    left: 350px;
+    bottom: 75px;
+    background: radial-gradient(#fff89e, #ffde45);
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+  }
+  
