@@ -1,0 +1,144 @@
+body {
+    position: fixed;
+    background-color: #d5f3fe;
+    top: 40%;
+    left: 50%;
+    margin-left: -100px;
+    margin-top: -50px;
+  }
+  
+  /*CAR*/
+  .car {
+    position: absolute;
+    display: block;
+    width: 16px;
+    height: 5px;
+    top: 230px;
+    left: -80px;
+    box-shadow: -8px 5px 0 0 #333;
+    z-index: 1;
+    background-color: #c52735;
+    animation: car 9s linear infinite;
+    transform: skew(60deg, -15deg);
+  }
+  
+  /*front rectangle*/
+  .car div:first-child {
+    position: absolute;
+    display: block;
+    background-color: #9b0404;
+    width: 16px;
+    height: 3px;
+    top: 5px;
+    right: 2.75px;
+    z-index: -998;
+    transform: skewX(-60deg);
+  }
+  
+  /*left rectangle*/
+  .car div:nth-child(2) {
+    position: absolute;
+    display: block;
+    background-color: #9b0404;
+    width: 5px;
+    height: 5px;
+    top: 1.5px;
+    right: 16px;
+    z-index: -998;
+    transform: skewY(-30deg);
+  }
+  
+  /*car's animation*/
+  @keyframes car {
+    0% {
+      top: 240px;
+      left: -75px;
+    }
+    39% {
+      top: 190px;
+      left: 100px;
+    }
+    50% {
+      top: 170px;
+      left: 150px;
+    }
+    65% {
+      top: 144px;
+      left: 240px;
+    }
+    73% {
+      top: 145px;
+      left: 280px;
+    }
+    100% {
+      top: 95px;
+      left: 450px;
+    }
+  }
+  
+  /*BOAT*/
+  .boat {
+    /*boat rectangle and shadow*/
+    position: absolute;
+    display: block;
+    width: 16px;
+    height: 15px;
+    top: 100px;
+    left: 100px;
+    box-shadow: -13px 5px 15px 15px #215199;
+    z-index: -998;
+    background-color: #e2a150;
+    animation: boat 15s linear infinite;
+    transform: skew(60deg, -15deg);
+  }
+  
+  /*left rectangle*/
+  .boat div:first-child {
+    position: absolute;
+    display: block;
+    background-color: #996627;
+    width: 8px;
+    height: 6px;
+    top: 20px;
+    right: 12px;
+    z-index: -998;
+    transform: skew(-60deg, 55deg);
+  }
+  
+  /*front triangle part*/
+  .boat div:nth-child(2) {
+    margin-top: 15px;
+    margin-left: 0px;
+    width: 0;
+    height: 0;
+    z-index: -998;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 12px solid #e2a150;
+  }
+  
+  /*front rectangle*/
+  .boat div:nth-child(3) {
+    position: absolute;
+    display: block;
+    background-color: #996627;
+    width: 9px;
+    height: 15.5px;
+    top: 2.5px;
+    right: 16px;
+    z-index: -998;
+    transform: skewY(-30deg);
+  }
+  
+  /*boat's animation*/
+  @keyframes boat {
+    0% {
+      top: 60px;
+      left: 20px;
+    }
+    100% {
+      top: 150px;
+      left: 220px;
+    }
+  }
+  
