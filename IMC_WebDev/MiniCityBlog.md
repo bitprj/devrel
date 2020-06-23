@@ -70,13 +70,18 @@ To style our webpage, we will need to learn the CSS syntax. A CSS rule-set consi
 Apart from color and font-size, these are some of the properties you will require to get started:
 
 1. Position: It specifies the type of positioning method used for an element: static, relative, fixed, absolute or sticky. 
+* Static: static positions are always positioned according to the normal flow of the page.
+* Relative: relative positions are positioned relative to another object in your CSS.
+* Fixed: elements with fixed positions will always stay in the same place no matter which way the page is scrolled.
+* Absolute: similar to fixed, but will always stay in the same place relative to another object rather than the page.
+* Sticky: an element positioned based on the user's scroll position.
 2. Display: it handles whether an element is shown or not. If you choose display: none, the element will not be visible.
 3. Background-color: It determines the background color of the element. A color can be specified by a valid color name - like “black”, a hexadecimal value - like “ffffff” or an rgb value - like “rgb(255,0,0)”.
 4. Height and Width: These are properties used to set the height and width of the element.
 5. Transform: This property is used to make 2D transformations. The most commonly used transformations are: rotate() and skew.
-   5a. rotate(): It rotates an element clockwise or counter-clockwise according to a given degree. For example, 
+* rotate(): It rotates an element clockwise or counter-clockwise according to a given degree. For example, 
 transform: rotate(20deg);
-   5b. skew(): skews an element along the X and Y-axis by the given angles. For example, this example skews the element 30 degrees along the X-axis, and 50 degrees along the Y-axis.
+* skew(): skews an element along the X and Y-axis by the given angles. For example, this example skews the element 30 degrees along the X-axis, and 50 degrees along the Y-axis.
 transform: skew(30deg, 50deg);
 6. Top: It affects the vertical position of the element. The above example sets the element 18px below the top edge of its nearest positioned ancestor.
 7. Left:  It affects the horizontal position of the element. The above example sets the element 90px from the left edge of its nearest positioned ancestor.
