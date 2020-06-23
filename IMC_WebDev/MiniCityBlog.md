@@ -1,17 +1,16 @@
 ## Building a Mini City: HTML Portion
 ## Purpose
-HTML and CSS are extremely important parts of learning about how websites work. Every website uses HTML in order to display things such as text or images on sites. Being able to grasp a few concepts of  HTML and CSS can help a lot when it comes to learning more intricate subjects in computer science. HTML and CSS are tools used to create and edit websites, and it would be nearly impossible to create a website without using at least some HTML/CSS! For this reason, it is important to get some experience with it!
+HTML and CSS are extremely important parts of learning about how websites work. Every website uses HTML in order to display things such as text or images on sites. Being able to grasp a few concepts of  HTML and CSS can help a lot when it comes to learning more intricate subjects in computer science. HTML and CSS are tools used to create and edit websites. For this reason, it is important to get some experience with it!
 
 This tutorial will give you a walkthrough on how certain functions of HTML work and why they are important, all while learning how to build a cool mini-city!
 
 ## Setup
-Open any HTML/CSS editor. A good browser-based editor is:
-https://www.w3schools.com/tryit/tryit.asp?filename=tryhtml_default.
+Open any HTML/CSS editor. [Here is a good browser-based editor](https://www.w3schools.com/tryit/tryit.asp?filename=tryhtml_default).
 Follow along with this tutorial, and you will be one step closer to building your first mini-city!
 
 ## Walkthrough
 
-To build our mini-city, we will need to use tools such as HTML, CSS, and Javascript. This tutorial will go over the HTML portion of the mini-city. You can think of HTML as the foundation of the entire project! If we work to build a strong foundation, our mini-city will look fantastic!
+This tutorial will go over the HTML and CSS portion of the mini-city. You can think of HTML as the foundation of the entire project! If we work to build a strong foundation, our mini-city will look fantastic!
 
 Our first step when using HTML is to establish a “!DOCTYPE html” function. This simply means that all of our code below this will be rendered as an HTML document.
 So, your first line should look like this: <img src=https://lh3.googleusercontent.com/3-aYKYNPyv2Ie-XOajV4_q8EM1PDzeSIxRDKeKtAsSxj_Cy9gSzlhYjDZ_d2UGupdsr5DvKaZy0tfP6NpqwOm8QXHNIIai5XspYBKACo_MODMXnfLni4-VK4KaNcdq2KMLWEGN-A>
@@ -19,13 +18,13 @@ So, your first line should look like this: <img src=https://lh3.googleuserconten
 
 Got it? Great!
 
-Next, we have to actually create our HTML tag. This just means that we are beginning to write our HTML code, but first we must actually tell our computer that we will be writing in HTML. To do this, simply type “html” on your second line. Your code should look like this so far: <img src=https://lh4.googleusercontent.com/xcemOKcTNUUlo5yAwQvAyAaMhLiwskacjc1LTDy0P0yoaSUpssBCjlURYTfSYsw-yHPBpXGgJCK_Y76lxqLPbjmiEx7WSMxJ5v-OclRHJo1J7YkQNaqI9sR-el_PM8qnaUp0rjvt>
+Next, we have to actually create our HTML tag. Tags are essentially commands that tell our editor what type of HTML we are writing. This just means that we are beginning to write our HTML code, but first we must actually tell our computer that we will be writing in HTML. To do this, simply type &lt;html&gt; on your second line. Your code should look like this so far: <img src=https://lh4.googleusercontent.com/xcemOKcTNUUlo5yAwQvAyAaMhLiwskacjc1LTDy0P0yoaSUpssBCjlURYTfSYsw-yHPBpXGgJCK_Y76lxqLPbjmiEx7WSMxJ5v-OclRHJo1J7YkQNaqI9sR-el_PM8qnaUp0rjvt>
 
-Now that we have established the fact that we will be writing in HTML, it’s time to get into the fun stuff. We start by writing “head” in our third line of code. This tells our editor that the information for our header will be stored here.
+Now that we have established the fact that we will be writing in HTML, it’s time to get into the fun stuff. We start by writing &lt;head&gt; in our third line of code. This tells our editor that the information for our header will be stored here.
 
-After we write our “head” tag, we know that we should give our project a title. Let’s title our project “My Mini City”. This is how your code should look now: <img src=https://lh3.googleusercontent.com/1ZecOiCyLV4wjTHfQsGzQSuJJGePIZp46IQkE29VVEmbHz1WUeS5tsDMs0iiKPVIFjCyic2dk49RRXEbnbwYrJFjGgykmT4rVDqWedqytukmAUpdbSiDKXYdvogTciuwNopK4Vzl>
+After we write our &lt;head&gt; tag, we know that we should give our project a title. Let’s title our project “My Mini City”. This is how your code should look now: <img src=https://lh3.googleusercontent.com/1ZecOiCyLV4wjTHfQsGzQSuJJGePIZp46IQkE29VVEmbHz1WUeS5tsDMs0iiKPVIFjCyic2dk49RRXEbnbwYrJFjGgykmT4rVDqWedqytukmAUpdbSiDKXYdvogTciuwNopK4Vzl>
 
-You may notice that there is a /title tag after our title’s name. This is called a closing tag. Closing tags have a “/” before they state which tag they are closing. This just tells our editor that we are no longer editing this tag.
+You may notice that there is a &lt;/title&gt; tag after our title’s name. This is called a closing tag. Closing tags have a “/” before they state which tag they are closing. This just tells our editor that we are no longer editing this tag.
 
 To create our body section, simply type body on your next line.
 
@@ -40,9 +39,9 @@ An ocean
 A waterfall
 A car
 
-In order to eventually create these objects, we have to make classes for them. Classes are basically like blank notebooks that we use to establish the fact that we are going to create an object. Then, we actually create it in CSS!
+In order to eventually create these objects, we have to make classes for them. Classes are simply declarations that we use to establish the fact that we are going to create an object. Then, we actually create it in CSS!
 
-We create classes using the "div" tag. Like this: <img src=https://lh6.googleusercontent.com/1iPgi651LuYWiyo5AnInaCkxrpUMpnVAeBFdxIiEtEpILCPIm1JixLkgK5oUWdsnLYMyOxsO2LjNdGGBz47F-g-yJpUt2dtV4mnathNFa6TGKwOJ2KJoXVRXrY2b9M0W6eQ6r6nR>
+We create classes using the &lt;div&gt; tag. Like this: <img src=https://lh6.googleusercontent.com/1iPgi651LuYWiyo5AnInaCkxrpUMpnVAeBFdxIiEtEpILCPIm1JixLkgK5oUWdsnLYMyOxsO2LjNdGGBz47F-g-yJpUt2dtV4mnathNFa6TGKwOJ2KJoXVRXrY2b9M0W6eQ6r6nR>
 As you can see, we just created a class called “ground”. Now our editor knows that we are planning to create an object.
 
 We do the same thing with all of our other objects. When you are done, it should look something like this: <img src=https://lh4.googleusercontent.com/KvgGx3EetIK7wY0oXVeEFvrvaznJTFkrwE6fwTi0HoYN4Rymi5SmJj6WAc-g2BUgAiFMjVm3WNUOdvusnb-0-cbewzMQDYZhIWOdrJRLtGd-KC2Ox1Ps7MVcq8Ev4bG5NOUirUz3> <img src=https://lh4.googleusercontent.com/QPwNwwgKTGt_I6I4pmBxnd5dvlew7OocTCup8YiqBB8DTmmnyaWZ2Qi5TK_GBboP6gjdJgObXWbt1-pIjPF95GlkQSGlZcfw0Z3Wa7amH-24IBkAMO4Z6mXmepX5uNoRb5kh9xao>
@@ -55,7 +54,7 @@ For every object in our city, we create a div class for it. That way, we can edi
 Sometimes, objects have “children”. For example, since our buildings are placed on the ground, the buildings are “children” of the ground.
 You can see that “building1” is placed within the “ground” tag in our code.
 
-Our “building1” also has children of its own. Since walls and a roof are components of our building, we place them inside our “building1” tag. We repeat this whenever components belong to each other. (You can also see this with the grass area and trees)
+Our “building1” also has children of its own. Since walls and a roof are components of our building, we place them inside our &lt;building1&gt; tag. We repeat this whenever components belong to each other. (You can also see this with the grass area and trees)
 
 After we create all of our objects and their “children”, it is time to close our body and our html tag by using /body and /html.
 
@@ -70,18 +69,18 @@ To style our webpage, we will need to learn the CSS syntax. A CSS rule-set consi
 
 Apart from color and font-size, these are some of the properties you will require to get started:
 
-Position: It specifies the type of positioning method used for an element: static, relative, fixed, absolute or sticky. 
-Display: it handles whether an element is shown or not. If you choose display: none, the element will not be visible.
-Background-color: It determines the background color of the element. A color can be specified by a valid color name - like “black”, a hexadecimal value - like “ffffff” or an rgb value - like “rgb(255,0,0)”.
-Height and Width: These are properties used to set the height and width of the element.
-Transform: This property is used to make 2D transformations. The most commonly used transformations are: rotate() and skew.
-rotate(): It rotates an element clockwise or counter-clockwise according to a given degree. For example, 
+1. Position: It specifies the type of positioning method used for an element: static, relative, fixed, absolute or sticky. 
+2. Display: it handles whether an element is shown or not. If you choose display: none, the element will not be visible.
+3. Background-color: It determines the background color of the element. A color can be specified by a valid color name - like “black”, a hexadecimal value - like “ffffff” or an rgb value - like “rgb(255,0,0)”.
+4. Height and Width: These are properties used to set the height and width of the element.
+5. Transform: This property is used to make 2D transformations. The most commonly used transformations are: rotate() and skew.
+   5a. rotate(): It rotates an element clockwise or counter-clockwise according to a given degree. For example, 
 transform: rotate(20deg);
- skew(): skews an element along the X and Y-axis by the given angles. For example, this example skews the element 30 degrees along the X-axis, and 50 degrees along the Y-axis.
+   5b. skew(): skews an element along the X and Y-axis by the given angles. For example, this example skews the element 30 degrees along the X-axis, and 50 degrees along the Y-axis.
 transform: skew(30deg, 50deg);
-Top: It affects the vertical position of the element. The above example sets the element 18px below the top edge of its nearest positioned ancestor.
-Left:  It affects the horizontal position of the element. The above example sets the element 90px from the left edge of its nearest positioned ancestor.
-Z-Index: It specifies the stack order of an element such that an element with a greater value is drawn before an element with a lower value. For example, an element with a z-index of -990 will be drawn before an element which has a z-index of -1000.
+6. Top: It affects the vertical position of the element. The above example sets the element 18px below the top edge of its nearest positioned ancestor.
+7. Left:  It affects the horizontal position of the element. The above example sets the element 90px from the left edge of its nearest positioned ancestor.
+8. Z-Index: It specifies the stack order of an element. You can think about Z-Index like layers of a sandwich. If the Z-Index value is higher for one item than another, the higher value will be drawn first. 
 
 To begin with, you will need a foundation for your city to be built upon. You can use the following code as a starting off point:
 <img src=https://lh6.googleusercontent.com/nZcAdMZnQDGDfw-g03-90yQgQcdS4mhQPlOFNpuUhFpB3AIVSEF-YtZJ8n5qs332bXjnNEkxspiWQpyn1BFyTgKsEJHK-dQojxqiWR04nd_tZbHe4e-D9XLHXAjMTYuIXNFWbs50>
@@ -90,7 +89,7 @@ Now that you have your foundation, you might want to start building. To help you
 <img src=https://lh6.googleusercontent.com/sDm5NTjvOdTJLM17ABgWDYo2vwaXLoNWE1t_8fqJxEBRCHWIuUGPhvsF-SjffJrARWNaDNNJ00awF6usQsISpVBpmnEZtGlhHkIztWAmclhshrbrMZs3m0giMTLE34Cx5K2P87UA>
 
 
-Now that you’ve laid down the foundation and built a road, you can start building more roads, bridges, buildings, or anything else you might want in your mini city! This is what our city looked like: <img src=https://lh4.googleusercontent.com/yu268ztRROLzh3AjLVUeNroSMUlbOsHpZzsWNIokeRtjF7iz-1mqWCqJPdtL1-JyUX6shb3kq28_CYm1xihsf70nPM8EBfHVERg13x7ef5nf5TibItYGI7ixBu_CHcgyIUfRML_c>
+Now that you’ve laid down the foundation and built a road, you can start building more roads, bridges, buildings, or anything else you might want in your mini city! This is what our city looked like after creating all the code described in this tutorial: <img src=https://lh4.googleusercontent.com/yu268ztRROLzh3AjLVUeNroSMUlbOsHpZzsWNIokeRtjF7iz-1mqWCqJPdtL1-JyUX6shb3kq28_CYm1xihsf70nPM8EBfHVERg13x7ef5nf5TibItYGI7ixBu_CHcgyIUfRML_c>
 
 
 
