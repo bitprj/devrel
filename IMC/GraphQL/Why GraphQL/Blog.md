@@ -1,4 +1,4 @@
-![graphql_img1](https://tva1.sinaimg.cn/large/007S8ZIlgy1gg24ub5m6tj30uk0famy0.jpg)
+![graphql_img1](graphql_img1.jpeg)
 
 # What is GraphQL?
 
