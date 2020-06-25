@@ -1,6 +1,6 @@
 ## Building a Mini City: HTML Portion
 ## Purpose
-HTML and CSS are extremely important parts of learning about how websites work. Every website uses HTML in order to display things such as text or images on sites. Being able to grasp a few concepts of  HTML and CSS can help a lot when it comes to learning more intricate subjects in computer science. HTML and CSS are tools used to create and edit websites. For this reason, it is important to get some experience with it!
+HTML and CSS are extremely important parts of learning about how websites work. Every website uses HTML in order to display things such as text or images on sites. Being able to grasp a few concepts of  HTML and CSS can help a lot when it comes to learning more intricate subjects in computer science. For this reason, it is important to get some experience with it!
 
 This tutorial will give you a walkthrough on how certain functions of HTML work and why they are important, all while learning how to build a cool mini-city!
 
@@ -13,7 +13,7 @@ Follow along with this tutorial, and you will be one step closer to building you
 This tutorial will go over the HTML and CSS portion of the mini-city. You can think of HTML as the foundation of the entire project! If we work to build a strong foundation, our mini-city will look fantastic!
 
 Our first step when using HTML is to establish a “!DOCTYPE html” function. This simply means that all of our code below this will be rendered as an HTML document.
-So, your first line should look like this: <img src=https://lh3.googleusercontent.com/3-aYKYNPyv2Ie-XOajV4_q8EM1PDzeSIxRDKeKtAsSxj_Cy9gSzlhYjDZ_d2UGupdsr5DvKaZy0tfP6NpqwOm8QXHNIIai5XspYBKACo_MODMXnfLni4-VK4KaNcdq2KMLWEGN-A>
+So, your first line should look like this: <img src=blob:https://carbon.now.sh/75a0f7f5-0808-432b-a7b4-3e626e577937>
 
 
 Got it? Great!
