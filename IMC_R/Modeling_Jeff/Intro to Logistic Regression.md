@@ -17,6 +17,15 @@ To measure the accuracy of the classification model, there are 2 methods that yo
 
 Both forms of measuring the accuracy of our logistic regression model are important because the accuracy score ensures that both the true positives and the true negatives equally matter and the correct and incorrect predictions would give us a better course of action on how to handle potentially dangerous mistakes in our study. For example, having a high number of falsely misdiagnosed cases is much worse than having falsely diagnosed cases because you're potentially letting people that are seriously ill live freely for their lives, but they could have a heart attack at any moment without treatment.
 
-Now that we have explained the concept behind logistic regression, let's put this knowledge to practice. The first step would be to import the csv file regarding the heart disease cases.
+Now that we have explained the concept behind logistic regression, let's put this knowledge to practice. The first step would be to import the csv file regarding the heart disease cases and to read the first 6 rows of the dataset.
 
+```r
+#Load Dataset
+library(dplyr)
+library(caTools)
+library(caret)
+chest = heart
+#Looks at first 6 rows of dataset
+head(chest)
+```
 
