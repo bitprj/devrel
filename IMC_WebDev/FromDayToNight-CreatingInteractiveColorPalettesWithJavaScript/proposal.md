@@ -23,3 +23,8 @@ Here, the blog will dive into the coding aspect by first teaching the reader how
 **End (2-3+ sentences):**    
 Now, the blog will show the reader how the JavaScript code connects with the HTML and CSS code, then allow the reader to run and adjust the colors if needed. Since this blog is the last part of the tiny city series, the blog will encourage the reader to continue to build and customize their tiny city and suggest how to learn more about web development and design.
 
+
+
+LOOM VIDEO:
+
+https://www.loom.com/share/0129881d019d4f4cb44075adea6e807a
