@@ -1,3 +1,5 @@
+# What is Hadoop and Why do we need it?
+
 ![Hadoop Art](Assets/hadoop-art.jpg)
 
 ***"In pioneer days they used oxen for heavy pulling, and when one onx couldn't budge a log, they didn't try to grow a larger ox. We shouldn't be trying for bigger computers, but for more systems of computers." - Grace Hopper***
