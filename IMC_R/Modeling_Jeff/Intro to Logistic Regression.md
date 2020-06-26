@@ -19,7 +19,7 @@ Both forms of measuring the accuracy of our logistic regression model are import
 
 Now that we have explained the concept behind logistic regression, let's put this knowledge to practice. The first step would be to import the csv file regarding the heart disease cases and to read the first 6 rows of the dataset.
 
-```R
+```r
 #Load Dataset
 library(dplyr)
 library(caTools)
@@ -31,4 +31,24 @@ head(chest)
 
 ![](https://i.paste.pics/5aa972ef76be7d8a186ebd0fc26ed856.png)
 
-As we can see, the data set consists of 14 columns of the necessary factors that affect the patients chances of being diagnosed for heart disease. The next step would be to look at the summary statistics of the given columns
+As we can see, the data set consists of 14 columns of the necessary factors that affect the patients chances of being diagnosed for heart disease. The next step would be to look at the summary statistics of the given columns.
+
+```r
+#Summary Statistics
+summary(chest)
+```
+
+![](https://i.paste.pics/b299da2b3dd62763ce03138a6b7be6fa.png)
+
+Now that we can see the values of the summary statistics, we shall look into the column names of the dataset to see what specfic features would be best to build out model with.
+
+```r
+#Names of the features
+names(chest)
+```
+
+![](https://i.paste.pics/a2cd4df73adf6445780054f01aca4fde.png)
+
+As you can see here, these are the 14 features that our dataset has. In terms of what columns would seem necessary to fit our model against, we should use the target column since it's our dependent variable in the dataset, sex to classify in terms of the two sexes in the dataset, cp (chest pain type) because the severe level of chest pain can affect the accuracy of the diagnosis (angina could be the real problem rather than heart disease), thalach (maximum heart rate) because the heart could be misconstrued for over exercising, oldpeak (ST depression levels) to measure the control of the heart rate itself, and ca (number of blood vessels colored by fluoroscopy) because we want to measure the levels of cholesterol plaque build up that's accumlate in each patient's blood vessels.
+
+Now that we have covered what metrics seem to make the most sense
