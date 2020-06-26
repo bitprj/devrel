@@ -29,4 +29,4 @@ chest = heart
 head(chest)
 ```
 
-<img = "https://pasteboard.co/JeOwJR8.png"/>
+![alt](https://pasteboard.co/JeOwJR8.png)
