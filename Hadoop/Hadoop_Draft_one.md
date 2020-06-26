@@ -17,7 +17,8 @@ iv. The Large Hadron Collider near Geneva, Switzerland, produces about 30 petaby
 
 Processing datasets such as these are not simple and provide many hurdles. for example:
 
-1. Loading and writing the dataset can take hours if not minutes for processing.
+1. Loading and writing the dataset can take minutes if not hours for processing.
+
 2. When it comes to data visualization and processing it is an iterative process and can take a heavy toll on computers that do not have powerful (in turn expensive graphic cards).
 3. This, in turn, leads to high electricity bills which should be as low as possible.
 
