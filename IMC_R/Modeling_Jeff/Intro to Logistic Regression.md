@@ -19,7 +19,7 @@ Both forms of measuring the accuracy of our logistic regression model are import
 
 Now that we have explained the concept behind logistic regression, let's put this knowledge to practice. The first step would be to import the csv file regarding the heart disease cases and to read the first 6 rows of the dataset.
 
-```r
+```R
 #Load Dataset
 library(dplyr)
 library(caTools)
@@ -30,3 +30,5 @@ head(chest)
 ```
 
 ![](https://i.paste.pics/5aa972ef76be7d8a186ebd0fc26ed856.png)
+
+As we can see, the data set consists of 14 columns of the necessary factors that affect the patients chances of being diagnosed for heart disease. The next step would be to look at the summary statistics of the given columns
