@@ -29,4 +29,4 @@ chest = heart
 head(chest)
 ```
 
-![](https://paste.pics/5aa972ef76be7d8a186ebd0fc26ed856)
+![](https://i.paste.pics/5aa972ef76be7d8a186ebd0fc26ed856.png)
