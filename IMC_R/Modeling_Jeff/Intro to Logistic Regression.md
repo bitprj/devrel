@@ -51,4 +51,49 @@ names(chest)
 
 As you can see here, these are the 14 features that our dataset has. In terms of what columns would seem necessary to fit our model against, we should use the target column since it's our dependent variable in the dataset, sex to classify in terms of the two sexes in the dataset, cp (chest pain type) because the severe level of chest pain can affect the accuracy of the diagnosis (angina could be the real problem rather than heart disease), thalach (maximum heart rate) because the heart could be misconstrued for over exercising, oldpeak (ST depression levels) to measure the control of the heart rate itself, and ca (number of blood vessels colored by fluoroscopy) because we want to measure the levels of cholesterol plaque build up that's accumlate in each patient's blood vessels.
 
-Now that we have covered what metrics seem to make the most sense
+Now that we have covered what metrics seem to make the most sense, we can now start creating the logistic regression model by making a train-test split of a level of 70% and fitting the model directly.
+
+```r
+#Train-Test Split by 70%
+sample_size = sample.split(chest$target,SplitRatio=0.70)
+train=subset(chest,sample_size==TRUE)
+test=subset(chest,sample_size==FALSE)
+#Logistic Regression Model
+Diagnosis_fit=glm(target~sex+cp+thalach+oldpeak+ca,train,family=binomial())
+summary(Diagnosis_fit)
+```
+
+![](https://i.paste.pics/a8e695c39f63edb05544e7686fc4fac7.png)
+
+Now these are the summary statistics of the logistic regression model given. The P-value (Pr(>|z|)) of the selected columns are all less than the significance level, 0.05, so they're all significant values for factoring out the determination of diagnosis. 
+
+Now we shall predict the target value for our dataset using the testing data.
+
+```r
+#Creating the prediction variable
+Diagnosis_pred = predict(Diagnosis_fit,test,type="response")
+prediction = as.data.frame(Diagnosis_pred)
+categorise=function(x){
+  return(ifelse(x>0.5,1,0))
+}
+
+prediction = apply(prediction,2,categorise)
+head(prediction,10)
+```
+
+![](https://i.paste.pics/1c6e7ce8081c0e0394b38f5805db6323.png)
+
+We can now see the first 10 rows of the binary values of the target column with in our dataset (1 = misdiagnosed, 0 = diagnosed)
+
+The final step would be to create the confusion matrix to determine the true/false postive and the true/false negatives values of the patients' diagnosis, the accuracy level of the logistic regression model itself, and the confidence interval of the true accuracely level of how the logistic regression model performs.
+
+```r
+#Creating the confusion matrix that will also give the accuracy level
+confusionMatrix(as.factor(test$target),as.factor(prediction))
+```
+
+![](https://i.paste.pics/cd29f1cbf3e96a02d6ddc44e958bae00.png)
+
+This is the numerical information regarding the confusion matrix of our logistic regression model. We can see that that the accuracy level is 80.22% (Accuracy : 0.8022), which means that our model has a high accuracy level of predicting the proper diagnosis of heart disease patients. The 95% confidence interval is between 70.55% to 87.94% (95% CI : (0.7055, 0.8784)) which means that overall, model is fairly accurate since the range of accuracy is much higher than 50%. In terms of the true/false postive and the true/false negative values of each patient's diagnosis, we can look at the true positive rate by looking at the Pos Pred Value entry, which is 0.8049 (80.49%). We can also look at the false positive rate by doing 1 - (Pos Pred Value) which would give us 0.1951 (19.51%). This means that 80.49% of patients were correctly diagnosed to have heart disease and 19.51% of patients were incorrectly diagnosed with heart disease (true postive diagnosed patients = 40, false positive diagnosed patients = 8). As for the true negative rate, we can use the Neg Pred Value entry, which is 0.8000 (80%). We can also look for the false negative rate by doing 1 - (Neg Pred Value) which would give us 0.2000 (20%). This means that 80% of patients were correctly misdiagnosed for heart disease and 20% of patients were incorrectly misdiagnosed for heart disease (true negative misdiagnosed patients = 33, false negative misdiagnosed patients = 10). So if we were to add the total amount of patients that actually have heart disease, it would be 50 people in total (40 + 10 = 50) and if we were to add the total number of people that don't have heart disease, it would be 41 in total (33 + 8 = 41). We can see that the majority of pateints do have heart disease, but there is a moral consequence of clasification error. A false positive for diagnosis would mean that the doctor would waste time and resources on a patient that they believe has heart disease, when they're actually fine. A false negative would mean that the doctor would ignore patients that they believe were misdiagnosed, but they are in dire need of help and cold die of a heart attack at any minute without aid. Luckily it was only a small percent of patients that fall into both groups, but it's still a risky error a doctor can make on the livelihood of their patients.
+
+Overall, logistic regression is a very important machine learning model to implement so that we can determine what perspective binary hroups does our data belong in and that we can avoid as much classification error as possible when conducting the process.
