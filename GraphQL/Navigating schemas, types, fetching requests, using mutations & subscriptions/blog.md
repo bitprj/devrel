@@ -99,11 +99,11 @@ In this example, object types include the fields <code>artist</code> and <code>s
 
 **The 5 Scalar Types in GraphQL are:**
 
-<code>• int</code> : an integer value of 32-bit
-<code>• float</code> : a floating-point value
-<code>• string</code> : a character sequence
-<code>• boolean</code> : <code>true</code> or <code>false</code>
-<code>• id </code> : a unique human-unreadable identifier used to refetch an object 
+<code>int</code> : an integer value of 32-bit
+<code>float</code> : a floating-point value
+<code>string</code> : a character sequence
+<code>boolean</code> : <code>true</code> or <code>false</code>
+<code>id </code> : a unique human-unreadable identifier used to refetch an object 
 
 The most common and simple types of schemas in GraphQL are object types. There are several other types of schemas covered in this blog such as <em>mutations</em> and <em>subscriptions</em> which are structured quite differently from object types.
 
