@@ -13,16 +13,28 @@ Follow along with this tutorial, and you will be one step closer to building you
 This tutorial will go over the HTML and CSS portion of the mini-city. You can think of HTML as the foundation of the entire project! If we work to build a strong foundation, our mini-city will look fantastic!
 
 Our first step when using HTML is to establish a “!DOCTYPE html” function. This simply means that all of our code below this will be rendered as an HTML document.
-So, your first line should look like this: <img src=blob:https://carbon.now.sh/75a0f7f5-0808-432b-a7b4-3e626e577937>
-
+So, your first line should look like this:
+```html
+<!DOCTYPE html>
+ ```
 
 Got it? Great!
 
-Next, we have to actually create our HTML tag. Tags are essentially commands that tell our editor what type of HTML we are writing. This just means that we are beginning to write our HTML code, but first we must actually tell our computer that we will be writing in HTML. To do this, simply type &lt;html&gt; on your second line. Your code should look like this so far: <img src=https://lh4.googleusercontent.com/xcemOKcTNUUlo5yAwQvAyAaMhLiwskacjc1LTDy0P0yoaSUpssBCjlURYTfSYsw-yHPBpXGgJCK_Y76lxqLPbjmiEx7WSMxJ5v-OclRHJo1J7YkQNaqI9sR-el_PM8qnaUp0rjvt>
+Next, we have to actually create our HTML tag. Tags are essentially commands that tell our editor what type of HTML we are writing. This just means that we are beginning to write our HTML code, but first we must actually tell our computer that we will be writing in HTML. To do this, simply type &lt;html&gt; on your second line. Your code should look like this so far: 
+```html
+<!DOCTYPE html>
+<html>
+  ```
 
 Now that we have established the fact that we will be writing in HTML, it’s time to get into the fun stuff. We start by writing &lt;head&gt; in our third line of code. This tells our editor that the information for our header will be stored here.
 
-After we write our &lt;head&gt; tag, we know that we should give our project a title. Let’s title our project “My Mini City”. This is how your code should look now: <img src=https://lh3.googleusercontent.com/1ZecOiCyLV4wjTHfQsGzQSuJJGePIZp46IQkE29VVEmbHz1WUeS5tsDMs0iiKPVIFjCyic2dk49RRXEbnbwYrJFjGgykmT4rVDqWedqytukmAUpdbSiDKXYdvogTciuwNopK4Vzl>
+After we write our &lt;head&gt; tag, we know that we should give our project a title. Let’s title our project “My Mini City”. This is how your code should look now: 
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+  		<title>My Mini City</title>
+  ```
 
 You may notice that there is a &lt;/title&gt; tag after our title’s name. This is called a closing tag. Closing tags have a “/” before they state which tag they are closing. This just tells our editor that we are no longer editing this tag.
 
@@ -41,10 +53,68 @@ A car
 
 In order to eventually create these objects, we have to make classes for them. Classes are simply declarations that we use to establish the fact that we are going to create an object. Then, we actually create it in CSS!
 
-We create classes using the &lt;div&gt; tag. Like this: <img src=https://lh6.googleusercontent.com/1iPgi651LuYWiyo5AnInaCkxrpUMpnVAeBFdxIiEtEpILCPIm1JixLkgK5oUWdsnLYMyOxsO2LjNdGGBz47F-g-yJpUt2dtV4mnathNFa6TGKwOJ2KJoXVRXrY2b9M0W6eQ6r6nR>
+We create classes using the &lt;div&gt; tag. Like this:
+```html
+  <body>
+      <div class = "ground">
+  ```
 As you can see, we just created a class called “ground”. Now our editor knows that we are planning to create an object.
 
-We do the same thing with all of our other objects. When you are done, it should look something like this: <img src=https://lh4.googleusercontent.com/KvgGx3EetIK7wY0oXVeEFvrvaznJTFkrwE6fwTi0HoYN4Rymi5SmJj6WAc-g2BUgAiFMjVm3WNUOdvusnb-0-cbewzMQDYZhIWOdrJRLtGd-KC2Ox1Ps7MVcq8Ev4bG5NOUirUz3> <img src=https://lh4.googleusercontent.com/QPwNwwgKTGt_I6I4pmBxnd5dvlew7OocTCup8YiqBB8DTmmnyaWZ2Qi5TK_GBboP6gjdJgObXWbt1-pIjPF95GlkQSGlZcfw0Z3Wa7amH-24IBkAMO4Z6mXmepX5uNoRb5kh9xao>
+We do the same thing with all of our other objects. When you are done, it should look something like this: 
+```html
+<body>
+      <div class = "ground">
+        <div class = "bottomSide"></div> 
+        <div class = "bottomFront"></div> 
+        <div class = "building1">
+          <div class = "wall1"></div>
+          <div class = "wall2"></div>
+          <div class = "roof"></div>
+          <div class = "railing1"></div>
+          <div class = "railing2"></div>
+        </div>
+        <div class = "building2">
+          <div class = "wall3"></div>
+          <div class = "wall4"></div>
+          <div class = "roof2"></div>
+        </div>
+        <div class = "road1"></div>
+        <div class = "road2"></div>
+      </div>
+    
+    	<div class = "ocean"></div>
+    	<div class = "ramp1"></div>
+      <div class = "ramp2"></div>
+    
+      <div class = "bridge"></div>
+    
+    	<div class = "waterfall"></div>
+    
+    	<div class = "ground2">
+    		<div class = "grassArea"> <!--GRASS AREA-->
+    			<div class = "treeTrunks"></div> 
+          <div class = "triangleTops"></div>
+          <div class = "circleTops"></div> 
+    		</div>
+        <div class = "bottomFront"></div> 
+    	</div>
+      
+      <div class = "car">
+        <div></div>
+        <div></div>
+      </div>
+    
+    	<div class = "boat">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    
+    	<div class = "sun"></div>
+  </body>
+  
+</html>
+```
 
 
 This looks like a huge chunk of code right now, but let’s break it down!
@@ -60,7 +130,14 @@ After we create all of our objects and their “children”, it is time to close
 
 When it’s time to design our objects in CSS, we MUST use the exact name we created for them in our HTML. For example, if I want to change the color of the bridge in my city, I need to name it “bridge” in my CSS, just like how it is in my HTML.
 
-Next, let’s prepare our editor for the CSS portion of the code. We do this by establishing a style tag. Since we will be using CSS, our style tag will look like this: <img src=https://lh5.googleusercontent.com/kNUcMVEmTr0O0GyTUlYwlJro5lYXiehFh5gwS_B4xZujFUkrVZEn9pIjoA-venhZlkqoWjYBlksmDZ4o0-SEaem_FFR072jiqH26Svuy4ga0ACzWjt4m-5JQG1FI_mBGbIDppin0>
+Next, let’s prepare our editor for the CSS portion of the code. We do this by establishing a style tag. Since we will be using CSS, our style tag will look like this: 
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+  		<title>Mini City Webinar</title>
+    	<style TYPE="text/css">
+```
 
 We will be writing all of our CSS in our head portion of our code.
 
@@ -88,10 +165,56 @@ transform: skew(30deg, 50deg);
 8. Z-Index: It specifies the stack order of an element. You can think about Z-Index like layers of a sandwich. If the Z-Index value is higher for one item than another, the higher value will be drawn first. 
 
 To begin with, you will need a foundation for your city to be built upon. You can use the following code as a starting off point:
-<img src=https://lh6.googleusercontent.com/nZcAdMZnQDGDfw-g03-90yQgQcdS4mhQPlOFNpuUhFpB3AIVSEF-YtZJ8n5qs332bXjnNEkxspiWQpyn1BFyTgKsEJHK-dQojxqiWR04nd_tZbHe4e-D9XLHXAjMTYuIXNFWbs50>
+```html
+.ground{ /*foundation*/
+        position: absolute;
+        display: block;
+        /*purple*/
+        background-color: #D3D3D3;
+        width: 200px;
+        height: 148px;
+        transform: skew(60deg, -15deg);
+        top: 100px;
+        left: -150px;
+        z-index:-999;
+      }
+      .ground .bottomSide{
+        position: absolute;
+        display: block;
+        width: 16px;
+        height: 148px;
+        background-color: #C0C0C0;
+        transform: skew(0deg, -30deg);
+        top: 4px;
+        left: -16px;
+        z-index:-1001;
+      }
+      .ground .bottomFront{
+        position: absolute;
+        display: block;
+        width: 210px;
+        height: 9.5px;
+        background-color: #C0C0C0;
+        transform: skew(-60deg, 0deg);
+        top: 147px;
+        left: -8px;
+        z-index:-1001;
+      }
+```
 
 Now that you have your foundation, you might want to start building. To help you get started, this is what the code to draw a road looks like:
-<img src=https://lh6.googleusercontent.com/sDm5NTjvOdTJLM17ABgWDYo2vwaXLoNWE1t_8fqJxEBRCHWIuUGPhvsF-SjffJrARWNaDNNJ00awF6usQsISpVBpmnEZtGlhHkIztWAmclhshrbrMZs3m0giMTLE34Cx5K2P87UA>
+```html
+.ground .road1 {
+      	position: absolute;
+        display: block;
+        background-color: #C0C0C0;
+        width: 20px;
+        height: 200px;
+        transform: rotateZ(90deg);
+        top: 18px;
+        left: 90px;
+        z-index:-998;
+```
 
 
 Now that you’ve laid down the foundation and built a road, you can start building more roads, bridges, buildings, or anything else you might want in your mini city! This is what our city looked like after creating all the code described in this tutorial: <img src=https://lh4.googleusercontent.com/yu268ztRROLzh3AjLVUeNroSMUlbOsHpZzsWNIokeRtjF7iz-1mqWCqJPdtL1-JyUX6shb3kq28_CYm1xihsf70nPM8EBfHVERg13x7ef5nf5TibItYGI7ixBu_CHcgyIUfRML_c>
