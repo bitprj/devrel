@@ -37,7 +37,7 @@ After fully installing Postman,
 
 ```
 
-<li> Scrolling down to the bottom, we can see the data that we requested from the server output information back to the client </li>
+<li> Scrolling down to the bottom, we can see the data that we requested from the server output information back to the client: </li>
 
 ```
 {
