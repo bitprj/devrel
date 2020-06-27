@@ -28,7 +28,8 @@ These days, a  1 Terabyte drive is a normal part of our lives, but there are sti
 
 ## What does Hadoop Do?
 
-![Hadoop Distribution Node System](Assets/Node_System.jpg)
+![Hadoop Distribution Node System](Assets/Node_System.jpg) 
+
 Working with parallel drives is risky since there are two important problems that can arise. </br>
 
 **Hardware Failure** </br>
