@@ -116,7 +116,9 @@ The most common and simple types of schemas in GraphQL are object types. There a
 We've already learned how to fetch data from the server, but we need to learn a way to make changes to the data stored in the server. This is achieved through mutations. <em>Mutations</em> are classified into 3 different types:
 
 • Creating new data
+
 • Updating existing data
+
 • Deleting existing data
 
 As mentioned earlier, mutations have a unique structure that distinguishes their type with other types of schemas.
