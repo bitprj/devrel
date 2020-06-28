@@ -24,6 +24,7 @@ Now that we have explained the concept behind logistic regression, let's put thi
 library(dplyr)
 library(caTools)
 library(caret)
+set.seed(123)
 chest = read.csv("C:\\Users\\ugoch\\Downloads\\usa_county_wise.csv\\Bit Project Supervised Learning\\heart.csv")
 #Looks at first 6 rows of dataset
 head(chest)
