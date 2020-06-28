@@ -136,8 +136,8 @@ Next, let’s prepare our editor for the CSS portion of the code. We do this by 
 ```html
 <!DOCTYPE html>
 <html>
-	<head>
-  		<title>Mini City Webinar</title>
+  <head>
+      <title>Mini City Webinar</title>
     	<style TYPE="text/css">
 ```
 
