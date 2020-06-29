@@ -26,7 +26,10 @@ It is also a fact that companies rely heavily on an abundance of data instead of
 
 These days, a  1 Terabyte drive is a normal part of our lives, but there are still some open disadvantages. First, the transfer speed is around 100 MB/s, so it takes more than 2 and a 1/2 hours to read all the data of the disk. Long time right? at big data reliant company, even worse. **But what if we had 100 drives, each holding one-hundredth of the data?** In a case such as this, working in parallel we could read the data in under 2 minutes. This where the need for **Hadoop** arose.
 
-## What does Hadoop Do?
+## What is Hadoop?
+Hadoop is a framework that allows you to first store Big Data in a distributed environment, so that, you can process it parallely. There are basically two components in Hadoop:
+
+### What does Hadoop Do?
 
 ![Hadoop Distribution Node System](Assets/Node_System.jpg) 
 
@@ -55,7 +58,7 @@ Hadoop allows users to quickly write efficient parallel code.
 Hadoop, and large-scale distributed data processing in general has now become an improtant and necessary skillset for programmers. It's accessibility and simplicity give it an edge over writing and running large distributed programs.
 **Note:** The good news is that even if you're a college student, we can quickly (and cheaply) create their own Hadoop Cluster.
 
-## What is a node?
+### What is a node?
 A node in hadoop simply means a computer that can be used for processing and storing. There are two types of nodes in hadoop Name node and Data node. It is called as a node as all these computers are interconnected.
 
 **NameNode** is also known as the Master node. NameNode only stores the metadata of HDFS – the directory tree of all files in the file system, and tracks the files across the cluster. NameNode does not store the actual data or the dataset.The data itself is actually stored in the DataNodes. A functional filesystem has more than one DataNode, with data replicated across them.
