@@ -1,0 +1,5 @@
+You need Python 3.6 or higher installed on your computer.
+Open terminal and run the following commands:
+1. pip install pandas
+2. pip install numpy
+3. pip install mlxtend
