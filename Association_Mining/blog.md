@@ -1,7 +1,7 @@
 # Association Rule Mining in Python
 
-Ever wondered why you get recommendation emails that suggest you buy things related to what you bought earlier? Perhaps a pillow cover is recommended when you buy a new bedsheet. You might have noticed that whenever you buy things online, you are also given a list of items which other customers bought along with the item that you buy. For example, when you buy a mobile phone, you are automatically shown a phone case in the recommended products. Similarly, whenever you are in a mall, you might have noticed that bread and butter are kept nearby. This naturally helps us in buying things but it also increases the shop's profit because every retailer knows that if you put two products next to each other on a shelf, they're more likely to be sold together. This magical recommendations of the items based on what others buy with an item is nothing but association mining. 
-One of the most interesting associations is the diaper-beer pair. You might be thinking, how are diaper and beer correlated? But in 1992, Karen Heath, stumbled across this correlation. Evidently, young fathers tend to go to stores late at night to buy diapers, and also pick up beer. This became quite the folklore in data analysis.
+Ever wondered why you get recommendation emails that suggest you buy things related to what you bought earlier? Perhaps a pillow cover is recommended when you buy a new bedsheet. You might have noticed that whenever you buy things online, you are also given a list of items which other customers bought along with the item that you buy. For example, when you buy a mobile phone, you are automatically shown a phone case in the recommended products. This magical recommendations of the items based on what others buy with an item is nothing but association mining. 
+One of the most interesting associations is the diaper-beer pair. You might be thinking, how are diaper and beer correlated? Some researchers stumbled across this correlation. Evidently, young fathers tend to go to stores late at night to buy diapers, and also pick up beer. This became quite the folklore in data analysis.
 
 Let's skip to the part where we become the magicians and find the associations between products. Apriori is an algorithm is used for finding association rules. The three major terms which help to understand the Apriori algorithm are: 
  * Support
@@ -62,17 +62,17 @@ We will count the frequency of the singleton set, i.e. a single item, and decide
 |J|4|
 
 Here, 'Pepsi' only has a count of 2, which is below the support threshold. Hence, we can say that the frequent item sets of size 1 are {M},{C},{B} and {J}.
-Similarly, the frequent item sets of size 2 are {M,B}, {C,B} and {C,J} and frequent item set of size 3 is {M,C,B}.
+Similarly, the frequent item sets of size 2 are {M,B}, {C,B} and {C,J} and frequent item set of size 3 is {M,C,B}, since their counts have exceeded our default threshold. 
 We now calculate the confidence of the association rules which we can form using the frequent item sets. Assume that the threshold for confidence is 0.75.
 Using the formula given above, we calculate the confidence of the rules:
 B→M has a confidence of 4/6. This is below the threshold so we do not consider this rule. However, the rule B→C has a confidence of 5/6 and it is above the confidence threshold level, so we consider this as one of the association rules. This is how the association rules are generated.
 
-Now, we turn to the practical application of this algorithm on a given dataset.
-(Audiences are encouraged to use various tools to have their implementations, such as Goole Colab, Jupyter notebook)
+Now, Let's try this concept on our own! 
 
 The data which we will work on is a real online retail transaction data set of two years which is available at this [link](https://archive.ics.uci.edu/ml/datasets/Online+Retail+II).
 The data has 1067371 instances and 8 features. The downloaded dataset is in an Excel file format.
 Let's start with importing the libraries that are required to run the program.
+(Audiences are encouraged to use various tools to have their implementations, such as Goole Colab, Jupyter notebook)
 
 #### Importing Libraries
 
@@ -111,7 +111,7 @@ The data frame will look like this:
 
 ![data_head output](/Association_Mining/images/data_head.png)
 
-To check if we are on the right track, we can look at the number of rows and columns in the data and verify it with the actual numbers. 
+To check if we are on the right track, we can look at the number of rows and columns in the data and verify it with the actual numbers. For example, we can use the below code to check its dimensions. 
 
 ```
 data.shape
@@ -171,13 +171,13 @@ basket_encoded = basket_USA.applymap(hot_encode)
 basket_USA = basket_encoded
 ```
 
-Using the apriori function, and also assuming the support threshold to be *0.06*, we find the frequent item sets.
+Using the apriori function, and also assuming the support threshold to be *0.06* (defualt value), we find the frequent item sets.
 
 ```
 frq_items = apriori(basket_USA, min_support = 0.06, use_colnames = True)
 ```
 
-To find the association rules, we use the *association_rules()* function. We pass the frequent item sets as one of the parameters. We use the **Lift** metric and set the minimum threshold to be 1.2.
+To find the association rules, we use the *association_rules()* function. We pass the frequent item sets as one of the parameters. We use the **Lift** metric and set the minimum threshold to be 1.2 to see if we are approaching the possible result, and value might be changed to adapt the later result.
 
 ```
 rules = association_rules(frq_items, metric ="lift", min_threshold = 1.2)
@@ -196,21 +196,19 @@ rules.head(6)
 
 For example, here we see that if a customer in the USA buys a *Mini Paint Set Vintage*, they will most likely buy *60 Cake Cases Dolly Girl Design*.
 
-The support value for the first rule is 0.1. This number is calculated by dividing the number of transactions containing *Mini Paint Set Vintage* divided by total number of transactions. The confidence level for the rule is 1.0 which shows that out of all the transactions that contain *Mini Paint Set Vintage*, 100% of the transactions also contain *60 Cake Cases Dolly Girl Design*. Finally, the lift of 10.0 tells us that *60 Cake Cases Dolly Girl Design* is 10 times more likely to be bought by the customers who buy *Mini Paint Set Vintage* compared to the default likelihood of the sale of *60 Cake Cases Dolly Girl Design*.
+The support value for the first rule is 0.1. This number is calculated by dividing the number of transactions containing *Mini Paint Set Vintage* of the total number of transactions. The confidence level for the rule is 1.0 which shows that out of all the transactions that contain *Mini Paint Set Vintage*, 100% of the transactions also contain *60 Cake Cases Dolly Girl Design*. Finally, the lift of 10.0 tells us that *60 Cake Cases Dolly Girl Design* is 10 times more likely to be bought by the customers who buy *Mini Paint Set Vintage* compared to the default likelihood of the sale of *60 Cake Cases Dolly Girl Design*.
 
 You can try this for other countries and find interesting association rules, changing the threshold values as required.
 
 ## Conclusion
 
-* Audiences are able to understand the basic concept of association mining
-* Audiences are able to know how to implement the basic association mining instance with Apriori Algorithm in Python which includes: 
+After reading this blog, we are able to understand the basic concept of association mining, and we are also able to know how to implement the basic association mining instance with Apriori Algorithm in Python which includes: 
 1. Correctly import the dataset
 2. Understanding the dataset
 3. Preprocessing the dataset
 4. Implementing Apriori Algorithm
 5. Evaluation of the model
-* Use of association mining in the real world to boost the businesses, especially retail sellers
-* Audiences may extend their thinkings of association mining in a broader way and fields, such as internet ads, promotional discounts, etc
+Furthermore, we should also understand the use of association mining in the real world to boost the businesses, especially retail sellers. Lastly, we should be able to extend their thinkings of association mining in a broader way and fields, such as internet ads, promotional discounts, etc
 
 Apriori algorithm is a very useful for finding simple correlations between data items. It is easy to implement and is simple to understand. However, for faster processing, more complex algorithms such as [SON algorithm](https://smartech.gatech.edu/bitstream/handle/1853/6678/GIT-CC-95-04.pdf?sequence=1&isAllowed=y) and [FP-Growth](https://en.wikipedia.org/wiki/Association_rule_learning#FP-growth_algorithm) are used.
 
