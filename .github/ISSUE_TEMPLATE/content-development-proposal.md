@@ -75,7 +75,21 @@ assignees: shreyagupta98
     - Assign your Technical QA expert and PM to the pull request
 </details>
 
-### :pushpin: Step 4: Written Deliverables
+### :pushpin: Step 4.1: Blog Deliverables
+> :fire: DO NOT MERGE TO MASTER YET
+- [ ] Submit Written Deliverables
+
+<details><summary><b>How to: Submit Written Deliverables</b></summary>
+    - Fork the bitprj/devrel repo
+    
+    - Commit + Push written content (step-by-step blog tutorial of code) under blog.md within the pertinent folder
+    
+    - Create a pull request to merge into the #{{insert-blog-title}} branch on bitprj/devrel
+    
+    - Assign your Technical QA expert, Writing QA expert, and PM to the pull request
+</details>
+
+### :pushpin: Step 4.2: Workshop Deliverables
 > :fire: DO NOT MERGE TO MASTER YET
 - [ ] Submit Written Deliverables
 
