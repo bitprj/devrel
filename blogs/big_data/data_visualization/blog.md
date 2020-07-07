@@ -70,7 +70,7 @@ First, click any abc column and click Format.
 
 ![](https://i.imgur.com/NZ6WGTx.jpg)
 
-Change Pane color to White.
+Change ***Default*** Pane color to White.
 
 ![](https://i.imgur.com/BcWDLzU.jpg)
 
