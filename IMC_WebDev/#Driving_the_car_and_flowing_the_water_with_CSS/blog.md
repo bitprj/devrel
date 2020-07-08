@@ -57,7 +57,7 @@ animation-delay
 animation-iteration-count
 animation-direction
 ```
-We could set these properties of the objects (e.g. the car and the boat) to make them move. The `animation` will gradually change the object from one set of styles to another, as indicated by the codes associated with the `animation-name`. This animation will last for the amount of time that you set `animation-duration` to. Also, we will use `@keyframes` to create our customized animation.
+To make the car and the boat move, we can set the properties of these objects. The `animation` will gradually change the object from one set of styles to another, as indicated by the codes associated with the `animation-name`. This animation will last for the amount of time that you set `animation-duration` to. Also, we will use `@keyframes` to create our customized animation.
 
 The above six properties can also be written shortened in one line in that order. For example,    `animation: example 5s linear 2s infinite alternate;`
 
