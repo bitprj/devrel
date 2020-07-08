@@ -59,7 +59,7 @@ animation-direction
 ```
 We could set these properties of the objects (e.g. the car and the boat) to make them move. The `animation` will gradually change the object from one set of styles to another, as indicated by the codes associated with the `animation-name`. This animation will last for the amount of time that you set `animation-duration` to. Also, we will use `@keyframes` to create our customized animation.
 
-The above 6 properties can also be written shortened in 1 line in that order. For example,    `animation: example 5s linear 2s infinite alternate;`
+The above six properties can also be written shortened in one line in that order. For example,    `animation: example 5s linear 2s infinite alternate;`
 
 Therefore, for the boat, we will have 
 `animation: boat 15s linear infinite;` in the `.boat` , which means the boat will change from one style to another as `@keyframes boat` shows in 15 seconds, and then it will repeat infinite times.
@@ -70,7 +70,7 @@ Similarly, the car will have `animation: car 9s linear infinite;` to change the 
 
 
 
-This is similar for the car, but we want the car to go onto the bridge; so, we break its route into 5 parts.
+This is similar to what we did for the boat, but we want the car to go onto the bridge; so, we break its route into five parts.
 ![](https://i.imgur.com/3EtTnGI.gif)
 
 1. go straight along the road: 
