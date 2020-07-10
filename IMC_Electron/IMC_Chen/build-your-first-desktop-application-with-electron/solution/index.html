@@ -1,0 +1,47 @@
+<!-- 
+Author: Chen Meng
+Date: 5/18/2020
+-->
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>My Timer</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+  </head>
+
+  <style type="text/css">
+    .container{ width: 300px; }
+    ul{ padding-left: 0px; }
+    li { display: inline; }
+    input { width: 50px; }
+    button { width: 80px; }
+    #display{
+      font-size: 50px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      margin-left: 40px;
+    }
+  </style>
+
+  <body>
+    <div class="container">
+      <!-- Input fields-->
+      <ul> 
+        <li> <input type="text" id="minutes" value="0"> </li>
+        <li> minutes</li>
+        <li> <input type="text" id="seconds" value="0"> </li>
+        <li> seconds</li>
+      </ul>
+      <!-- Buttons -->
+      <ul>
+        <li> <button id="startBtn"> start </button> </li>
+        <li> <button id="stopBtn" style="margin-left: 25px"> stop </button> </li>
+      </ul>
+      <!-- Display field -->
+      <p id="display">00:00</p>
+    </div>
+    <!-- Link to our logics for the timer -->
+    <script type="text/javascript" src='./timer.js'></script>
+  </body>
+</html>
