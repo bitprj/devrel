@@ -16,9 +16,9 @@ In this tutorial, you will learn how to do the following:
 
 ### HTML Code
 
-Before we start incorporating interactivity into our Tiny City with JavaScript, we first need to set up these elements by adding to our HTML code. 
+Before we start incorporating interactivity into our Tiny City with JavaScript, we first need to set up these elements by adding them to our HTML code. 
 
-In order to switch from a daytime to nighttime color palette, we will create two clickable buttons, labelled "day" and "night", that will allow us to select the desired setting. To do this, we will add a set of `<button></button>` tags for each button in the `body` element:
+In order to switch from a daytime to a nighttime color palette, we will create two clickable buttons, labelled "day" and "night," that will allow us to select the desired setting. To do this, we will add a set of `<button></button>` tags for each button in the `body` element:
 
 ```html
 ...
@@ -29,9 +29,9 @@ In order to switch from a daytime to nighttime color palette, we will create two
 ...
 ```
 
-To prepare for our planned color changes, we shall assign an `id` attribute for each element that is involved, and this allows these elements to be stylized in CSS and manipulate in JavaScript. 
+To prepare for our planned color changes, we shall assign an `id` attribute for each element that is involved. This allows these elements to be stylized in CSS and manipulated in JavaScript. 
 
-To  create a sun that can change into a moon for our Tiny City, we will add a `<div>` element with an `id` named "sun". To change the color of the sky, we must access the `background-color` attribute of the `body` element, so we will set up an `id` named "body".  Add the following lines of code to the `body` element:
+To  create a sun that can change into a moon for our Tiny City, we will add a `<div>` element with an `id` named "sun." To change the color of the sky, we must access the `background-color` attribute of the `body` element, so we will set up an `id` named "body."  Add the following lines of code to the `body` element:
 
 ```html
 ...
@@ -65,7 +65,7 @@ This is what our Tiny City should look like so far:
 
 Now that we have set up our elements in HTML, we can start adjusting and stylizing them in CSS.
 
-For our sun element, we will be adding a `#id` selector into our CSS code:
+For our sun element, we will be adding an `#id` selector into our CSS code:
 
 ```html
 ...
@@ -134,9 +134,9 @@ In preparation for our day-to-night change, we can also create our moon element 
 ...
 ```
 
-For our moon, we will use a new selector labelled `#moon` and change the colors in the `radial-gradient` function—the color at the center of our moon will be a light cool gray, and the color at the edges will be a dark grayish violet.
+For our moon, we will use a new selector labelled `#moon` and change the colors in the `radial-gradient` function — the color at the center of our moon will be a light cool gray, and the color at the edges will be a dark grayish violet. 
 
-At this point, we will not be able to view our moon element because we have not declared a `<div>` element for it in our HTML code. We do not need to declare this because will only be switching back and forth between these two selectors, which we will code in JavaScript later on.
+At this point, we will not be able to view our moon element because we have not declared a `<div>` element for it in our HTML code. We do not need to declare this because we will only be switching back and forth between these two selectors, which we will code in JavaScript later on.
 
 This is what our completed `#sun` and `#moon` elements should look like:
 
@@ -194,7 +194,7 @@ button {
 ...
 ```
 
-By setting the `position` attribute to `relative`, this will allow us to adjust the location of the buttons from its "normal" position, which is the center of the webpage, using the `top` and `right` attributes—the values that we inputted will move buttons to the area below our sun. We will also set the buttons' color to white using the `background-color` attribute.
+By setting the `position` attribute to `relative`, this will allow us to adjust the location of the buttons from its "normal" position, which is the center of the webpage, using the `top` and `right` attributes — the values that we inputted will move buttons to the area below our sun. We will also set the buttons' color to white using the `background-color` attribute.
 
 Then, we will add a border to our buttons by adding the following attributes:
 
@@ -210,7 +210,7 @@ button {
 ...
 ```
 
-For all the border properties to show up, the `border-style` attribute first must be set. Above, we set our buttons' borders to `solid` that will result in a solid colored border. Feel free to experiment with different kinds of borders from this [CSS Border Styles list](https://www.w3schools.com/css/css_border.asp). As for the additional border attributes, `border-width` and`border-color` adjust the border's thickness and color, respectively, and `border-radius` adjusts the roundness of the corners of the border—this particular property allows up to four values, each value accessing each corner of the element.
+For all the border properties to show up, the `border-style` attribute first must be set. Above, we set our buttons' borders to `solid` which will result in a solid colored border. Feel free to experiment with different kinds of borders from this [CSS Border Styles list](https://www.w3schools.com/css/css_border.asp). As for the additional border attributes, `border-width` and`border-color` adjust the border's thickness and color, respectively, and `border-radius` adjusts the roundness of the corners of the border—this particular property allows up to four values, with each value accessing each corner of the element.
 
 Finally, we will change the font of the text of our buttons with the last two following attributes:
 
@@ -301,7 +301,7 @@ To do this, we will create an array named `colors` that will contain the color o
 ...
 ```
 
-The first color in the array is our default daytime color, which is the light blue that we currently set, and the second color is for our nighttime color palette, which is a dark cool blue.
+The first color in the array is our default daytime color, which is the light blue that is currently set, and the second color is for our nighttime color palette, which is a dark cool blue.
 
 Now, to set up our day and night color palettes, we will set up two functions labelled `day` and `night`:
 
@@ -334,7 +334,7 @@ function night() {
 ...
 ```
 
-To set our sky colors for the daytime and nighttime, we will accessing the `backgroundColor` attribute of the `body` element through our `sky` variable by appending `.style.backgroundColor` to retrieve and manipulate the CSS properties of this variable. Then, we will set this equal to its respective color of the day and night color palettes in our `colors` array (remember, the index of an array always starts from the number `0`, so `colors[0]` is referring to the daytime color while `colors[1]` is referring to the nighttime color):
+To set our sky colors for the daytime and nighttime, we will be accessing the `backgroundColor` attribute of the `body` element through our `sky` variable by appending `.style.backgroundColor` to retrieve and manipulate the CSS properties of this variable. Then, we will set it equal to its respective color of the day and night color palettes in our `colors` array (remember, the index of an array always starts from the number `0`, so `colors[0]` is referring to the daytime color while `colors[1]` is referring to the nighttime color):
 
 ```js
 ...
@@ -391,4 +391,4 @@ Now, you can interact with your Tiny City. When you click on the `night` button,
 
 Congrats on adding an interactive color component to your Tiny City!
 
-Throughout this tutorial, we created and designed buttons in JavaScript, and learned how to stylize and link features to these buttons in HTML and CSS. 
+In this tutorial, we created and designed buttons in JavaScript and learned how to stylize and link features to these buttons in HTML and CSS. 
