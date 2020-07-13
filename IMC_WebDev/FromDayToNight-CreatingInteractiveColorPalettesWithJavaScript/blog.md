@@ -1,6 +1,6 @@
 # From Day to Night - Creating Interactive Color Palettes with JavaScript
 
-Now that you have completed setting up your Mini City in HTML and CSS, have you ever wondered what your Mini City would look like at night? Let's create a day-to-night color palette change by adding buttons with JavaScript! JavaScript is a programming language that is used to create interactive designs, such as buttons, pop-up windows, and so on, and brings user interaction to web development projects.
+Now that you have completed setting up your Mini City in HTML and CSS, have you ever wondered what your Mini City would look like at night? Let's create a day-to-night color palette change by adding buttons with JavaScript! JavaScript is a programming language that is used to create interactive designs, such as buttons, pop-up windows, and more, bringing user interaction to web development projects.
 
 In this tutorial, you will learn how to do the following:
 
@@ -393,4 +393,4 @@ Congrats on adding an interactive color component to your Mini City!
 
 Throughout this tutorial, we designed buttons in JavaScript and learned how to stylize and link these elements in HTML and CSS. 
 
-Feel free to add more decorative features to your buttons or implement more actions under the day and night functions to create a more distinct switch between the changing times of the day. Though this blog series may only serve as a very simple introduction to these programming tools, hopefully, this project has sparked your interest and/or built your confidence in web development and design.
+Feel free to add more decorative features to your buttons or implement more actions under the day and night functions to create a more distinct switch between the changing times of the day. Though this blog series may only serve as a very simple introduction to these programming tools, hopefully, this project has sparked your interest and built your confidence in web development and design.
