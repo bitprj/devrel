@@ -393,4 +393,4 @@ Congrats on adding an interactive color component to your Mini City!
 
 Throughout this tutorial, we designed buttons in JavaScript and learned how to stylize and link these elements in HTML and CSS. 
 
-Feel free to add more decorative features to your buttons and implement more actions under the day and night functions to create a more distinct switch between the changing times of the day. Though this blog series may only serve as a very simple introduction to these programming tools, hopefully, this project has sparked your interest and/or built your confidence in web development and design!
+Feel free to add more decorative features to your buttons or implement more actions under the day and night functions to create a more distinct switch between the changing times of the day. Though this blog series may only serve as a very simple introduction to these programming tools, hopefully, this project has sparked your interest and/or built your confidence in web development and design.
