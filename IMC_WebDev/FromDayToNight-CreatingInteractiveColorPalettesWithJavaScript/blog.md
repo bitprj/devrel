@@ -57,7 +57,7 @@ This is what our completed additions to the HTML code should look like:
 ...
 ```
 
-This is what our Tiny City should look like so far:
+This is what our Mini City should look like so far:
 
 ![html_code_1](photos/html_code_1.jpg)
 
@@ -108,9 +108,9 @@ Then, we will determine the location of the sun by adding the following attribut
 ...
 ```
 
-Similar to the other elements in our Tiny City, we will declaring the `absolute` value to the sun's `position` attribute, which allows the element to move along with the webpage's document body. The `left` attribute affects the element's horizontal position by pushing the sun more to the side, and `bottom` attribute affects the element's vertical position by lifting the sun upwards.
+Similar to the other elements in our Mini City, we will declaring the `absolute` value to the sun's `position` attribute, which allows the element to move along with the webpage's document body. The `left` attribute affects the element's horizontal position by pushing the sun more to the side, and `bottom` attribute affects the element's vertical position by lifting the sun upwards.
 
-This is what our sun should look like in our Tiny City:
+This is what our sun should look like in our Mini City:
 
 ![](photos/css_code_1.jpg)
 
