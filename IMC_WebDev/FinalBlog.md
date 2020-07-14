@@ -28,7 +28,7 @@ Next, we have to actually create our HTML tag. Tags are essentially commands tha
 
 Now that we have established the fact that we will be writing in HTML, it’s time to get into the fun stuff. We start by writing &lt;head&gt; in our third line of code. This tells our editor that the information for our header will be stored here.
 
-After we write our &lt;head&gt; tag, we know that we should give our project a title. Let’s title our project “My Mini City”. This is how your code should look now: 
+After we write our &lt;head&gt; tag, we know that we should give our project a title. Let’s title our project “My Mini City.” This is how your code should look now: 
 ```html
 <!DOCTYPE html>
 <html>
@@ -57,7 +57,7 @@ We create classes using the &lt;div&gt; tag. Like this:
 <body>
     <div class = "ground">
 ```
-As you can see, we just created a class called “ground”. Now our editor knows that we are planning to create an object.
+As you can see, we just created a class called “ground.” Now our editor knows that we are planning to create an object.
 
 We do the same thing with all of our other objects. When you are done, it should look something like this: 
 ```html
