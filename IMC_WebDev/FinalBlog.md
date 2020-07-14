@@ -160,9 +160,9 @@ Apart from color and font-size, these are some of the properties you will need t
 4. Height and Width: These properties are used to set the height and width of the element.
 5. Transform: This property is used to make 2D transformations. The most commonly used transformations are rotate() and skew.
 * rotate(): This transformation rotates an element clockwise or counter-clockwise according to a given degree. For example, 
-transform: rotate(20deg);
+transform: rotate(20deg).
 * skew(): Unlike rotate, this transformation skews an element along the X and Y-axis by the given angles. For example, this example skews the element 30 degrees along the X-axis and 50 degrees along the Y-axis.
-* transform: skew(30deg, 50deg);
+transform: skew(30deg, 50deg);
 6. Top: This affects the vertical position of the element. The above example sets the element 18px below the top edge of its nearest positioned ancestor.
 7. Left: In contrast, this affects the horizontal position of the element. The above example sets the element 90px from the left edge of its nearest positioned ancestor.
 8. Z-Index: This property specifies the stack order of an element. You can think about Z-Index like layers of a sandwich. If the Z-Index value is higher for one item than another, the higher value will be drawn first. 
