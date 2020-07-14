@@ -1,16 +1,16 @@
 ## Building a Mini City: HTML and CSS Portion
 ## Purpose
-HTML and CSS are extremely important parts of learning about how websites work. Every website uses HTML in order to display things such as text or images on sites. Being able to grasp a few concepts of  HTML and CSS can help a lot when it comes to learning more intricate subjects in computer science. For this reason, it is important to get some experience with it!
+HTML and CSS are extremely important parts of learning about how websites work. Every website uses HTML to display content such as text or images. Being able to grasp a few concepts of  HTML and CSS can help a lot when it comes to learning more intricate subjects in computer science, so it's important to get some experience with it!
 
 This tutorial will give you a walkthrough on how certain functions of HTML work and why they are important, all while learning how to build a cool mini-city!
 
 ## Setup
-Open any HTML/CSS editor. [Here is a good browser-based editor](https://www.w3schools.com/tryit/tryit.asp?filename=tryhtml_default).
+Open any HTML/CSS editor. [This browser-based editor is good to use](https://www.w3schools.com/tryit/tryit.asp?filename=tryhtml_default).
 Follow along with this tutorial, and you will be one step closer to building your first mini-city!
 
 ## Walkthrough
 
-This tutorial will go over the HTML and CSS portion of the mini-city. You can think of HTML as the foundation of the entire project! If we work to build a strong foundation, our mini-city will look fantastic!
+This tutorial will go over the HTML and CSS portion of the mini-city. You can think of HTML as the foundation of the entire project. If we work to build a strong foundation, our mini-city will look fantastic!
 
 Our first step when using HTML is to establish a “!DOCTYPE html” function. This simply means that all of our code below this will be rendered as an HTML document.
 So, your first line should look like this: 
@@ -50,7 +50,7 @@ An ocean
 A waterfall
 A car
 
-In order to eventually create these objects, we have to make classes for them. Classes are simply declarations that we use to establish the fact that we are going to create an object. Then, we actually create it in CSS!
+We have to make classes for these objects so that we can create them later on. Classes are simply declarations that we use to establish the fact that we are going to create an object. Then, we can actually create it in CSS!
 
 We create classes using the &lt;div&gt; tag. Like this:
 ```html
@@ -121,14 +121,14 @@ We do the same thing with all of our other objects. When you are done, it should
 
 This looks like a huge chunk of code right now, but let’s break it down!
 
-For every object in our city, we create a div class for it. That way, we can edit it using our CSS. HTML is just our canvas for all of our objects, while CSS is like our paint!
+HTML works as the canvas for all of our objects, so for every object in our city, we create a div class for it. Once we do that, we can edit those divs using our CSS, which is like our paint! It allows us to control how the objects appear on the site, like color, layout, etc.
 
-Sometimes, objects have “children”. For example, since our buildings are placed on the ground, the buildings are “children” of the ground.
+Sometimes, objects have “children." For example, since our buildings are placed on the ground, the buildings are the “children” of the ground.
 You can see that “building1” is placed within the “ground” tag in our code.
 
-Our “building1” also has children of its own. Since walls and a roof are components of our building, we place them inside our &lt;building1&gt; tag. We repeat this whenever components belong to each other. (You can also see this with the grass area and trees)
+Our “building1” also has children of its own. Since walls and a roof are components of our building, we place them inside our &lt;building1&gt; tag. We repeat this whenever components belong to each other. (You can also see this with the grass area and trees.)
 
-After we create all of our objects and their “children”, it is time to close our body and our html tag by using /body and /html.
+After we create all of our objects and their “children,” it is time to close our body and our html tag by using /body and /html.
 
 When it’s time to design our objects in CSS, we MUST use the exact name we created for them in our HTML. For example, if I want to change the color of the bridge in my city, I need to name it “bridge” in my CSS, just like how it is in my HTML.
 
@@ -142,32 +142,32 @@ Next, let’s prepare our editor for the CSS portion of the code. We do this by 
 ```
 
 
-We will be writing all of our CSS in our head portion of our code.
+We will be writing all of our CSS in the head portion of our code.
 
 To style our webpage, we will need to learn the CSS syntax. A CSS rule-set consists of a selector and a declaration block.
 <img src=https://lh3.googleusercontent.com/3UcaVdjNU8MuMn4Feims4asq1epCgIOEwJX2goOH8SZE2eP2IKz5vRvCuSL9howvCc_Co_G2TE8Tqe5pIPgTAITV9KB28hqPEWXLzvZZ7xTnF1GNBohcY75WK00KBHIfbJ4nufVR>
 
-Apart from color and font-size, these are some of the properties you will require to get started:
+Apart from color and font-size, these are some of the properties you will need to get started:
 
-1. Position: It specifies the type of positioning method used for an element: static, relative, fixed, absolute or sticky. 
-* Static: static positions are always positioned according to the normal flow of the page.
-* Relative: relative positions are positioned relative to another object in your CSS.
-* Fixed: elements with fixed positions will always stay in the same place no matter which way the page is scrolled.
-* Absolute: similar to fixed, but will always stay in the same place relative to another object rather than the page.
-* Sticky: an element positioned based on the user's scroll position.
-2. Display: it handles whether an element is shown or not. If you choose display: none, the element will not be visible.
-3. Background-color: It determines the background color of the element. A color can be specified by a valid color name - like “black”, a hexadecimal value - like “ffffff” or an rgb value - like “rgb(255,0,0)”.
-4. Height and Width: These are properties used to set the height and width of the element.
-5. Transform: This property is used to make 2D transformations. The most commonly used transformations are: rotate() and skew.
-* rotate(): It rotates an element clockwise or counter-clockwise according to a given degree. For example, 
+1. Position: This property specifies the type of positioning method used for an element, such as static, relative, fixed, absolute, or sticky. 
+* Static: Static positions are always positioned according to the normal flow of the page.
+* Relative: Relative positions are positioned relative to another object in your CSS.
+* Fixed: Elements with fixed positions will always stay in the same place no matter which way the page is scrolled.
+* Absolute: Similar to fixed, but absolute positions will always stay in the same place relative to another object, rather than the page.
+* Sticky: An element is positioned based on the user's scroll position.
+2. Display: This property affects whether or not an element is shown. If you choose display: none, then the element will not be visible.
+3. Background-color: It determines the background color of the element. A color can be specified by a valid color name (“black”), a hexadecimal value (like “ffffff”), or an rgb value (“rgb(255,0,0)”).
+4. Height and Width: These properties are used to set the height and width of the element.
+5. Transform: This property is used to make 2D transformations. The most commonly used transformations are rotate() and skew.
+* rotate(): This transformation rotates an element clockwise or counter-clockwise according to a given degree. For example, 
 transform: rotate(20deg);
-* skew(): skews an element along the X and Y-axis by the given angles. For example, this example skews the element 30 degrees along the X-axis, and 50 degrees along the Y-axis.
-transform: skew(30deg, 50deg);
-6. Top: It affects the vertical position of the element. The above example sets the element 18px below the top edge of its nearest positioned ancestor.
-7. Left:  It affects the horizontal position of the element. The above example sets the element 90px from the left edge of its nearest positioned ancestor.
-8. Z-Index: It specifies the stack order of an element. You can think about Z-Index like layers of a sandwich. If the Z-Index value is higher for one item than another, the higher value will be drawn first. 
+* skew(): Unlike rotate, this transformation skews an element along the X and Y-axis by the given angles. For example, this example skews the element 30 degrees along the X-axis and 50 degrees along the Y-axis.
+* transform: skew(30deg, 50deg);
+6. Top: This affects the vertical position of the element. The above example sets the element 18px below the top edge of its nearest positioned ancestor.
+7. Left: In contrast, this affects the horizontal position of the element. The above example sets the element 90px from the left edge of its nearest positioned ancestor.
+8. Z-Index: This property specifies the stack order of an element. You can think about Z-Index like layers of a sandwich. If the Z-Index value is higher for one item than another, the higher value will be drawn first. 
 
-To begin with, you will need a foundation for your city to be built upon. You can use the following code as a starting off point:
+To begin with, you will need a foundation for your city to be built on. You can use the following code as a starting off point:
 ```html
 .ground{ /*foundation*/
         position: absolute;
