@@ -4,7 +4,7 @@
 
 Do you ever wonder how social media services like Facebook or Instagram are able to interact with the user? Whenever you click on that like button on a post that your friend posted, how is it possible that a week after the like button is still there? This is achieved through the usage of application programming interfaces, commonly known as APIs. In short, with the help of APIs, the user is able to deliver requests for information from the server which then the server sends a response back to the user. This is precisely why the like button is still present in the same post a week after -- because the database used by Facebook stores all of the information and we are able to access it through performing an action. You might think that APIs are only allowed to fetch existing data from the server, but there are various other features that are impressive in APIs including creating, updating, and deleting data. Developers choose to use the API of their preference, two of the most common APIs used being REST API and GraphQL. However, throughout this blog, I will be discussing the features and services of GraphQL as well as the reasoning behind why GraphQL is a better query language than the REST API. 
 
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20200108170534/RestvsGraphQL.png" alt="drawing" width="1150"/>
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20200108170534/RestvsGraphQL.png" alt="drawing" width="1250"/>
 
 ## Why is GraphQL better than the REST API? 
 
