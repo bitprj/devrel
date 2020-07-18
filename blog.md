@@ -1,13 +1,13 @@
 Should YOU use Google AMP? Putting user experience first.
 What is Google AMP and What are the ways developers can take advantage of AMP?
 
+![alt text][logo]
 
+[logo]: https://www.stateofdigitalpublishing.com/wp-content/uploads/2019/09/Google-AMP-for-Publishers-759x500.png
 
+![alt text][image1]
 
-
-
-
-
+[image1]: https://www.searchengineacademy.com/wp-content/uploads/amp-and-google-e1472224343798.png
 
 
 What is it?
@@ -18,11 +18,23 @@ Businesses use Google AMP as a framework to design their ads, emails, websites, 
 
 Take this ad that Google uses as a demo to show how Google AMP is implemented:
 
+![alt text][image2]
+
+[image2]: https://amphtml.files.wordpress.com/2017/05/amp-ads-blog-demo-gif1.gif?w=808&h=386
+
 These images show how this company used Google AMP to make their ads more engaging for their viewers. Allowing users to interact with the buttons on the ad will essentially increase the user’s viewing time. There are numerous interactive features that Google AMP has that companies have the option of choosing when creating an ad, website, story, or email. Whether it is an interactive button that takes the user to a different screen or an arrow button that allows the user to scroll through a variety of pictures.
 
 What are the Advantages?   
    
    Business Benefits
+   
+![alt text][image3]
+
+[image3]: https://storage.googleapis.com/website-production/uploads/2018/06/amp-cost-and-benefit-analysis-chart.png
+
+![alt text][image5]
+
+[image5]: https://storage.googleapis.com/website-production/uploads/2018/06/average-engagement-time-chart.png
 
 
 
@@ -40,7 +52,10 @@ Google AMP is used across many popular platforms such as Google, Twitter, and Bi
 
 
    Developer Benefits
+   
+![alt text][image4]
 
+[image4]: https://storage.googleapis.com/website-production/uploads/2018/06/amp-landing-pages-vs-regular-landing-pages.png
 
 
 The code on AMP is flexible and customizable for developers who can make their code complex or as simple as they want.
@@ -51,6 +66,14 @@ Can convert an entire archive in the matter of days which makes it easier for de
 
 
    Disadvantages?
+   
+ ![alt text][image6]
+
+[image6]: https://www.marketingdonut.co.uk/sites/default/files/styles/landing_pages_lists_500/public/branding_overview_371705137.jpg?itok=0wdCtP-L
+
+![alt text][image7]
+
+[image7]: https://cdn.searchenginejournal.com/wp-content/uploads/2019/04/shutterstock_456779230-1520x800.png
 
 
 Your website and pages will have fewer designs of your brand because Google AMP transforms websites into a more Google-styled site instead of having your own unique branding.
@@ -71,6 +94,8 @@ There is a different display of sites from desktop to mobile which viewers will 
 
 So should you use Google AMP?
 At the end of the day it does depend on what you value in your company. Whether it is branding or views or your ads, there are both many pros and cons to what Google AMP has to offer. Using AMP as a whole does seem easy to set up even if you already have many websites or ads so on the developer side it is fairly simple to integrate into the style of a company’s sites. Many companies that made a switch to Google AMP have reaped the benefits of the user engagement focus and have increased in profit overall which is a big plus when considering the use of Google AMP. Ultimately, it does depend on what a company values and what you are willing to give up for Google AMP.
+
+
 
 
 RESOURCES
