@@ -24,7 +24,7 @@ If we wanted **numbers** initialized to be empty, its declaration would look lik
 
 *list[index]*
 
-Quite possibly the most important thing to keep in mind when using a Python list is how indices are numbered. When we count in programming, we always start at 0, not 1. So, when we keep track of the index of a list, the first index is always numbered ‘0’. This means that if your list has six elements, the last element is stored at index ‘5’. 
+The most important thing to keep in mind when using a Python list is how indices are numbered. When we count in programming, we always start at 0, not 1. When we keep track of the index of a list, the first index is always numbered ‘0’. This means that if your list has six elements, the last element is stored at index ‘5’. 
 
 With that being said, we can access an element using square brackets, [], and its index. 
 
@@ -32,7 +32,7 @@ Ex: If we want to access the fourth element (index 3) and save it to a variable 
 
 <center>x = numbers[3]</center>
 
-“x =” assigns the value of x and “numbers[3]” returns the item at the third index of the list. If you are new to coding, you should keep in mind that **“=” does not indicate an equivalence relation, it means that you are assigning a value to the variable on the left.** Looking at the example above, we can say that *x is numbers[3]* or *x is 3*, BUT, we CANNOT say that *numbers[3] = x*. We are not modifying the variable on the right at all. So, in this case, although we change what ‘x’ means, the value of numbers[3] remains the same.
+“x =” assigns the value of x and “numbers[3]” returns the item at the third index of the list. If you are new to coding, you should keep in mind that **“=” does not indicate an equivalence relation, it means that you are assigning a value to the variable on the left.** Looking at the example above, we can say that *x is numbers[3]* or *x is 3*, BUT, we CANNOT say that *numbers[3] = x*. We are not modifying the variable on the right at all. Therefore in this case, although we change what ‘x’ means, the value of numbers[3] remains the same.
 
 **Modifying an Element**
 
@@ -228,11 +228,11 @@ Now, the dictionary would look like this:
 
 ## When to Use Which
 
-Now that we have laid out the basic functions of lists, sets, and dictionaries, we can differentiate the three and list out some scenarios in which you would use each. Let’s start by finding what they all have in common and what makes them unique.
+Now that we have laid out the basic functions of lists, sets, and dictionaries, we can differentiate the three and list out some scenarios to use each one. First, let's find what they all have in common and what makes them unique.
 
 To the right is a Venn diagram that shows the differences and similarities between lists, sets, and dictionaries. As you can see, the only similarity they all share in functionality is storing data. This graph will help you narrow down your choice simply based on whether you need something indexable, modifiable, or if you need your variables to be unique.
 
-Now that we know what makes each data structure unique, let’s get into their features that will further assist you in your choice.
+Now that we know what makes each data structure unique, let’s get into features that will further assist you in your choice.
 
 ![image-20200606192735370](C:\Users\danie\AppData\Roaming\Typora\typora-user-images\image-20200606192735370.png)
 
@@ -246,8 +246,8 @@ Though sets seem difficult to work with as they aren’t indexable, they can be 
 
 **Dictionaries**
 
-Dictionaries give you the best of both worlds in sets and lists. They are indexable and keep your information organized with the key-value pair design. Dictionaries can also be nested so that the value that a key maps to is a dictionary rather than a number or a string. This data structure is best if you want to store several pieces of information about one item. A good example would be simulating a phone book or an address book. You could set each key to be a contact’s name and each value as their phone number or address. This problem could also be approached using a nested dictionary where each nested dictionary represents a contact with several key-value pairs to store more information on each of them.
+Dictionaries give you the best of both sets and lists. They are indexable and keep your information organized with the key-value pair design. Dictionaries can also be nested so that the value that a key maps to is a dictionary rather than a number or a string. This data structure is best if you want to store several pieces of information about one item. A good example would be simulating a phone book or an address book. You could set each key to be a contact’s name and each value as their phone number or address. This problem could also be approached using a nested dictionary where each nested dictionary represents a contact with several key-value pairs to store more information on each of them.
 
-Overall, none of these data structures are better than another – each has their own qualities and capabilities that make them useful for a certain purpose. Hopefully by this point you have figured out which method is best for storing the information that you will be using in your Python program. Otherwise, I advise you pick one out and search for where you may run into a problem. To learn more about Python, visit bitproject.org or e-mail me at danzelo1@binghamton.edu.
+Overall, none of these data structures are better than another – each has their own qualities and capabilities that make them useful for a certain purpose. Hopefully you have figured out which method is best for storing the information that you will be using in your Python program. Otherwise, I advise you pick one out and search for where you may run into a problem. To learn more about Python, visit bitproject.org or e-mail me at danzelo1@binghamton.edu.
 
  
