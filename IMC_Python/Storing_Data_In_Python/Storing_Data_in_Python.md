@@ -1,12 +1,12 @@
 # Storing Data in Python
 
-When we think about Python, we can think of tons of applications for our potential code; we can create desktop applications, build websites, analyze data, and much more - the possibilities are endless. However, in order to do anything of that caliber with this programming language, you must start from the bottom and master the basics. One essential building block of Python is to learn to store pieces of data that will be useful to our program and, more importantly, decide how we will store this data. Lists, sets, and dictionaries are the most common ways to store data. In this blog post, I will show you how you can use them, why you would want to use them, and what features each data structure has to offer. 
+Python has the ability to produce useful applications for our potential code; we can create desktop applications, build websites, analyze data, and much more - the possibilities are endless. However, in order to do anything of that caliber with this programming language, you must start from the bottom and master the basics. One essential building block of Python is to learn to store pieces of data that will be useful to our program and, more importantly, decide how we will store this data. Lists, sets, and dictionaries are the most common ways to store data. In this blog post, I will show you how you can use them, why you would want to use them, and what features each data structure has to offer. 
 
 The first data structure I will talk about is probably the most commonly used in Python - lists. With this method, you can store variables of the same type in a specific order. The, you can access and modify them with an index. 
 
 ## Lists
 
-**Initialization**
+### Initialization
 
 *list= [element1, element2, …, elementn]*
 
@@ -20,21 +20,21 @@ If we wanted **numbers** initialized to be empty, its declaration would look lik
 
 <center>numbers = []</center>
 
-**Accessing an Element**
+### Accessing an Element
 
 *list[index]*
 
 The most important thing to keep in mind when using a Python list is how indices are numbered. When we count in programming, we always start at 0, not 1. When we keep track of the index of a list, the first index is always numbered ‘0’. This means that if your list has six elements, the last element is stored at index ‘5’. 
 
-With that being said, we can access an element using square brackets, [], and its index. 
+With that being said, we can access an element through the use of square brackets, [], and its index. 
 
 Ex: If we want to access the fourth element (index 3) and save it to a variable **x**, we would call:
 
 <center>x = numbers[3]</center>
 
-“x =” assigns the value of x and “numbers[3]” returns the item at the third index of the list. If you are new to coding, you should keep in mind that **“=” does not indicate an equivalence relation, it means that you are assigning a value to the variable on the left.** Looking at the example above, we can say that *x is numbers[3]* or *x is 3*, BUT, we CANNOT say that *numbers[3] = x*. We are not modifying the variable on the right at all. Therefore in this case, although we change what ‘x’ means, the value of numbers[3] remains the same.
+“x =” assigns the value of x and “numbers[3]” returns the item at the third index of the list. If you are new to coding, you should keep in mind that **“=” does not indicate an equivalence relation, it means that a value is being assigned to the variable on the left.** Looking at the example above, we can say that *x is numbers[3]* or *x is 3*, BUT, we CANNOT say that *numbers[3] = x*. The variable on the right is not modified at all. Therefore in this case, although we change what ‘x’ means, the value of numbers[3] remains the same.
 
-**Modifying an Element**
+### Modifying an Element
 
 *list[index] = new element*
 
@@ -44,9 +44,9 @@ Ex: If we wanted to change the third value of the list (index 2) to 10, we would
 
 <center>numbers[2] = 10</center>
 
-The “numbers[2]” accesses the list at index 2 using the brackets, []. By putting an equals sign, “=”, to the right of it, we are indicating that we want to reassign numbers[2]’s value to the value on the right of the “=” – in this instance, it is 10.
+The “numbers[2]” accesses the list at index 2 using the brackets, []. Placing an equals sign, “=”, to the right of it indicates that we want to reassign numbers[2]’s value to the value on the right of the “=” – in this instance, it is 10.
 
-**Adding an Element**
+### Adding an Element
 
 *append(new_element)* 
 
@@ -74,7 +74,7 @@ Now the contents of numbers is: **[0, 1, 2, 3, 4, ‘a’, ‘b’, ‘c]**
 
 Because of how Python is designed, if we insert an element at an index, the list automatically expands and shifts all the elements to the right of the given index one position to the right.
 
-**Removing an Element**
+### Removing an Element
 
 *pop(index)* 
 
@@ -102,9 +102,9 @@ Which would result in the list: **[“apple”, “strawberry”, “banana”]*
 
 The next method for storing data that we will go over is sets. Sets allow you to store variables of the same type in a group – however, a set is unordered and each element must be unique.
 
- ## Sets
+## Sets
 
-**Initialization**
+### Initialization
 
 *set = {element1, element2, …, elementn}*
 
@@ -114,15 +114,15 @@ Similar to a list, you can initialize a set to be empty, or you can add elements
 
 <center>fruit = {}</center>
 
-**Accessing an Element**
+### Accessing an Element
 
 Since sets are unordered and do not have indices, you cannot access a specific item in it as you would in a list. 
 
- **Modifying an Element**
+### Modifying an Element
 
 Unfortunately, once an item is added to a set, it cannot be modified, only removed. This is because there is no way to access the element to modify it since there are no indices.
 
-**Adding an Element**
+### Adding an Element
 
 *set.add(new_element)*
 
@@ -140,7 +140,7 @@ You can also append multiple items at once using update() by passing several ele
 
 Now the contents of fruits is: **{“apple”, “strawberry”, “banana”, “orange”, “pineapple”, “mango”}** 
 
-**Removing an Element**
+### Removing an Element
 
 *set.remove(element)*
 
@@ -162,7 +162,7 @@ Finally, let’s address dictionaries. This data structure functions using a key
 
 ## Dictionaries
 
-**Initialization**
+### Initialization
 
 *dictionary = {key1:value1, key2:value2}*
 
@@ -178,9 +178,9 @@ my_dictionary = {“name” : “Danielle”,
 
 ​              				}
 
-Though you do not have to insert a new line and tab for each input, it may make initializing your dictionary easier to read. 
+Though you do not have to insert a new line and tab for each input, it may make your dictionary easier to read. 
 
-**Accessing an Element**
+### Accessing an Element
 
 *dictionary[key]*
 
@@ -188,7 +188,7 @@ To get the value stored at a key, you use square brackets, [], just as you would
 
 Ex: my_dictionary[“name”] would return **“Danielle”**
 
-**Modifying an Element**
+### Modifying an Element
 
 *dictionary[key] = new_value*
 
@@ -200,11 +200,11 @@ Now, my_dictionary would look like this:
 
 <center>{“name”: “Danielle”, “age”: 21, “college”: “Binghamton University”}</center>
 
-**Adding an Element**
+### Adding an Element
 
 *dictionary[new_key] = new_value*
 
-The process of adding a new key-value pair to a dictionary is the same as that of updating an existing pair. The only difference is that the key in the square brackets is not expected to be in the dictionary.  **This is where you need to keep in mind that keys are unique.**  If you mistakenly pass a key that is already in the dictionary when you mean to pass a new one, no error will be thrown and the existing key’s value will be updated.
+The way in which you add a new key-value pair to a dictionary is the same as how you would update an existing pair. The only difference is that the key in the square brackets is not expected to be in the dictionary.  **This is where you need to keep in mind that keys are unique.**  If you mistakenly pass a key that is already in the dictionary when you mean to pass a new one, no error will be thrown and the existing key’s value will be updated.
 
 Ex: If you wanted to add a phone number to my_dictionary, the statement would look like this:
 
@@ -212,7 +212,7 @@ Ex: If you wanted to add a phone number to my_dictionary, the statement would lo
 
 Now, my_dictionary’s contents would be: **{“name”: “Danielle”, “age”: 21, “college”: “Binghamton University”, “phone number” = “(888)123-4567”}**
 
- **Removing an Element**
+### Removing an Element
 
 *dictionary.pop(key)*
 
@@ -236,17 +236,17 @@ Now that we know what makes each data structure unique, let’s get into feature
 
 ![image-20200606192735370](C:\Users\danie\AppData\Roaming\Typora\typora-user-images\image-20200606192735370.png)
 
-**Lists**
+#### Lists
 
 Because a list is ordered, it features functions such as *sort()*, which re-orders your list either alphanumerically or according to a given function, and *reverse()* which puts your list in the order opposite to what it is in now. It also has a method called *count()* which returns the amount of times a passed variable is found in the list. These features make lists useful for a dataset that you would want to arrange in a certain manner, especially if your data features duplicate values.
 
-**Sets**
+#### Sets
 
 Though sets seem difficult to work with as they aren’t indexable, they can be quite useful. Python sets are similar to mathematical sets – they are unordered and have unique elements. Just as you can find the union and intersection of sets in math, you can also find the union and intersection of Python sets using the *union()* function and *intersection()* function respectively. Both methods can take several sets as parameters and return the resulting set. These two functions only scratch the surface of what Python sets are capable of – you can determine if a set is disjoint from another, if one set is a subset of another, and so much more. Therefore, this option useful if you plan to perform such operations on your datasets.
 
-**Dictionaries**
+#### Dictionaries
 
-Dictionaries give you the best of both sets and lists. They are indexable and keep your information organized with the key-value pair design. Dictionaries can also be nested so that the value that a key maps to is a dictionary rather than a number or a string. This data structure is best if you want to store several pieces of information about one item. A good example would be simulating a phone book or an address book. You could set each key to be a contact’s name and each value as their phone number or address. This problem could also be approached using a nested dictionary where each nested dictionary represents a contact with several key-value pairs to store more information on each of them.
+Dictionaries give you the best of both sets and lists. They are indexable and keep your information organized with the key-value pair design. Dictionaries can also be nested so that the value that a key maps to is a dictionary rather than a number or a string. This data structure is best if you want to store several pieces of information about one item. A good example would be if you were to simulate a phone book or an address book. You could set each key to be a contact’s name and each value as their phone number or address. This problem could also be approached using a nested dictionary where each nested dictionary represents a contact with several key-value pairs to store more information on each of them.
 
 Overall, none of these data structures are better than another – each has their own qualities and capabilities that make them useful for a certain purpose. Hopefully you have figured out which method is best for storing the information that you will be using in your Python program. Otherwise, I advise you pick one out and search for where you may run into a problem. To learn more about Python, visit bitproject.org or e-mail me at danzelo1@binghamton.edu.
 
