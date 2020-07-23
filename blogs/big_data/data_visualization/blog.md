@@ -1,4 +1,4 @@
-
+  
 # How to create a Tableau dashboard
 
 **This blog will teach you how to create a Tableau dashboard in the following steps:**
