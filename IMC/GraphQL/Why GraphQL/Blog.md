@@ -12,9 +12,7 @@ GraphQL was first built by Facebook in 2012 before being open sourced and releas
 
 Before GraphQL comes out, almost all web APIs are designed using REST. REST stands for “Representational State Transfer.”  It uses HTTP requests to `GET`, ` PUT`, ` POST`, and `DELETE` data. GraphQL can be seen as an alternative to REST. It solves some inefficiencies that developers experienced when using REST API. But how are they different?  Is GraphQL a replacement for REST? Which one should you use?
 
-### GraphQL vs REST API
-
-#### Advantages of GraphQL
+### GraphQL vs REST API - Advantages of GraphQL
 
 - **Data fetching**
 
@@ -55,7 +53,7 @@ Before GraphQL comes out, almost all web APIs are designed using REST. REST stan
 
   
 
-#### Disadvantages
+### Disadvantages
 
 Although GraphQL reduces the complexity of changing data on the client side, it requires more server computing power that may burden serverside. Also, having a good schema design, and schema management could be a hard thing when your team gets larger.
 
