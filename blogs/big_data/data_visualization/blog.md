@@ -1,5 +1,11 @@
-  
+
 # How to create a Tableau dashboard
+
+**Have you seen Tableau in the job description and wondered what that it?**
+
+Tableau is the fastest growing data visualization tool and it's widely used in the industry. It converts a raw dataset into a data visualization, such as graphs and tables, and helps users to interpret the dataset in a more understable format. Also, Tableau is very easy to use as you can simply drag and drop columns to create data visualizations. 
+
+Now, let's dive into the fundamentals of Tableau!
 
 **This blog will teach you how to create a Tableau dashboard in the following steps:**
 * Step 1: Connect to a data source
@@ -22,10 +28,13 @@ We will use a Microsoft Excel file for this dashboard.
 
 ![](https://i.imgur.com/UUjUMPf.jpg)
 
-After connection, this is my raw data. I'm using data on COVID-19 cases by county here:
+After connection, you will see the raw data: COVID-19 cases by county. 
+With thousands of rows listed out like this, we wouldn't be able to get any insights. But, if we create data visualization with Tableau, then we can interpret the spread of COVID-19 cases.
 
 ![](https://i.imgur.com/5o0HVof.jpg)
 
+If you'd like to try a different COVID-19 dataset, you can explore more in the following link:
+https://www.kaggle.com/roche-data-science-coalition/uncover
 
 
 Step 2: Create a table with filters
@@ -105,7 +114,7 @@ This filter shows all of the states. It's too lengthy!
 
 ![](https://i.imgur.com/yMBKQLd.jpg)
 
-Right click the tiny dropdown in the State filter and change it to the form you like - I choose Single Value dropdown
+Click on the drop down arrow in the State filter and change it to the format you'd like - I choose "Single Value (dropdown)"
 
 ![](https://i.imgur.com/ENuRhRh.jpg)
 
@@ -113,11 +122,11 @@ The lengthy filter list changed to a dropdown list!
 
 ![](https://i.imgur.com/EPLT9LJ.jpg)
 
-Change the title name and this is the final product!
+Change the title and this is the final product!
 
 ![](https://i.imgur.com/9YqW9RT.jpg)
 
-To demonstrate what the last few steps provide here, let's apply a Georgia State filter on the right side and it displays the data for Georgia State only.
+Let's see if the State filter works. Georgia State is selected on the right side and now it displays the data for Georgia state only!
 
 ![](https://i.imgur.com/2qiWEI8.jpg)
 
@@ -182,7 +191,7 @@ If you change the date range, the bar graph updates accordingly.
 
 ![](https://i.imgur.com/schpEg4.jpg)
 
-If you would like to apply the date range filter to sheet 1 (COVID-19 case by state and County), you can do so by applying the date filter to all worksheets using the same data source. Now, the date filter will be applied to both sheet 1 and sheet 2.
+If you would like to apply the date range filter to sheet 1 (COVID-19 Case by State and County), you can do so by applying the date filter to all worksheets using the same data source. Now, the date filter will be applied to both sheet 1 and sheet 2.
 
 ![](https://i.imgur.com/3XZuNIM.jpg)
 
@@ -204,7 +213,7 @@ Select sheet 1 and click the downward arrow and select Floating. This allows you
 
 ![](https://i.imgur.com/K25QOae.jpg)
 
-Click “Floating” on State and County filter as well and move them around as you would like.
+Click “Floating” on State and County filter as well and move them around as you'd like.
 
 ![](https://i.imgur.com/eAg9Add.jpg)
 
@@ -242,11 +251,9 @@ Feel free to check out the dashboard we just created! Play around with the date 
 https://public.tableau.com/profile/narae.lee#!/vizhome/COVID-19StatusDashboardatCountyLevel/Dashboard1?publish=yes
 
 
-In this blog, we have learned how to connect to a dataset, create a table and a line graph, and add different types of filters. As these features are the basics of data visualization, you can apply these features in any Tableau dashboard. 
+In this blog, we have learned how to connect to a dataset, create a table and a line graph, and add different types of filters. As these features are the basics of data visualization, you can apply these features when you create any Tableau dashboards. 
 
 If you would like to dive into Tableau further, I would recommend working with a more complicated dataset and looking into the following features:
 
 1. Create a calculated field, which allows you to create a new column from data that already exists in your dataset
 2. Work with maps in Tableau
-
-Thank you for reading my blog!
