@@ -14,11 +14,11 @@ When you initialize a list, you must give it a name. If you choose to add elemen
 
 Ex: Take a list of integers called **numbers**. Let’s suppose you want it to contain numbers 0-4. This is how we would initialize the list: 
 
-<center>numbers = [0, 1, 2, 3, 4]</center>
+    numbers = [0, 1, 2, 3, 4]
 
 If we wanted **numbers** initialized to be empty, its declaration would look like this:
 
-<center>numbers = []</center>
+    numbers = []
 
 ### Accessing an Element
 
@@ -30,7 +30,7 @@ With that being said, we can access an element through the use of square bracket
 
 Ex: If we want to access the fourth element (index 3) and save it to a variable **x**, we would call:
 
-<center>x = numbers[3]</center>
+    x = numbers[3]
 
 “x =” assigns the value of x and “numbers[3]” returns the item at the third index of the list. If you are new to coding, you should keep in mind that **“=” does not indicate an equivalence relation, it means that a value is being assigned to the variable on the left.** Looking at the example above, we can say that *x is numbers[3]* or *x is 3*, BUT, we CANNOT say that *numbers[3] = x*. The variable on the right is not modified at all. Therefore in this case, although we change what ‘x’ means, the value of numbers[3] remains the same.
 
@@ -42,7 +42,7 @@ Just as we can access an element and assign its value to a variable (like we did
 
 Ex: If we wanted to change the third value of the list (index 2) to 10, we would call the following:
 
-<center>numbers[2] = 10</center>
+    numbers[2] = 10
 
 The “numbers[2]” accesses the list at index 2 using the brackets, []. Placing an equals sign, “=”, to the right of it indicates that we want to reassign numbers[2]’s value to the value on the right of the “=” – in this instance, it is 10.
 
@@ -56,19 +56,18 @@ Say we want to add the number ‘5’ to our **numbers** list. If we had a speci
 
 Ex: If we wanted to place 5 at index 2, we would use the following statement:
 
-<center> numbers.insert(5, 2)</center>
+    numbers.insert(5, 2)
 
 Now, the contents of numbers is: **[0, 1, 2, 3, 4, 5]**. However, if we wanted to tack ‘5’ onto the end of the list, we would simply use the append() function and pass 5 as a parameter.
 
-<center>numbers.append(5)</center>
+    numbers.append(5)
 
 Here, the contents of numbers is: **[0, 1, 2, 3, 4, 5]**
 
 The append() function is very user-friendly because it lets you append list onto one another.
 
-<center>letters = [‘a’, ‘b’, ‘c’]</center>
-
-<center>numbers.append(letters)</center>
+    letters = [‘a’, ‘b’, ‘c’]
+    numbers.append(letters)
 
 Now the contents of numbers is: **[0, 1, 2, 3, 4, ‘a’, ‘b’, ‘c]**
 
@@ -84,7 +83,7 @@ There are two ways in which we can remove an element - according to its index or
 
 Ex: If we wanted to remove the fifth element (index 4) of our original list, we would call:
 
-<center>numbers.pop(4)</center>
+    numbers.pop(4)
 
 Now the contents of numbers is: **[0, 1, 2, 3]**
 
@@ -96,7 +95,7 @@ Let’s define a list called **fruits** where fruits = **[“apple”, “strawb
 
 If we wanted to remove “orange” from the list, we would call 
 
-<center>fruits.remove(“orange”)</center>
+    fruits.remove(“orange”)
 
 Which would result in the list: **[“apple”, “strawberry”, “banana”]**
 
@@ -110,9 +109,8 @@ The next method for storing data that we will go over is sets. Sets allow you to
 
 Similar to a list, you can initialize a set to be empty, or you can add elements. However, with a set, we use curly brackets, {}, instead of square brackets, [], to initialize its values.
 
-<center>Ex: fruit = {“apple”, “strawberry”, “banana”}</center>
-
-<center>fruit = {}</center>
+    Ex: fruit = {“apple”, “strawberry”, “banana”}
+    fruit = {}
 
 ### Accessing an Element
 
@@ -130,13 +128,13 @@ Unfortunately, once an item is added to a set, it cannot be modified, only remov
 
 Sets have an add() function that takes a variable of the same type as the rest of the set and appends it to the set. Since sets are unordered, there is no need to worry about where you should place it like you would when adding an item to a list.
 
-<center>Ex: fruits.add(“orange”)</center>
+    Ex: fruits.add(“orange”)
 
 Now the contents of fruits is: **{“apple”, “strawberry”, “banana”, “orange”}**
 
 You can also append multiple items at once using update() by passing several elements.
 
-<center>Ex:fruits.add([“orange”, “pineapple”, “mango”])</center>
+    Ex:fruits.add([“orange”, “pineapple”, “mango”])
 
 Now the contents of fruits is: **{“apple”, “strawberry”, “banana”, “orange”, “pineapple”, “mango”}** 
 
@@ -150,11 +148,9 @@ There are two functions that you may use to remove an element from a set. Both r
 
 If **fruits** = {“apple”, “strawberry”, “banana”, “orange”}, then
 
-<center>remove(“strawberry”)</center>
-
-<center>and</center>
-
-<center>discard(“strawberry”)</center>
+    remove(“strawberry”)
+           and
+    discard(“strawberry”)
 
 will both give you fruits = **{“apple”, banana”, “orange”}**
 
@@ -170,13 +166,10 @@ Because of the way dictionaries are designed, you can use different data types a
 
 Ex: If we wanted to create a dictionary about a person with attributes “name”, “age”, and “college”, we could use the attribute names as keys and the personal attributes as values.
 
-my_dictionary = {“name” : “Danielle”,
-
-​            					“age” : 20,
-
-​              				  “college” : “Binghamton University”
-
-​              				}
+    my_dictionary = {“name” : “Danielle”,
+                     “age” : 20,
+                     “college” : “Binghamton University"
+                     }
 
 Though you do not have to insert a new line and tab for each input, it may make your dictionary easier to read. 
 
@@ -194,11 +187,11 @@ Ex: my_dictionary[“name”] would return **“Danielle”**
 
 Similar to the way we update an element of a list, you would also use square brackets, [], and an equals sign, =, to update the value of a dictionary at a certain key. It should be noted that you can only update the value in a key-value pair – if you would like to update the key, you must create a new key-value pair and delete the old one.
 
-<center>my_dictionary[“age”] = 21</center>
+    my_dictionary[“age”] = 21
 
 Now, my_dictionary would look like this:
 
-<center>{“name”: “Danielle”, “age”: 21, “college”: “Binghamton University”}</center>
+    {“name”: “Danielle”, “age”: 21, “college”: “Binghamton University”}
 
 ### Adding an Element
 
@@ -208,7 +201,7 @@ The way in which you add a new key-value pair to a dictionary is the same as how
 
 Ex: If you wanted to add a phone number to my_dictionary, the statement would look like this:
 
-<center>my_dictionary[“phone number”] = “(888)123-4567”</center>
+    my_dictionary[“phone number”] = “(888)123-4567”
 
 Now, my_dictionary’s contents would be: **{“name”: “Danielle”, “age”: 21, “college”: “Binghamton University”, “phone number” = “(888)123-4567”}**
 
@@ -220,21 +213,22 @@ If you would like to delete a specific key-value pair, you would use the pop() f
 
 Ex: If you wanted to remove the “college” key, you would call the following:
 
-<center>my_dictionary.pop(“college”)</center>
+    my_dictionary.pop(“college”)
 
 Now, the dictionary would look like this:
 
-<center>{name: Danielle, age: 21, phone number = (888)123-4567}</center>
+    {name: Danielle, age: 21, phone number = (888)123-4567}
 
 ## When to Use Which
 
 Now that we have laid out the basic functions of lists, sets, and dictionaries, we can differentiate the three and list out some scenarios to use each one. First, let's find what they all have in common and what makes them unique.
 
-To the right is a Venn diagram that shows the differences and similarities between lists, sets, and dictionaries. As you can see, the only similarity they all share in functionality is storing data. This graph will help you narrow down your choice simply based on whether you need something indexable, modifiable, or if you need your variables to be unique.
+Below is a Venn diagram that shows the differences and similarities between lists, sets, and dictionaries. As you can see, the only similarity they all share in functionality is storing data. This graph will help you narrow down your choice simply based on whether you need something indexable, modifiable, or if you need your variables to be unique.
 
 Now that we know what makes each data structure unique, let’s get into features that will further assist you in your choice.
 
-![image-20200606192735370](C:\Users\danie\AppData\Roaming\Typora\typora-user-images\image-20200606192735370.png)
+![alt text](https://i.ibb.co/LrNQ2D1/bit-project-diagram.png)
+
 
 #### Lists
 
