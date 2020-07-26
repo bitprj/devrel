@@ -1,4 +1,4 @@
-# Storing Data in Python
+# How to Store Data in Python
 
 Python has the ability to produce useful applications for our potential code; we can create desktop applications, build websites, analyze data, and much more - the possibilities are endless. However, in order to do anything of that caliber with this programming language, you must start from the bottom and master the basics. One essential building block of Python is to learn to store pieces of data that will be useful to our program and, more importantly, decide how we will store this data. Lists, sets, and dictionaries are the most common ways to store data. In this blog post, I will show you how you can use them, why you would want to use them, and what features each data structure has to offer. 
 
