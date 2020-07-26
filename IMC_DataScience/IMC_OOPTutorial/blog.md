@@ -29,7 +29,9 @@ In 1969, Martin M. Broadwell made one of the first references to a psychological
 
 
 
-This guide hopes to be different. I’m assuming, if you’re reading this, you’re on your journey from incompetence to competence, and to this end have the fundamentals already down - variables, loops, basic syntax, and other things like that. These lessons will discuss higher level concepts and techniques, and hopefully convince you that the past few hours you spent on Codecademy or whatever your teaching method of choice was wasn’t a waste of time. Even making it to stage 3 in this context - competence with coding - is no simple task, and one that we all are taking steps to achieve, but with any luck these articles can help guide you down that path.
+This guide hopes to be different. I’m assuming, if you’re reading this, you’re on your journey from incompetence to competence, and to this end have the fundamentals already down - variables, loops, basic syntax, and other things like that (if not, give [Codecademy](https://www.codecademy.com/learn/learn-java) or some other coding website a visit, and go through the first few lessons they have. You probably don't need to go through the whole thing, but the more the merrier). These lessons will discuss higher level concepts and techniques, and hopefully convince you that the past few hours you spent on Codecademy or whatever your teaching method of choice was wasn’t a waste of time. Even making it to stage 3 in this context - competence with coding - is no simple task, and one that we all are taking steps to achieve, but with any luck these articles can help guide you down that path.
+
+
 
 ### Part 2: What is an Object?
 
@@ -47,12 +49,16 @@ To start, let’s make a public class called “Person” (since that’s the ty
 
 ![img](https://lh6.googleusercontent.com/zehLJy0dg7jY0SIAesHgX1_GRqjn_et0uq-QoJPPNZWSta4vbNkB1AlJnqcahxzgZHD-pG96n0ZiGzIKNM0W2T6cbDEwZ256ye3eybvMx-EX5dhS1-eXaI5Yuc48F4uLhsRLb-zf)
 
-To clarify, we’re making this object in its own file. To actually create a “person” object, we’ll just leave the “Person.java” file in the same directory as whatever program is actually using the object, then create an object in that file. How do we actually create the object, though? Well, that uses something we call a **constructor**. A constructor is a bit of code in the object class (the Person.java file) that lets you know how exactly you’re going to create a Person object in your code. Here’s a sample one I wrote:
 
-![img](https://lh6.googleusercontent.com/-2fB1lh2VpfFGMAo1ZkOUvsuq_2WVJI5olcYobpgnLRUZOcYg1KmihudAuU7cnUsgmudentdtre8LAL4KL5tdC2kJW5a-sq_Bd15Kio6J8dDgcpvfzTBwYe0bl-ZqUMab1Wuw3xT)
+
+To clarify, we’re making this object in its own file. To actually create a “person” object, we’ll just leave the “Person.java” file in the same directory as whatever program is actually using the object, then create an object in that file. How do we actually create the object, though? Well, that uses something we call a **constructor**. A constructor is a bit of code in the object class (the Person.java file) that lets you know how exactly you’re going to create a Person object in your code. Here are two that I wrote:
+
+![image-20200726115504153](C:\Users\MMO\AppData\Roaming\Typora\typora-user-images\image-20200726115504153.png)
+
+
 
 So, what’s going on here?
-Whenever we make an object, we’re making a copy of this Person object with its own firstName, lastName, and age values. These lines of code mean that, when we want to make a Person in our code, we need to give it a first name, a last name, and an age - like this!
+Whenever we make an object, we’re making a copy of this Person object with its own firstName, lastName, and (optionally) age values. These lines of code mean that, when we want to make a Person in our code, we need to give it a first name, a last name, and, if we want, an age - like this!
 
 
 
@@ -60,12 +66,17 @@ Whenever we make an object, we’re making a copy of this Person object with its
 
 
 
-Here’s an object in action. We’re making a Person object named “John” with a first name input of “John” (shocker), a last name input of “Smith”, and an age input of 26. Note that this is in a completely separate file. We’re just storing Person.java and PersonTest.java in the same directory. 
+Here’s an object in action. This line of code creates a new Person object, and runs the code inside the associated constructor for that object. In this case, we’re making a Person object named “John” with a first name input of “John” (shocker), a last name input of “Smith”, and an age input of 26. If we didn't know John's age, we could simply input "John" and "Smith" and the object would be created with the second constructor I wrote, since that one only needs a first and last name. In that case, the "age" value would be set to -1, which I'm using to indicate an unknown age.
+
+​			*Note that this is in a completely separate file. We’re just storing Person.java and PersonTest.java in the same directory.* 
+
+
+
 With that, we’re 1 for 3 in the things we want this Person object to do. It can store that info, sure, but there’s no magic trick with Objects for accessing the variables within them*. We’ll have to write that in ourselves, via a method. 
 
-​			*there actually is indeed a trick for this, but it’s bad form. When we initially created those variables, we made them private. If they were instead public, we 			could then just access, and edit, them from anywhere. This typically isn’t what we’re looking to do though, since granting full access to those variables can 			be messy. If you’re coding Person.java, do you want the people using it to be able to modify firstName or lastName freely? Probably not.*
+​			*There actually is indeed a trick for this, but it’s bad form. When we initially created those variables, we made them private. If they were instead public, we 			could then just access, and edit, them from anywhere. This typically isn’t what we’re looking to do though, since granting full access to those variables can 			be messy. If you’re coding Person.java, do you want the people using it to be able to modify firstName or lastName freely? Probably not.*
 
-You most likely already know what a method is, but just in case, a real quick reminder: a **method** is just a fancy name for a function. You (optionally) input a value, it does something, and (optionally) outputs a value (the only required part of those three is that it does something). If we want methods to retrieve the variables, we just need to write some public methods in Person.java that will return the desired values:
+You most likely already know what a method is, but just in case, a quick reminder: a **method** is just a fancy name for a function. You (optionally) input a value, it does something, and (optionally) outputs a value (the only required part of those three is that it does something). If we want methods to retrieve the variables, we just need to write some public methods in Person.java that will return the desired values:
 
 ![img](https://lh6.googleusercontent.com/Lmtty-FotG5btSIPU7eBzFYbY76k3W1Hwd9CLvkR1h-scr5dHKTgId5WVDqjp4QlDSbViF67QRFp0iGGStmKbmA6kqB7OCUr2945a0rwdM-oUQMcO15dykRMGshkN5DSvUcuM72q)
 
@@ -80,21 +91,23 @@ You’ll notice I added a getName() method that just returns the whole name, sin
 
 
 
-
 Using the method of an object is as simple as [specific object instance].[method name]. Here’s what the above code outputs:
 
 ![img](https://lh3.googleusercontent.com/-pn_m1XcMA0xH0wxxLkaechvajPV4lo0135r7WL1nuYdy1JOlXqmjEnoLveH8elh9gFi0HOKx0prMkTjZTcPt5bub14PbseULPN8DvhNivh38t-AATjeVxHnQTsnwge_NFpvMebE)
 
-Our last task for this is to change the age of the person. This one will use a method too, but it raises an important question: How exactly do we want to approach this? Do we want to give free access to increment the age, or do we want to simply increment it by one? An easy answer is to do both! 
-Quick Sublesson: Overloading
+
+
+Our last task for this is to modify the age of the person. This one will use methods too, but it raises an important question: How exactly do we want to approach this? Do we want to give free access to increment the age, or do we want to simply increment it by one? An easy answer is to do both! 
+
+###### 	Quick Sublesson: Overloading
 
 ​			*Note: This does not apply to every language! I know it works for C++ and Java, for example, but not Python. Do a quick google search to see if this will 			work for you. If not, skip this.*
 
-In some languages, two methods can be given the same name, if they take different inputs - as seen in the code example you’ll see in a second. This is called **overloading**.
+​	In some languages, two methods can be given the same name, if they take different inputs - as seen in the code example you’ll see in a second. This is 	called **overloading**.
 
-I’ve gone ahead and made a function that takes an input and adjusts the age accordingly, and another that takes no input and simply increments the age by one. With that, we have our complete (simple) Person.java file!
+I’ve gone ahead and made a function that sets the age to a new value, takes an input and adjusts the age accordingly, and another that takes no input and simply increments the age by one. With that, we have our complete (simple) Person.java file!
 
-![img](https://lh4.googleusercontent.com/NsFmGAZKJXQ0hWunbwB2_NVgK5-HcEt_rsFhNqD2tWJar0fbsUOXPpijWXj6dIlrlrX9BWGo87pm3OIsgF7W85zrfiE2J3b-YrugwbP1bQinJkZ3pFJcNiGRebTp0JZ8VUl0796s)
+![image-20200726115626085](C:\Users\MMO\AppData\Roaming\Typora\typora-user-images\image-20200726115626085.png)
 
 Our complete test program:
 
