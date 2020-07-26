@@ -106,7 +106,43 @@ And finally, its complete output:
 
 
 
-### Part 3: The End of the Beginning
+### Part 3: Inheritance, or How to Make Your Code Look Cleaner
+
+Inheritance is another important aspect of objects, and it can be a massive time saver when it comes to writing objects. Essentially, inheritance is implementing an object, within another object. 
+
+That sounds more complicated than it actually is. Let me elaborate. 
+
+**Inheritance** lets an object *inherit* the properties of another object. For example, say we've already coded a hypothetical “Wolf” object and a hypothetical “Animal” object. With this line of code in the Wolf object's header - 
+
+![img](https://lh5.googleusercontent.com/JGvonMJYeaB_YrKOvY_1HfzIG0Be5-EzKqhO00xT9OcaLT5eVI6cU7k2agRBRPCQcEV3MRe1-nXjozqROJyCwVW9VC3Aw08uKJLAlXGSp4_WmuFEZAerD_-PISJqjvrrTT9p3Uwr)
+
+Wolf will now have all the characteristics (methods, variables, etc.) of Animal, in addition to whatever code is written in Wolf. Note that a given object (a **subclass**) can only inherit from one parent class (a **superclass**).
+
+Another important item that's similar to a superclass is an interface. An **interface** is basically just a list of method titles that an object will **implement** - i.e. you'll code those methods from the interface into the object.
+
+Here’s an example. Say we have this interface:
+
+![img](https://lh6.googleusercontent.com/NFfFh9y1i5eX6QSLgMHAM2GqGA_63I8ektHr-zt_xDDIQphEqfdFDN52UhZVWLbRig4FL1emtEMhVqUlQlUkpElnsljt6xol6FIWpxORxgjbJhEvwciaTIZRrgOlwCPhbMQAaZ0t)
+
+To our previous Wolf example, we could now write: 
+
+![img](https://lh3.googleusercontent.com/2GGG0-uYYJERrZv3lV1v1LDMYepc8ZZj73i1AKgeBmGSBUGOm8Wgw1IS9UkfgI5i1fuFvqnhhGYnFGHSSm7zUgsu4osPLJ9RSTH-QkKe_QajkSC7yFnlc_zR1TrnjmQsRYpEGpv2)
+
+
+
+Now that we’ve implemented AlphaWolf, our code will not successfully compile unless we include:
+
+* A "howl" method that takes no input and returns no output, 
+* a "fight" method that takes a string input and outputs a boolean (if the wolf won, maybe), and 
+* a "run" method that takes an input of the distance ran and returns no output. 
+
+​			*Note that the input and outputs of the method are relevant. You can’t just include methods with the same names!*
+
+At this point, you’re probably wondering what the benefit of an interface is at all. It doesn’t seem to do anything other than restrict the code you can write, right? Well… yeah, that’s really all it does. Consider, though, in a group setting, with multiple people working on a project, it may be beneficial to outline to your teammates what exactly you want in the object. You can look at an interface and know exactly what’s methods you're going to have to work with, without having to search through the entire code of the object (assuming you haven’t slacked off and put an empty method in just to satisfy the requirement!).
+
+
+
+### Part 4: The End of the Beginning
 
 This is not all there is to Object Oriented Programming. It’s not even all there is to Objects. It is, however, a good introduction to the topic. With any luck, this guide gave you an understanding of objects. We’ll continue on the topic next time. However, it’s not possible to cover everything, so eventually you’ll have to venture into the scary world of advanced computer science. Don’t worry - the people there don’t bite. Usually.
 
