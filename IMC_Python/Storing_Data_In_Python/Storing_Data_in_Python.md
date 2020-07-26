@@ -20,7 +20,7 @@ If we wanted **numbers** initialized to be empty, its declaration would look lik
 
     numbers = []
 
-### Accessing an Element
+### Access an Element
 
 *list[index]*
 
@@ -34,7 +34,7 @@ Ex: If we want to access the fourth element (index 3) and save it to a variable 
 
 “x =” assigns the value of x and “numbers[3]” returns the item at the third index of the list. If you are new to coding, you should keep in mind that **“=” does not indicate an equivalence relation, it means that a value is being assigned to the variable on the left.** Looking at the example above, we can say that *x is numbers[3]* or *x is 3*, BUT, we CANNOT say that *numbers[3] = x*. The variable on the right is not modified at all. Therefore in this case, although we change what ‘x’ means, the value of numbers[3] remains the same.
 
-### Modifying an Element
+### Modify an Element
 
 *list[index] = new element*
 
@@ -46,7 +46,7 @@ Ex: If we wanted to change the third value of the list (index 2) to 10, we would
 
 The “numbers[2]” accesses the list at index 2 using the brackets, []. Placing an equals sign, “=”, to the right of it indicates that we want to reassign numbers[2]’s value to the value on the right of the “=” – in this instance, it is 10.
 
-### Adding an Element
+### Add an Element
 
 *append(new_element)* 
 
@@ -73,7 +73,7 @@ Now the contents of numbers is: **[0, 1, 2, 3, 4, ‘a’, ‘b’, ‘c]**
 
 Because of how Python is designed, if we insert an element at an index, the list automatically expands and shifts all the elements to the right of the given index one position to the right.
 
-### Removing an Element
+### Remove an Element
 
 *pop(index)* 
 
@@ -112,15 +112,15 @@ Similar to a list, you can initialize a set to be empty, or you can add elements
     Ex: fruit = {“apple”, “strawberry”, “banana”}
     fruit = {}
 
-### Accessing an Element
+### Access an Element
 
 Since sets are unordered and do not have indices, you cannot access a specific item in it as you would in a list. 
 
-### Modifying an Element
+### Modify an Element
 
 Unfortunately, once an item is added to a set, it cannot be modified, only removed. This is because there is no way to access the element to modify it since there are no indices.
 
-### Adding an Element
+### Add an Element
 
 *set.add(new_element)*
 
@@ -138,7 +138,7 @@ You can also append multiple items at once using update() by passing several ele
 
 Now the contents of fruits is: **{“apple”, “strawberry”, “banana”, “orange”, “pineapple”, “mango”}** 
 
-### Removing an Element
+### Remove an Element
 
 *set.remove(element)*
 
@@ -173,7 +173,7 @@ Ex: If we wanted to create a dictionary about a person with attributes “name�
 
 Though you do not have to insert a new line and tab for each input, it may make your dictionary easier to read. 
 
-### Accessing an Element
+### Access an Element
 
 *dictionary[key]*
 
@@ -181,7 +181,7 @@ To get the value stored at a key, you use square brackets, [], just as you would
 
 Ex: my_dictionary[“name”] would return **“Danielle”**
 
-### Modifying an Element
+### Modify an Element
 
 *dictionary[key] = new_value*
 
@@ -193,7 +193,7 @@ Now, my_dictionary would look like this:
 
     {“name”: “Danielle”, “age”: 21, “college”: “Binghamton University”}
 
-### Adding an Element
+### Add an Element
 
 *dictionary[new_key] = new_value*
 
@@ -205,7 +205,7 @@ Ex: If you wanted to add a phone number to my_dictionary, the statement would lo
 
 Now, my_dictionary’s contents would be: **{“name”: “Danielle”, “age”: 21, “college”: “Binghamton University”, “phone number” = “(888)123-4567”}**
 
-### Removing an Element
+### Remove an Element
 
 *dictionary.pop(key)*
 
