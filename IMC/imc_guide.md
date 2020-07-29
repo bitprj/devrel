@@ -1,3 +1,8 @@
+---
+title: 'IMC Guide'
+---
+###### tags: `Templates` `Documentation`
+
 Guide to Integrated Marketing Campaigns (IMCs)
 ===
 

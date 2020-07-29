@@ -1,9 +1,9 @@
 ---
-name: Content Development Proposal
+name: Workshop Development Proposal
 about: First steps to creating a plan for content dev.
-title: "[Content Dev Proposal] {{Title}} {{IMC Name}}"
+title: "[Blog Dev Proposal] Title : IMC_Name"
 labels: IMC
-assignees: shreyagupta98
+assignees: ''
 
 ---
 
@@ -18,11 +18,11 @@ assignees: shreyagupta98
 
 >**FORMAT:** Add blog/video/webinar labels
 
-**[Step-By-Step Technical Blog Guide](https://hq.bitproject.org/how-to-write-a-technical-blog/)**
+### [Workshop Guide](https://www.notion.so/Guide-Workshops-6e978d8a8961464f84cf9d74425a78dc)
 
 ### :dancer: Before starting
-> [Blog tracker](https://airtable.com/shrDBBOFqn5c7SlBh)
-- [ ] [Submit blog choice on airtable](https://airtable.com/shrshp0d9sruL7l9J)
+> [Workshop tracker](https://airtable.com/shrDBBOFqn5c7SlBh)
+- [ ] Contact PM to ask about workshop topics
 
 ### :pushpin: Step 1: Proposal
 > :fire: DO NOT MERGE TO MASTER YET
@@ -75,22 +75,9 @@ assignees: shreyagupta98
     - Assign your Technical QA expert and PM to the pull request
 </details>
 
-### :pushpin: Step 4.1: Blog Deliverables
+### :pushpin: Step 4: Written Deliverables
 > :fire: DO NOT MERGE TO MASTER YET
-- [ ] Submit Written Deliverables
-
-<details><summary><b>How to: Submit Written Deliverables</b></summary>
-    - Fork the bitprj/devrel repo
-    
-    - Commit + Push written content (step-by-step blog tutorial of code) under blog.md within the pertinent folder
-    
-    - Create a pull request to merge into the #{{insert-blog-title}} branch on bitprj/devrel
-    
-    - Assign your Technical QA expert, Writing QA expert, and PM to the pull request
-</details>
-
-### :pushpin: Step 4.2: Workshop Deliverables
-> :fire: DO NOT MERGE TO MASTER YET
+- [Slides Template](https://docs.google.com/presentation/d/1v3HcEPIispxTmlko_7qJq2sW3yHX7nGjKOXvlV3FbrM/edit?usp=sharing)
 - [ ] Submit Written Deliverables
 
 <details><summary><b>How to: Submit Written Deliverables</b></summary>

@@ -1,9 +1,9 @@
 ---
-name: Content Development Proposal
+name: Blog Development Proposal
 about: First steps to creating a plan for content dev.
-title: "[Content Dev Proposal] {{Title}} {{IMC Name}}"
+title: "[Blog Dev Proposal] Title : IMC_Name"
 labels: IMC
-assignees: shreyagupta98
+assignees: ''
 
 ---
 
@@ -75,21 +75,7 @@ assignees: shreyagupta98
     - Assign your Technical QA expert and PM to the pull request
 </details>
 
-### :pushpin: Step 4.1: Blog Deliverables
-> :fire: DO NOT MERGE TO MASTER YET
-- [ ] Submit Written Deliverables
-
-<details><summary><b>How to: Submit Written Deliverables</b></summary>
-    - Fork the bitprj/devrel repo
-    
-    - Commit + Push written content (step-by-step blog tutorial of code) under blog.md within the pertinent folder
-    
-    - Create a pull request to merge into the #{{insert-blog-title}} branch on bitprj/devrel
-    
-    - Assign your Technical QA expert, Writing QA expert, and PM to the pull request
-</details>
-
-### :pushpin: Step 4.2: Workshop Deliverables
+### :pushpin: Step 4: Written Deliverables
 > :fire: DO NOT MERGE TO MASTER YET
 - [ ] Submit Written Deliverables
 
