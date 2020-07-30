@@ -1,0 +1,172 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "roulette game",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "RouletteIntent",
+          "slots": [
+            {
+              "name": "number",
+              "type": "AMAZON.NUMBER"
+            },
+            {
+              "name": "color",
+              "type": "Color"
+            },
+            {
+              "name": "betType",
+              "type": "betType"
+            }
+          ],
+          "samples": [
+            "{betType}"
+          ]
+        },
+        {
+          "name": "NumberIntent",
+          "slots": [
+            {
+              "name": "number",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "{number}"
+          ]
+        },
+        {
+          "name": "ColorIntent",
+          "slots": [
+            {
+              "name": "color",
+              "type": "Color"
+            }
+          ],
+          "samples": [
+            "{color}"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "red"
+              }
+            },
+            {
+              "name": {
+                "value": "black"
+              }
+            },
+            {
+              "name": {
+                "value": "green"
+              }
+            }
+          ],
+          "name": "Color"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "number"
+              }
+            },
+            {
+              "name": {
+                "value": "color"
+              }
+            }
+          ],
+          "name": "betType"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "RouletteIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "number",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {},
+              "validations": [
+                {
+                  "type": "isLessThanOrEqualTo",
+                  "prompt": "Slot.Validation.1310184359007.367949772610.1004972204693",
+                  "value": "36"
+                },
+                {
+                  "type": "isGreaterThanOrEqualTo",
+                  "prompt": "Slot.Validation.1310184359007.367949772610.633367818155",
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "name": "color",
+              "type": "Color",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "betType",
+              "type": "betType",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Slot.Validation.1310184359007.367949772610.1004972204693",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "your value must be less than thirty six"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.1310184359007.367949772610.633367818155",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "your value must be greater than zero"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "11"
+}
