@@ -42,14 +42,14 @@ To create our body section, simply type body on your next line.
 
 Now, let’s make our classes! Let’s think about what we want our city to look like.
 We know that we want the following objects in our city:
-The ground
-A skyscraper
-A smaller building
-A road
-A bridge
-An ocean
-A waterfall
-A car
+* The ground
+* A skyscraper
+* A smaller building
+* A road
+* A bridge
+* An ocean
+* A waterfall
+* A car
 
 In order to eventually create these objects, we have to make classes for them. Classes are simply declarations that we use to establish the fact that we are going to create an object. Then, we actually create it in CSS!
 
