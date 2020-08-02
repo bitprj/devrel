@@ -20,7 +20,7 @@ using Python, from checking assumptions to evaluating performance.
 
 ### Import Libraries
 
-First, let’s important all necessary libraries in the beginning to keep our code organized:
+First, let’s import all necessary libraries in the beginning to keep our code organized:
 
 ```python
 import pandas as pd
@@ -42,7 +42,7 @@ import io
 
 ### Read Dataset
 
-For this analysis, I will use a real estate dataset that can be downloaded from here. I choose to
+For this analysis, I will use a real estate dataset that can be downloaded from [here](https://www.kaggle.com/quantbruce/real-estate-price-prediction). I choose to
 upload it to Google Colab from local drive. Of course, you can also replace the first argument in
 read csv() with the filepath or URL to the dataset that you’d like to use instead. The delimiter
 parameter is set to comma by default, but you can change it depending on the delimiter of your
@@ -88,17 +88,7 @@ outliers on the right.
 
 ## Checking Multicollinearity
 
-Before the analysis, it is important to verify several regression conditions so as to make sure that
-our analysis is valid. Most of the conditions in linear regression can be checked easily with the
-residuals–the only snag is that we get the residuals only after we perform the regression. Still, ”no
-multicollinearity” is the condition that we are able to check beforehand, without using the residuals.
-
-Since a multiple regression involves more than one predictor variables, multicollinearity occurs
-when some of them are highly correlated with each other, which means each of these predictors
-will account for similar variance in the target variable. Therefore, though the presence of multi-
-collinearity will not affect the predictive power of our model, it will make it more difficult for us to
-assess the individual influence of a predictor on our target variable. We can detect multicollinearity
-using either a correlation matrix or VIF factors.
+Since a multiple regression involves more than one predictor variables, multicollinearity occurs when some of them are highly correlated with each other, which means each of these predictors will account for similar variance in the target variable. Though the presence of multicollinearity will not affect the predictive power of our model, it will make it more difficult for us to assess the individual influence of a predictor on our target variable. Therefore, it is important to check the ”no multicollinearity” condition before our analysis. We can detect multicollinearity using either a correlation matrix or VIF factors.
 
 ### Correlation Matrix
 
@@ -154,11 +144,7 @@ kind of arbitrary here. To remove the redundant variables more carefully, we can
 stepwise regression to only keep the predictors that lead to the best performance; I will describe
 backwards stepwise regression later.
 
-Another way to deal with multicollinearity without having to drop your predictors before the
-analysis is to perform regression with regularization techniques (such as Lasso and Ridge) which I
-will also describe at the end of the article. Regularization can help you handle multicollinearity, so
-if you don’t want to delete any variables, you may choose to skip the OLS model below and directly
-jump to the Lasso/Ridge/Elastic Net regression presented in the end.
+Another way to deal with multicollinearity without having to drop your predictors before the analysis is to perform regression with regularization techniques, such as Lasso and Ridge. Regularization can help you handle multicollinearity, so if you don’t want to delete any variables, you may choose to skip the OLS model below and directly jump to the Lasso/Ridge/Elastic Net regression presented in the end.
 
 
 
@@ -256,14 +242,9 @@ plt.grid(which = 'minor', linestyle = ':', linewidth = '0.5', color = 'black')
 
 ## Checking the Residuals
 
-Congrats! You have successfully obtained the regression line. But remember that we still need to
-check the residuals of the regression to ensure its validity.
+Congrats! You have successfully obtained the regression line. Now we can get the residuals of the regression by calculating the difference between each data point and the corresponding predicted value. In order to ensure the validity of our analysis, we need to use the residuals to verify a few more conditions apart from multicollinearity.
 
-First, we can use the scatter() function from the matplotlib library to plot the residuals (be-
-tween the actual and predicted values) against the predicted values. We expect to see that the
-points are randomly distributed in the scatter plot. More specifically, they should show no cur-
-vature (which ensures linearity), and constant variation along the predicted value (which ensures
-homoscedasticity).
+First, we can use the scatter() function from the matplotlib library to plot the residuals (between the actual and predicted values) against the predicted values. We expect to see that the points are randomly distributed in the scatter plot. More specifically, they should show no curvature (which ensures linearity), and constant variation along the predicted value (which ensures homoscedasticity).
 
 ```python
 epsilon_hat = y - y_hat # residuals
@@ -349,9 +330,9 @@ Don’t panic, let’s interpret some important values one by one.
 
 <img src="Blog/26.png" style="float: left;" />
 
-R-squared, a.k.a. coefficient of determination, measures the proportion of the variance of the target variable that can be explained by the predictors in our model. It is calculated as $1 - \frac{\text{Sum of Squares Error (SSE)}}{\text{Sum of Squares Total (SST)}}$, and ranges from 0 to 100%. The higher $R^2$, the better the model. An $R^2$ of 100%, for example, means the model explains all the variation of the target variable, whereas a value of 0% indicates zero predictive capability. Our model has $R^2 = 0.542$, so approximately 54% of the variation in the house price can be accounted for by our OLS model.
+R-squared, a.k.a. coefficient of determination, measures the proportion of the variance of the target variable that can be explained by the predictors in our model. $R^2$ ranges from 0 to 100\%. The higher the value, the better the model. Our model has $R^2 = 0.542$, which means approximately 54\% of the variation in the house price can be accounted for by our OLS model.
 
-Note that there's an adjusted $R^2 = 0.537$ in the second row which is slightly smaller than $R^2$. This is because $R^2$ only works as intended in a simple linear regression model where there's only one predictor. In a multiple regression, when a new predictor is added to the model, $R^2$ can only increase but never decrease. This implies that a model may seem to have a better fit simply because it has more predictors. Thus the adjusted $R^2$, calculated as $1 - \frac{\text{Mean Squares Error (MSE)}}{\text{Mean Squares Total (MST)}}$ or $1 - \frac{(1 - R^2)(n - 1)}{n - k - 1}$ if we already know $R^2$, takes into account the number of predictors $k$ and the number of data points $n$ in the model. It only increases if the new predictor improves the model more than expected by chance and decreases if it fails to do so. As a result, adjusted $R^2$ should always be less than or equal to $R^2$.
+Nevertheless, $R^2$ only works as intended in a simple linear regression model with only one predictor. In a multiple regression, when a new predictor is added to the model, $R^2$ can only increase but never decrease. This implies that a model may have a higher $R^2$ simply because it has more predictors. On the other hand, the adjusted $R^2$ takes into account the number of predictors in the model. As a result, it only increases if the new predictor improves the model more than expected by chance and decreases if it fails to do so.
 
 ### F-statistic
 
@@ -385,13 +366,13 @@ redundant variable at .01 significance level.
 
 The results of the OLS regression seem significant but the real estate data set involves only 6 predictors. When we have a substantial number of predictors in the model, it's unlikely that all of them will have significant p-values. Oftentimes, there exist predictors that give redundant information. As the model increases in complexity, the variance of our estimator can get very large. Thus we may consider getting rid of some of the predictors in order to simplify the model and prevent overfitting.
 
-In theory, you could try all the possible combinations of your predictors and select the one that you believe is the best (for example, the model that yields the highest adjusted $R^2$). However, imagine your data set contains have 20 predictors, then you would need to compare $2^{20} > 1,000,000$ potential models!
+In theory, we could try all possible combinations of our predictors and choose the best combination (for example, the one that yields the highest adjusted $R^2$). However, imagine your data set contains have 20 predictors, then you would need to compare $2^{20} > 1,000,000$ potential models!
 
-An easier predictor selection procedure, as I mentioned previously, is backwards stepwise regression. Starting with all predictors in the model, in each iteration we find out which predictor to delete, if any, will lead to the best model. We repeat this step until we can't improve our model by removing any variables. (Similarly, there is also forward stepwise regression that works in the reverse way.)
+Backwards stepwise regression provides an easier procedure to select reliable predictors. Starting with all predictors in the model, in each iteration we find out which predictor to delete, if any, will lead to the best model. We repeat this step until we can't improve our model by removing any variables.
 
-The question then arises: how do we determine quantitatively which model is the best? There are numerous methods that can provide a quantitative measure of the model performance. The one I present here is leave-one-out cross-validation. Its procedure is as follows: in each iteration, we pick a data point (a row of $X_{i\cdot}$ and $y_i$) from our data set, and refit an OLS model on the remaining data points. Based on this model, we make a prediction $\hat{y}_{i}$ for the data point $y_i$ that we picked in the current iteration. We sum up the squared differences between each data point and its predicted value, i.e. $\sum_{i=1}^{n} (y_i - \hat{y}_i)^2$ as our evaluation metric, called the risk estimator. A good model should yield small difference between each pair of predicted and actual values, thus a smaller risk estimator is preferred.
+The question then arises: how do we determine quantitatively which model is the best? One method to measure the performance of models is the leave-one-out cross-validation--in each iteration, we pick a data point (a row of $X_{i\cdot}$ and $y_i$) from our data set, and refit an OLS model on the remaining data points. Based on this model, we make a prediction $\hat{y}_{i}$ for the data point $y_i$ that we picked in the current iteration. We sum up the squared differences between each data point and its predicted value, i.e. $\sum_{i=1}^{n} (y_i - \hat{y}_i)^2$ as our evaluation metric, called the risk estimator. A good model should yield small difference between each pair of predicted and actual values, so smaller risk estimators are preferred.
 
-Using leave-one-out cross-validation, we are able to quantitatively compare the models during each iteration of backwards stepwise regression. This procedure is not supported in Python libraries, so we have to implement the process by ourselves:
+Using the leave-one-out cross-validation, we are able to quantitatively compare the models during each iteration of backwards stepwise regression. This procedure is not supported in Python libraries, but the process is not hard to implement:
 
 ```python
 X_ = dataset[['X1 transaction date', 'X2 house age', 'X3 distance to the nearest MRT station', 'X4 number of convenience stores', 'X5 latitude', 'X6 longitude']]
@@ -463,11 +444,9 @@ print(est_.summary())
 
 However, stepwise regression has many potential drawbacks. For example, as a greedy search algorithm, it is not guaranteed to find the best model, especially when predictors are correlated.
 
-Another approach that performs predictor selection and also works in the presence of multicollinearity is regularization, a technique for reducing the complexity of the model by adding an extra penalty term to the errors. More specifically, our objective here is still to minimize $||\mathbf{y} - \text{X} \mathbf{\beta}||^2$ (same as the OLS model), but we now impose an additional constraint that the coefficients should not exceed some threshold. The specific constraint depends on the type of the regularization. Below I will mention three popular regularization techniques--Lasso, Ridge, and Elastic Net.
+Another approach that performs predictor selection and also works in the presence of multicollinearity is regularization, a technique for reducing the complexity of the model by adding an extra penalty term to the errors. More specifically, our objective here is still to minimize $||\mathbf{y} - \text{X} \mathbf{\beta}||^2$ (same as the OLS model), but we now impose an additional constraint that the coefficients should not exceed some threshold. The specific constraint depends on the type of the regularization. Three popular regularization techniques are mentioned below--Lasso, Ridge, and Elastic Net.
 
-(I will stick to the real estate data as our example data set. But normally, these techniques are used when we have a substantial number of predictors in a complex model, avoiding the risk of overfitting. Thus it would probably be a little bit of overkill in this case where only 6 predictor variables are involved.)
-
-First, since the new model will penalize large coefficients, we need to standardize our predictor variables to ensure that the penalty is applied fairly across all predictors. By standardization I mean converting the values in each column of the regressor matrix into z-scores, so the standard score of $x$ is calculated as $z = \frac{x - \mu}{\sigma}$, where $\mu$ is the mean of all values in the same column and $\sigma$ is their standard deviation.
+Regardless of the type of regularization, the new model will always penalize large coefficients, so we need to standardize our predictor variables to ensure that the penalty is applied fairly across all predictors. Standardization means converting the values in each column of the regressor matrix into z-scores, so the standard score of $x$ is calculated as $z = \frac{x - \mu}{\sigma}$, where $\mu$ is the mean of all values in the same column and $\sigma$ is their standard deviation.
 
 ```python
 X_std = StandardScaler().fit_transform(X_)
@@ -475,7 +454,7 @@ X_std = StandardScaler().fit_transform(X_)
 
 ### Lasso
 
-After the standardization, we are ready to choose a specific model to perform. Let's start with Lasso regression. Lasso regression requires that the sum of the absolute values of the coefficients $||\beta||_1$ is no larger than some prespecified value. Using Lagrange Multiplier, we can write our objective function to minimize as $||\mathbf{y} - \text{X} \mathbf{\beta}||^2_2 + \lambda ||\beta||_1$. $\lambda ||\beta||_1$ is the extra penalty term here and can be controlled by changing the value of $\lambda$. When $\lambda$ is zero, the model reduces to OLS; when $\lambda$ tends to infinity, all coefficients approach zero. You can imagine that, as I gradually increase $\lambda$, the magnitude of my coefficients has to decrease towards zero. This can be illustrated by the code below:
+After the standardization, we are ready to choose a specific model to perform. Let's start with Lasso regression. Lasso regression requires that the sum of the absolute values of the coefficients $||\beta||_1$ is no larger than some prespecified value. Using Lagrange Multiplier, we can write our objective function to minimize as $||\mathbf{y} - \text{X} \mathbf{\beta}||^2_2 + \lambda ||\beta||_1$. $\lambda ||\beta||_1$ is the extra penalty term here and can be controlled by changing the value of $\lambda$. When $\lambda$ is zero, the model reduces to OLS; when $\lambda$ tends to infinity, all coefficients approach zero. As you gradually increase $\lambda$, the magnitude of the coefficients has to decrease towards zero. This can be illustrated by the code below:
 
 ```python
 coefs = []
