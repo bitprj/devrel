@@ -1,0 +1,235 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Intro to Multiple Linear Regression Analysis in Python}
+\author{Bowen Zhu}
+\date{May 2020}
+
+\usepackage{bm}
+\usepackage{esvect}
+\usepackage{commath}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{physics}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage[driver=pdftex]{geometry}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage[strict]{changepage}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+}
+
+\begin{document}
+\newgeometry{top=3.5cm}
+\maketitle
+
+\textbf{Linear Regression models} allow us to summarize and study relationships between variables by fitting a straight line to the observed data. You may have heard of \textbf{simple linear regression}, which establishes the relationship between two quantitative variables--one predictor variable and one target variable.
+
+However, in reality, it is rare that a target variable is explained by only one predictor. So what if we want to estimate a continuous variable using more than one predictors? If two or more predictor variables have a linear relationship with the target variable, a \textbf{multiple linear regression analysis} allows us to quantify the strength of the relationship and estimate the target variable at a certain value of the predictor variables.
+
+This tutorial will show you step-by-step how to perform a multiple linear regression analysis using Python, from checking assumptions to evaluating performance.
+\section*{Getting Started}
+\subsection*{Import Libraries}
+First, let's important all necessary libraries in the beginning to keep our code organized:
+\begin{figure}[H]\includegraphics[width=\linewidth]{1}\end{figure}
+\restoregeometry
+\subsection*{Read Dataset}
+For this analysis, I will use a real estate dataset that can be downloaded from \href{https://www.kaggle.com/quantbruce/real-estate-price-prediction}{here}. I choose to upload it to Google Colab from local drive. Of course, you can also replace the first argument in read\_csv() with the filepath or URL to the dataset that you'd like to use instead. The delimiter parameter is set to comma by default, but you can change it depending on the delimiter of your csv file.
+\begin{figure}[H]\includegraphics[width=\linewidth]{2}\end{figure}
+We can take a look at what the data looks like:
+\begin{figure}[H]\includegraphics[width=\linewidth]{3}\end{figure}
+\begin{figure}[H]\includegraphics[width=\linewidth]{4}\end{figure}
+As you can see, the first column in the real estate data set is redundant, so we should probably remove it. Otherwise, this data set seems directly usable. However, it's likely that your own data set will require more preprocessing--dealing with missing/invalid values, restructuring the data, and encoding dummy variables, etc.
+\begin{figure}[H]\includegraphics[width=\linewidth]{5}\end{figure}
+After data preprocessing, we can use the describe() function to obtain some summary statistics of our target variable, and the displot() function from the seaborn library to plot its distribution.
+\begin{figure}[H]\includegraphics[width=1.1\linewidth]{6}\end{figure}
+\begin{figure}[H]\centering\includegraphics[width=0.5\linewidth]{7}\end{figure}
+We see that the values of house price of unit area are normally distributed with perhaps a few outliers on the right.
+\section*{Checking Multicollinearity}
+Since a multiple regression involves more than one predictor variables, multicollinearity occurs when some of them are highly correlated with each other, which means each of these predictors will account for similar variance in the target variable. Though the presence of multicollinearity will not affect the predictive power of our model, it will make it more difficult for us to assess the individual influence of a predictor on our target variable. Therefore, it is important to check the ”no multicollinearity” condition before our analysis. We can detect multicollinearity using either a correlation matrix or VIF factors.
+\subsection*{Correlation Matrix}
+The correlation coefficient is a statistic that measures linear correlation between two variables. Its value lies between -1 and +1. The absolute value gives the strength of the relationship between the two variables. The larger its magnitude, the stronger their relationship. In general, a correlation coefficient above +0.8 or below -0.8 indicates a strong correlation, and we should take some measures to reduce multicollinearity before we continue.
+
+The pandas corr() function calculates the correlations among all variables in the dataframe. We can visualize the resulting correlation matrix using a heatmap from the seaborn library. The diagonal values should always equal 1 since they are the correlations of a variable with itself.
+\begin{figure}[H]\includegraphics[width=1.1\linewidth]{8}\end{figure}
+\begin{figure}[H]\includegraphics[width=0.9\linewidth]{9}\end{figure}
+\subsection*{VIF Factors}
+VIF factor is an alternative measure for multicollinearity, which ranges from 1 upwards. A rule of thumb used in practice is if a VIF value is greater than 4, then multicollinearity is a problem. We can check VIF factors using the variance\_inflation\_factor() function from the statsmodels package.
+\begin{figure}[H]\includegraphics[width=\linewidth]{10}\end{figure}
+\begin{figure}[H]\centering\includegraphics[width=0.5\linewidth]{11}\end{figure}
+You should see in the correlation matrix that the correlation coefficient between X3 and X6 is $-0.81 < -0.8$, and the VIF factor for X3 is also slightly higher than 4, which is unfavorable.
+
+A simple solution is to remove one of the correlated variables from our model. After removing X3 from the list of column names and rerunning the previous code, the new correlation matrix should show no significant multicollinearity, and the VIF factors of all the remaining variables are around 1, so we are in good shape, and can proceed with our regression.
+\begin{figure}[H]\includegraphics[width=0.8\linewidth]{12}\end{figure}
+\begin{figure}[H]\centering\includegraphics[width=0.5\linewidth]{13}\end{figure}
+But wait, you may ask, why did I choose to delete X3 rather than X6? Indeed, my choice was kind of arbitrary here. To remove the redundant variables more carefully, we can consider using stepwise regression to only keep the predictors that lead to the best performance; I will describe backwards stepwise regression later.
+
+Another way to deal with multicollinearity without the need to drop predictors before the analysis is to perform regression with regularization techniques, such as Lasso and Ridge. Regularization can help you handle multicollinearity, so if you don't want to delete any variables, you may choose to skip the OLS model below and directly jump to the Lasso/Ridge/Elastic Net regression presented in the end.
+
+\section*{Performing the Regression}
+\subsection*{A Bit of Math}
+Now it's finally time to introduce our regression model. Under the linear model, the actual value of our target variable should be a linear combination of all predictor variables plus a constant (intercept) as well as some errors. Thus it can be written in the form of an equation $y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \epsilon_i$, and our goal is to estimate $\beta_0$, $\beta_1$, $\beta_2$, ...
+
+Assuming you’re not scared of matrices, let's first understand some mathematical background for linear regression in linear algebra. More generally speaking, suppose our data consisits of $n$ observations, each of which contains the values of $k$ predictor variables (not including the intercept) as well as the corresponding value of the target variable. In matrix notation, we can write the regressor matrix $\text{X}$ as 
+$\begin{bmatrix} 
+1 & X_{11} & \dots & X_{1k} \\
+1 & X_{21} & \dots & X_{2k} \\
+\vdots & \vdots & \ddots & \vdots \\
+1 & X_{n1} & \dots & X_{nk} \\
+\end{bmatrix}$, the target vector $\mathbf{y}$ as
+$\begin{bmatrix} 
+y_1 \\
+y_2 \\
+\vdots \\
+y_n \\
+\end{bmatrix}$, the coefficient vector $\bm{\beta}$ as
+$\begin{bmatrix} 
+\beta_0 \\
+\beta_1 \\
+\vdots \\
+\beta_k \\
+\end{bmatrix}$, and the residual vector $\bm{\epsilon}$ as
+$\begin{bmatrix} 
+\epsilon_1 \\
+\epsilon_2 \\
+\vdots \\
+\epsilon_n \\
+\end{bmatrix}$. Then, our linear model can be rewritten as the following:
+$\begin{bmatrix} 
+y_1 \\
+y_2 \\
+\vdots \\
+y_n \\
+\end{bmatrix} = 
+\begin{bmatrix} 
+1 & X_{11} & \dots & X_{1k} \\
+1 & X_{21} & \dots & X_{2k} \\
+\vdots & \vdots & \ddots & \vdots \\
+1 & X_{n1} & \dots & X_{nk} \\
+\end{bmatrix} 
+\begin{bmatrix} 
+\beta_0 \\
+\beta_1 \\
+\vdots \\
+\beta_k \\
+\end{bmatrix} + 
+\begin{bmatrix} 
+\epsilon_1 \\
+\epsilon_2 \\
+\vdots \\
+\epsilon_n \\
+\end{bmatrix}$. Or, more simply, as $\mathbf{y} = \text{X} \bm{\beta} + \bm{\epsilon}$, where for each $i \in [1, n]$, $y_i = \beta_0 + \beta_1 X_{i1} + \beta_2 X_{i2} + \dots + \beta_k X_{ik} + \epsilon_i$.
+
+The simplest model that we're going to start with is the ordinary least squares (OLS) regression, which aims to minimize the sum of the squared residuals $\norm{\epsilon}^2$, which is equivalent to $\norm{\mathbf{y} - \text{X} \bm{\beta}}^2$. It can be shown via matrix calculus that the least squares estimator for our coefficient vector $\bm{\beta}$ is given by $\bm{\hat{\beta}} = (\text{X}^\intercal \text{X})^{-1} \text{X}^\intercal \mathbf{y}$.
+\subsection*{Getting the Coefficients}
+The above calculation has already been implemented in the scikit-learn library so we don't need to calculate $\bm{\hat{\beta}}$ manually. After instantiating the LinearRegression class, we can easily obtain the coefficients along with the intercept by calling the fit() method along with our data.
+\begin{figure}[H]\includegraphics[width=\linewidth]{14}\end{figure}
+\begin{figure}[H]\centering\includegraphics[width=0.6\linewidth]{15}\end{figure}
+This means, for example, that for every one unit of change in X1 transaction date, the change in the house price of unit area is approximately 4.21.
+
+We can compare and visualize some predicted values of the house price with the corresponding actual values in a bar graph:
+\begin{figure}[H]\includegraphics[width=\linewidth]{16}\end{figure}
+\vspace*{-2cm}
+\begin{figure}[H]\includegraphics[width=0.25\linewidth]{17}\end{figure}
+\begin{figure}[H]\includegraphics[width=\linewidth]{18}\end{figure}
+
+\section*{Checking the Residuals}
+Congrats! You have successfully obtained the regression line. Now we can get the residuals of the regression by calculating the difference between each data point and the corresponding predicted value. In order to ensure the validity of our analysis, we need to use the residuals to verify a few more conditions apart from multicollinearity.
+
+First, we can use the scatter() function from the matplotlib library to plot the residuals (between the actual and predicted values) against the predicted values. We expect to see that the points are randomly distributed in the scatter plot. More specifically, they should show no curvature (which ensures linearity), and constant variation along the predicted value (which ensures homoscedasticity).
+\begin{figure}[H]\centering\includegraphics[width=0.9\linewidth]{19}\end{figure}
+\begin{figure}[H]\centering\includegraphics[width=0.6\linewidth]{20}\end{figure}
+Finally, let's generate a normal probability plot using probplot() to test the normality of the residuals. If the residuals are normally distributed, the points in the normal probability plot should stick to the red diagonal line as closely as possible. As shown in the plot below, the residuals of our real estate model show a slight deviation from the ideal line, but the deviation or bend is not very serious.
+\begin{figure}[H]\centering\includegraphics[width=\linewidth]{21}\end{figure}
+\begin{figure}[H]\centering\includegraphics[width=0.6\linewidth]{22}\end{figure}
+The above procedure indicates that our residuals satisfy the regression conditions. If, however, your residuals do show some strong patterns, you should consider transforming your data using negative reciprocal, logarithm, square root, square, or exponentiation and then redo the regression. If none of the above transformation options can solve the problem, it's possible that your data set does not fit the linear model, and you may resort to a nonlinear model.
+
+\section*{Making Predictions}
+After all the previous conditions have been verified, you now have a trustworthy regression equation which enables you to make some predictions if given an extra piece of data. While we can use predict() in scikit-learn to get the mean of our prediction, confidence intervals are available via get\_prediction() in the statsmodels package. However, unlike the scikit-learn library, statsmodels does not add a column of ones to the regressor matrix by default, so before calling get\_prediction() we need to add the ones using the add\_constant() function.
+\begin{figure}[H]\centering\includegraphics[width=\linewidth]{23}\end{figure}
+\begin{figure}[H]\centering\includegraphics[width=1.05\linewidth]{24}\end{figure}
+Note that apart from the mean and standard error, summary\_frame() spits out two intervals at 95\% confidence level (we have set alpha = 0.05). The first pair of lower bound and upper bound forms a confidence interval, which is an estimate of the mean price of all the houses that match our randomly generated data. The second pair, on the other hand, forms a prediction interval, which estimate the price of a particular house with this set of data. Because individual values vary more than means, we can expect the prediction interval to be wider than the confidence interval at the same confidence level.
+
+\section*{Evaluations}
+While it is relatively straightforward to obtain regression lines and predictions, there are numerous evaluation metrics to measure the accuracy of our model. In fact, the summary() function from statsmodels provides you with an overwhelming amount of data:
+\begin{figure}[H]\includegraphics[width=\linewidth]{25}\end{figure}
+Don't panic, let's interpret some important values one by one.
+\subsubsection*{R-squared and Adjusted R-squared}
+\begin{figure}[H]\includegraphics[width=0.5\linewidth]{26}\end{figure}
+R-squared, a.k.a. coefficient of determination, measures the proportion of the variance of the target variable that can be explained by the predictors in our model. $R^2$ ranges from 0 to 100\%. The higher the value, the better the model.
+Our model has $R^2 = 0.542$, which means approximately 54\% of the variation in the house price can be accounted for by our OLS model.
+
+Nevertheless, $R^2$ only works as intended in a simple linear regression model with only one predictor. In a multiple regression, when a new predictor is added to the model, $R^2$ can only increase but never decrease. This implies that a model may have a higher $R^2$ simply because it has more predictors. On the other hand, the adjusted $R^2$ takes into account the number of predictors in the model. As a result, it only increases if the new predictor improves the model more than expected by chance and decreases if it fails to do so.
+\subsubsection*{F-statistic}
+\begin{figure}[H]\includegraphics[width=0.5\linewidth]{27}\end{figure}
+Below $R^2$ and the adjusted $R^2$ is the F-statistic which is the statistic of an F-test checking whether our model fits the data well. The null hypothesis of the F-test is that the model with no predictors but only an intercept can fit the data as well as the proposed one. To put it simply, it's testing whether $R^2$ is significantly greater than zero. The F-statistic is the ratio of the explained variance to the unexplained variance, so a higher value of F-statistic is evidence against the null hypothesis.
+
+The fourth row on the right gives the p-value corresponding to the F-statistic. Our model yields a very small p-value of 5.12e-67, so there is sufficient evidence to reject the null hypothesis and conclude that our model does have some predictive power.
+\subsubsection*{Confidence Intervals and t-tests}
+\begin{figure}[H]\includegraphics[width=\linewidth]{28}\end{figure}
+Perhaps the most important information is located in the central part of the summary--the estimated values of each coefficient in the first column, followed by an estimate of the standard deviation of the coefficient. The last two columns provide 95\% confidence intervals constructed from the coefficients and their standard errors in the first two columns.
+
+The two columns in the middle are the results of t-tests checking for the relevancy of each coefficient. The null hypothesis of each t-test is that the corresponding coefficient equals zero, meaning no linear relationship between this predictor and the target variable. The t-statistic is the value in the first column (mean) divided by the second column (standard error); the p-values corresponding to each t-statistic are presented in the next column.
+
+In our case, you can see that the p-values of all the coefficients except X1 are smaller than .01, so we can safely reject the null hypotheses and say that they are indeed relevant to predicting our target variable. However, X1 may be a redundant variable at .01 significance level.
+
+\section*{Stepwise Regression}
+The results of the OLS regression seem significant but the real estate data set involves only 6 predictors. When we have a substantial number of predictors in the model, it's unlikely that all of them will have significant p-values. Oftentimes, there exist predictors that give redundant information. As the model increases in complexity, the variance of our estimator can get very large. Thus we may consider getting rid of some of the predictors in order to simplify the model and prevent overfitting.
+
+In theory, we could try all possible combinations of our predictors and choose the best combination (for example, the one that yields the highest adjusted $R^2$). However, imagine your data set contains have 20 predictors, then you would need to compare $2^{20} > 1,000,000$ potential models!
+
+Backwards stepwise regression provides an easier procedure to select reliable predictors. Starting with all predictors in the model, in each iteration we find out which predictor to delete, if any, will lead to the best model. We repeat this step until we can't improve our model by removing any variables.
+
+The question then arises: how do we determine quantitatively which model is the best? One method to measure the performance of models is the leave-one-out cross-validation--in each iteration, we pick a data point (a row of $X_{i\cdot}$ and $y_i$) from our data set, and refit an OLS model on the remaining data points. Based on this model, we make a prediction $\hat{y}_{i}$ for the data point $y_i$ that we picked in the current iteration. We sum up the squared differences between each data point and its predicted value, i.e. $\sum_{i=1}^{n} (y_i - \hat{y}_i)^2$ as our evaluation metric, called the risk estimator. A good model should yield small difference between each pair of predicted and actual values, so smaller risk estimators are preferred.
+
+Using the leave-one-out cross-validation, we are able to quantitatively compare the models during each iteration of backwards stepwise regression. This procedure is not supported in Python libraries, but the process is not hard to implement:
+\begin{figure}[H]\centering\includegraphics[width=1.1\linewidth]{29.1}\end{figure}
+\begin{figure}[H]\centering\includegraphics[width=1.1\linewidth]{29.2}\end{figure}
+We can apply the above function to our real estate data, though it is too small in size to let the above algorithm run for many rounds and make significant improvement. Still, backwards stepwise regression reveals that X6 is the only predictor among X1-X6 that should be dropped so that the risk estimator can be improved from 33075 to 32952 (obviously, very little improvement here).
+\begin{figure}[H]\includegraphics[width=0.8\linewidth]{30}\end{figure}
+We can try to rerun the OLS regression with X6 removed from the model. The adjusted $R^2$ now increases to 0.577. Thus to reduce multicollinearity, deleting X6 is perhaps a better option than X3.
+\begin{figure}[H]\includegraphics[width=1.1\linewidth]{31}\end{figure}
+\begin{figure}[H]\includegraphics[width=\linewidth]{32}\end{figure}
+
+\section*{Regularization}
+However, stepwise regression has many potential drawbacks. For example, as a greedy search algorithm, it is not guaranteed to find the best model, especially when predictors are correlated.
+
+Another approach that performs predictor selection and also works in the presence of multicollinearity is regularization, a technique for reducing the complexity of the model by adding an extra penalty term to the errors. More specifically, our objective here is still to minimize $\norm{\mathbf{y} - \text{X} \bm{\beta}}^2$ (same as the OLS model), but we now impose an additional constraint that the coefficients should not exceed some threshold. The specific constraint depends on the type of the regularization. Three popular regularization techniques are mentioned below--Lasso, Ridge, and Elastic Net.
+
+Regardless of the type of regularization, the new model will always penalize large coefficients, so we need to standardize our predictor variables to ensure that the penalty is applied fairly across all predictors. Standardization means converting the values in each column of the regressor matrix into z-scores, so the standard score of $x$ is calculated as $z = \frac{x - \mu}{\sigma}$, where $\mu$ is the mean of all values in the same column and $\sigma$ is their standard deviation.
+\begin{figure}[H]\includegraphics[width=0.6\linewidth]{33}\end{figure}
+After the standardization, we are ready to choose a specific model to perform. Let's start with Lasso regression. Lasso regression requires that the sum of the absolute values of the coefficients $\norm{\beta}_1$ is no larger than some prespecified value. Using Lagrange Multiplier, we can write our objective function to minimize as $\norm{\mathbf{y} - \text{X} \bm{\beta}}^2_2 + \lambda \norm{\beta}_1$. $\lambda \norm{\beta}_1$ is the extra penalty term here and can be controlled by changing the value of $\lambda$. When $\lambda$ is zero, the model reduces to OLS; when $\lambda$ tends to infinity, all coefficients approach zero. As you gradually increase $\lambda$, the magnitude of the coefficients has to decrease towards zero. This can be illustrated by the code below:
+\begin{figure}[H]\includegraphics[width=0.8\linewidth]{34}\end{figure}
+\begin{figure}[H]\centering\includegraphics[width=0.5\linewidth]{35}\end{figure}
+To improve the predictive power of our model, we can again resort to cross-validation and choose the $\lambda$ that optimizes some evaluation metrics, such as the cross-validated sum of squared residuals. This can be done by the GridSearchCV() function in scikit-learn. It searches over some range of $\lambda$ to find the optimal evaluation score. Note that the scoring metric is negative mean squared error since the scoring API is designed to maximize rather than minimize the score. Of course, we can easily convert the score back to positive using the negative() function in numpy.
+\begin{figure}[H]\centering\includegraphics[width=\linewidth]{36}\end{figure}
+\begin{figure}[H]\includegraphics[width=0.5\linewidth]{37}\end{figure}
+We can visualize where the optimal value of $\lambda$ is located in the interval:
+\begin{figure}[H]\includegraphics[width=\linewidth]{38}\end{figure}
+\begin{figure}[H]\centering\includegraphics[width=0.6\linewidth]{39}\end{figure}
+Putting the optimal value of $\lambda$ in the parameter of Lasso(), we can obtain the coefficients under the Lasso model:
+\begin{figure}[H]\includegraphics[width=\linewidth]{40}\end{figure}
+\begin{figure}[H]\includegraphics[width=0.75\linewidth]{41}\end{figure}
+Note that X6 is again reduced to zero. The significant changes in the magnitude of other coefficients is due to the fact that we have standardized our predictors before the regression. To recover the interpretability of our results, we may choose to back-convert the coefficients (by dividing by the standard deviation) and the intercept (by subtracting all the coefficients times the means of the corresponding predictors and divided by the corresponding standard deviations):
+\begin{figure}[H]\includegraphics[width=\linewidth]{42}\end{figure}
+\begin{figure}[H]\includegraphics[width=0.75\linewidth]{43}\end{figure}
+We can also try Ridge and Elastic Net regression. Their procedures are exactly the same except that we need to call different functions for different types of regressions.
+
+For Ridge regression, the only difference is that the objective now becomes $\min\limits_{\beta} \norm{Y - X\beta}^2_2 + \lambda \norm{\beta}^2_2$. (The constraint is now on the sum of squared coefficients.) While Lasso promotes predictor selection, Ridge will decrease the values of coefficients but is unable to force a coefficient to exactly 0.
+\begin{figure}[H]\includegraphics[width=\linewidth]{44.1}\end{figure}
+\begin{figure}[H]\includegraphics[width=\linewidth]{44.2}\end{figure}
+\begin{figure}[H]\includegraphics[width=0.63\linewidth]{45}\end{figure}
+Lastly, Elastic Net regression is a combination of Lasso and Ridge--the objective is $\min\limits_{\beta} \norm{Y - X\beta}^2_2 + \lambda \left(\alpha \norm{\beta}_1 + \frac{1 - \alpha}{2} \norm{\beta}^2_2\right)$, and $\alpha = 0.5$ by default.
+\begin{figure}[H]\includegraphics[width=1.1\linewidth]{46.1}\end{figure}
+\begin{figure}[H]\includegraphics[width=1.1\linewidth]{46.2}\end{figure}
+\begin{figure}[H]\includegraphics[width=0.6\linewidth]{47}\end{figure}
+Again, we can calculate the adjusted $R^2$ of each of these regressions. You can see that their values are all around 0.576, which is better than the adjusted $R^2$ of our initial OLS model.
+\begin{figure}[H]\includegraphics[width=1\linewidth]{48}\end{figure}
+\begin{figure}[H]\includegraphics[width=0.6\linewidth]{49}\end{figure}
+That's it for a complete procedure to perform linear regression analysis in Python! We have checked the necessary conditions, calculated the coefficients under different models, and compared their performance. If you want to find an even better regression model, perhaps you could go on to try some nonlinear models in the future!
+\end{document}
