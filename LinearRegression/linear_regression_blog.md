@@ -44,7 +44,7 @@ import io
 
 For this analysis, I will use a real estate dataset that can be downloaded from [here](https://www.kaggle.com/quantbruce/real-estate-price-prediction). I choose to
 upload it to Google Colab from local drive. Of course, you can also replace the first argument in
-read csv() with the filepath or URL to the dataset that you’d like to use instead. The delimiter
+read_csv() with the filepath or URL to the dataset that you’d like to use instead. The delimiter
 parameter is set to comma by default, but you can change it depending on the delimiter of your
 csv file.
 
@@ -114,7 +114,7 @@ sn.heatmap(corrMatrix, annot=True) # visualize the correlation matrix using a he
 
 VIF factor is an alternative measure for multicollinearity, which ranges from 1 upwards. A rule of
 thumb used in practice is if a VIF value is greater than 4, then multicollinearity is a problem. We
-can check VIF factors using the variance inflation factor() function from the statsmodels package.
+can check VIF factors using the variance_inflation_factor() function from the statsmodels package.
 
 ```python
 X = dataset[['X1 transaction date', 'X2 house age', 'X3 distance to the nearest MRT station', 'X4 number of convenience stores', 'X5 latitude', 'X6 longitude']]
@@ -129,8 +129,9 @@ vif
 ![](Blog/11.png)
 
 You should see in the correlation matrix that the correlation coefficient between X3 and X6 is
-−0.81 < −0.8, and the VIF factor for X3 is also slightly higher than 4, which is unfavorable. A
-simple solution is to remove one of the correlated variables from our model. After removing X3
+−0.81 < −0.8, and the VIF factor for X3 is also slightly higher than 4, which is unfavorable.
+
+A simple solution is to remove one of the correlated variables from our model. After removing X3
 from the list of column names and rerunning the previous code, the new correlation matrix should
 show no significant multicollinearity, and the VIF factors of all the remaining variables are around
 1, so we are in good shape, and can proceed with our regression.
@@ -144,7 +145,7 @@ kind of arbitrary here. To remove the redundant variables more carefully, we can
 stepwise regression to only keep the predictors that lead to the best performance; I will describe
 backwards stepwise regression later.
 
-Another way to deal with multicollinearity without having to drop your predictors before the analysis is to perform regression with regularization techniques, such as Lasso and Ridge. Regularization can help you handle multicollinearity, so if you don’t want to delete any variables, you may choose to skip the OLS model below and directly jump to the Lasso/Ridge/Elastic Net regression presented in the end.
+Another way to deal with multicollinearity without the need to drop predictors before the analysis is to perform regression with regularization techniques, such as Lasso and Ridge. Regularization can help you handle multicollinearity, so if you don’t want to delete any variables, you may choose to skip the OLS model below and directly jump to the Lasso/Ridge/Elastic Net regression presented in the end.
 
 
 
@@ -279,11 +280,7 @@ does not fit the linear model, and you may resort to a nonlinear model.
 
 After all the previous conditions have been verified, you now have a trustworthy regression equation
 which enables you to make some predictions if given an extra piece of data. While we can use
-predict() in scikit-learn to get the mean of our prediction (like what we did when comparing the
-predicted values with the actual values right after we’ve got the coefficients), confidence intervals
-are available via the get prediction() in the statsmodels package. However, unlike the scikit-learn
-library, statsmodels does not add a column of ones to the regressor matrix by default, so before
-calling get prediction() we need to add the ones using the add constant() function.
+predict() in scikit-learn to get the mean of our prediction, confidence intervals are available via the get_prediction() in the statsmodels package. However, unlike the scikit-learn library, statsmodels does not add a column of ones to the regressor matrix by default, so before calling get_prediction() we need to add the ones using the add_constant() function.
 
 ```python
 random = []
@@ -302,7 +299,7 @@ print(prediction.summary_frame(alpha = 0.05))
 
 ![](Blog/24.png)
 
-Note that apart from the mean and standard error, summary frame() spits out two intervals at
+Note that apart from the mean and standard error, summary_frame() spits out two intervals at
 95% confidence level (we have set alpha = 0.05). The first pair of lower bound and upper bound
 forms a confidence interval, which is an estimate of the mean price of all the houses that match our
 randomly generated data. The second pair, on the other hand, forms a prediction interval, which
@@ -330,7 +327,7 @@ Don’t panic, let’s interpret some important values one by one.
 
 <img src="Blog/26.png" style="float: left;" />
 
-R-squared, a.k.a. coefficient of determination, measures the proportion of the variance of the target variable that can be explained by the predictors in our model. $R^2$ ranges from 0 to 100\%. The higher the value, the better the model. Our model has $R^2 = 0.542$, which means approximately 54\% of the variation in the house price can be accounted for by our OLS model.
+R-squared, a.k.a. coefficient of determination, measures the proportion of the variance of the target variable that can be explained by the predictors in our model. $R^2$ ranges from 0 to 100%. The higher the value, the better the model. Our model has $R^2 = 0.542$, which means approximately 54% of the variation in the house price can be accounted for by our OLS model.
 
 Nevertheless, $R^2$ only works as intended in a simple linear regression model with only one predictor. In a multiple regression, when a new predictor is added to the model, $R^2$ can only increase but never decrease. This implies that a model may have a higher $R^2$ simply because it has more predictors. On the other hand, the adjusted $R^2$ takes into account the number of predictors in the model. As a result, it only increases if the new predictor improves the model more than expected by chance and decreases if it fails to do so.
 
@@ -346,8 +343,7 @@ The fourth row on the right gives the p-value corresponding to the F-statistic. 
 
 <img src="Blog/28.png" style="float: left; zoom:90%;" />
 
-Perhaps the most important information is located in the central part of the summary. We can see
-the estimated values of each coefficient in the first column, followed by an estimate of the standard
+Perhaps the most important information is located in the central part of the summary--the estimated values of each coefficient in the first column, followed by an estimate of the standard
 deviation of the coefficient. The last two columns provide 95% confidence intervals constructed
 from the coefficients and their standard errors in the first two columns.
 
@@ -355,10 +351,9 @@ The two columns in the middle are the results of t-tests checking for the releva
 coefficient. The null hypothesis of each t-test is that the corresponding coefficient equals zero,
 meaning no linear relationship between this predictor and the target variable. The t-statistic is
 the value in the first column (mean) divided by the second column (standard error); the p-values
-corresponding to each t-statistic are presented in the next column. You can see that the p-values
-of all our coefficients except X1 are smaller than .01, so we can safely reject the null hypotheses
-and say that they are indeed relevant to predicting our target variable. However, X1 may be a
-redundant variable at .01 significance level.
+corresponding to each t-statistic are presented in the next column.
+
+In our case, you can see that the p-values of all the coefficients except X1 are smaller than .01, so we can safely reject the null hypotheses and say that they are indeed relevant to predicting our target variable. However, X1 may be a redundant variable at .01 significance level.
 
 
 
