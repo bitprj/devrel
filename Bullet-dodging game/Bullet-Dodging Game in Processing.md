@@ -1,6 +1,6 @@
 # Bullet-Dodging Game in Processing
 
-Processing is an open-source graphical library written in Java. Designed for the visual arts community, Processing can be used to create interactive graphics such as data visualizations, digital art, and video games. In this blog, we're going to build a simple bullet-dodging game from scratch using Processing. All of the built-in functions mentioned below can be found on the [Processing reference page](https://processing.org/reference/).
+Processing is an open-source graphical library written in Java. Designed for the visual arts community, Processing can be used to create interactive graphics such as data visualizations, digital art, video games. In this blog, we're going to build a simple bullet-dodging game from scratch using Processing. All of the built-in functions mentioned below can be found on the [Processing reference page](https://processing.org/reference/).
 
 
 
@@ -163,7 +163,7 @@ We haven't dealt with the case when the bullet hits the player, but at least we 
 
 ## Part III: Adding a Life and Scoring System
 
-Perhaps we should allow the player to have multiple chances in our game, otherwise the game tends to end to fast. So let's add a life system to make the game more enjoyable.
+Perhaps we should allow the player to have multiple chances in our game, otherwise the game tends to end too fast. So let's add a life system to make the game more enjoyable.
 
 To start, [here](https://github.com/Bowen1Zhu/Bullet-Dodging-Game/blob/master/data/heart1.png) & [here](https://github.com/Bowen1Zhu/Bullet-Dodging-Game/blob/master/data/heart2.png) are the heart icons that I used in the life system. To add an image to the program, simply drag it into the Processing editor, and when you save the project, a data folder containing the image will automatically appear in the project folder next to the Processing code file.
 
@@ -3113,4 +3113,4 @@ void keyPressed() {
 
 
 
-We have completed the ultimate version of the program that allows us to pause, resume, and restart the game in addition to all the functions we have implemented earlier. [Here](https://github.com/Bowen1Zhu/Bullet-Dodging-Game/tree/master/data) are all the images that I have used in my shooting game. Feel free to customize your own characters, improve the aesthetics, and add more features to the game!
+We have completed the ultimate version of the program that allows us to pause, resume, and restart the game in addition to all the functions we have implemented earlier. [Here](https://github.com/Bowen1Zhu/devrel/tree/BulletDodgingGame/Bullet-dodging%20game/data) are all the images that I have used in my shooting game. Feel free to customize your own characters, improve the aesthetics, and add more features to the game!
