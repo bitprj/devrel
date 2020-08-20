@@ -2,7 +2,7 @@
 
 # Coding for (Not Quite) Dummies: Object Oriented Programming
 
-### Part 1: Introduction - Coding is Scary
+## Part 1: Introduction - Coding is Scary
 
 In 1969, Martin M. Broadwell made one of the first references to a psychological learning model known as the four stages of competence. They comprise of: 
 
@@ -15,8 +15,7 @@ In 1969, Martin M. Broadwell made one of the first references to a psychological
 4. unconscious competence. 
 
    
-
-   When it comes to programming, there are many, many different websites and articles aiming to quickly teach a person the basics, and try and convince them to take the plunge and commit to reaching those third and fourth stages.
+When it comes to programming, there are many, many different websites and articles aiming to quickly teach a person the basics, and try and convince them to take the plunge and commit to reaching those third and fourth stages.
    
 If you’re here, you’ve been convinced too.
    
@@ -30,25 +29,25 @@ To progress in any significant manner beyond the second stage of competence requ
 
 
 
-This guide hopes to be different. If you’re reading this, you’re on your journey from incompetence to competence, and to this end hopefully have a working knowledge of the coding fundamentals - variables, loops, basic syntax, etc. (if not, a website like [Codecademy](https://www.codecademy.com/learn/learn-java) will teach those basics within its first few lessons). These lessons will discuss higher level concepts and techniques, and hopefully convince you that the past few hours you spent on Codecademy or another comparable website wasn’t a waste of time. Even making it to stage 3 in this context - competence with coding - is no simple task, and one that we all are taking steps to achieve, but with any luck these articles can help guide you down that path.
+This guide hopes to be different. If you’re reading this, you’re on your journey from incompetence to competence, and to this end hopefully have a working knowledge of the coding fundamentals - variables, loops, basic syntax, etc. (if not, a website like [Codecademy](https://www.codecademy.com/learn/learn-java) will teach those basics within its first few lessons). This blog will discuss higher level concepts and techniques, and hopefully convince you that the past few hours you spent on Codecademy or another comparable website wasn’t a waste of time. Even making it to stage three in this context - competence with coding - is no simple task, and one that we all are taking steps to achieve, but with any luck this lesson can help guide you down that path.
 
 
 
-### Part 2: What is an Object?
+## Part 2: What is an Object?
 
 **Object Oriented Programming** is a name that we give to certain coding languages because they make use of a type of code we call “objects.” Many major languages are Object Oriented, including (but not limited to) Python, C++, C#, Java, JavaScript, and many more.
 
 ​				*Quick note: For examples and sample code, I’ll be writing in Java because it’s my primary language. Object Oriented techniques and features hold 				across all these languages unless noted otherwise, but specific implementations may differ if you aren’t using Java.* 
 
-An object is obviously not a physical object, but a special variable type. It can do more than just store a number, though. Objects are variable types that we make ourselves, and both store data and utilize functions specific to the object. What do I mean by this? Here’s an example. Say we want to store the data of a bunch of people for a hypothetical classroom roster or something similar. We'll want to store their first name, last name, and age, we'll want to be able to access any of these pieces of data at any time, and we'll want to be able to change their age after the fact, seeing as how people age.
+An object is obviously not a physical object, but a special variable type. It can do more than just store a number, though. Objects are variable types that we make ourselves, and both store data and utilize functions specific to the object. What do I mean by this? Here’s an example. Say we want to store the data of a bunch of people for a hypothetical classroom roster or something similar. We'll want to store their first name, last name, and age, we'll want to be able to access any of these pieces of data at any time, and we'll want to be able to change their age after the fact, seeing as people's age changes.
 
-​				*Remember: This is Java - Specific implementation may vary if you’re using a different language.*
+​				*Remember: This is Java-specific implementation may vary if you’re using a different language.*
 
 To start, let’s make a public class called “Person” (since that’s the type of object we’re trying to make - people). We’ll also make some variables to store names and age, though we won’t assign any values to them, seeing as how this isn’t any one specific person we’re making right now (we’re making a general template that we’ll be able to use to create specific “person” objects with later, each with their own unique names and ages).
 
 ![img](https://lh6.googleusercontent.com/zehLJy0dg7jY0SIAesHgX1_GRqjn_et0uq-QoJPPNZWSta4vbNkB1AlJnqcahxzgZHD-pG96n0ZiGzIKNM0W2T6cbDEwZ256ye3eybvMx-EX5dhS1-eXaI5Yuc48F4uLhsRLb-zf)
 
-To clarify, we’re making this object in its own file. To actually create a “person” object, we’ll need to put the “Person.java” file in the same directory as the program is actually using the object, then create an object in that main program. How do we actually create the object, though? That uses something we call a **constructor**. A constructor is a bit of code in the object class (the Person.java file) that lets you determine howhow exactly a Person object is created in your code. Here are two that I wrote:
+To clarify, we’re making this object in its own file. To actually create a “person” object, we’ll need to put the “Person.java” file in the same directory as the program that is using the object, then create an object in that main program. How do we actually create the object, though? That uses something we call a **constructor**. A constructor is a bit of code in the object class (the Person.java file) that lets you determine how exactly a Person object is created in your code. Here are two that I wrote:
 
 ![img](https://lh3.googleusercontent.com/71i-A6XK3i2RPOIpGQULaGR04HD_NmjxD260ccFoHY6jr0NjSCduBuGz54hUQjWIYdBjOp05tk658qaW3nlAmFhWOlCql8qYv-EHJnTboSm35asJEfbrxV5YA1RRCiJD5AcxWpTY)
 
@@ -62,13 +61,13 @@ Whenever we make an object, we’re making a unique Person object with its own f
 
 
 
-Here’s an object in action. This line of code creates a new Person object, and runs the code inside the associated constructor for that object. In this case, we’re making a Person object named “John” with a first name input of “John,” a last name input of “Smith”, and an age input of 26. If we didn't know John's age, we could simply input "John" and "Smith" and the object would be created with the other constructor, since that one only needs a first and last name. In that case, the "age" value would be set to -1, which I'm using to indicate an unknown age.
+Here’s an object in action. This line of code creates a new Person object, and runs the code inside the associated constructor for that object. In this case, we’re making a Person object named “John” with a first name input of “John,” a last name input of “Smith,” and an age input of 26. If we didn't know John's age, we could simply input "John" and "Smith" and the object would be created with the other constructor, since that one only needs a first and last name. In that case, the "age" value would be set to -1, which I'm using to indicate an unknown age.
 
 ​			*Remember that this is in a completely separate file. We’re just storing Person.java and PersonTest.java in the same directory.* 
 
 With that, we’re a step closer to coding everything we want this Person object to do, but we aren't finished. It can store that info, sure, but we still can't access those variables from outside the class*. We’ll have to write that in ourselves, via a method. 
 
-​			**There actually is indeed a trick for this, but it’s bad form. When we initially created those variables, we made them private. If they were instead public, we 			could then just access, and edit, them from anywhere. This typically isn’t what we want though, since granting full access to those variables can have 			unintended consequences. If you’re coding Person.java, do you want the people using it to be able to modify firstName or lastName freely? Probably not.*
+​			**There actually is indeed a trick for this, but it’s bad form. When we initially created those variables, we made them private. If they were instead public, we 			could then just access, and edit, them from anywhere. But this typically isn’t what we want, since granting full access to those variables can have 			unintended consequences. If you’re coding Person.java, do you want the people using it to be able to modify firstName or lastName freely? Probably not.*
 
 You most likely already know what a method is, but just in case, a quick reminder: a **method** is just a fancy name for a function. You (optionally) input a value, it does something, and (optionally) outputs a value (the only required part of those three is that it does something). If we want methods to access the variables, we just need to write some public methods in Person.java that will return the desired values:
 
@@ -93,11 +92,11 @@ Using the method of an object is as simple as [specific object instance].[method
 
 One last task for this is to modify the age of the person. This one will use methods too, but it raises an important question: How exactly do we want to approach this? Do we want to give free access to increment the age, or do we want to simply increment it by one? An easy answer is to do both! 
 
-###### 	Quick Sublesson: Overloading
+#### Sublesson: Overloading
 
 ​			*Note: This does not apply to every language! I know it works for C++ and Java, for example, but not Python. Do a quick google search to see if this will 			work for you. If not, skip this.*
 
-​	In some languages, two methods can be given the same name, if they take different inputs - as seen in the code example you’ll see in a second. This is 	called **overloading**.
+​In some languages, two methods can be given the same name, if they take different inputs — as seen in the code example you’ll see in a second. This is 	called **overloading**.
 
 I’ve gone ahead and made a function that sets the age to a new value, takes an input and adjusts the age accordingly, and another that takes no input and simply increments the age by one. With that, we have our complete (simple) Person.java file:
 
@@ -117,17 +116,17 @@ And finally, its complete output:
 
 
 
-### Part 3: Inheritance, or How to Make Your Code Look Cleaner
+## Part 3: Inheritance, or How to Make Your Code Look Cleaner
 
-Inheritance is another important aspect of objects, and it can be a massive time saver when it comes to writing objects. Essentially, inheritance is implementing an object, within another object. 
+Inheritance is another important aspect of objects, and it can be a massive time saver when it comes to writing objects. Essentially, inheritance is implementing an object within another object. 
 
-To put it more simply, **inheritance** lets an object *inherit* the properties of another object. For example, say we've already coded a hypothetical “Wolf” object and a hypothetical “Animal” object. With this line of code in the Wolf object's header - 
+To put it more simply, **inheritance** lets an object *inherit* the properties of another object. For example, say we've already coded a hypothetical “Wolf” object and a hypothetical “Animal” object. With this line of code in the Wolf object's header,
 
 ![img](https://lh5.googleusercontent.com/JGvonMJYeaB_YrKOvY_1HfzIG0Be5-EzKqhO00xT9OcaLT5eVI6cU7k2agRBRPCQcEV3MRe1-nXjozqROJyCwVW9VC3Aw08uKJLAlXGSp4_WmuFEZAerD_-PISJqjvrrTT9p3Uwr)
 
 Wolf will now have all the characteristics (methods, variables, etc.) of Animal, in addition to whatever code is written in Wolf. Note that in Java, a given object (a **subclass**) can only inherit from one parent class (a **superclass**). This varies from language to language. For example, C# also only supports single inheritance, whereas C++ supports multiple inheritance (that is to say, a single subclass can inherit from multiple superclasses). 
 
-Another important item that's similar to a superclass is an interface. An **interface** is basically just a list of method titles that an object will **implement** - i.e. you'll code those methods from the interface into the object.
+Another important item that's similar to a superclass is an interface. An **interface** is basically just a list of method titles that an object will **implement**, i.e. you'll code those methods from the interface into the object.
 
 Here’s an example. Say we have this interface:
 
@@ -151,9 +150,9 @@ At this point, you might be wondering what the benefit of an interface is at all
 
 
 
-### Part 4: The End of the Beginning
+## Part 4: The End of the Beginning
 
 This is not all there is to Object Oriented Programming. It’s not even all there is to Objects. It is, however, a good introduction to the topic. With any luck, this guide gave you an understanding of objects. However, it’s not possible to cover everything, so eventually you’ll have to venture into the world of advanced computer science. Don't worry, it's not as threatening as it sounds.
 
-The 4 stages of competence are something of a simplification, in my opinion. It’s not easy to draw a line defining where “conscious competence” stops and “unconscious competence” starts. However, the model does do an important thing of drawing a distinction between not knowing something, and not knowing but wanting to learn. Once you’ve reached that threshold, you’ve already taken the biggest step. The only thing to do from there is to not get dissuaded, and stick the landing as you continue your education. Once you’ve gotten to the point where nothing can dissuade you, then I think you can say you’ve finally reached that next stage.
+The four stages of competence are something of a simplification, in my opinion. It’s not easy to draw a line defining where “conscious competence” stops and “unconscious competence” starts. However, the model does do an important thing of drawing a distinction between not knowing something, and not knowing but wanting to learn. Once you’ve reached that threshold, you’ve already taken the biggest step. The only thing to do from there is to not get dissuaded, and stick the landing as you continue your education. Once you’ve gotten to the point where nothing can dissuade you, then I think you can say you’ve finally reached that next stage.
 
